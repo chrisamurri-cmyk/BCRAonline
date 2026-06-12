@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BCRAonline — Variables económicas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d0f14;
+      --surface:   #13161d;
+      --border:    #1e2330;
+      --text:      #e8eaf0;
+      --muted:     #5a6080;
+      --accent:    #3d8bff;
+      --green:     #22c55e;
+      --red:       #ef4444;
+      --amber:     #f59e0b;
+      --mono:      'JetBrains Mono', monospace;
+      --sans:      'Inter', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      min-height: 100vh;
+      padding: 0;
+    }
+
+    /* HEADER */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 10;
+    }
+    .logo {
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--text);
+    }
+    .logo span { color: var(--accent); }
+    #last-update {
+      font-size: 12px;
+      color: var(--muted);
+      font-family: var(--mono);
+    }
+    #status-dot {
+      display: inline-block;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--muted);
+      margin-right: 6px;
+      vertical-align: middle;
+      transition: background 0.4s;
+    }
+    #status-dot.live { background: var(--green); animation: pulse 2s infinite; }
+    @keyframes pulse {
+      0%,100% { opacity: 1; } 50% { opacity: 0.4; }
+    }
+
+    /* MAIN */
+    main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 64px; }
+
+    h1 {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    /* GRID DE CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      position: relative;
+      transition: border-color 0.2s;
+    }
+    .card:hover { border-color: #2e3550; }
+
+    .card-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .card-value {
+      font-family: var(--mono);
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 6px;
+      min-height: 34px;
+    }
+
+    .card-sub {
+      font-size: 12px;
+      color: var(--muted);
+      font-family: var(--mono);
+    }
+
+    .card-tag {
+      position: absolute;
+      top: 16px; right: 16px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    .tag-blue  { background: rgba(61,139,255,0.12); color: var(--accent); }
+    .tag-green { background: rgba(34,197,94,0.12);  color: var(--green);  }
+    .tag-amber { background: rgba(245,158,11,0.12); color: var(--amber);  }
+    .tag-red   { background: rgba(239,68,68,0.12);  color: var(--red);    }
+
+    /* SKELETON LOADER */
+    .skeleton {
+      background: linear-gradient(90deg, var(--border) 25%, #252a38 50%, var(--border) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite;
+      border-radius: 4px;
+      height: 28px; width: 120px;
+    }
+    @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+    /* ERROR */
+    .card-value.error { font-size: 13px; color: var(--red); }
+
+    /* SECCIÓN GRÁFICO */
+    .chart-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 40px;
+    }
+    .chart-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .chart-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .chart-tabs {
+      display: flex;
+      gap: 6px;
+    }
+    .chart-tab {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 5px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-family: var(--sans);
+      transition: all 0.15s;
+    }
+    .chart-tab.active, .chart-tab:hover {
+      background: rgba(61,139,255,0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    canvas { width: 100% !important; }
+
+    /* TABLA HISTÓRICA */
+    .table-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .table-header {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+      font-weight: 500;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    thead th {
+      text-align: left;
+      padding: 10px 24px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+    tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.1s;
+    }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: rgba(255,255,255,0.02); }
+    td {
+      padding: 11px 24px;
+      font-family: var(--mono);
+      font-size: 13px;
+    }
+    td:first-child { color: var(--muted); }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      padding: 24px;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      header { padding: 14px 16px; }
+      main { padding: 20px 12px 48px; }
+      .card-value { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">BCRA<span>online</span></div>
+  <div id="last-update"><span id="status-dot"></span>Cargando...</div>
+</header>
+
+<main>
+  <h1>Variables del Banco Central · Argentina</h1>
+
+  <div class="grid" id="cards-grid">
+    <!-- generadas por JS -->
+  </div>
+
+  <div class="chart-section">
+    <div class="chart-header">
+      <div class="chart-title">Evolución histórica</div>
+      <div class="chart-tabs" id="chart-tabs">
+        <button class="chart-tab active" data-var="4" data-label="Reservas (USD M)">Reservas</button>
+        <button class="chart-tab" data-var="40" data-label="Base monetaria (M$)">Base monetaria</button>
+        <button class="chart-tab" data-var="7" data-label="BADLAR bancos privados (%)">BADLAR</button>
+      </div>
+    </div>
+    <canvas id="main-chart" height="260"></canvas>
+  </div>
+
+  <div class="table-section">
+    <div class="table-header">Últimos 10 registros — <span id="table-var-label">Reservas internacionales</span></div>
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <tr><td colspan="2" style="text-align:center;padding:24px;color:var(--muted)">Cargando...</td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<footer>
+  Datos: <a href="https://www.bcra.gob.ar" target="_blank">BCRA</a> vía API pública ·
+  Actualizado automáticamente al cargar la página ·
+  Fuente abierta en <a href="https://github.com/chrisamurri-cmyk/BCRAonline" target="_blank">GitHub</a>
+</footer>
+
+<!-- Chart.js desde CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+<script>
+// ─── VARIABLES A MOSTRAR EN CARDS ───────────────────────────────────────────
+// IDs de la API BCRA: https://api.bcra.gob.ar/estadisticas/v2.0/principalesvariables
+const VARIABLES = [
+  { id: 1,   label: 'Reservas internacionales', unit: 'USD M',  tag: 'tag-blue',  tagText: 'Stock',   format: v => formatNum(v) },
+  { id: 27,  label: 'Tipo de cambio oficial',   unit: '$/USD',  tag: 'tag-amber', tagText: 'FX',      format: v => '$' + formatDec(v) },
+  { id: 7,   label: 'BADLAR bancos privados',   unit: '% TNA',  tag: 'tag-green', tagText: 'Tasa',    format: v => formatDec(v) + '%' },
+  { id: 40,  label: 'Base monetaria',           unit: 'MM$',    tag: 'tag-blue',  tagText: 'Stock',   format: v => formatNum(v) },
+  { id: 15,  label: 'Inflación mensual',        unit: '%',      tag: 'tag-red',   tagText: 'IPC',     format: v => formatDec(v) + '%' },
+  { id: 29,  label: 'Circulación monetaria',    unit: 'MM$',    tag: 'tag-blue',  tagText: 'Stock',   format: v => formatNum(v) },
+];
+
+function formatNum(v) {
+  if (v >= 1_000_000) return (v / 1_000_000).toFixed(2) + 'B';
+  if (v >= 1_000)     return (v / 1_000).toFixed(1) + 'K';
+  return v.toLocaleString('es-AR');
+}
+function formatDec(v) {
+  return parseFloat(v).toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+function formatDate(d) {
+  if (!d) return '—';
+  const [y, m, day] = d.split('-');
+  return `${day}/${m}/${y}`;
+}
+
+// ─── RENDER CARDS SKELETON ───────────────────────────────────────────────────
+const grid = document.getElementById('cards-grid');
+VARIABLES.forEach(v => {
+  grid.innerHTML += `
+    <div class="card" id="card-${v.id}">
+      <div class="card-label">${v.label}</div>
+      <div class="card-value" id="val-${v.id}"><div class="skeleton"></div></div>
+      <div class="card-sub" id="sub-${v.id}">—</div>
+      <span class="card-tag ${v.tag}">${v.tagText}</span>
+    </div>`;
+});
+
+// ─── FETCH VARIABLES PRINCIPALES ────────────────────────────────────────────
+async function loadCards() {
+  const dot = document.getElementById('status-dot');
+  const upd = document.getElementById('last-update');
+  try {
+    const res = await fetch('https://api.bcra.gob.ar/estadisticas/v2.0/principalesvariables');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const json = await res.json();
+    const data = json.results || [];
+    const byId = {};
+    data.forEach(d => { byId[d.idVariable] = d; });
+
+    VARIABLES.forEach(v => {
+      const d = byId[v.id];
+      const el = document.getElementById('val-' + v.id);
+      const sub = document.getElementById('sub-' + v.id);
+      if (d) {
+        el.textContent = v.format(d.valor);
+        sub.textContent = `${v.unit} · ${formatDate(d.fecha)}`;
+      } else {
+        el.textContent = 'N/D';
+        el.classList.add('error');
+      }
+    });
+
+    dot.classList.add('live');
+    const now = new Date();
+    upd.innerHTML = `<span id="status-dot" class="live" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#22c55e;margin-right:6px;vertical-align:middle;animation:pulse 2s infinite"></span>Actualizado ${now.toLocaleTimeString('es-AR', {hour:'2-digit',minute:'2-digit'})}`;
+  } catch (e) {
+    console.error(e);
+    upd.textContent = 'Error al cargar datos';
+    VARIABLES.forEach(v => {
+      const el = document.getElementById('val-' + v.id);
+      if (el) { el.textContent = 'Error'; el.classList.add('error'); }
+    });
+  }
+}
+
+// ─── CHART ───────────────────────────────────────────────────────────────────
+let chartInstance = null;
+let activeVarId = 4;
+let activeVarLabel = 'Reservas (USD M)';
+
+async function loadChart(varId, varLabel) {
+  const today = new Date();
+  const from = new Date(today); from.setMonth(from.getMonth() - 6);
+  const fmt = d => d.toISOString().split('T')[0];
+
+  const url = `https://api.bcra.gob.ar/estadisticas/v2.0/datosvariable/${varId}/${fmt(from)}/${fmt(today)}`;
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const json = await res.json();
+    const rows = (json.results || []).slice(-180);
+
+    const labels = rows.map(r => formatDate(r.fecha));
+    const values = rows.map(r => parseFloat(r.valor));
+
+    // Tabla histórica (últimos 10)
+    const tbody = document.getElementById('table-body');
+    document.getElementById('table-var-label').textContent = varLabel;
+    const last10 = rows.slice(-10).reverse();
+    tbody.innerHTML = last10.map(r =>
+      `<tr><td>${formatDate(r.fecha)}</td><td>${parseFloat(r.valor).toLocaleString('es-AR', {minimumFractionDigits:2, maximumFractionDigits:2})}</td></tr>`
+    ).join('');
+
+    // Gráfico
+    const ctx = document.getElementById('main-chart').getContext('2d');
+    if (chartInstance) chartInstance.destroy();
+
+    chartInstance = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [{
+          label: varLabel,
+          data: values,
+          borderColor: '#3d8bff',
+          borderWidth: 1.5,
+          pointRadius: 0,
+          tension: 0.3,
+          fill: true,
+          backgroundColor: ctx => {
+            const gradient = ctx.chart.ctx.createLinearGradient(0, 0, 0, 260);
+            gradient.addColorStop(0, 'rgba(61,139,255,0.15)');
+            gradient.addColorStop(1, 'rgba(61,139,255,0)');
+            return gradient;
+          }
+        }]
+      },
+      options: {
+        responsive: true,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#13161d',
+            borderColor: '#1e2330',
+            borderWidth: 1,
+            titleColor: '#5a6080',
+            bodyColor: '#e8eaf0',
+            titleFont: { family: 'JetBrains Mono', size: 11 },
+            bodyFont: { family: 'JetBrains Mono', size: 13 },
+          }
+        },
+        scales: {
+          x: {
+            grid: { color: '#1e2330', drawBorder: false },
+            ticks: {
+              color: '#5a6080', font: { family: 'JetBrains Mono', size: 11 },
+              maxTicksLimit: 8, maxRotation: 0
+            }
+          },
+          y: {
+            grid: { color: '#1e2330', drawBorder: false },
+            ticks: {
+              color: '#5a6080', font: { family: 'JetBrains Mono', size: 11 },
+              callback: v => v >= 1000 ? (v/1000).toFixed(0)+'K' : v
+            }
+          }
+        }
+      }
+    });
+  } catch(e) {
+    console.error('Chart error:', e);
+  }
+}
+
+// ─── TABS ────────────────────────────────────────────────────────────────────
+document.getElementById('chart-tabs').addEventListener('click', e => {
+  const btn = e.target.closest('.chart-tab');
+  if (!btn) return;
+  document.querySelectorAll('.chart-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeVarId = btn.dataset.var;
+  activeVarLabel = btn.dataset.label;
+  loadChart(activeVarId, activeVarLabel);
+});
+
+// ─── INIT ─────────────────────────────────────────────────────────────────────
+loadCards();
+loadChart(activeVarId, activeVarLabel);
+</script>
+</body>
+</html>
