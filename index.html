@@ -274,8 +274,8 @@
     <div class="chart-header">
       <div class="chart-title">Evolución histórica</div>
       <div class="chart-tabs" id="chart-tabs">
-        <button class="chart-tab active" data-var="4" data-label="Reservas (USD M)">Reservas</button>
-        <button class="chart-tab" data-var="40" data-label="Base monetaria (M$)">Base monetaria</button>
+        <button class="chart-tab active" data-var="1" data-label="Reservas (USD M)">Reservas</button>
+        <button class="chart-tab" data-var="15" data-label="Base monetaria (M$)">Base monetaria</button>
         <button class="chart-tab" data-var="7" data-label="BADLAR bancos privados (%)">BADLAR</button>
       </div>
     </div>
@@ -309,20 +309,23 @@
 
 <script>
 // ─── VARIABLES A MOSTRAR EN CARDS ───────────────────────────────────────────
-// IDs de la API BCRA: https://api.bcra.gob.ar/estadisticas/v2.0/principalesvariables
+// IDs actualizados para la API v4.0 del BCRA
 const VARIABLES = [
   { id: 1,   label: 'Reservas internacionales', unit: 'USD M',  tag: 'tag-blue',  tagText: 'Stock',   format: v => formatNum(v) },
-  { id: 27,  label: 'Tipo de cambio oficial',   unit: '$/USD',  tag: 'tag-amber', tagText: 'FX',      format: v => '$' + formatDec(v) },
+  { id: 4,   label: 'Tipo de cambio oficial',   unit: '$/USD',  tag: 'tag-amber', tagText: 'FX',      format: v => '$' + formatDec(v) },
   { id: 7,   label: 'BADLAR bancos privados',   unit: '% TNA',  tag: 'tag-green', tagText: 'Tasa',    format: v => formatDec(v) + '%' },
-  { id: 40,  label: 'Base monetaria',           unit: 'MM$',    tag: 'tag-blue',  tagText: 'Stock',   format: v => formatNum(v) },
-  { id: 15,  label: 'Inflación mensual',        unit: '%',      tag: 'tag-red',   tagText: 'IPC',     format: v => formatDec(v) + '%' },
-  { id: 29,  label: 'Circulación monetaria',    unit: 'MM$',    tag: 'tag-blue',  tagText: 'Stock',   format: v => formatNum(v) },
+  { id: 15,  label: 'Base monetaria',           unit: 'MM$',    tag: 'tag-blue',  tagText: 'Stock',   format: v => formatNum(v) },
+  { id: 27,  label: 'Inflación mensual',        unit: '%',      tag: 'tag-red',   tagText: 'IPC',     format: v => formatDec(v) + '%' },
+  { id: 16,  label: 'Circulación monetaria',    unit: 'MM$',    tag: 'tag-blue',  tagText: 'Stock',   format: v => formatNum(v) },
 ];
 
 function formatNum(v) {
   if (v >= 1_000_000) return (v / 1_000_000).toFixed(2) + 'B';
   if (v >= 1_000)     return (v / 1_000).toFixed(1) + 'K';
   return v.toLocaleString('es-AR');
+}
+defDec = parseFloat => {
+  return parseFloat.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 function formatDec(v) {
   return parseFloat(v).toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -345,37 +348,66 @@ VARIABLES.forEach(v => {
     </div>`;
 });
 
-// ─── FETCH VARIABLES PRINCIPALES ────────────────────────────────────────────
-async function loadCards() {
+// ─── CARGAR DATOS DESDE JSON LOCAL ──────────────────────────────────────────
+let cacheData = null;
+let chartInstance = null;
+let activeVarId = 1;
+let activeVarLabel = 'Reservas (USD M)';
+
+async function loadData() {
   const dot = document.getElementById('status-dot');
   const upd = document.getElementById('last-update');
   try {
-    const res = await fetch('https://api.bcra.gob.ar/estadisticas/v2.0/principalesvariables');
+    const res = await fetch('data/bcra_data.json');
     if (!res.ok) throw new Error('HTTP ' + res.status);
-    const json = await res.json();
-    const data = json.results || [];
+    cacheData = await res.json();
+
     const byId = {};
-    data.forEach(d => { byId[d.idVariable] = d; });
+    (cacheData.variables || []).forEach(d => { byId[d.idVariable] = d; });
 
     VARIABLES.forEach(v => {
       const d = byId[v.id];
       const el = document.getElementById('val-' + v.id);
       const sub = document.getElementById('sub-' + v.id);
       if (d) {
-        el.textContent = v.format(d.valor);
-        sub.textContent = `${v.unit} · ${formatDate(d.fecha)}`;
+        el.textContent = v.format(d.ultValorInformado);
+        sub.textContent = `${v.unit} · ${formatDate(d.ultFechaInformada)}`;
       } else {
         el.textContent = 'N/D';
         el.classList.add('error');
       }
     });
 
+    // Banner de advertencia si el token está próximo a expirar
+    const metadata = cacheData.metadata || {};
+    if (metadata.token_alert && metadata.token_expiration) {
+      const alertBanner = document.createElement('div');
+      alertBanner.style.background = 'rgba(245, 158, 11, 0.1)';
+      alertBanner.style.border = '1px solid var(--amber)';
+      alertBanner.style.color = 'var(--amber)';
+      alertBanner.style.padding = '12px 20px';
+      alertBanner.style.borderRadius = '8px';
+      alertBanner.style.marginBottom = '24px';
+      alertBanner.style.fontSize = '12px';
+      alertBanner.style.fontFamily = 'var(--sans)';
+      alertBanner.innerHTML = `⚠️ <strong>Aviso:</strong> El token de autenticación del BCRA vencerá pronto (Fecha: ${formatDate(metadata.token_expiration)}). Recuerda renovarlo.`;
+      
+      const main = document.querySelector('main');
+      main.insertBefore(alertBanner, main.querySelector('h1').nextSibling);
+    }
+
     dot.classList.add('live');
-    const now = new Date();
-    upd.innerHTML = `<span id="status-dot" class="live" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#22c55e;margin-right:6px;vertical-align:middle;animation:pulse 2s infinite"></span>Actualizado ${now.toLocaleTimeString('es-AR', {hour:'2-digit',minute:'2-digit'})}`;
+    if (metadata.last_update) {
+      const updDate = new Date(metadata.last_update);
+      upd.innerHTML = `<span id="status-dot" class="live" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#22c55e;margin-right:6px;vertical-align:middle;animation:pulse 2s infinite"></span>Actualizado ${updDate.toLocaleDateString('es-AR')} ${updDate.toLocaleTimeString('es-AR', {hour:'2-digit',minute:'2-digit'})}`;
+    }
+
+    // Dibujar gráfico por defecto
+    loadChart(activeVarId, activeVarLabel);
+
   } catch (e) {
     console.error(e);
-    upd.textContent = 'Error al cargar datos';
+    upd.textContent = 'Error al cargar datos locales';
     VARIABLES.forEach(v => {
       const el = document.getElementById('val-' + v.id);
       if (el) { el.textContent = 'Error'; el.classList.add('error'); }
@@ -383,94 +415,81 @@ async function loadCards() {
   }
 }
 
-// ─── CHART ───────────────────────────────────────────────────────────────────
-let chartInstance = null;
-let activeVarId = 4;
-let activeVarLabel = 'Reservas (USD M)';
+function loadChart(varId, varLabel) {
+  if (!cacheData || !cacheData.history || !cacheData.history[varId]) {
+    console.error("No hay datos históricos disponibles para ID:", varId);
+    return;
+  }
 
-async function loadChart(varId, varLabel) {
-  const today = new Date();
-  const from = new Date(today); from.setMonth(from.getMonth() - 6);
-  const fmt = d => d.toISOString().split('T')[0];
+  const rows = cacheData.history[varId];
+  const labels = rows.map(r => formatDate(r.fecha));
+  const values = rows.map(r => parseFloat(r.valor));
 
-  const url = `https://api.bcra.gob.ar/estadisticas/v2.0/datosvariable/${varId}/${fmt(from)}/${fmt(today)}`;
-  try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    const json = await res.json();
-    const rows = (json.results || []).slice(-180);
+  // Tabla histórica (últimos 10 registros)
+  const tbody = document.getElementById('table-body');
+  document.getElementById('table-var-label').textContent = varLabel;
+  const last10 = rows.slice(-10).reverse();
+  tbody.innerHTML = last10.map(r =>
+    `<tr><td>${formatDate(r.fecha)}</td><td>${parseFloat(r.valor).toLocaleString('es-AR', {minimumFractionDigits:2, maximumFractionDigits:2})}</td></tr>`
+  ).join('');
 
-    const labels = rows.map(r => formatDate(r.fecha));
-    const values = rows.map(r => parseFloat(r.valor));
+  // Gráfico
+  const ctx = document.getElementById('main-chart').getContext('2d');
+  if (chartInstance) chartInstance.destroy();
 
-    // Tabla histórica (últimos 10)
-    const tbody = document.getElementById('table-body');
-    document.getElementById('table-var-label').textContent = varLabel;
-    const last10 = rows.slice(-10).reverse();
-    tbody.innerHTML = last10.map(r =>
-      `<tr><td>${formatDate(r.fecha)}</td><td>${parseFloat(r.valor).toLocaleString('es-AR', {minimumFractionDigits:2, maximumFractionDigits:2})}</td></tr>`
-    ).join('');
-
-    // Gráfico
-    const ctx = document.getElementById('main-chart').getContext('2d');
-    if (chartInstance) chartInstance.destroy();
-
-    chartInstance = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels,
-        datasets: [{
-          label: varLabel,
-          data: values,
-          borderColor: '#3d8bff',
-          borderWidth: 1.5,
-          pointRadius: 0,
-          tension: 0.3,
-          fill: true,
-          backgroundColor: ctx => {
-            const gradient = ctx.chart.ctx.createLinearGradient(0, 0, 0, 260);
-            gradient.addColorStop(0, 'rgba(61,139,255,0.15)');
-            gradient.addColorStop(1, 'rgba(61,139,255,0)');
-            return gradient;
-          }
-        }]
+  chartInstance = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: varLabel,
+        data: values,
+        borderColor: '#3d8bff',
+        borderWidth: 1.5,
+        pointRadius: 0,
+        tension: 0.3,
+        fill: true,
+        backgroundColor: ctx => {
+          const gradient = ctx.chart.ctx.createLinearGradient(0, 0, 0, 260);
+          gradient.addColorStop(0, 'rgba(61,139,255,0.15)');
+          gradient.addColorStop(1, 'rgba(61,139,255,0)');
+          return gradient;
+        }
+      }]
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#13161d',
+          borderColor: '#1e2330',
+          borderWidth: 1,
+          titleColor: '#5a6080',
+          bodyColor: '#e8eaf0',
+          titleFont: { family: 'JetBrains Mono', size: 11 },
+          bodyFont: { family: 'JetBrains Mono', size: 13 },
+        }
       },
-      options: {
-        responsive: true,
-        interaction: { mode: 'index', intersect: false },
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            backgroundColor: '#13161d',
-            borderColor: '#1e2330',
-            borderWidth: 1,
-            titleColor: '#5a6080',
-            bodyColor: '#e8eaf0',
-            titleFont: { family: 'JetBrains Mono', size: 11 },
-            bodyFont: { family: 'JetBrains Mono', size: 13 },
+      scales: {
+        x: {
+          grid: { color: '#1e2330', drawBorder: false },
+          ticks: {
+            color: '#5a6080', font: { family: 'JetBrains Mono', size: 11 },
+            maxTicksLimit: 8, maxRotation: 0
           }
         },
-        scales: {
-          x: {
-            grid: { color: '#1e2330', drawBorder: false },
-            ticks: {
-              color: '#5a6080', font: { family: 'JetBrains Mono', size: 11 },
-              maxTicksLimit: 8, maxRotation: 0
-            }
-          },
-          y: {
-            grid: { color: '#1e2330', drawBorder: false },
-            ticks: {
-              color: '#5a6080', font: { family: 'JetBrains Mono', size: 11 },
-              callback: v => v >= 1000 ? (v/1000).toFixed(0)+'K' : v
-            }
+        y: {
+          grid: { color: '#1e2330', drawBorder: false },
+          ticks: {
+            color: '#5a6080', font: { family: 'JetBrains Mono', size: 11 },
+            callback: v => v >= 1000 ? (v/1000).toFixed(0)+'K' : v
           }
         }
       }
-    });
-  } catch(e) {
-    console.error('Chart error:', e);
-  }
+    }
+  });
 }
 
 // ─── TABS ────────────────────────────────────────────────────────────────────
@@ -485,8 +504,8 @@ document.getElementById('chart-tabs').addEventListener('click', e => {
 });
 
 // ─── INIT ─────────────────────────────────────────────────────────────────────
-loadCards();
-loadChart(activeVarId, activeVarLabel);
+loadData();
 </script>
 </body>
 </html>
+
