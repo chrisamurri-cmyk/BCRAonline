@@ -2,16 +2,14 @@ name: Actualizar datos del BCRA
 
 on:
   schedule:
-    # Corre todos los días a las 09:00 UTC (06:00 AM hora de Argentina)
     - cron: '0 9 * * *'
-  workflow_dispatch: # Permite ejecución manual desde la pestaña Actions de GitHub
+  workflow_dispatch:
 
 jobs:
   update-data:
     runs-on: ubuntu-latest
     permissions:
-      contents: write      # Requerido para hacer commit/push
-      issues: write        # Requerido para crear Issues de alerta
+      contents: write
 
     steps:
       - name: Checkout del repositorio
@@ -23,47 +21,7 @@ jobs:
           python-version: '3.10'
 
       - name: Ejecutar script de descarga
-        env:
-          # Inyecta las variables de entorno desde los Secrets del repositorio si existen
-          BCRA_API_TOKEN: ${{ secrets.BCRA_API_TOKEN }}
-          BCRA_TOKEN_EXPIRATION_DATE: ${{ secrets.BCRA_TOKEN_EXPIRATION_DATE }}
         run: python fetch_data.py
-
-      - name: Verificar expiración del token y crear alerta
-        env:
-          BCRA_TOKEN_EXPIRATION_DATE: ${{ secrets.BCRA_TOKEN_EXPIRATION_DATE }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          EXPIRATION="${BCRA_TOKEN_EXPIRATION_DATE}"
-          
-          if [ -z "$EXPIRATION" ]; then
-            echo "No se configuró fecha de expiración del token."
-            exit 0
-          fi
-          
-          # Calcular días restantes
-          EXPIRY_EPOCH=$(date -d "$EXPIRATION" +%s 2>/dev/null || date -j -f "%Y-%m-%d" "$EXPIRATION" +%s 2>/dev/null)
-          TODAY_EPOCH=$(date +%s)
-          DAYS_LEFT=$(( (EXPIRY_EPOCH - TODAY_EPOCH) / 86400 ))
-          
-          echo "Días restantes para que expire el token: $DAYS_LEFT"
-          
-          if [ "$DAYS_LEFT" -le 7 ]; then
-            # Crear un Issue de alerta en el repositorio
-            TITLE="[ALERTA] Token del BCRA expira en $DAYS_LEFT días ($EXPIRATION)"
-            BODY="## ⚠️ Token del BCRA por vencer\n\nEl token de la API del BCRA vence el **$EXPIRATION** (faltan **$DAYS_LEFT días**).\n\n### Pasos para renovar:\n\n1. Ir a la [página de registro del BCRA](https://estadisticasbcra.com/api/registracion) o al portal oficial del BCRA\n2. Solicitar un nuevo token con tu email\n3. Ir a **Settings → Secrets and variables → Actions** de este repositorio\n4. Actualizar los siguientes secrets:\n   - \`BCRA_API_TOKEN\`: pegar el nuevo token\n   - \`BCRA_TOKEN_EXPIRATION_DATE\`: poner la nueva fecha de vencimiento (formato YYYY-MM-DD)\n\n> Este Issue fue creado automáticamente por GitHub Actions."
-            
-            # Crear el Issue usando la API de GitHub
-            curl -s -X POST \
-              -H "Authorization: token $GITHUB_TOKEN" \
-              -H "Accept: application/vnd.github.v3+json" \
-              https://api.github.com/repos/${{ github.repository }}/issues \
-              -d "{\"title\":\"$TITLE\",\"body\":\"$BODY\",\"labels\":[]}" > /dev/null
-            
-            echo "Issue de alerta creado: $TITLE"
-          else
-            echo "El token aún tiene $DAYS_LEFT días. No se requiere acción."
-          fi
 
       - name: Commit y Push de los datos actualizados
         run: |
