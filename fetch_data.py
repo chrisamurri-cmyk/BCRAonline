@@ -17,7 +17,9 @@ HEADERS = {
 # 15: Base monetaria
 # 27: Inflación mensual
 # 16: Circulación monetaria
-VARIABLE_IDS = [1, 4, 7, 15, 27, 16]
+# 8: Tasa de interés TM20 de bancos privados
+# 12: Tasa de interés de depósitos a 30 días
+VARIABLE_IDS = [1, 4, 7, 15, 27, 16, 8, 12]
 
 def get_api_token():
     # Retorna el token si existe en variables de entorno (GitHub Secrets)
@@ -85,8 +87,8 @@ def main():
                 raw_history = raw_results[0]["detalle"]
                 # Ordenar por fecha de forma ascendente (más antigua a más reciente)
                 sorted_history = sorted(raw_history, key=lambda x: x.get("fecha", ""))
-                # Nos quedamos con los últimos 180 registros para el gráfico
-                history_data[str(var_id)] = sorted_history[-180:]
+                # Nos quedamos con los últimos 365 registros para el gráfico (un año)
+                history_data[str(var_id)] = sorted_history[-365:]
             else:
                 history_data[str(var_id)] = []
         else:
@@ -115,7 +117,7 @@ def main():
         json.dump(output_data, f, ensure_ascii=False, indent=2)
         
     print(f"Datos descargados con éxito en {output_path}")
+    print(f"Variables procesadas: {[v.get('idVariable') for v in filtered_variables]}")
 
 if __name__ == "__main__":
     main()
-

@@ -123,7 +123,24 @@
       font-size: 12px;
       color: var(--muted);
       font-family: var(--mono);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
     }
+
+    /* Variación porcentual */
+    .card-change {
+      font-size: 11px;
+      font-weight: 600;
+      font-family: var(--mono);
+      padding: 2px 6px;
+      border-radius: 4px;
+      letter-spacing: 0.02em;
+    }
+    .change-up   { background: rgba(34,197,94,0.1);  color: var(--green); }
+    .change-down { background: rgba(239,68,68,0.1);  color: var(--red);   }
+    .change-flat { background: rgba(90,96,128,0.1);  color: var(--muted); }
 
     .card-tag {
       position: absolute;
@@ -174,6 +191,11 @@
       font-weight: 500;
       color: var(--text);
     }
+    .chart-controls {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
     .chart-tabs {
       display: flex;
       gap: 6px;
@@ -195,6 +217,23 @@
       border-color: var(--accent);
       color: var(--accent);
     }
+    .range-tab {
+      font-size: 10px;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 5px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-family: var(--mono);
+      transition: all 0.15s;
+    }
+    .range-tab.active, .range-tab:hover {
+      background: rgba(61,139,255,0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
     canvas { width: 100% !important; }
 
     /* TABLA HISTÓRICA */
@@ -210,6 +249,32 @@
       border-bottom: 1px solid var(--border);
       font-size: 13px;
       font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .table-actions {
+      display: flex;
+      gap: 8px;
+    }
+    .btn-export {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 5px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-family: var(--sans);
+      transition: all 0.15s;
+    }
+    .btn-export:hover {
+      background: rgba(61,139,255,0.1);
+      border-color: var(--accent);
+      color: var(--accent);
     }
     table {
       width: 100%;
@@ -238,6 +303,7 @@
       font-size: 13px;
     }
     td:first-child { color: var(--muted); }
+    td:last-child { text-align: right; }
 
     /* FOOTER */
     footer {
@@ -249,10 +315,24 @@
     }
     footer a { color: var(--accent); text-decoration: none; }
 
+    /* ALERTA TOKEN */
+    .token-alert {
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid var(--amber);
+      color: var(--amber);
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      font-size: 12px;
+      font-family: var(--sans);
+    }
+
     @media (max-width: 600px) {
       header { padding: 14px 16px; }
       main { padding: 20px 12px 48px; }
       .card-value { font-size: 22px; }
+      .chart-controls { flex-direction: column; align-items: flex-start; }
+      .chart-tabs { flex-wrap: wrap; }
     }
   </style>
 </head>
@@ -273,17 +353,33 @@
   <div class="chart-section">
     <div class="chart-header">
       <div class="chart-title">Evolución histórica</div>
-      <div class="chart-tabs" id="chart-tabs">
-        <button class="chart-tab active" data-var="1" data-label="Reservas (USD M)">Reservas</button>
-        <button class="chart-tab" data-var="15" data-label="Base monetaria (M$)">Base monetaria</button>
-        <button class="chart-tab" data-var="7" data-label="BADLAR bancos privados (%)">BADLAR</button>
+      <div class="chart-controls">
+        <div class="chart-tabs" id="chart-tabs">
+          <button class="chart-tab active" data-var="1" data-label="Reservas (USD M)">Reservas</button>
+          <button class="chart-tab" data-var="4" data-label="TC Oficial ($/USD)">Dólar</button>
+          <button class="chart-tab" data-var="7" data-label="BADLAR (%)">BADLAR</button>
+          <button class="chart-tab" data-var="15" data-label="Base Monetaria (M$)">Base M.</button>
+          <button class="chart-tab" data-var="27" data-label="Inflación Mensual (%)">IPC</button>
+        </div>
+        <div class="chart-tabs" id="range-tabs">
+          <button class="range-tab" data-days="30">30d</button>
+          <button class="range-tab" data-days="90">90d</button>
+          <button class="range-tab active" data-days="180">6M</button>
+          <button class="range-tab" data-days="365">1A</button>
+          <button class="range-tab" data-days="0">Todo</button>
+        </div>
       </div>
     </div>
-    <canvas id="main-chart" height="260"></canvas>
+    <canvas id="main-chart" height="280"></canvas>
   </div>
 
   <div class="table-section">
-    <div class="table-header">Últimos 10 registros — <span id="table-var-label">Reservas internacionales</span></div>
+    <div class="table-header">
+      <span>Últimos registros — <span id="table-var-label">Reservas internacionales</span></span>
+      <div class="table-actions">
+        <button class="btn-export" id="btn-csv" title="Descargar CSV">⬇ CSV</button>
+      </div>
+    </div>
     <table>
       <thead>
         <tr>
@@ -311,21 +407,23 @@
 // ─── VARIABLES A MOSTRAR EN CARDS ───────────────────────────────────────────
 // IDs actualizados para la API v4.0 del BCRA
 const VARIABLES = [
-  { id: 1,   label: 'Reservas internacionales', unit: 'USD M',  tag: 'tag-blue',  tagText: 'Stock',   format: v => formatNum(v) },
-  { id: 4,   label: 'Tipo de cambio oficial',   unit: '$/USD',  tag: 'tag-amber', tagText: 'FX',      format: v => '$' + formatDec(v) },
-  { id: 7,   label: 'BADLAR bancos privados',   unit: '% TNA',  tag: 'tag-green', tagText: 'Tasa',    format: v => formatDec(v) + '%' },
-  { id: 15,  label: 'Base monetaria',           unit: 'MM$',    tag: 'tag-blue',  tagText: 'Stock',   format: v => formatNum(v) },
-  { id: 27,  label: 'Inflación mensual',        unit: '%',      tag: 'tag-red',   tagText: 'IPC',     format: v => formatDec(v) + '%' },
-  { id: 16,  label: 'Circulación monetaria',    unit: 'MM$',    tag: 'tag-blue',  tagText: 'Stock',   format: v => formatNum(v) },
+  { id: 1,   label: 'Reservas internacionales',  unit: 'USD M',  tag: 'tag-blue',  tagText: 'Stock',  format: v => formatNum(v),     invertido: false },
+  { id: 4,   label: 'Tipo de cambio oficial',      unit: '$/USD',  tag: 'tag-amber', tagText: 'FX',     format: v => '$' + formatDec(v), invertido: true },
+  { id: 7,   label: 'BADLAR bancos privados',      unit: '% TNA',  tag: 'tag-green', tagText: 'Tasa',   format: v => formatDec(v) + '%', invertido: false },
+  { id: 15,  label: 'Base monetaria',              unit: 'MM$',    tag: 'tag-blue',  tagText: 'Stock',  format: v => formatNum(v),     invertido: false },
+  { id: 27,  label: 'Inflación mensual',           unit: '%',      tag: 'tag-red',   tagText: 'IPC',    format: v => formatDec(v) + '%', invertido: false },
+  { id: 16,  label: 'Circulación monetaria',       unit: 'MM$',    tag: 'tag-blue',  tagText: 'Stock',  format: v => formatNum(v),     invertido: false },
+  { id: 8,   label: 'TM20 bancos privados',       unit: '% TNA',  tag: 'tag-green', tagText: 'Tasa',   format: v => formatDec(v) + '%', invertido: false },
+  { id: 12,  label: 'Depósitos a 30 días',        unit: '% TNA',  tag: 'tag-green', tagText: 'Tasa',   format: v => formatDec(v) + '%', invertido: false },
 ];
+
+// invertido: true = para variables donde subir es malo (dólar, inflación)
+// → la flecha verde (↓) indica que bajó, lo cual es "positivo"
 
 function formatNum(v) {
   if (v >= 1_000_000) return (v / 1_000_000).toFixed(2) + 'B';
   if (v >= 1_000)     return (v / 1_000).toFixed(1) + 'K';
   return v.toLocaleString('es-AR');
-}
-defDec = parseFloat => {
-  return parseFloat.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 function formatDec(v) {
   return parseFloat(v).toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -353,6 +451,7 @@ let cacheData = null;
 let chartInstance = null;
 let activeVarId = 1;
 let activeVarLabel = 'Reservas (USD M)';
+let activeRange = 180; // días por defecto
 
 async function loadData() {
   const dot = document.getElementById('status-dot');
@@ -370,8 +469,32 @@ async function loadData() {
       const el = document.getElementById('val-' + v.id);
       const sub = document.getElementById('sub-' + v.id);
       if (d) {
+        // Mostrar valor principal
         el.textContent = v.format(d.ultValorInformado);
-        sub.textContent = `${v.unit} · ${formatDate(d.ultFechaInformada)}`;
+
+        // Calcular variación porcentual vs registro anterior
+        const history = cacheData.history && cacheData.history[v.id];
+        let changeHtml = '';
+        if (history && history.length >= 2) {
+          const current = parseFloat(d.ultValorInformado);
+          const prev = parseFloat(history[history.length - 2].valor);
+          if (prev !== 0) {
+            const change = ((current - prev) / Math.abs(prev)) * 100;
+            const isUp = change > 0;
+            const isFlat = Math.abs(change) < 0.001;
+
+            if (isFlat) {
+              changeHtml = `<span class="card-change change-flat">— 0,00%</span>`;
+            } else {
+              // Para variables invertidas (dólar, inflación): bajar es positivo
+              const isPositive = v.invertido ? !isUp : isUp;
+              const cls = isPositive ? 'change-up' : 'change-down';
+              const arrow = isUp ? '↑' : '↓';
+              changeHtml = `<span class="card-change ${cls}">${arrow} ${Math.abs(change).toFixed(2)}%</span>`;
+            }
+          }
+        }
+        sub.innerHTML = `${v.unit} · ${formatDate(d.ultFechaInformada)} ${changeHtml}`;
       } else {
         el.textContent = 'N/D';
         el.classList.add('error');
@@ -382,16 +505,9 @@ async function loadData() {
     const metadata = cacheData.metadata || {};
     if (metadata.token_alert && metadata.token_expiration) {
       const alertBanner = document.createElement('div');
-      alertBanner.style.background = 'rgba(245, 158, 11, 0.1)';
-      alertBanner.style.border = '1px solid var(--amber)';
-      alertBanner.style.color = 'var(--amber)';
-      alertBanner.style.padding = '12px 20px';
-      alertBanner.style.borderRadius = '8px';
-      alertBanner.style.marginBottom = '24px';
-      alertBanner.style.fontSize = '12px';
-      alertBanner.style.fontFamily = 'var(--sans)';
-      alertBanner.innerHTML = `⚠️ <strong>Aviso:</strong> El token de autenticación del BCRA vencerá pronto (Fecha: ${formatDate(metadata.token_expiration)}). Recuerda renovarlo.`;
-      
+      alertBanner.className = 'token-alert';
+      alertBanner.innerHTML = `&#9888;&#65039; <strong>Aviso:</strong> El token de autenticación del BCRA vence el ${formatDate(metadata.token_expiration)}. <a href="https://www.bcra.gob.ar" target="_blank" style="color:var(--amber);text-decoration:underline">Renuevalo</a> y actualiza los Secrets del repositorio.`;
+
       const main = document.querySelector('main');
       main.insertBefore(alertBanner, main.querySelector('h1').nextSibling);
     }
@@ -421,21 +537,31 @@ function loadChart(varId, varLabel) {
     return;
   }
 
-  const rows = cacheData.history[varId];
+  let rows = cacheData.history[varId];
+
+  // Aplicar filtro de rango si es necesario
+  if (activeRange > 0 && rows.length > activeRange) {
+    rows = rows.slice(-activeRange);
+  }
+
   const labels = rows.map(r => formatDate(r.fecha));
   const values = rows.map(r => parseFloat(r.valor));
 
-  // Tabla histórica (últimos 10 registros)
+  // Tabla histórica (últimos 15 registros)
   const tbody = document.getElementById('table-body');
   document.getElementById('table-var-label').textContent = varLabel;
-  const last10 = rows.slice(-10).reverse();
-  tbody.innerHTML = last10.map(r =>
+  const last15 = rows.slice(-15).reverse();
+  tbody.innerHTML = last15.map(r =>
     `<tr><td>${formatDate(r.fecha)}</td><td>${parseFloat(r.valor).toLocaleString('es-AR', {minimumFractionDigits:2, maximumFractionDigits:2})}</td></tr>`
   ).join('');
 
   // Gráfico
   const ctx = document.getElementById('main-chart').getContext('2d');
   if (chartInstance) chartInstance.destroy();
+
+  // Color del gráfico según la variable
+  const varConfig = VARIABLES.find(v => v.id === varId);
+  const lineColor = varConfig ? getLineColor(varConfig.tag) : '#3d8bff';
 
   chartInstance = new Chart(ctx, {
     type: 'line',
@@ -444,15 +570,15 @@ function loadChart(varId, varLabel) {
       datasets: [{
         label: varLabel,
         data: values,
-        borderColor: '#3d8bff',
+        borderColor: lineColor,
         borderWidth: 1.5,
         pointRadius: 0,
         tension: 0.3,
         fill: true,
         backgroundColor: ctx => {
-          const gradient = ctx.chart.ctx.createLinearGradient(0, 0, 0, 260);
-          gradient.addColorStop(0, 'rgba(61,139,255,0.15)');
-          gradient.addColorStop(1, 'rgba(61,139,255,0)');
+          const gradient = ctx.chart.ctx.createLinearGradient(0, 0, 0, 280);
+          gradient.addColorStop(0, lineColor.replace(')', ',0.15)').replace('rgb', 'rgba'));
+          gradient.addColorStop(1, 'rgba(0,0,0,0)');
           return gradient;
         }
       }]
@@ -484,7 +610,7 @@ function loadChart(varId, varLabel) {
           grid: { color: '#1e2330', drawBorder: false },
           ticks: {
             color: '#5a6080', font: { family: 'JetBrains Mono', size: 11 },
-            callback: v => v >= 1000 ? (v/1000).toFixed(0)+'K' : v
+            callback: v => v >= 1000000 ? (v/1000000).toFixed(0)+'M' : v >= 1000 ? (v/1000).toFixed(0)+'K' : v
           }
         }
       }
@@ -492,14 +618,55 @@ function loadChart(varId, varLabel) {
   });
 }
 
-// ─── TABS ────────────────────────────────────────────────────────────────────
+function getLineColor(tag) {
+  const map = {
+    'tag-blue':  'rgb(61,139,255)',
+    'tag-amber': 'rgb(245,158,11)',
+    'tag-green': 'rgb(34,197,94)',
+    'tag-red':   'rgb(239,68,68)',
+  };
+  return map[tag] || '#3d8bff';
+}
+
+// ─── EXPORTAR CSV ──────────────────────────────────────────────────────────
+document.getElementById('btn-csv').addEventListener('click', () => {
+  if (!cacheData || !cacheData.history || !cacheData.history[activeVarId]) return;
+  const rows = cacheData.history[activeVarId];
+  const varConfig = VARIABLES.find(v => v.id === activeVarId);
+  const varName = varConfig ? varConfig.label : 'Variable';
+
+  let csv = 'Fecha,Valor\n';
+  rows.forEach(r => {
+    csv += `${r.fecha},${r.valor}\n`;
+  });
+
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `BCRA_${varName.replace(/\s+/g, '_')}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
+});
+
+// ─── TABS DE VARIABLES ───────────────────────────────────────────────────────
 document.getElementById('chart-tabs').addEventListener('click', e => {
   const btn = e.target.closest('.chart-tab');
   if (!btn) return;
-  document.querySelectorAll('.chart-tab').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('#chart-tabs .chart-tab').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   activeVarId = btn.dataset.var;
   activeVarLabel = btn.dataset.label;
+  loadChart(activeVarId, activeVarLabel);
+});
+
+// ─── TABS DE RANGO ────────────────────────────────────────────────────────────
+document.getElementById('range-tabs').addEventListener('click', e => {
+  const btn = e.target.closest('.range-tab');
+  if (!btn) return;
+  document.querySelectorAll('.range-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeRange = parseInt(btn.dataset.days);
   loadChart(activeVarId, activeVarLabel);
 });
 
@@ -508,4 +675,3 @@ loadData();
 </script>
 </body>
 </html>
-
