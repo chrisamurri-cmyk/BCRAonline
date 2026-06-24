@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_update": "2026-06-23T12:10:24.352387"
+    "last_update": "2026-06-24T11:47:34.800002"
   },
   "variables": [
     {
@@ -12,8 +12,8 @@
       "unidadExpresion": "En millones de USD",
       "moneda": "ME",
       "primerFechaInformada": "1996-01-03",
-      "ultFechaInformada": "2026-06-18",
-      "ultValorInformado": 47500.0
+      "ultFechaInformada": "2026-06-19",
+      "ultValorInformado": 47373.0
     },
     {
       "idVariable": 4,
@@ -24,8 +24,8 @@
       "unidadExpresion": "Pesos argentinos por dólar estadounidense",
       "moneda": "ML",
       "primerFechaInformada": "2010-06-01",
-      "ultFechaInformada": "2026-06-19",
-      "ultValorInformado": 1481.94
+      "ultFechaInformada": "2026-06-23",
+      "ultValorInformado": 1491.13
     },
     {
       "idVariable": 7,
@@ -36,8 +36,8 @@
       "unidadExpresion": "En porcentaje nominal anual",
       "moneda": "ML",
       "primerFechaInformada": "1999-01-04",
-      "ultFechaInformada": "2026-06-19",
-      "ultValorInformado": 20.6875
+      "ultFechaInformada": "2026-06-22",
+      "ultValorInformado": 20.875
     },
     {
       "idVariable": 8,
@@ -48,8 +48,8 @@
       "unidadExpresion": "En porcentaje nominal anual",
       "moneda": "ML",
       "primerFechaInformada": "2017-01-02",
-      "ultFechaInformada": "2026-06-19",
-      "ultValorInformado": 21.125
+      "ultFechaInformada": "2026-06-22",
+      "ultValorInformado": 21.375
     },
     {
       "idVariable": 12,
@@ -60,8 +60,8 @@
       "unidadExpresion": "En porcentaje nominal anual",
       "moneda": "ML",
       "primerFechaInformada": "1985-08-26",
-      "ultFechaInformada": "2026-06-19",
-      "ultValorInformado": 19.63
+      "ultFechaInformada": "2026-06-22",
+      "ultValorInformado": 19.94
     },
     {
       "idVariable": 15,
@@ -72,8 +72,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "ML",
       "primerFechaInformada": "1996-01-02",
-      "ultFechaInformada": "2026-06-18",
-      "ultValorInformado": 43235697.0
+      "ultFechaInformada": "2026-06-19",
+      "ultValorInformado": 43144287.0
     },
     {
       "idVariable": 16,
@@ -84,8 +84,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "ML",
       "primerFechaInformada": "1996-01-02",
-      "ultFechaInformada": "2026-06-18",
-      "ultValorInformado": 26881176.0
+      "ultFechaInformada": "2026-06-19",
+      "ultValorInformado": 26925571.0
     },
     {
       "idVariable": 27,
@@ -102,10 +102,6 @@
   ],
   "history": {
     "1": [
-      {
-        "fecha": "2024-12-09",
-        "valor": 31512.0
-      },
       {
         "fecha": "2024-12-10",
         "valor": 31619.0
@@ -1561,17 +1557,13 @@
       {
         "fecha": "2026-06-18",
         "valor": 47500.0
+      },
+      {
+        "fecha": "2026-06-19",
+        "valor": 47373.0
       }
     ],
     "4": [
-      {
-        "fecha": "2024-12-10",
-        "valor": 1047.55
-      },
-      {
-        "fecha": "2024-12-11",
-        "valor": 1047.12
-      },
       {
         "fecha": "2024-12-12",
         "valor": 1048.68
@@ -3023,13 +3015,17 @@
       {
         "fecha": "2026-06-19",
         "valor": 1481.94
+      },
+      {
+        "fecha": "2026-06-22",
+        "valor": 1481.79
+      },
+      {
+        "fecha": "2026-06-23",
+        "valor": 1491.13
       }
     ],
     "7": [
-      {
-        "fecha": "2024-12-10",
-        "valor": 32.6875
-      },
       {
         "fecha": "2024-12-11",
         "valor": 31.3125
@@ -4485,13 +4481,13 @@
       {
         "fecha": "2026-06-19",
         "valor": 20.6875
+      },
+      {
+        "fecha": "2026-06-22",
+        "valor": 20.875
       }
     ],
     "15": [
-      {
-        "fecha": "2024-12-09",
-        "valor": 27216853.0
-      },
       {
         "fecha": "2024-12-10",
         "valor": 26867862.0
@@ -5947,6 +5943,10 @@
       {
         "fecha": "2026-06-18",
         "valor": 43235697.0
+      },
+      {
+        "fecha": "2026-06-19",
+        "valor": 43144287.0
       }
     ],
     "27": [
@@ -7413,10 +7413,6 @@
     ],
     "16": [
       {
-        "fecha": "2024-12-09",
-        "valor": 17019984.0
-      },
-      {
         "fecha": "2024-12-10",
         "valor": 17144370.0
       },
@@ -8871,13 +8867,13 @@
       {
         "fecha": "2026-06-18",
         "valor": 26881176.0
+      },
+      {
+        "fecha": "2026-06-19",
+        "valor": 26925571.0
       }
     ],
     "8": [
-      {
-        "fecha": "2024-12-10",
-        "valor": 33.6875
-      },
       {
         "fecha": "2024-12-11",
         "valor": 32.3125
@@ -10333,13 +10329,13 @@
       {
         "fecha": "2026-06-19",
         "valor": 21.125
+      },
+      {
+        "fecha": "2026-06-22",
+        "valor": 21.375
       }
     ],
     "12": [
-      {
-        "fecha": "2024-12-10",
-        "valor": 31.73
-      },
       {
         "fecha": "2024-12-11",
         "valor": 30.64
@@ -11795,6 +11791,10 @@
       {
         "fecha": "2026-06-19",
         "valor": 19.63
+      },
+      {
+        "fecha": "2026-06-22",
+        "valor": 19.94
       }
     ]
   }
