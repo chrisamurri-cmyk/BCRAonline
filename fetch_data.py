@@ -2,7 +2,7 @@ import os
 import json
 import urllib.request
 from datetime import datetime
-from google import genai # Nueva librería de 2026
+from google import genai # Librería de 2026
 
 # Configuración API BCRA
 BASE_URL = "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias"
@@ -24,27 +24,45 @@ def generar_analisis_ia(datos_principales):
         return "Falta configuración de clave de IA."
 
     try:
-        # Seguimos usando la librería nueva de 2026
         client = genai.Client(api_key=api_key)
         
+        # --- BUSCADOR AUTOMÁTICO DE MODELOS ---
+        print("Buscando modelos disponibles en tu cuenta...")
+        modelos_disponibles = [m.name for m in client.models.list()]
+        print(f"Modelos encontrados: {modelos_disponibles}")
+
+        # Intentamos buscar el mejor candidato (flash es el más probable que sea gratis)
+        mejor_modelo = None
+        for m_name in modelos_disponibles:
+            if "flash" in m_name.lower():
+                mejor_modelo = m_name
+                break
+        
+        if not mejor_modelo and modelos_disponibles:
+            mejor_modelo = modelos_disponibles[0] # Si no hay flash, el primero que haya
+            
+        if not mejor_modelo:
+            return "No se encontraron modelos disponibles en esta clave."
+
+        print(f"Intentando usar el modelo: {mejor_modelo}")
+        # ---------------------------------------
+
         resumen_texto = ""
         for v in datos_principales:
             resumen_texto += f"- {v.get('descripcion')}: {v.get('ultValorInformado')}\n"
 
-        prompt = f"Analiza estos datos del BCRA de Argentina y haz un informe de 3 párrafos cortos: {resumen_texto}"
+        prompt = f"Analiza estos datos del BCRA y haz un informe de 3 párrafos cortos: {resumen_texto}"
         
-        # CAMBIO AQUÍ: Volvemos al modelo 1.5-flash que es el que acepta el plan gratuito
         response = client.models.generate_content(
-            model='gemini-1.5-flash', 
+            model=mejor_modelo, 
             contents=prompt
         )
         return response.text
     except Exception as e:
-        return f"Error en la API de Google: {str(e)}"
+        return f"Error detectado en 2026: {str(e)}"
 
 def main():
-    print("--- INICIANDO PROCESO ACTUALIZADO 2026 ---")
-    
+    print("--- INICIANDO PROCESO ---")
     v_data = fetch_json(BASE_URL)
     if not v_data: return
     
@@ -57,7 +75,6 @@ def main():
             detalle = h_data["results"][0].get("detalle", [])
             history[str(vid)] = sorted(detalle, key=lambda x: x.get("fecha", ""))[-365:]
 
-    print("Generando análisis con la nueva librería google-genai...")
     analisis = generar_analisis_ia(filtered)
 
     output = {
@@ -70,7 +87,7 @@ def main():
     os.makedirs("data", exist_ok=True)
     with open("data/bcra_data.json", "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
-    print("--- PROCESO FINALIZADO CON ÉXITO ---")
+    print("--- PROCESO FINALIZADO ---")
 
 if __name__ == "__main__":
     main()
