@@ -24,45 +24,36 @@ def fetch_json(url):
 def generar_analisis_ia(datos_principales):
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
-        return "Falta configurar la clave GEMINI_API_KEY en GitHub Secrets."
+        return "Error: No se encontró la variable GEMINI_API_KEY en GitHub Secrets."
 
     try:
         genai.configure(api_key=api_key)
         
-        # Lista de modelos a probar para evitar el error 404
-        modelos_a_probar = ['gemini-1.5-flash', 'gemini-1.5-flash-latest', 'gemini-pro']
-        
-        model = None
-        for nombre in modelos_a_probar:
-            try:
-                print(f"Intentando conectar con modelo: {nombre}...")
-                m = genai.GenerativeModel(nombre)
-                # Prueba rápida
-                m.generate_content("test", generation_config={"max_output_tokens": 1})
-                model = m
-                print(f"Conexión exitosa con: {nombre}")
-                break
-            except:
-                continue
-        
-        if not model:
-            return "No se pudo conectar con ningún modelo de IA disponible."
+        # 1. Listamos modelos para ver qué ve tu cuenta realmente
+        print("Listando modelos disponibles para esta API Key...")
+        try:
+            for m in genai.list_models():
+                print(f"-> Encontrado: {m.name}")
+        except Exception as e:
+            print(f"Error al listar modelos: {e}")
 
+        # 2. Intentamos el modelo estándar pero capturando el error real
+        model = genai.GenerativeModel('gemini-1.5-flash')
+        
         resumen_texto = ""
         for v in datos_principales:
             resumen_texto += f"- {v.get('descripcion')}: {v.get('ultValorInformado')}\n"
 
-        prompt = f"""
-        Eres un analista económico senior. Analiza estos datos del Banco Central de Argentina 
-        y redacta un informe de 3 párrafos cortos explicando la situación de forma clara y profesional.
-        Datos:
-        {resumen_texto}
-        """
-
+        prompt = f"Resume estos datos económicos de Argentina en 3 párrafos: {resumen_texto}"
+        
+        print("Enviando consulta a Gemini...")
         response = model.generate_content(prompt)
         return response.text
+
     except Exception as e:
-        return f"Error en el proceso de IA: {str(e)}"
+        # Esto nos va a decir exactamente por qué Google nos rebota
+        print(f"DETALLE DEL ERROR DE IA: {str(e)}")
+        return f"Error detallado: {str(e)}"
 
 def main():
     print("--- INICIANDO ACTUALIZACIÓN ---")
