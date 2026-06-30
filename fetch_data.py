@@ -24,23 +24,23 @@ def generar_analisis_ia(datos_principales):
         return "Falta configuración de clave de IA."
 
     try:
-        # Nueva forma de conectar en 2026
+        # Seguimos usando la librería nueva de 2026
         client = genai.Client(api_key=api_key)
         
         resumen_texto = ""
         for v in datos_principales:
             resumen_texto += f"- {v.get('descripcion')}: {v.get('ultValorInformado')}\n"
 
-        prompt = f"Analiza estos datos económicos de Argentina y haz un informe de 3 párrafos cortos: {resumen_texto}"
+        prompt = f"Analiza estos datos del BCRA de Argentina y haz un informe de 3 párrafos cortos: {resumen_texto}"
         
-        # Usamos el modelo más actual de 2026
+        # CAMBIO AQUÍ: Volvemos al modelo 1.5-flash que es el que acepta el plan gratuito
         response = client.models.generate_content(
-            model='gemini-2.0-flash', 
+            model='gemini-1.5-flash', 
             contents=prompt
         )
         return response.text
     except Exception as e:
-        return f"Error con la nueva API de Google: {str(e)}"
+        return f"Error en la API de Google: {str(e)}"
 
 def main():
     print("--- INICIANDO PROCESO ACTUALIZADO 2026 ---")
