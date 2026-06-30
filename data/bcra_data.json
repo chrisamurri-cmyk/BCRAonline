@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "last_update": "2026-06-30T17:55:49.540185"
+    "last_update": "2026-06-30T18:00:19.481232"
   },
-  "ai_analysis": "Error de IA: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.",
+  "ai_analysis": "Error de IA: 404 models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.",
   "variables": [
     {
       "idVariable": 1,
