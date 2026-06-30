@@ -345,7 +345,14 @@
 
 <main>
   <h1>Variables del Banco Central · Argentina</h1>
-
+<!-- SECCIÓN DE ANÁLISIS IA -->
+<section id="ai-container" style="display: none; background: #1a1d24; border-left: 4px solid #00f3ff; padding: 20px; border-radius: 8px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+  <h3 style="color: #00f3ff; margin-top: 0; font-size: 16px; font-family: 'Inter', sans-serif;">🤖 Informe Económico del Día (Gemini AI)</h3>
+  <div id="ai-text" style="line-height: 1.6; font-size: 14px; color: #e0e0e0; white-space: pre-wrap; font-family: 'Inter', sans-serif;">
+    Generando informe...
+  </div>
+</section>
+  
   <div class="grid" id="cards-grid">
     <!-- generadas por JS -->
   </div>
@@ -461,6 +468,17 @@ async function loadData() {
     if (!res.ok) throw new Error('HTTP ' + res.status);
     cacheData = await res.json();
 
+    // ─── NUEVO: MOSTRAR ANÁLISIS IA ────────────────────────────────────────
+    if (cacheData.ai_analysis) {
+      const aiContainer = document.getElementById('ai-container');
+      const aiText = document.getElementById('ai-text');
+      if (aiContainer && aiText) {
+        aiContainer.style.display = 'block';
+        aiText.innerText = cacheData.ai_analysis;
+      }
+    }
+    // ───────────────────────────────────────────────────────────────────────
+
     const byId = {};
     (cacheData.variables || []).forEach(d => { byId[d.idVariable] = d; });
 
@@ -469,10 +487,8 @@ async function loadData() {
       const el = document.getElementById('val-' + v.id);
       const sub = document.getElementById('sub-' + v.id);
       if (d) {
-        // Mostrar valor principal
         el.textContent = v.format(d.ultValorInformado);
 
-        // Calcular variación porcentual vs registro anterior
         const history = cacheData.history && cacheData.history[v.id];
         let changeHtml = '';
         if (history && history.length >= 2) {
@@ -486,7 +502,6 @@ async function loadData() {
             if (isFlat) {
               changeHtml = `<span class="card-change change-flat">— 0,00%</span>`;
             } else {
-              // Para variables invertidas (dólar, inflación): bajar es positivo
               const isPositive = v.invertido ? !isUp : isUp;
               const cls = isPositive ? 'change-up' : 'change-down';
               const arrow = isUp ? '↑' : '↓';
@@ -501,36 +516,20 @@ async function loadData() {
       }
     });
 
-    // Banner de advertencia si el token está próximo a expirar
     const metadata = cacheData.metadata || {};
-    if (metadata.token_alert && metadata.token_expiration) {
-      const alertBanner = document.createElement('div');
-      alertBanner.className = 'token-alert';
-      alertBanner.innerHTML = `&#9888;&#65039; <strong>Aviso:</strong> El token de autenticación del BCRA vence el ${formatDate(metadata.token_expiration)}. <a href="https://www.bcra.gob.ar" target="_blank" style="color:var(--amber);text-decoration:underline">Renuevalo</a> y actualiza los Secrets del repositorio.`;
-
-      const main = document.querySelector('main');
-      main.insertBefore(alertBanner, main.querySelector('h1').nextSibling);
-    }
-
     dot.classList.add('live');
     if (metadata.last_update) {
       const updDate = new Date(metadata.last_update);
       upd.innerHTML = `<span id="status-dot" class="live" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#22c55e;margin-right:6px;vertical-align:middle;animation:pulse 2s infinite"></span>Actualizado ${updDate.toLocaleDateString('es-AR')} ${updDate.toLocaleTimeString('es-AR', {hour:'2-digit',minute:'2-digit'})}`;
     }
 
-    // Dibujar gráfico por defecto
     loadChart(activeVarId, activeVarLabel);
 
   } catch (e) {
     console.error(e);
     upd.textContent = 'Error al cargar datos locales';
-    VARIABLES.forEach(v => {
-      const el = document.getElementById('val-' + v.id);
-      if (el) { el.textContent = 'Error'; el.classList.add('error'); }
-    });
   }
 }
-
 function loadChart(varId, varLabel) {
   if (!cacheData || !cacheData.history || !cacheData.history[varId]) {
     console.error("No hay datos históricos disponibles para ID:", varId);
