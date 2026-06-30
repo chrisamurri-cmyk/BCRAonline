@@ -43,7 +43,7 @@ def generar_analisis_ia(datos_principales):
         response = model.generate_content(prompt)
         return response.text
     except Exception as e:
-        return f"No se pudo generar el análisis en este momento."
+        return f"Error de IA: {str(e)}"
 
 def fetch_json(url):
     token = get_api_token()
