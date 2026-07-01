@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "last_update": "2026-07-01T15:10:25.546931"
+    "last_update": "2026-07-01T15:21:34.881211"
   },
-  "ai_analysis": "Error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
-  "ai_title": "Informe Económico",
+  "ai_analysis": "Análisis no disponible en este momento.",
+  "ai_title": "Informe",
   "variables": [
     {
       "idVariable": 1,
