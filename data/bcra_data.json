@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "last_update": "2026-06-30T18:31:51.183734"
+    "last_update": "2026-07-01T12:11:41.436379"
   },
-  "ai_analysis": "Aquí tienes un informe de tres párrafos cortos analizando los datos proporcionados:\n\nLos datos del Banco Central de la República Argentina (BCRA) revelan una preocupante disparidad entre la inflación y las tasas de interés. La inflación interanual del 33.2% y una inflación mensual del 2.1% superan significativamente las tasas de interés ofrecidas por los bancos, como la BADLAR (20.25%), TM20 (20.8125%) y los depósitos a 30 días (19.36%). Esta situación implica tasas de interés reales negativas, lo cual desincentiva el ahorro en moneda local y puede fomentar la búsqueda de refugio en otros activos.\n\nEn el ámbito cambiario, el tipo de cambio minorista promedio vendedor se ubica en 1498.22, mientras que el mayorista de referencia es 1480.6598, mostrando una diferencia marginal. Las reservas internacionales ascienden a 46968.0 millones de dólares, un nivel que, si bien es significativo, es crucial monitorear en un contexto de presiones inflacionarias que suelen impactar sobre la demanda de divisas y la estabilidad cambiaria.\n\nLa base monetaria, con un valor de 44451195.0, y la circulación monetaria en 27358027.0, reflejan la magnitud de la liquidez en el sistema. En conjunto, estos indicadores delinean un escenario macroeconómico complejo, caracterizado por una alta inflación que erosiona el poder adquisitivo y el valor del ahorro, tasas de interés que no logran compensar esa pérdida, y una constante necesidad de monitorear el equilibrio entre las variables monetarias y cambiarias para preservar la estabilidad.",
+  "ai_analysis": "Aquí tienes un informe de 3 párrafos cortos analizando los datos proporcionados del BCRA:\n\nLas reservas internacionales se sitúan en 47.082 millones, un indicador clave de la capacidad del país para afrontar compromisos externos. Los tipos de cambio, con el minorista en 1502.09 y el mayorista de referencia en 1483.0198, muestran una brecha esperable entre ambos segmentos. A pesar de una inflación mensual contenida en 2.1%, la inflación interanual se mantiene elevada en 33.2%, lo que sigue siendo un desafío macroeconómico significativo para la estabilidad de precios y el poder adquisitivo de la moneda.\n\nUn aspecto crítico es la relación entre las tasas de interés y la inflación. Las tasas de interés de referencia (BADLAR, TM20 y depósitos a 30 días) se ubican alrededor del 20-21%. Al comparar estas cifras con la inflación interanual del 33.2%, se evidencia que las tasas de interés reales son marcadamente negativas. Esta situación desincentiva el ahorro en pesos y podría generar presiones hacia la dolarización o el consumo, afectando la estabilidad financiera y el control de precios a largo plazo.\n\nEn cuanto a la política monetaria, la Base Monetaria supera los 43.761 millones y la Circulación Monetaria los 27.540 millones, reflejando el volumen de liquidez en la economía. El BCRA enfrenta el desafío de gestionar esta liquidez en un contexto de inflación persistente y tasas reales negativas. Mantener la estabilidad del tipo de cambio y recuperar el poder adquisitivo del peso sigue siendo una prioridad, requiriendo un ajuste continuo de sus herramientas de política monetaria y cambiaria para alinear las expectativas y fomentar la confianza.",
   "variables": [
     {
       "idVariable": 1,
@@ -13,8 +13,8 @@
       "unidadExpresion": "En millones de USD",
       "moneda": "ME",
       "primerFechaInformada": "1996-01-03",
-      "ultFechaInformada": "2026-06-25",
-      "ultValorInformado": 46968.0
+      "ultFechaInformada": "2026-06-26",
+      "ultValorInformado": 47082.0
     },
     {
       "idVariable": 4,
@@ -25,8 +25,8 @@
       "unidadExpresion": "Pesos argentinos por dólar estadounidense",
       "moneda": "ML",
       "primerFechaInformada": "2010-06-01",
-      "ultFechaInformada": "2026-06-29",
-      "ultValorInformado": 1498.22
+      "ultFechaInformada": "2026-06-30",
+      "ultValorInformado": 1502.09
     },
     {
       "idVariable": 5,
@@ -37,8 +37,8 @@
       "unidadExpresion": "Pesos argentinos por dólar estadounidense",
       "moneda": "ML",
       "primerFechaInformada": "2002-03-04",
-      "ultFechaInformada": "2026-06-29",
-      "ultValorInformado": 1480.6598
+      "ultFechaInformada": "2026-06-30",
+      "ultValorInformado": 1483.0198
     },
     {
       "idVariable": 7,
@@ -49,8 +49,8 @@
       "unidadExpresion": "En porcentaje nominal anual",
       "moneda": "ML",
       "primerFechaInformada": "1999-01-04",
-      "ultFechaInformada": "2026-06-26",
-      "ultValorInformado": 20.25
+      "ultFechaInformada": "2026-06-29",
+      "ultValorInformado": 21.0
     },
     {
       "idVariable": 8,
@@ -61,8 +61,8 @@
       "unidadExpresion": "En porcentaje nominal anual",
       "moneda": "ML",
       "primerFechaInformada": "2017-01-02",
-      "ultFechaInformada": "2026-06-26",
-      "ultValorInformado": 20.8125
+      "ultFechaInformada": "2026-06-29",
+      "ultValorInformado": 21.5
     },
     {
       "idVariable": 12,
@@ -73,8 +73,8 @@
       "unidadExpresion": "En porcentaje nominal anual",
       "moneda": "ML",
       "primerFechaInformada": "1985-08-26",
-      "ultFechaInformada": "2026-06-26",
-      "ultValorInformado": 19.36
+      "ultFechaInformada": "2026-06-29",
+      "ultValorInformado": 20.11
     },
     {
       "idVariable": 15,
@@ -85,8 +85,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "ML",
       "primerFechaInformada": "1996-01-02",
-      "ultFechaInformada": "2026-06-25",
-      "ultValorInformado": 44451195.0
+      "ultFechaInformada": "2026-06-26",
+      "ultValorInformado": 43761087.0
     },
     {
       "idVariable": 16,
@@ -97,8 +97,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "ML",
       "primerFechaInformada": "1996-01-02",
-      "ultFechaInformada": "2026-06-25",
-      "ultValorInformado": 27358027.0
+      "ultFechaInformada": "2026-06-26",
+      "ultValorInformado": 27540812.0
     },
     {
       "idVariable": 27,
@@ -127,10 +127,6 @@
   ],
   "history": {
     "1": [
-      {
-        "fecha": "2024-12-16",
-        "valor": 31744.0
-      },
       {
         "fecha": "2024-12-17",
         "valor": 32257.0
@@ -1586,13 +1582,13 @@
       {
         "fecha": "2026-06-25",
         "valor": 46968.0
+      },
+      {
+        "fecha": "2026-06-26",
+        "valor": 47082.0
       }
     ],
     "4": [
-      {
-        "fecha": "2024-12-18",
-        "valor": 1050.56
-      },
       {
         "fecha": "2024-12-19",
         "valor": 1051.66
@@ -3048,13 +3044,13 @@
       {
         "fecha": "2026-06-29",
         "valor": 1498.22
+      },
+      {
+        "fecha": "2026-06-30",
+        "valor": 1502.09
       }
     ],
     "5": [
-      {
-        "fecha": "2024-12-18",
-        "valor": 1022.75
-      },
       {
         "fecha": "2024-12-19",
         "valor": 1023.25
@@ -4510,13 +4506,13 @@
       {
         "fecha": "2026-06-29",
         "valor": 1480.6598
+      },
+      {
+        "fecha": "2026-06-30",
+        "valor": 1483.0198
       }
     ],
     "7": [
-      {
-        "fecha": "2024-12-17",
-        "valor": 32.5
-      },
       {
         "fecha": "2024-12-18",
         "valor": 32.375
@@ -5972,13 +5968,13 @@
       {
         "fecha": "2026-06-26",
         "valor": 20.25
+      },
+      {
+        "fecha": "2026-06-29",
+        "valor": 21.0
       }
     ],
     "8": [
-      {
-        "fecha": "2024-12-17",
-        "valor": 33.3125
-      },
       {
         "fecha": "2024-12-18",
         "valor": 33.4375
@@ -7434,13 +7430,13 @@
       {
         "fecha": "2026-06-26",
         "valor": 20.8125
+      },
+      {
+        "fecha": "2026-06-29",
+        "valor": 21.5
       }
     ],
     "12": [
-      {
-        "fecha": "2024-12-17",
-        "valor": 31.86
-      },
       {
         "fecha": "2024-12-18",
         "valor": 31.57
@@ -8896,13 +8892,13 @@
       {
         "fecha": "2026-06-26",
         "valor": 19.36
+      },
+      {
+        "fecha": "2026-06-29",
+        "valor": 20.11
       }
     ],
     "15": [
-      {
-        "fecha": "2024-12-16",
-        "valor": 28000252.0
-      },
       {
         "fecha": "2024-12-17",
         "valor": 27719282.0
@@ -10358,13 +10354,13 @@
       {
         "fecha": "2026-06-25",
         "valor": 44451195.0
+      },
+      {
+        "fecha": "2026-06-26",
+        "valor": 43761087.0
       }
     ],
     "16": [
-      {
-        "fecha": "2024-12-16",
-        "valor": 17879375.0
-      },
       {
         "fecha": "2024-12-17",
         "valor": 18060808.0
@@ -11820,6 +11816,10 @@
       {
         "fecha": "2026-06-25",
         "valor": 27358027.0
+      },
+      {
+        "fecha": "2026-06-26",
+        "valor": 27540812.0
       }
     ],
     "27": [
