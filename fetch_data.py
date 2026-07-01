@@ -2,7 +2,7 @@ import os
 import json
 import urllib.request
 from datetime import datetime
-from google import genai # Librería de 2026
+from google import genai
 
 # Configuración API BCRA
 BASE_URL = "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias"
@@ -23,50 +23,53 @@ def generar_analisis_ia(datos_principales):
     if not api_key:
         return "Falta configuración de clave de IA.", "Informe"
 
+    # 1. Título Dinámico
+    fecha_datos_str = "—"
+    for v in datos_principales:
+        if v.get('idVariable') == 4:
+            fecha_datos_str = v.get('ultFechaInformada')
+            break
+    
     try:
-        # Usamos la librería moderna de 2026
-        client = genai.Client(api_key=api_key)
-        
-        # Identificar fecha de los datos
-        fecha_datos_str = "—"
-        for v in datos_principales:
-            if v.get('idVariable') == 4:
-                fecha_datos_str = v.get('ultFechaInformada')
-                break
-        
-        # Lógica de Título Dinámico
         hoy = datetime.now().date()
         fecha_datos = datetime.strptime(fecha_datos_str, "%Y-%m-%d").date()
         diferencia = (hoy - fecha_datos).days
-        if diferencia == 0: titulo_dinamico = "Resumen del día"
-        elif diferencia == 1: titulo_dinamico = "Resumen de ayer"
-        else: titulo_dinamico = f"Resumen del {fecha_datos.strftime('%d/%m/%Y')}"
+        if diferencia == 0: titulo = "Resumen del día"
+        elif diferencia == 1: titulo = "Resumen de ayer"
+        else: titulo = f"Resumen del {fecha_datos.strftime('%d/%m/%Y')}"
+    except:
+        titulo = "Resumen de mercado"
 
-        # Preparar datos
-        resumen_texto = "".join([f"- {v.get('descripcion')}: {v.get('ultValorInformado')}\n" for v in datos_principales])
-
-        prompt = f"""
-        Actúa como un analista financiero senior. Analiza los datos del BCRA al {fecha_datos_str}.
-        REGLAS: Un solo párrafo, máximo 100 palabras, sin introducciones. 
-        Usa formato 1.234,56 para números. Foco en Reservas y Dólar.
-        DATOS: {resumen_texto}
-        """
+    # 2. Conexión a Gemini
+    try:
+        client = genai.Client(api_key=api_key)
         
-        # CAMBIO CLAVE: Quitamos el prefijo 'models/' que está causando el 404
+        resumen_texto = "".join([f"- {v.get('descripcion')}: {v.get('ultValorInformado')}\n" for v in datos_principales])
+        
+        prompt = f"""
+        Actúa como analista financiero. Analiza estos datos del BCRA: {resumen_texto}.
+        REGLAS: Un solo párrafo corto. Sin introducciones. Usa formato 1.234,56. 
+        Foco en Reservas y Dólar.
+        """
+
+        # Intentamos generar el contenido
         response = client.models.generate_content(
             model='gemini-1.5-flash', 
             contents=prompt
         )
         
-        return response.text.strip(), titulo_dinamico
+        if response.text:
+            return response.text.strip(), titulo
+        else:
+            return "Análisis generado vacío.", titulo
 
     except Exception as e:
-        # Si falla el 1.5, intentamos con el 1.0 por las dudas
-        try:
-            response = client.models.generate_content(model='gemini-1.0-pro', contents=prompt)
-            return response.text.strip(), titulo_dinamico
-        except:
-            return f"Análisis no disponible en este momento.", "Informe"
+        # ESTO ES LO MÁS IMPORTANTE: Ver el error en el log de GitHub
+        print(f"--- ERROR CRÍTICO DE GOOGLE ---")
+        print(str(e)) 
+        print(f"-------------------------------")
+        return f"La IA no pudo responder (Error 429/404).", titulo
+
 def main():
     print("--- INICIANDO PROCESO ---")
     v_data = fetch_json(BASE_URL)
@@ -81,14 +84,13 @@ def main():
             detalle = h_data["results"][0].get("detalle", [])
             history[str(vid)] = sorted(detalle, key=lambda x: x.get("fecha", ""))[-365:]
 
-    # CORRECCIÓN AQUÍ: Atrapamos los dos valores que devuelve la función
-    print("Generando análisis con IA...")
+    print("Solicitando análisis a la IA...")
     analisis_texto, titulo_ia = generar_analisis_ia(filtered)
 
     output = {
         "metadata": {"last_update": datetime.now().isoformat()},
-        "ai_analysis": analisis_texto, # El párrafo
-        "ai_title": titulo_ia,        # El título dinámico (Hoy, Ayer, etc)
+        "ai_analysis": analisis_texto,
+        "ai_title": titulo_ia,
         "variables": filtered,
         "history": history
     }
