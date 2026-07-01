@@ -1,8 +1,9 @@
 {
   "metadata": {
-    "last_update": "2026-07-01T12:11:41.436379"
+    "last_update": "2026-07-01T15:10:25.546931"
   },
-  "ai_analysis": "Aquí tienes un informe de 3 párrafos cortos analizando los datos proporcionados del BCRA:\n\nLas reservas internacionales se sitúan en 47.082 millones, un indicador clave de la capacidad del país para afrontar compromisos externos. Los tipos de cambio, con el minorista en 1502.09 y el mayorista de referencia en 1483.0198, muestran una brecha esperable entre ambos segmentos. A pesar de una inflación mensual contenida en 2.1%, la inflación interanual se mantiene elevada en 33.2%, lo que sigue siendo un desafío macroeconómico significativo para la estabilidad de precios y el poder adquisitivo de la moneda.\n\nUn aspecto crítico es la relación entre las tasas de interés y la inflación. Las tasas de interés de referencia (BADLAR, TM20 y depósitos a 30 días) se ubican alrededor del 20-21%. Al comparar estas cifras con la inflación interanual del 33.2%, se evidencia que las tasas de interés reales son marcadamente negativas. Esta situación desincentiva el ahorro en pesos y podría generar presiones hacia la dolarización o el consumo, afectando la estabilidad financiera y el control de precios a largo plazo.\n\nEn cuanto a la política monetaria, la Base Monetaria supera los 43.761 millones y la Circulación Monetaria los 27.540 millones, reflejando el volumen de liquidez en la economía. El BCRA enfrenta el desafío de gestionar esta liquidez en un contexto de inflación persistente y tasas reales negativas. Mantener la estabilidad del tipo de cambio y recuperar el poder adquisitivo del peso sigue siendo una prioridad, requiriendo un ajuste continuo de sus herramientas de política monetaria y cambiaria para alinear las expectativas y fomentar la confianza.",
+  "ai_analysis": "Error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
+  "ai_title": "Informe Económico",
   "variables": [
     {
       "idVariable": 1,
