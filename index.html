@@ -1,680 +1,104 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BCRAonline — Variables económicas</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+import os
+import json
+import urllib.request
+from datetime import datetime
+from google import genai
 
-    :root {
-      --bg:        #0d0f14;
-      --surface:   #13161d;
-      --border:    #1e2330;
-      --text:      #e8eaf0;
-      --muted:     #5a6080;
-      --accent:    #3d8bff;
-      --green:     #22c55e;
-      --red:       #ef4444;
-      --amber:     #f59e0b;
-      --mono:      'JetBrains Mono', monospace;
-      --sans:      'Inter', sans-serif;
+# Configuración API BCRA
+BASE_URL = "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias"
+HEADERS = {"User-Agent": "Mozilla/5.0", "Accept": "application/json"}
+VARIABLE_IDS = [1, 4, 5, 7, 8, 12, 15, 16, 27, 28]
+
+def fetch_json(url):
+    req = urllib.request.Request(url, headers=HEADERS)
+    try:
+        with urllib.request.urlopen(req, timeout=15) as response:
+            return json.loads(response.read().decode('utf-8'))
+    except Exception as e:
+        print(f"Error BCRA: {e}")
+        return None
+
+def generar_analisis_ia(datos_principales):
+    api_key = os.environ.get("GEMINI_API_KEY")
+    if not api_key:
+        return "Falta configuración de clave de IA.", "Informe"
+
+    try:
+        client = genai.Client(api_key=api_key)
+        
+        # --- BUSCADOR DE MODELOS (EVITA EL ERROR 404) ---
+        modelos_vivos = [m.name for m in client.models.list()]
+        mejor_modelo = next((m for m in modelos_vivos if "flash" in m.lower()), modelos_vivos[0])
+        print(f"Usando modelo exacto: {mejor_modelo}")
+
+        # --- LÓGICA DE FECHA Y TÍTULO ---
+        fecha_datos_str = "—"
+        for v in datos_principales:
+            if v.get('idVariable') == 4: # Dólar como referencia
+                fecha_datos_str = v.get('ultFechaInformada')
+                break
+        
+        hoy = datetime.now().date()
+        fecha_dt = datetime.strptime(fecha_datos_str, "%Y-%m-%d").date()
+        diff = (hoy - fecha_dt).days
+        
+        if diff == 0: titulo = "Resumen del día"
+        elif diff == 1: titulo = "Resumen de la jornada de ayer"
+        else: titulo = f"Resumen de la jornada del {fecha_dt.strftime('%d/%m/%Y')}"
+
+        # --- PREPARACIÓN DE DATOS Y PROMPT ---
+        resumen_datos = "".join([f"- {v.get('descripcion')}: {v.get('ultValorInformado')}\n" for v in datos_principales])
+
+        prompt = f"""
+        Actúa como un analista financiero senior de Argentina. 
+        Analiza estos datos del BCRA con cierre al {fecha_datos_str}.
+        
+        REGLAS ESTRICTAS:
+        1. Responde con UN SOLO PÁRRAFO de máximo 80 palabras.
+        2. NO incluyas introducciones, saludos ni "Aquí tienes el informe". Empieza directo con los datos.
+        3. Foco: Reservas y Tipo de Cambio. Menciona si subieron o bajaron.
+        4. Formato de números: SIEMPRE usa punto para miles y coma para decimales (ej: 1.502,09).
+        5. Tono: Profesional, seco, tipo terminal de Bloomberg.
+
+        DATOS:
+        {resumen_datos}
+        """
+        
+        response = client.models.generate_content(model=mejor_modelo, contents=prompt)
+        return response.text.strip(), titulo
+
+    except Exception as e:
+        print(f"Error en IA: {e}")
+        return "El análisis no pudo ser generado.", "Informe Económico"
+
+def main():
+    print("--- INICIANDO PROCESO ---")
+    v_data = fetch_json(BASE_URL)
+    if not v_data: return
+    
+    filtered = [v for v in v_data.get("results", []) if v.get("idVariable") in VARIABLE_IDS]
+    
+    history = {}
+    for vid in VARIABLE_IDS:
+        h_data = fetch_json(f"{BASE_URL}/{vid}")
+        if h_data and "results" in h_data:
+            detalle = h_data["results"][0].get("detalle", [])
+            history[str(vid)] = sorted(detalle, key=lambda x: x.get("fecha", ""))[-365:]
+
+    analisis_txt, titulo_txt = generar_analisis_ia(filtered)
+
+    output = {
+        "metadata": {"last_update": datetime.now().isoformat()},
+        "ai_analysis": analisis_txt,
+        "ai_title": titulo_txt,
+        "variables": filtered,
+        "history": history
     }
+    
+    os.makedirs("data", exist_ok=True)
+    with open("data/bcra_data.json", "w", encoding="utf-8") as f:
+        json.dump(output, f, ensure_ascii=False, indent=2)
+    print(f"--- FINALIZADO: {titulo_txt} ---")
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--sans);
-      min-height: 100vh;
-      padding: 0;
-    }
-
-    /* HEADER */
-    header {
-      border-bottom: 1px solid var(--border);
-      padding: 18px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      background: var(--bg);
-      z-index: 10;
-    }
-    .logo {
-      font-family: var(--mono);
-      font-size: 15px;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      color: var(--text);
-    }
-    .logo span { color: var(--accent); }
-    #last-update {
-      font-size: 12px;
-      color: var(--muted);
-      font-family: var(--mono);
-    }
-    #status-dot {
-      display: inline-block;
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--muted);
-      margin-right: 6px;
-      vertical-align: middle;
-      transition: background 0.4s;
-    }
-    #status-dot.live { background: var(--green); animation: pulse 2s infinite; }
-    @keyframes pulse {
-      0%,100% { opacity: 1; } 50% { opacity: 0.4; }
-    }
-
-    /* MAIN */
-    main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 64px; }
-
-    h1 {
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
-
-    /* GRID DE CARDS */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-      gap: 14px;
-      margin-bottom: 40px;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 20px;
-      position: relative;
-      transition: border-color 0.2s;
-    }
-    .card:hover { border-color: #2e3550; }
-
-    .card-label {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    .card-value {
-      font-family: var(--mono);
-      font-size: 28px;
-      font-weight: 500;
-      color: var(--text);
-      line-height: 1;
-      margin-bottom: 6px;
-      min-height: 34px;
-    }
-
-    .card-sub {
-      font-size: 12px;
-      color: var(--muted);
-      font-family: var(--mono);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-
-    /* Variación porcentual */
-    .card-change {
-      font-size: 11px;
-      font-weight: 600;
-      font-family: var(--mono);
-      padding: 2px 6px;
-      border-radius: 4px;
-      letter-spacing: 0.02em;
-    }
-    .change-up   { background: rgba(34,197,94,0.1);  color: var(--green); }
-    .change-down { background: rgba(239,68,68,0.1);  color: var(--red);   }
-    .change-flat { background: rgba(90,96,128,0.1);  color: var(--muted); }
-
-    .card-tag {
-      position: absolute;
-      top: 16px; right: 16px;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 4px;
-    }
-    .tag-blue  { background: rgba(61,139,255,0.12); color: var(--accent); }
-    .tag-green { background: rgba(34,197,94,0.12);  color: var(--green);  }
-    .tag-amber { background: rgba(245,158,11,0.12); color: var(--amber);  }
-    .tag-red   { background: rgba(239,68,68,0.12);  color: var(--red);    }
-
-    /* SKELETON LOADER */
-    .skeleton {
-      background: linear-gradient(90deg, var(--border) 25%, #252a38 50%, var(--border) 75%);
-      background-size: 200% 100%;
-      animation: shimmer 1.4s infinite;
-      border-radius: 4px;
-      height: 28px; width: 120px;
-    }
-    @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
-
-    /* ERROR */
-    .card-value.error { font-size: 13px; color: var(--red); }
-
-    /* SECCIÓN GRÁFICO */
-    .chart-section {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 24px;
-      margin-bottom: 40px;
-    }
-    .chart-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .chart-title {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text);
-    }
-    .chart-controls {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-    .chart-tabs {
-      display: flex;
-      gap: 6px;
-    }
-    .chart-tab {
-      font-size: 11px;
-      font-weight: 500;
-      padding: 5px 12px;
-      border-radius: 5px;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--muted);
-      cursor: pointer;
-      font-family: var(--sans);
-      transition: all 0.15s;
-    }
-    .chart-tab.active, .chart-tab:hover {
-      background: rgba(61,139,255,0.1);
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-    .range-tab {
-      font-size: 10px;
-      font-weight: 500;
-      padding: 4px 10px;
-      border-radius: 5px;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--muted);
-      cursor: pointer;
-      font-family: var(--mono);
-      transition: all 0.15s;
-    }
-    .range-tab.active, .range-tab:hover {
-      background: rgba(61,139,255,0.1);
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-    canvas { width: 100% !important; }
-
-    /* TABLA HISTÓRICA */
-    .table-section {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 40px;
-    }
-    .table-header {
-      padding: 18px 24px;
-      border-bottom: 1px solid var(--border);
-      font-size: 13px;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .table-actions {
-      display: flex;
-      gap: 8px;
-    }
-    .btn-export {
-      font-size: 11px;
-      font-weight: 500;
-      padding: 5px 12px;
-      border-radius: 5px;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--muted);
-      cursor: pointer;
-      font-family: var(--sans);
-      transition: all 0.15s;
-    }
-    .btn-export:hover {
-      background: rgba(61,139,255,0.1);
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-    }
-    thead th {
-      text-align: left;
-      padding: 10px 24px;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      border-bottom: 1px solid var(--border);
-    }
-    tbody tr {
-      border-bottom: 1px solid var(--border);
-      transition: background 0.1s;
-    }
-    tbody tr:last-child { border-bottom: none; }
-    tbody tr:hover { background: rgba(255,255,255,0.02); }
-    td {
-      padding: 11px 24px;
-      font-family: var(--mono);
-      font-size: 13px;
-    }
-    td:first-child { color: var(--muted); }
-    td:last-child { text-align: right; }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      font-size: 12px;
-      color: var(--muted);
-      padding: 24px;
-      border-top: 1px solid var(--border);
-    }
-    footer a { color: var(--accent); text-decoration: none; }
-
-    /* ALERTA TOKEN */
-    .token-alert {
-      background: rgba(245, 158, 11, 0.1);
-      border: 1px solid var(--amber);
-      color: var(--amber);
-      padding: 12px 20px;
-      border-radius: 8px;
-      margin-bottom: 24px;
-      font-size: 12px;
-      font-family: var(--sans);
-    }
-
-    @media (max-width: 600px) {
-      header { padding: 14px 16px; }
-      main { padding: 20px 12px 48px; }
-      .card-value { font-size: 22px; }
-      .chart-controls { flex-direction: column; align-items: flex-start; }
-      .chart-tabs { flex-wrap: wrap; }
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  <div class="logo">BCRA<span>online</span></div>
-  <div id="last-update"><span id="status-dot"></span>Cargando...</div>
-</header>
-
-<main>
-  <h1>Variables del Banco Central · Argentina</h1>
-<!-- SECCIÓN DE ANÁLISIS IA -->
-<section id="ai-container" style="display: none; background: #1a1d24; border-left: 4px solid #00f3ff; padding: 20px; border-radius: 8px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-  <h3 style="color: #00f3ff; margin-top: 0; font-size: 16px; font-family: 'Inter', sans-serif;">🤖 Informe Económico del Día (Gemini AI)</h3>
-  <div id="ai-text" style="line-height: 1.6; font-size: 14px; color: #e0e0e0; white-space: pre-wrap; font-family: 'Inter', sans-serif;">
-    Generando informe...
-  </div>
-</section>
-  
-  <div class="grid" id="cards-grid">
-    <!-- generadas por JS -->
-  </div>
-
-  <div class="chart-section">
-    <div class="chart-header">
-      <div class="chart-title">Evolución histórica</div>
-      <div class="chart-controls">
-        <div class="chart-tabs" id="chart-tabs">
-          <button class="chart-tab active" data-var="1" data-label="Reservas (USD M)">Reservas</button>
-          <button class="chart-tab" data-var="4" data-label="TC Oficial ($/USD)">Dólar</button>
-          <button class="chart-tab" data-var="7" data-label="BADLAR (%)">BADLAR</button>
-          <button class="chart-tab" data-var="15" data-label="Base Monetaria (M$)">Base M.</button>
-          <button class="chart-tab" data-var="27" data-label="Inflación Mensual (%)">IPC</button>
-        </div>
-        <div class="chart-tabs" id="range-tabs">
-          <button class="range-tab" data-days="30">30d</button>
-          <button class="range-tab" data-days="90">90d</button>
-          <button class="range-tab active" data-days="180">6M</button>
-          <button class="range-tab" data-days="365">1A</button>
-          <button class="range-tab" data-days="0">Todo</button>
-        </div>
-      </div>
-    </div>
-    <canvas id="main-chart" height="280"></canvas>
-  </div>
-
-  <div class="table-section">
-    <div class="table-header">
-      <span>Últimos registros — <span id="table-var-label">Reservas internacionales</span></span>
-      <div class="table-actions">
-        <button class="btn-export" id="btn-csv" title="Descargar CSV">⬇ CSV</button>
-      </div>
-    </div>
-    <table>
-      <thead>
-        <tr>
-          <th>Fecha</th>
-          <th>Valor</th>
-        </tr>
-      </thead>
-      <tbody id="table-body">
-        <tr><td colspan="2" style="text-align:center;padding:24px;color:var(--muted)">Cargando...</td></tr>
-      </tbody>
-    </table>
-  </div>
-</main>
-
-<footer>
-  Datos: <a href="https://www.bcra.gob.ar" target="_blank">BCRA</a> vía API pública ·
-  Actualizado automáticamente al cargar la página ·
-  Fuente abierta en <a href="https://github.com/chrisamurri-cmyk/BCRAonline" target="_blank">GitHub</a>
-</footer>
-
-<!-- Chart.js desde CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-
-<script>
-// ─── VARIABLES A MOSTRAR EN CARDS ───────────────────────────────────────────
-// IDs actualizados para la API v4.0 del BCRA
-const VARIABLES = [
-  { id: 1,   label: 'Reservas internacionales',  unit: 'USD M',  tag: 'tag-blue',  tagText: 'Stock',  format: v => formatNum(v),     invertido: false },
-  { id: 4,   label: 'Tipo de cambio oficial',      unit: '$/USD',  tag: 'tag-amber', tagText: 'FX',     format: v => '$' + formatDec(v), invertido: true },
-  { id: 7,   label: 'BADLAR bancos privados',      unit: '% TNA',  tag: 'tag-green', tagText: 'Tasa',   format: v => formatDec(v) + '%', invertido: false },
-  { id: 15,  label: 'Base monetaria',              unit: 'MM$',    tag: 'tag-blue',  tagText: 'Stock',  format: v => formatNum(v),     invertido: false },
-  { id: 27,  label: 'Inflación mensual',           unit: '%',      tag: 'tag-red',   tagText: 'IPC',    format: v => formatDec(v) + '%', invertido: false },
-  { id: 16,  label: 'Circulación monetaria',       unit: 'MM$',    tag: 'tag-blue',  tagText: 'Stock',  format: v => formatNum(v),     invertido: false },
-  { id: 8,   label: 'TM20 bancos privados',       unit: '% TNA',  tag: 'tag-green', tagText: 'Tasa',   format: v => formatDec(v) + '%', invertido: false },
-  { id: 12,  label: 'Depósitos a 30 días',        unit: '% TNA',  tag: 'tag-green', tagText: 'Tasa',   format: v => formatDec(v) + '%', invertido: false },
-];
-
-// invertido: true = para variables donde subir es malo (dólar, inflación)
-// → la flecha verde (↓) indica que bajó, lo cual es "positivo"
-
-function formatNum(v) {
-  if (v >= 1_000_000) return (v / 1_000_000).toFixed(2) + 'B';
-  if (v >= 1_000)     return (v / 1_000).toFixed(1) + 'K';
-  return v.toLocaleString('es-AR');
-}
-function formatDec(v) {
-  return parseFloat(v).toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-}
-function formatDate(d) {
-  if (!d) return '—';
-  const [y, m, day] = d.split('-');
-  return `${day}/${m}/${y}`;
-}
-
-// ─── RENDER CARDS SKELETON ───────────────────────────────────────────────────
-const grid = document.getElementById('cards-grid');
-VARIABLES.forEach(v => {
-  grid.innerHTML += `
-    <div class="card" id="card-${v.id}">
-      <div class="card-label">${v.label}</div>
-      <div class="card-value" id="val-${v.id}"><div class="skeleton"></div></div>
-      <div class="card-sub" id="sub-${v.id}">—</div>
-      <span class="card-tag ${v.tag}">${v.tagText}</span>
-    </div>`;
-});
-
-// ─── CARGAR DATOS DESDE JSON LOCAL ──────────────────────────────────────────
-let cacheData = null;
-let chartInstance = null;
-let activeVarId = 1;
-let activeVarLabel = 'Reservas (USD M)';
-let activeRange = 180; // días por defecto
-
-async function loadData() {
-  const dot = document.getElementById('status-dot');
-  const upd = document.getElementById('last-update');
-  try {
-    const res = await fetch('data/bcra_data.json');
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    cacheData = await res.json();
-
-    // ─── NUEVO: MOSTRAR ANÁLISIS IA CON TÍTULO DINÁMICO ───────────────────
-    if (cacheData.ai_analysis) {
-      const aiContainer = document.getElementById('ai-container');
-      const aiTitle = document.querySelector('#ai-container h3'); 
-      const aiText = document.getElementById('ai-text');
-      
-      if (aiContainer && aiText) {
-        aiContainer.style.display = 'block';
-        // Aquí usamos el título que calculó Python (Hoy / Ayer / Fecha)
-        aiTitle.innerText = `🤖 ${cacheData.ai_title || 'Resumen del día'}`;
-        aiText.innerText = cacheData.ai_analysis;
-      }
-    }
-    // ───────────────────────────────────────────────────────────────────────
-
-    const byId = {};
-    (cacheData.variables || []).forEach(d => { byId[d.idVariable] = d; });
-
-    VARIABLES.forEach(v => {
-      const d = byId[v.id];
-      const el = document.getElementById('val-' + v.id);
-      const sub = document.getElementById('sub-' + v.id);
-      if (d) {
-        el.textContent = v.format(d.ultValorInformado);
-
-        const history = cacheData.history && cacheData.history[v.id];
-        let changeHtml = '';
-        if (history && history.length >= 2) {
-          const current = parseFloat(d.ultValorInformado);
-          const prev = parseFloat(history[history.length - 2].valor);
-          if (prev !== 0) {
-            const change = ((current - prev) / Math.abs(prev)) * 100;
-            const isUp = change > 0;
-            const isFlat = Math.abs(change) < 0.001;
-
-            if (isFlat) {
-              changeHtml = `<span class="card-change change-flat">— 0,00%</span>`;
-            } else {
-              const isPositive = v.invertido ? !isUp : isUp;
-              const cls = isPositive ? 'change-up' : 'change-down';
-              const arrow = isUp ? '↑' : '↓';
-              changeHtml = `<span class="card-change ${cls}">${arrow} ${Math.abs(change).toFixed(2)}%</span>`;
-            }
-          }
-        }
-        sub.innerHTML = `${v.unit} · ${formatDate(d.ultFechaInformada)} ${changeHtml}`;
-      } else {
-        el.textContent = 'N/D';
-        el.classList.add('error');
-      }
-    });
-
-    const metadata = cacheData.metadata || {};
-    dot.classList.add('live');
-    if (metadata.last_update) {
-      const updDate = new Date(metadata.last_update);
-      upd.innerHTML = `<span id="status-dot" class="live" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#22c55e;margin-right:6px;vertical-align:middle;animation:pulse 2s infinite"></span>Actualizado ${updDate.toLocaleDateString('es-AR')} ${updDate.toLocaleTimeString('es-AR', {hour:'2-digit',minute:'2-digit'})}`;
-    }
-
-    loadChart(activeVarId, activeVarLabel);
-
-  } catch (e) {
-    console.error(e);
-    upd.textContent = 'Error al cargar datos locales';
-  }
-}
-function loadChart(varId, varLabel) {
-  if (!cacheData || !cacheData.history || !cacheData.history[varId]) {
-    console.error("No hay datos históricos disponibles para ID:", varId);
-    return;
-  }
-
-  let rows = cacheData.history[varId];
-
-  // Aplicar filtro de rango si es necesario
-  if (activeRange > 0 && rows.length > activeRange) {
-    rows = rows.slice(-activeRange);
-  }
-
-  const labels = rows.map(r => formatDate(r.fecha));
-  const values = rows.map(r => parseFloat(r.valor));
-
-  // Tabla histórica (últimos 15 registros)
-  const tbody = document.getElementById('table-body');
-  document.getElementById('table-var-label').textContent = varLabel;
-  const last15 = rows.slice(-15).reverse();
-  tbody.innerHTML = last15.map(r =>
-    `<tr><td>${formatDate(r.fecha)}</td><td>${parseFloat(r.valor).toLocaleString('es-AR', {minimumFractionDigits:2, maximumFractionDigits:2})}</td></tr>`
-  ).join('');
-
-  // Gráfico
-  const ctx = document.getElementById('main-chart').getContext('2d');
-  if (chartInstance) chartInstance.destroy();
-
-  // Color del gráfico según la variable
-  const varConfig = VARIABLES.find(v => v.id === varId);
-  const lineColor = varConfig ? getLineColor(varConfig.tag) : '#3d8bff';
-
-  chartInstance = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels,
-      datasets: [{
-        label: varLabel,
-        data: values,
-        borderColor: lineColor,
-        borderWidth: 1.5,
-        pointRadius: 0,
-        tension: 0.3,
-        fill: true,
-        backgroundColor: ctx => {
-          const gradient = ctx.chart.ctx.createLinearGradient(0, 0, 0, 280);
-          gradient.addColorStop(0, lineColor.replace(')', ',0.15)').replace('rgb', 'rgba'));
-          gradient.addColorStop(1, 'rgba(0,0,0,0)');
-          return gradient;
-        }
-      }]
-    },
-    options: {
-      responsive: true,
-      interaction: { mode: 'index', intersect: false },
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          backgroundColor: '#13161d',
-          borderColor: '#1e2330',
-          borderWidth: 1,
-          titleColor: '#5a6080',
-          bodyColor: '#e8eaf0',
-          titleFont: { family: 'JetBrains Mono', size: 11 },
-          bodyFont: { family: 'JetBrains Mono', size: 13 },
-        }
-      },
-      scales: {
-        x: {
-          grid: { color: '#1e2330', drawBorder: false },
-          ticks: {
-            color: '#5a6080', font: { family: 'JetBrains Mono', size: 11 },
-            maxTicksLimit: 8, maxRotation: 0
-          }
-        },
-        y: {
-          grid: { color: '#1e2330', drawBorder: false },
-          ticks: {
-            color: '#5a6080', font: { family: 'JetBrains Mono', size: 11 },
-            callback: v => v >= 1000000 ? (v/1000000).toFixed(0)+'M' : v >= 1000 ? (v/1000).toFixed(0)+'K' : v
-          }
-        }
-      }
-    }
-  });
-}
-
-function getLineColor(tag) {
-  const map = {
-    'tag-blue':  'rgb(61,139,255)',
-    'tag-amber': 'rgb(245,158,11)',
-    'tag-green': 'rgb(34,197,94)',
-    'tag-red':   'rgb(239,68,68)',
-  };
-  return map[tag] || '#3d8bff';
-}
-
-// ─── EXPORTAR CSV ──────────────────────────────────────────────────────────
-document.getElementById('btn-csv').addEventListener('click', () => {
-  if (!cacheData || !cacheData.history || !cacheData.history[activeVarId]) return;
-  const rows = cacheData.history[activeVarId];
-  const varConfig = VARIABLES.find(v => v.id === activeVarId);
-  const varName = varConfig ? varConfig.label : 'Variable';
-
-  let csv = 'Fecha,Valor\n';
-  rows.forEach(r => {
-    csv += `${r.fecha},${r.valor}\n`;
-  });
-
-  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `BCRA_${varName.replace(/\s+/g, '_')}.csv`;
-  a.click();
-  URL.revokeObjectURL(url);
-});
-
-// ─── TABS DE VARIABLES ───────────────────────────────────────────────────────
-document.getElementById('chart-tabs').addEventListener('click', e => {
-  const btn = e.target.closest('.chart-tab');
-  if (!btn) return;
-  document.querySelectorAll('#chart-tabs .chart-tab').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  activeVarId = btn.dataset.var;
-  activeVarLabel = btn.dataset.label;
-  loadChart(activeVarId, activeVarLabel);
-});
-
-// ─── TABS DE RANGO ────────────────────────────────────────────────────────────
-document.getElementById('range-tabs').addEventListener('click', e => {
-  const btn = e.target.closest('.range-tab');
-  if (!btn) return;
-  document.querySelectorAll('.range-tab').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  activeRange = parseInt(btn.dataset.days);
-  loadChart(activeVarId, activeVarLabel);
-});
-
-// ─── INIT ─────────────────────────────────────────────────────────────────────
-loadData();
-</script>
-</body>
-</html>
+if __name__ == "__main__":
+    main()
