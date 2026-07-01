@@ -468,12 +468,16 @@ async function loadData() {
     if (!res.ok) throw new Error('HTTP ' + res.status);
     cacheData = await res.json();
 
-    // ─── NUEVO: MOSTRAR ANÁLISIS IA ────────────────────────────────────────
+    // ─── NUEVO: MOSTRAR ANÁLISIS IA CON TÍTULO DINÁMICO ───────────────────
     if (cacheData.ai_analysis) {
       const aiContainer = document.getElementById('ai-container');
+      const aiTitle = document.querySelector('#ai-container h3'); 
       const aiText = document.getElementById('ai-text');
+      
       if (aiContainer && aiText) {
         aiContainer.style.display = 'block';
+        // Aquí usamos el título que calculó Python (Hoy / Ayer / Fecha)
+        aiTitle.innerText = `🤖 ${cacheData.ai_title || 'Resumen del día'}`;
         aiText.innerText = cacheData.ai_analysis;
       }
     }
