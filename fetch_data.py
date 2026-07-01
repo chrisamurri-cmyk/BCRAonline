@@ -24,65 +24,49 @@ def generar_analisis_ia(datos_principales):
         return "Falta configuración de clave de IA.", "Informe"
 
     try:
+        # Usamos la librería moderna de 2026
         client = genai.Client(api_key=api_key)
         
-        # 1. Identificar la fecha más reciente de los datos (usamos Dólar ID 4 como referencia)
+        # Identificar fecha de los datos
         fecha_datos_str = "—"
         for v in datos_principales:
             if v.get('idVariable') == 4:
                 fecha_datos_str = v.get('ultFechaInformada')
                 break
         
-        # 2. Lógica de Título Dinámico
+        # Lógica de Título Dinámico
         hoy = datetime.now().date()
         fecha_datos = datetime.strptime(fecha_datos_str, "%Y-%m-%d").date()
         diferencia = (hoy - fecha_datos).days
+        if diferencia == 0: titulo_dinamico = "Resumen del día"
+        elif diferencia == 1: titulo_dinamico = "Resumen de ayer"
+        else: titulo_dinamico = f"Resumen del {fecha_datos.strftime('%d/%m/%Y')}"
 
-        if diferencia == 0:
-            titulo_dinamico = "Resumen del día"
-        elif diferencia == 1:
-            titulo_dinamico = "Resumen de la jornada de ayer"
-        else:
-            # Para fines de semana o feriados
-            titulo_dinamico = f"Resumen de la jornada del {fecha_datos.strftime('%d/%m/%Y')}"
+        # Preparar datos
+        resumen_texto = "".join([f"- {v.get('descripcion')}: {v.get('ultValorInformado')}\n" for v in datos_principales])
 
-        # 3. Preparar los datos para la IA
-        resumen_texto = ""
-        for v in datos_principales:
-            resumen_texto += f"- {v.get('descripcion')}: {v.get('ultValorInformado')} (Fecha: {v.get('ultFechaInformada')})\n"
-
-        # 4. PROMPT REFINADO
         prompt = f"""
-        Actúa como un analista financiero senior. 
-        Analiza los datos del BCRA con cierre al {fecha_datos_str}.
-        
-        REGLAS CRÍTICAS:
-        1. Responde ÚNICAMENTE con un solo párrafo de máximo 100 palabras.
-        2. CERO introducciones tipo "Aquí tienes el informe". Empieza directo con la información.
-        3. Foco principal: Reservas y Tipo de Cambio. Menciona la tendencia de variación (si subió o bajó).
-        4. Formato de números: SIEMPRE punto para miles y coma para decimales (ej: 1.502,09).
-        5. Tono: Seco, profesional, de terminal financiera.
-
-        DATOS:
-        {resumen_texto}
+        Actúa como un analista financiero senior. Analiza los datos del BCRA al {fecha_datos_str}.
+        REGLAS: Un solo párrafo, máximo 100 palabras, sin introducciones. 
+        Usa formato 1.234,56 para números. Foco en Reservas y Dólar.
+        DATOS: {resumen_texto}
         """
         
+        # CAMBIO CLAVE: Quitamos el prefijo 'models/' que está causando el 404
         response = client.models.generate_content(
             model='gemini-1.5-flash', 
             contents=prompt
         )
         
-        # Devolvemos el texto y el título por separado
         return response.text.strip(), titulo_dinamico
 
     except Exception as e:
-        return f"Error: {str(e)}", "Informe Económico"
-
-# --- NOTA: En tu función main() deberás recibir ambos valores ---
-# analisis_texto, titulo_info = generar_analisis_ia(filtered_variables)
-# output_data["ai_analysis"] = analisis_texto
-# output_data["ai_title"] = titulo_info
-
+        # Si falla el 1.5, intentamos con el 1.0 por las dudas
+        try:
+            response = client.models.generate_content(model='gemini-1.0-pro', contents=prompt)
+            return response.text.strip(), titulo_dinamico
+        except:
+            return f"Análisis no disponible en este momento.", "Informe"
 def main():
     print("--- INICIANDO PROCESO ---")
     v_data = fetch_json(BASE_URL)
