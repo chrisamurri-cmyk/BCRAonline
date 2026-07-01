@@ -21,45 +21,67 @@ def fetch_json(url):
 def generar_analisis_ia(datos_principales):
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
-        return "Falta configuración de clave de IA."
+        return "Falta configuración de clave de IA.", "Informe"
 
     try:
         client = genai.Client(api_key=api_key)
         
-        # --- BUSCADOR AUTOMÁTICO DE MODELOS ---
-        print("Buscando modelos disponibles en tu cuenta...")
-        modelos_disponibles = [m.name for m in client.models.list()]
-        print(f"Modelos encontrados: {modelos_disponibles}")
-
-        # Intentamos buscar el mejor candidato (flash es el más probable que sea gratis)
-        mejor_modelo = None
-        for m_name in modelos_disponibles:
-            if "flash" in m_name.lower():
-                mejor_modelo = m_name
+        # 1. Identificar la fecha más reciente de los datos (usamos Dólar ID 4 como referencia)
+        fecha_datos_str = "—"
+        for v in datos_principales:
+            if v.get('idVariable') == 4:
+                fecha_datos_str = v.get('ultFechaInformada')
                 break
         
-        if not mejor_modelo and modelos_disponibles:
-            mejor_modelo = modelos_disponibles[0] # Si no hay flash, el primero que haya
-            
-        if not mejor_modelo:
-            return "No se encontraron modelos disponibles en esta clave."
+        # 2. Lógica de Título Dinámico
+        hoy = datetime.now().date()
+        fecha_datos = datetime.strptime(fecha_datos_str, "%Y-%m-%d").date()
+        diferencia = (hoy - fecha_datos).days
 
-        print(f"Intentando usar el modelo: {mejor_modelo}")
-        # ---------------------------------------
+        if diferencia == 0:
+            titulo_dinamico = "Resumen del día"
+        elif diferencia == 1:
+            titulo_dinamico = "Resumen de la jornada de ayer"
+        else:
+            # Para fines de semana o feriados
+            titulo_dinamico = f"Resumen de la jornada del {fecha_datos.strftime('%d/%m/%Y')}"
 
+        # 3. Preparar los datos para la IA
         resumen_texto = ""
         for v in datos_principales:
-            resumen_texto += f"- {v.get('descripcion')}: {v.get('ultValorInformado')}\n"
+            resumen_texto += f"- {v.get('descripcion')}: {v.get('ultValorInformado')} (Fecha: {v.get('ultFechaInformada')})\n"
 
-        prompt = f"Analiza estos datos del BCRA y haz un informe de 3 párrafos cortos: {resumen_texto}"
+        # 4. PROMPT REFINADO
+        prompt = f"""
+        Actúa como un analista financiero senior. 
+        Analiza los datos del BCRA con cierre al {fecha_datos_str}.
+        
+        REGLAS CRÍTICAS:
+        1. Responde ÚNICAMENTE con un solo párrafo de máximo 100 palabras.
+        2. CERO introducciones tipo "Aquí tienes el informe". Empieza directo con la información.
+        3. Foco principal: Reservas y Tipo de Cambio. Menciona la tendencia de variación (si subió o bajó).
+        4. Formato de números: SIEMPRE punto para miles y coma para decimales (ej: 1.502,09).
+        5. Tono: Seco, profesional, de terminal financiera.
+
+        DATOS:
+        {resumen_texto}
+        """
         
         response = client.models.generate_content(
-            model=mejor_modelo, 
+            model='gemini-1.5-flash', 
             contents=prompt
         )
-        return response.text
+        
+        # Devolvemos el texto y el título por separado
+        return response.text.strip(), titulo_dinamico
+
     except Exception as e:
-        return f"Error detectado en 2026: {str(e)}"
+        return f"Error: {str(e)}", "Informe Económico"
+
+# --- NOTA: En tu función main() deberás recibir ambos valores ---
+# analisis_texto, titulo_info = generar_analisis_ia(filtered_variables)
+# output_data["ai_analysis"] = analisis_texto
+# output_data["ai_title"] = titulo_info
 
 def main():
     print("--- INICIANDO PROCESO ---")
@@ -75,11 +97,14 @@ def main():
             detalle = h_data["results"][0].get("detalle", [])
             history[str(vid)] = sorted(detalle, key=lambda x: x.get("fecha", ""))[-365:]
 
-    analisis = generar_analisis_ia(filtered)
+    # CORRECCIÓN AQUÍ: Atrapamos los dos valores que devuelve la función
+    print("Generando análisis con IA...")
+    analisis_texto, titulo_ia = generar_analisis_ia(filtered)
 
     output = {
         "metadata": {"last_update": datetime.now().isoformat()},
-        "ai_analysis": analisis,
+        "ai_analysis": analisis_texto, # El párrafo
+        "ai_title": titulo_ia,        # El título dinámico (Hoy, Ayer, etc)
         "variables": filtered,
         "history": history
     }
@@ -87,7 +112,7 @@ def main():
     os.makedirs("data", exist_ok=True)
     with open("data/bcra_data.json", "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
-    print("--- PROCESO FINALIZADO ---")
+    print(f"--- PROCESO FINALIZADO: {titulo_ia} ---")
 
 if __name__ == "__main__":
     main()
