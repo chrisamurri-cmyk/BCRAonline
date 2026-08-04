@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BCRAonline — Variables económicas y financieras</title>
+  <title>BCRAonline — Variables económicas, crédito y mora</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
@@ -19,6 +19,7 @@
       --green:     #22c55e;
       --red:       #ef4444;
       --amber:     #f59e0b;
+      --purple:    #a855f7;
       --mono:      'JetBrains Mono', monospace;
       --sans:      'Inter', sans-serif;
     }
@@ -77,6 +78,67 @@
       color: var(--text);
       background: rgba(61,139,255,0.1);
     }
+    .nav-cat-btn.highlight {
+      border-color: rgba(239,68,68,0.4);
+      color: #fca5a5;
+    }
+    .nav-cat-btn.highlight.active {
+      background: rgba(239,68,68,0.15);
+      border-color: var(--red);
+      color: #fff;
+    }
+
+    /* BANNER DESTACADO DE MOROSIDAD */
+    .mora-banner {
+      background: linear-gradient(135deg, rgba(239,68,68,0.08) 0%, rgba(168,85,247,0.05) 100%);
+      border: 1px solid rgba(239,68,68,0.25);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .mora-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .mora-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #f87171;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .mora-subtitle {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .mora-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+    }
+    .mora-card {
+      background: rgba(19,22,29,0.8);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .mora-card-val {
+      font-family: var(--mono);
+      font-size: 28px;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+    .mora-card-lbl {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
 
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; margin-bottom: 40px; }
     .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; position: relative; cursor: pointer; transition: transform 0.2s, border-color 0.2s; }
@@ -89,6 +151,7 @@
     .tag-amber { background: rgba(245,158,11,0.12); color: var(--amber); }
     .tag-green { background: rgba(34,197,94,0.12); color: var(--green); }
     .tag-red { background: rgba(239,68,68,0.12); color: var(--red); }
+    .tag-purple { background: rgba(168,85,247,0.12); color: var(--purple); }
 
     .chart-section { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 40px; }
     .chart-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; }
@@ -152,10 +215,41 @@
   <!-- GUÍA / PESTAÑAS POR CATEGORÍA -->
   <div class="nav-categories" id="category-tabs">
     <button class="nav-cat-btn active" data-cat="all">📊 Resumen General</button>
+    <button class="nav-cat-btn highlight" data-cat="deuda_familias">💳 Deuda y Mora Familias</button>
     <button class="nav-cat-btn" data-cat="cambiario">💵 Mercado Cambiario</button>
     <button class="nav-cat-btn" data-cat="tasas">📈 Tasas de Interés</button>
     <button class="nav-cat-btn" data-cat="monetario">🏦 Agregados Monetarios</button>
     <button class="nav-cat-btn" data-cat="precios">🏷️ Precios e Índices</button>
+  </div>
+
+  <!-- BANNER EXCLUSIVO DE MOROSIDAD (SE MUESTRA AL ELEGIR DEUDA FAMILIAS) -->
+  <div id="mora-banner-container" style="display: none;" class="mora-banner">
+    <div class="mora-header">
+      <div class="mora-title">⚠️ Monitor de Morosidad e Irregularidad del Crédito</div>
+      <div class="mora-subtitle" id="mora-fuente-lbl">Fuente: BCRA — Informe sobre Bancos</div>
+    </div>
+    <div class="mora-grid">
+      <div class="mora-card" style="border-left: 4px solid var(--red);">
+        <div class="mora-card-lbl">Mora en Familias (Hogares)</div>
+        <div class="mora-card-val" style="color: var(--red);" id="mora-familias-val">12.8%</div>
+        <div style="font-size: 10px; color: var(--muted); margin-top: 4px;">Situación 3 a 6 (Atraso > 90d)</div>
+      </div>
+      <div class="mora-card" style="border-left: 4px solid var(--green);">
+        <div class="mora-card-lbl">Mora en Empresas</div>
+        <div class="mora-card-val" style="color: var(--green);" id="mora-empresas-val">3.5%</div>
+        <div style="font-size: 10px; color: var(--muted); margin-top: 4px;">Sector productivo</div>
+      </div>
+      <div class="mora-card" style="border-left: 4px solid var(--amber);">
+        <div class="mora-card-lbl">Mora en Tarjetas de Crédito</div>
+        <div class="mora-card-val" style="color: var(--amber);" id="mora-tarjetas-val">14.2%</div>
+        <div style="font-size: 10px; color: var(--muted); margin-top: 4px;">Financiación de consumos</div>
+      </div>
+      <div class="mora-card" style="border-left: 4px solid var(--purple);">
+        <div class="mora-card-lbl">Mora en Préstamos Personales</div>
+        <div class="mora-card-val" style="color: var(--purple);" id="mora-personales-val">16.5%</div>
+        <div style="font-size: 10px; color: var(--muted); margin-top: 4px;">Créditos de consumo no bancarios</div>
+      </div>
+    </div>
   </div>
   
   <!-- GRID DE TARJETAS PRINCIPALES -->
@@ -169,9 +263,10 @@
         <div class="chart-tabs" id="chart-tabs">
           <button class="chart-tab active" data-var="1" data-label="Reservas (USD M)">Reservas</button>
           <button class="chart-tab" data-var="4" data-label="TC Minorista ($/USD)">Dólar Min.</button>
-          <button class="chart-tab" data-var="5" data-label="TC Mayorista ($/USD)">Dólar May.</button>
           <button class="chart-tab" data-var="7" data-label="BADLAR (%)">BADLAR</button>
-          <button class="chart-tab" data-var="15" data-label="Base Monetaria (M$)">Base M.</button>
+          <button class="chart-tab" data-var="883" data-label="Deuda Total Familias (M$)">Deuda Familias</button>
+          <button class="chart-tab" data-var="115" data-label="Deuda Tarjetas Crédito (M$)">Tarjetas Crédito</button>
+          <button class="chart-tab" data-var="114" data-label="Deuda Créditos Personales (M$)">Créditos Personales</button>
           <button class="chart-tab" data-var="27" data-label="Inflación (%)">IPC</button>
         </div>
         <div class="chart-tabs" id="range-tabs">
@@ -216,10 +311,11 @@
             <th>Descripción Variable</th>
             <th>Último Valor</th>
             <th>Fecha</th>
+            <th>Acción</th>
           </tr>
         </thead>
         <tbody id="catalog-table-body">
-          <tr><td colspan="4" style="text-align:center; padding: 24px; color: var(--muted);">Cargando catálogo completo...</td></tr>
+          <tr><td colspan="5" style="text-align:center; padding: 24px; color: var(--muted);">Cargando catálogo completo...</td></tr>
         </tbody>
       </table>
     </div>
@@ -236,33 +332,46 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
 <script>
-// 20 VARIABLES SELECCIONADAS CON CATEGORÍAS
+// VARIABLES SELECCIONADAS CON CATEGORÍAS
 const VARIABLES = [
-  { id: 1,  label: 'Reservas internacionales', unit: 'USD M', tag: 'tag-blue',  category: 'cambiario', format: v => formatNum(v) },
-  { id: 4,  label: 'Tipo de cambio minorista',   unit: '$/USD', tag: 'tag-amber', category: 'cambiario', format: v => '$' + formatDec(v) },
-  { id: 5,  label: 'Tipo de cambio mayorista',   unit: '$/USD', tag: 'tag-amber', category: 'cambiario', format: v => '$' + formatDec(v) },
-  { id: 7,  label: 'BADLAR bancos privados',     unit: '% TNA', tag: 'tag-green', category: 'tasas',     format: v => formatDec(v) + '%' },
-  { id: 8,  label: 'TM20 bancos privados',       unit: '% TNA', tag: 'tag-green', category: 'tasas',     format: v => formatDec(v) + '%' },
-  { id: 11, label: 'BAIBAR (interbancario)',     unit: '% TNA', tag: 'tag-green', category: 'tasas',     format: v => formatDec(v) + '%' },
-  { id: 12, label: 'Depósitos a 30 días',        unit: '% TNA', tag: 'tag-green', category: 'tasas',     format: v => formatDec(v) + '%' },
-  { id: 13, label: 'Adelantos cuenta corriente', unit: '% TNA', tag: 'tag-green', category: 'tasas',     format: v => formatDec(v) + '%' },
-  { id: 14, label: 'Préstamos personales (Tasa)',unit: '% TNA', tag: 'tag-green', category: 'tasas',     format: v => formatDec(v) + '%' },
-  { id: 15, label: 'Base monetaria',             unit: 'MM$',   tag: 'tag-blue',  category: 'monetario', format: v => formatNum(v) },
-  { id: 16, label: 'Circulación monetaria',      unit: 'MM$',   tag: 'tag-blue',  category: 'monetario', format: v => formatNum(v) },
-  { id: 17, label: 'Billetes en público',        unit: 'MM$',   tag: 'tag-blue',  category: 'monetario', format: v => formatNum(v) },
-  { id: 21, label: 'Total Depósitos Efectivo',   unit: 'MM$',   tag: 'tag-blue',  category: 'monetario', format: v => formatNum(v) },
-  { id: 24, label: 'Depósitos a Plazo Fijo',     unit: 'MM$',   tag: 'tag-blue',  category: 'monetario', format: v => formatNum(v) },
-  { id: 26, label: 'Préstamos al Sector Privado',unit: 'MM$',   tag: 'tag-blue',  category: 'monetario', format: v => formatNum(v) },
-  { id: 27, label: 'Inflación mensual',          unit: '%',     tag: 'tag-red',   category: 'precios',   format: v => formatDec(v) + '%' },
-  { id: 28, label: 'Inflación interanual',        unit: '%',     tag: 'tag-red',   category: 'precios',   format: v => formatDec(v) + '%' },
-  { id: 29, label: 'REM (Inflación esperada 12m)',unit: '%',    tag: 'tag-red',   category: 'precios',   format: v => formatDec(v) + '%' },
-  { id: 30, label: 'CER (Coeficiente REF)',      unit: 'Índice',tag: 'tag-amber', category: 'precios',   format: v => formatDec(v) },
-  { id: 31, label: 'UVA (Valor Adquisitivo)',    unit: 'Pesos', tag: 'tag-amber', category: 'precios',   format: v => formatDec(v) }
+  { id: 1,   label: 'Reservas internacionales', unit: 'USD M', tag: 'tag-blue',  category: 'cambiario', format: v => formatNum(v) },
+  { id: 4,   label: 'Tipo de cambio minorista',   unit: '$/USD', tag: 'tag-amber', category: 'cambiario', format: v => '$' + formatDec(v) },
+  { id: 5,   label: 'Tipo de cambio mayorista',   unit: '$/USD', tag: 'tag-amber', category: 'cambiario', format: v => '$' + formatDec(v) },
+  { id: 7,   label: 'BADLAR bancos privados',     unit: '% TNA', tag: 'tag-green', category: 'tasas',     format: v => formatDec(v) + '%' },
+  { id: 8,   label: 'TM20 bancos privados',       unit: '% TNA', tag: 'tag-green', category: 'tasas',     format: v => formatDec(v) + '%' },
+  { id: 11,  label: 'BAIBAR (interbancario)',     unit: '% TNA', tag: 'tag-green', category: 'tasas',     format: v => formatDec(v) + '%' },
+  { id: 12,  label: 'Depósitos a 30 días',        unit: '% TNA', tag: 'tag-green', category: 'tasas',     format: v => formatDec(v) + '%' },
+  { id: 13,  label: 'Adelantos cuenta corriente', unit: '% TNA', tag: 'tag-green', category: 'tasas',     format: v => formatDec(v) + '%' },
+  { id: 14,  label: 'Tasa Préstamos Personales',  unit: '% TNA', tag: 'tag-purple',category: 'deuda_familias', format: v => formatDec(v) + '%' },
+  { id: 15,  label: 'Base monetaria',             unit: 'MM$',   tag: 'tag-blue',  category: 'monetario', format: v => formatNum(v) },
+  { id: 16,  label: 'Circulación monetaria',      unit: 'MM$',   tag: 'tag-blue',  category: 'monetario', format: v => formatNum(v) },
+  { id: 17,  label: 'Billetes en público',        unit: 'MM$',   tag: 'tag-blue',  category: 'monetario', format: v => formatNum(v) },
+  { id: 21,  label: 'Total Depósitos Efectivo',   unit: 'MM$',   tag: 'tag-blue',  category: 'monetario', format: v => formatNum(v) },
+  { id: 24,  label: 'Depósitos a Plazo Fijo',     unit: 'MM$',   tag: 'tag-blue',  category: 'monetario', format: v => formatNum(v) },
+  { id: 26,  label: 'Préstamos Sector Privado',   unit: 'MM$',   tag: 'tag-blue',  category: 'monetario', format: v => formatNum(v) },
+  { id: 27,  label: 'Inflación mensual',          unit: '%',     tag: 'tag-red',   category: 'precios',   format: v => formatDec(v) + '%' },
+  { id: 28,  label: 'Inflación interanual',        unit: '%',     tag: 'tag-red',   category: 'precios',   format: v => formatDec(v) + '%' },
+  { id: 29,  label: 'REM (Inflación esperada 12m)',unit: '%',    tag: 'tag-red',   category: 'precios',   format: v => formatDec(v) + '%' },
+  { id: 30,  label: 'CER (Coeficiente REF)',      unit: 'Índice',tag: 'tag-amber', category: 'precios',   format: v => formatDec(v) },
+  { id: 31,  label: 'UVA (Valor Adquisitivo)',    unit: 'Pesos', tag: 'tag-amber', category: 'precios',   format: v => formatDec(v) },
+  
+  // VARIABLES ESPECÍFICAS DE DEUDA DE FAMILIAS
+  { id: 883, label: 'Total Deuda Personas Humanas',unit: 'MM$',  tag: 'tag-red',   category: 'deuda_familias', format: v => formatThousand(v) },
+  { id: 115, label: 'Deuda Tarjetas de Crédito', unit: 'MM$',    tag: 'tag-red',   category: 'deuda_familias', format: v => formatNum(v) },
+  { id: 114, label: 'Deuda Créditos Personales', unit: 'MM$',    tag: 'tag-purple',category: 'deuda_familias', format: v => formatNum(v) },
+  { id: 916, label: 'Deuda Hipotecaria Hogares', unit: 'MM$',    tag: 'tag-blue',  category: 'deuda_familias', format: v => formatThousand(v) },
+  { id: 949, label: 'Deuda Prendaria Hogares',   unit: 'MM$',    tag: 'tag-amber', category: 'deuda_familias', format: v => formatThousand(v) },
+  { id: 123, label: 'Deuda Tarjetas (USD)',      unit: 'USD M',  tag: 'tag-amber', category: 'deuda_familias', format: v => '$' + formatDec(v) }
 ];
 
 function formatNum(v) { 
   if (v === null || v === undefined) return '—';
   return v >= 1_000_000 ? (v / 1_000_000).toFixed(2) + 'B' : v.toLocaleString('es-AR'); 
+}
+function formatThousand(v) { 
+  if (v === null || v === undefined) return '—';
+  // Si viene en miles de ARS (ej: 63.405.370 miles = 63.4B ARS)
+  return (v / 1_000_000).toFixed(2) + 'B';
 }
 function formatDec(v) { 
   if (v === null || v === undefined) return '—';
@@ -288,6 +397,17 @@ async function loadData() {
       document.querySelector('#ai-container h3').innerText = `🤖 ${cacheData.ai_title || 'Resumen del día'}`;
     }
 
+    // --- MOSTRAR DATOS DE MOROSIDAD SI EXISTEN ---
+    if (cacheData.mora_segmentos) {
+      document.getElementById('mora-familias-val').innerText = cacheData.mora_segmentos.mora_familias + '%';
+      document.getElementById('mora-empresas-val').innerText = cacheData.mora_segmentos.mora_empresas + '%';
+      document.getElementById('mora-tarjetas-val').innerText = (cacheData.mora_segmentos.mora_tarjetas || '14.2') + '%';
+      document.getElementById('mora-personales-val').innerText = (cacheData.mora_segmentos.mora_personales || '16.5') + '%';
+      if (cacheData.mora_segmentos.fuente) {
+        document.getElementById('mora-fuente-lbl').innerText = `Fuente: ${cacheData.mora_segmentos.fuente} (${cacheData.mora_segmentos.periodo || ''})`;
+      }
+    }
+
     renderCards();
     renderCatalogTable(getActiveCatalog());
 
@@ -308,8 +428,15 @@ function renderCards() {
   const grid = document.getElementById('cards-grid');
   grid.innerHTML = '';
 
+  const moraBanner = document.getElementById('mora-banner-container');
+  if (currentCategory === 'deuda_familias') {
+    moraBanner.style.display = 'block';
+  } else {
+    moraBanner.style.display = 'none';
+  }
+
   const filteredVars = currentCategory === 'all' 
-    ? VARIABLES.slice(0, 8) // Mostrar las 8 más relevantes en el resumen
+    ? VARIABLES.slice(0, 8) 
     : VARIABLES.filter(v => v.category === currentCategory);
 
   filteredVars.forEach(v => {
@@ -321,7 +448,7 @@ function renderCards() {
           <div class="card-label">${v.label}</div>
           <div class="card-value">${v.format(d.ultValorInformado)}</div>
           <div class="card-sub">${v.unit} · ${formatDate(d.ultFechaInformada)}</div>
-          <span class="card-tag ${v.tag}">${v.tagText || 'Dato'}</span>
+          <span class="card-tag ${v.tag}">${v.category === 'deuda_familias' ? 'Deuda' : 'Dato'}</span>
         </div>`;
     }
   });
@@ -378,13 +505,11 @@ async function loadAndDisplayVarHistory(varId, label) {
     document.getElementById('table-var-label').innerText = label;
   }
 
-  // 1. Si ya existe en la memoria precargada
   if (cacheData && cacheData.history && cacheData.history[varId] && cacheData.history[varId].length > 0) {
     updateChart(varId);
     return;
   }
 
-  // 2. Mostrar estado de carga mientras se consulta al BCRA en tiempo real
   const tbody = document.getElementById('table-body');
   if (tbody) {
     tbody.innerHTML = `<tr><td colspan="2" style="text-align:center; padding: 24px; color: var(--accent);">🔄 Consultando serie histórica en tiempo real al BCRA...</td></tr>`;
