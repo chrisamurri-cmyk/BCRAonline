@@ -189,7 +189,10 @@
   <div class="table-section">
     <div class="table-header">
       <span>Últimos registros — <span id="table-var-label">Reservas internacionales</span></span>
-      <button id="btn-csv" style="background:none; border:1px solid var(--border); color:var(--muted); cursor:pointer; padding:4px 10px; border-radius:4px; font-size:11px;">⬇ CSV</button>
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <button id="btn-csv" style="background:none; border:1px solid var(--border); color:var(--muted); cursor:pointer; padding:5px 12px; border-radius:5px; font-size:11px; font-weight:500;">⬇ CSV (1A)</button>
+        <button id="btn-excel" style="background:rgba(34,197,94,0.12); border:1px solid var(--green); color:var(--green); cursor:pointer; padding:5px 12px; border-radius:5px; font-size:11px; font-weight:600;">📊 Excel (Serie Completa)</button>
+      </div>
     </div>
     <table>
       <thead><tr><th>Fecha</th><th>Valor</th></tr></thead>
@@ -230,6 +233,7 @@
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
 <script>
 // 20 VARIABLES SELECCIONADAS CON CATEGORÍAS
@@ -524,6 +528,57 @@ document.getElementById('btn-csv').addEventListener('click', () => {
   a.download = `BCRA_${varName.replace(/\s+/g, '_')}.csv`;
   a.click();
   URL.revokeObjectURL(url);
+});
+
+document.getElementById('btn-excel').addEventListener('click', async () => {
+  const btn = document.getElementById('btn-excel');
+  const originalText = btn.innerText;
+  btn.innerText = '⏳ Consultando BCRA...';
+  btn.disabled = true;
+
+  const varConfig = VARIABLES.find(v => v.id == activeVarId);
+  const varName = varConfig ? varConfig.label : `Variable_${activeVarId}`;
+
+  try {
+    let fullRows = [];
+    const res = await fetch(`https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/${activeVarId}`);
+    const data = await res.json();
+    if (data && data.results && data.results.length > 0 && data.results[0].detalle) {
+      fullRows = data.results[0].detalle.sort((a, b) => (a.fecha > b.fecha ? 1 : -1));
+    } else if (cacheData && cacheData.history && cacheData.history[activeVarId]) {
+      fullRows = cacheData.history[activeVarId];
+    }
+
+    if (!fullRows || fullRows.length === 0) {
+      alert("No hay datos históricos disponibles para esta variable.");
+      return;
+    }
+
+    const excelData = fullRows.map(r => ({
+      "Fecha": r.fecha,
+      "Valor": r.valor
+    }));
+
+    const worksheet = XLSX.utils.json_to_sheet(excelData);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Serie Histórica");
+
+    XLSX.writeFile(workbook, `BCRA_${varName.replace(/\s+/g, '_')}_SerieCompleta.xlsx`);
+  } catch (e) {
+    console.error("Error al descargar Excel:", e);
+    if (cacheData && cacheData.history && cacheData.history[activeVarId]) {
+      const fallbackRows = cacheData.history[activeVarId].map(r => ({ "Fecha": r.fecha, "Valor": r.valor }));
+      const worksheet = XLSX.utils.json_to_sheet(fallbackRows);
+      const workbook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbook, worksheet, "Serie Histórica");
+      XLSX.writeFile(workbook, `BCRA_${varName.replace(/\s+/g, '_')}.xlsx`);
+    } else {
+      alert("Hubo un inconveniente al consultar la serie completa en el BCRA.");
+    }
+  } finally {
+    btn.innerText = originalText;
+    btn.disabled = false;
+  }
 });
 
 loadData();
