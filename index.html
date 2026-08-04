@@ -171,7 +171,6 @@
           <button class="chart-tab" data-var="4" data-label="TC Minorista ($/USD)">Dólar Min.</button>
           <button class="chart-tab" data-var="5" data-label="TC Mayorista ($/USD)">Dólar May.</button>
           <button class="chart-tab" data-var="7" data-label="BADLAR (%)">BADLAR</button>
-          <button class="chart-tab" data-var="14" data-label="Tasa Préstamos Personales (%)">Tasa Personales</button>
           <button class="chart-tab" data-var="15" data-label="Base Monetaria (M$)">Base M.</button>
           <button class="chart-tab" data-var="27" data-label="Inflación (%)">IPC</button>
         </div>
@@ -329,7 +328,7 @@ function renderCatalogTable(catalog, filterText = '') {
   if (!tbody) return;
 
   if (!catalog || catalog.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="4" style="text-align:center; padding: 20px; color: var(--muted);">Cargando catálogo de variables...</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding: 20px; color: var(--muted);">Cargando catálogo de variables...</td></tr>`;
     return;
   }
 
@@ -342,18 +341,23 @@ function renderCatalogTable(catalog, filterText = '') {
   });
 
   if (filtered.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="4" style="text-align:center; padding: 20px; color: var(--muted);">No se encontraron variables con "${filterText}".</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding: 20px; color: var(--muted);">No se encontraron variables con "${filterText}".</td></tr>`;
     return;
   }
 
   tbody.innerHTML = filtered.map(item => `
-    <tr>
+    <tr class="catalog-row" data-var="${item.idVariable}" data-label="${escapeHtml(item.descripcion)}" style="cursor: pointer;">
       <td><strong>${item.idVariable}</strong></td>
       <td>${item.descripcion || '—'}</td>
       <td style="color: var(--accent); font-weight: 500;">${item.ultValorInformado !== null && item.ultValorInformado !== undefined ? item.ultValorInformado.toLocaleString('es-AR') : '—'}</td>
       <td>${formatDate(item.ultFechaInformada)}</td>
+      <td><button class="btn-select-var" data-var="${item.idVariable}" data-label="${escapeHtml(item.descripcion)}" style="background: rgba(61,139,255,0.15); border: 1px solid var(--accent); color: var(--accent); cursor: pointer; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 500;">📈 Ver Gráfico</button></td>
     </tr>
   `).join('');
+}
+
+function escapeHtml(str) {
+  return (str || '').replace(/"/g, '&quot;');
 }
 
 function getActiveCatalog() {
@@ -362,6 +366,43 @@ function getActiveCatalog() {
     return cacheData.latest_catalog;
   }
   return cacheData.variables || [];
+}
+
+async function loadAndDisplayVarHistory(varId, label) {
+  activeVarId = varId;
+  if (label) {
+    document.getElementById('table-var-label').innerText = label;
+  }
+
+  // 1. Si ya existe en la memoria precargada
+  if (cacheData && cacheData.history && cacheData.history[varId] && cacheData.history[varId].length > 0) {
+    updateChart(varId);
+    return;
+  }
+
+  // 2. Mostrar estado de carga mientras se consulta al BCRA en tiempo real
+  const tbody = document.getElementById('table-body');
+  if (tbody) {
+    tbody.innerHTML = `<tr><td colspan="2" style="text-align:center; padding: 24px; color: var(--accent);">🔄 Consultando serie histórica en tiempo real al BCRA...</td></tr>`;
+  }
+
+  try {
+    const res = await fetch(`https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/${varId}`);
+    const data = await res.json();
+    if (data && data.results && data.results.length > 0 && data.results[0].detalle) {
+      const detalle = data.results[0].detalle;
+      const sortedHistory = detalle.sort((a, b) => (a.fecha > b.fecha ? 1 : -1)).slice(-365);
+      if (!cacheData.history) cacheData.history = {};
+      cacheData.history[varId] = sortedHistory;
+      updateChart(varId);
+    } else {
+      throw new Error("Sin detalle histórico");
+    }
+  } catch (err) {
+    if (!cacheData.history) cacheData.history = {};
+    if (!cacheData.history[varId]) cacheData.history[varId] = [];
+    updateChart(varId);
+  }
 }
 
 function updateChart(varId) {
@@ -452,6 +493,17 @@ document.getElementById('range-tabs').addEventListener('click', e => {
 
 document.getElementById('catalog-search').addEventListener('input', e => {
   renderCatalogTable(getActiveCatalog(), e.target.value);
+});
+
+document.getElementById('catalog-table-body').addEventListener('click', e => {
+  const target = e.target.closest('[data-var]');
+  if (!target) return;
+
+  const varId = target.dataset.var;
+  const label = target.dataset.label;
+
+  document.querySelector('.chart-section').scrollIntoView({ behavior: 'smooth' });
+  loadAndDisplayVarHistory(varId, label);
 });
 
 document.getElementById('btn-csv').addEventListener('click', () => {
