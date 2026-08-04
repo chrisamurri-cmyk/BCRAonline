@@ -286,7 +286,7 @@ async function loadData() {
     }
 
     renderCards();
-    renderCatalogTable(cacheData.latest_catalog || []);
+    renderCatalogTable(getActiveCatalog());
 
     if (cacheData.metadata && cacheData.metadata.last_update) {
       const date = new Date(cacheData.metadata.last_update);
@@ -328,11 +328,18 @@ function renderCatalogTable(catalog, filterText = '') {
   const tbody = document.getElementById('catalog-table-body');
   if (!tbody) return;
 
+  if (!catalog || catalog.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="4" style="text-align:center; padding: 20px; color: var(--muted);">Cargando catálogo de variables...</td></tr>`;
+    return;
+  }
+
   const query = filterText.toLowerCase().trim();
-  const filtered = catalog.filter(item => 
-    item.descripcion.toLowerCase().includes(query) || 
-    String(item.idVariable).includes(query)
-  );
+  const filtered = catalog.filter(item => {
+    const desc = (item.descripcion || '').toLowerCase();
+    const id = String(item.idVariable || '');
+    const cat = (item.categoria || '').toLowerCase();
+    return desc.includes(query) || id.includes(query) || cat.includes(query);
+  });
 
   if (filtered.length === 0) {
     tbody.innerHTML = `<tr><td colspan="4" style="text-align:center; padding: 20px; color: var(--muted);">No se encontraron variables con "${filterText}".</td></tr>`;
@@ -342,15 +349,32 @@ function renderCatalogTable(catalog, filterText = '') {
   tbody.innerHTML = filtered.map(item => `
     <tr>
       <td><strong>${item.idVariable}</strong></td>
-      <td>${item.descripcion}</td>
-      <td style="color: var(--accent); font-weight: 500;">${item.ultValorInformado !== null ? item.ultValorInformado.toLocaleString('es-AR') : '—'}</td>
+      <td>${item.descripcion || '—'}</td>
+      <td style="color: var(--accent); font-weight: 500;">${item.ultValorInformado !== null && item.ultValorInformado !== undefined ? item.ultValorInformado.toLocaleString('es-AR') : '—'}</td>
       <td>${formatDate(item.ultFechaInformada)}</td>
     </tr>
   `).join('');
 }
 
+function getActiveCatalog() {
+  if (!cacheData) return [];
+  if (cacheData.latest_catalog && cacheData.latest_catalog.length > 0) {
+    return cacheData.latest_catalog;
+  }
+  return cacheData.variables || [];
+}
+
 function updateChart(varId) {
-  if (!cacheData || !cacheData.history || !cacheData.history[varId]) return;
+  if (!cacheData || !cacheData.history || !cacheData.history[varId] || cacheData.history[varId].length === 0) {
+    const ctx = document.getElementById('main-chart').getContext('2d');
+    if (chartInstance) chartInstance.destroy();
+
+    const tbody = document.getElementById('table-body');
+    if (tbody) {
+      tbody.innerHTML = `<tr><td colspan="2" style="text-align:center; padding: 24px; color: var(--muted);">El historial para esta variable se descargará automáticamente en la próxima actualización en GitHub.</td></tr>`;
+    }
+    return;
+  }
 
   const history = cacheData.history[varId].slice(-activeRange);
   const labels = history.map(h => formatDate(h.fecha));
@@ -427,9 +451,7 @@ document.getElementById('range-tabs').addEventListener('click', e => {
 });
 
 document.getElementById('catalog-search').addEventListener('input', e => {
-  if (cacheData && cacheData.latest_catalog) {
-    renderCatalogTable(cacheData.latest_catalog, e.target.value);
-  }
+  renderCatalogTable(getActiveCatalog(), e.target.value);
 });
 
 document.getElementById('btn-csv').addEventListener('click', () => {
