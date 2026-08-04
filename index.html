@@ -260,6 +260,26 @@ document.getElementById('range-tabs').addEventListener('click', e => {
   }
 });
 
+document.getElementById('btn-csv').addEventListener('click', () => {
+  if (!cacheData || !cacheData.history || !cacheData.history[activeVarId]) return;
+  const rows = cacheData.history[activeVarId];
+  const varConfig = VARIABLES.find(v => v.id == activeVarId);
+  const varName = varConfig ? varConfig.label : 'Variable';
+
+  let csv = 'Fecha,Valor\n';
+  rows.forEach(r => {
+    csv += `${r.fecha},${r.valor}\n`;
+  });
+
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `BCRA_${varName.replace(/\s+/g, '_')}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
+});
+
 loadData();
 </script>
 </body>

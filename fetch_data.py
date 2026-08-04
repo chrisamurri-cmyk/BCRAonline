@@ -39,12 +39,14 @@ def generar_analisis_ia(datos_principales):
                 break
         
         hoy = datetime.now().date()
-        fecha_dt = datetime.strptime(fecha_datos_str, "%Y-%m-%d").date()
-        diff = (hoy - fecha_dt).days
-        
-        if diff == 0: titulo = "Resumen del día"
-        elif diff == 1: titulo = "Resumen de la jornada de ayer"
-        else: titulo = f"Resumen de la jornada del {fecha_dt.strftime('%d/%m/%Y')}"
+        try:
+            fecha_dt = datetime.strptime(fecha_datos_str, "%Y-%m-%d").date()
+            diff = (hoy - fecha_dt).days
+            if diff == 0: titulo = "Resumen del día"
+            elif diff == 1: titulo = "Resumen de la jornada de ayer"
+            else: titulo = f"Resumen de la jornada del {fecha_dt.strftime('%d/%m/%Y')}"
+        except Exception:
+            titulo = "Resumen de la jornada"
 
         # --- PREPARACIÓN DE DATOS Y PROMPT ---
         resumen_datos = "".join([f"- {v.get('descripcion')}: {v.get('ultValorInformado')}\n" for v in datos_principales])
