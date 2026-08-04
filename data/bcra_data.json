@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "last_update": "2026-08-03T12:28:31.605765"
+    "last_update": "2026-08-04T11:27:19.822901"
   },
-  "ai_analysis": "Las reservas internacionales se ubican en 49.196,00. El tipo de cambio minorista promedio vendedor alcanzó 1.511,12, y el mayorista 1.488,45, consolidando una tendencia alcista constante. La posición de reservas muestra un fortalecimiento reciente. Estos valores, junto a una inflación interanual del 33,5%, subrayan las presiones persistentes sobre la estabilidad monetaria y cambiaria, con los tipos de cambio reflejando la dinámica inflacionaria y las expectativas del mercado.",
-  "ai_title": "Resumen de la jornada del 31/07/2026",
+  "ai_analysis": "Al 03.08.2026, las Reservas Internacionales BCRA se posicionan en 49.002,0 millones de USD, indicando una robusta acumulación. El tipo de cambio mayorista cerró en 1.493,44 ARS/USD, con el minorista promediando 1.515,98 ARS/USD. Estos niveles cambiarios reflejan las actuales presiones de mercado, en línea con la inflación interanual del 33,5%.",
+  "ai_title": "Resumen de la jornada de ayer",
   "variables": [
     {
       "idVariable": 1,
@@ -14,8 +14,8 @@
       "unidadExpresion": "En millones de USD",
       "moneda": "ME",
       "primerFechaInformada": "1996-01-03",
-      "ultFechaInformada": "2026-07-29",
-      "ultValorInformado": 49196.0
+      "ultFechaInformada": "2026-07-30",
+      "ultValorInformado": 49002.0
     },
     {
       "idVariable": 4,
@@ -26,8 +26,8 @@
       "unidadExpresion": "Pesos argentinos por dólar estadounidense",
       "moneda": "ML",
       "primerFechaInformada": "2010-06-01",
-      "ultFechaInformada": "2026-07-31",
-      "ultValorInformado": 1511.12
+      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 1515.98
     },
     {
       "idVariable": 5,
@@ -38,8 +38,8 @@
       "unidadExpresion": "Pesos argentinos por dólar estadounidense",
       "moneda": "ML",
       "primerFechaInformada": "2002-03-04",
-      "ultFechaInformada": "2026-07-31",
-      "ultValorInformado": 1488.4531
+      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 1493.4428
     },
     {
       "idVariable": 7,
@@ -50,8 +50,8 @@
       "unidadExpresion": "En porcentaje nominal anual",
       "moneda": "ML",
       "primerFechaInformada": "1999-01-04",
-      "ultFechaInformada": "2026-07-30",
-      "ultValorInformado": 21.9375
+      "ultFechaInformada": "2026-07-31",
+      "ultValorInformado": 21.625
     },
     {
       "idVariable": 8,
@@ -62,8 +62,8 @@
       "unidadExpresion": "En porcentaje nominal anual",
       "moneda": "ML",
       "primerFechaInformada": "2017-01-02",
-      "ultFechaInformada": "2026-07-30",
-      "ultValorInformado": 22.25
+      "ultFechaInformada": "2026-07-31",
+      "ultValorInformado": 22.125
     },
     {
       "idVariable": 12,
@@ -74,8 +74,8 @@
       "unidadExpresion": "En porcentaje nominal anual",
       "moneda": "ML",
       "primerFechaInformada": "1985-08-26",
-      "ultFechaInformada": "2026-07-30",
-      "ultValorInformado": 20.61
+      "ultFechaInformada": "2026-07-31",
+      "ultValorInformado": 19.76
     },
     {
       "idVariable": 15,
@@ -86,8 +86,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "ML",
       "primerFechaInformada": "1996-01-02",
-      "ultFechaInformada": "2026-07-29",
-      "ultValorInformado": 44055898.0
+      "ultFechaInformada": "2026-07-30",
+      "ultValorInformado": 45706709.0
     },
     {
       "idVariable": 16,
@@ -98,8 +98,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "ML",
       "primerFechaInformada": "1996-01-02",
-      "ultFechaInformada": "2026-07-29",
-      "ultValorInformado": 28659716.0
+      "ultFechaInformada": "2026-07-30",
+      "ultValorInformado": 28760439.0
     },
     {
       "idVariable": 27,
@@ -128,10 +128,6 @@
   ],
   "history": {
     "1": [
-      {
-        "fecha": "2025-01-21",
-        "valor": 30282.0
-      },
       {
         "fecha": "2025-01-22",
         "valor": 30140.0
@@ -1587,13 +1583,13 @@
       {
         "fecha": "2026-07-29",
         "valor": 49196.0
+      },
+      {
+        "fecha": "2026-07-30",
+        "valor": 49002.0
       }
     ],
     "4": [
-      {
-        "fecha": "2025-01-23",
-        "valor": 1074.87
-      },
       {
         "fecha": "2025-01-24",
         "valor": 1075.78
@@ -3049,13 +3045,13 @@
       {
         "fecha": "2026-07-31",
         "valor": 1511.12
+      },
+      {
+        "fecha": "2026-08-03",
+        "valor": 1515.98
       }
     ],
     "5": [
-      {
-        "fecha": "2025-01-23",
-        "valor": 1047.6667
-      },
       {
         "fecha": "2025-01-24",
         "valor": 1049.5833
@@ -4511,13 +4507,13 @@
       {
         "fecha": "2026-07-31",
         "valor": 1488.4531
+      },
+      {
+        "fecha": "2026-08-03",
+        "valor": 1493.4428
       }
     ],
     "7": [
-      {
-        "fecha": "2025-01-22",
-        "valor": 31.3125
-      },
       {
         "fecha": "2025-01-23",
         "valor": 31.3125
@@ -5973,13 +5969,13 @@
       {
         "fecha": "2026-07-30",
         "valor": 21.9375
+      },
+      {
+        "fecha": "2026-07-31",
+        "valor": 21.625
       }
     ],
     "8": [
-      {
-        "fecha": "2025-01-22",
-        "valor": 32.125
-      },
       {
         "fecha": "2025-01-23",
         "valor": 32.25
@@ -7435,13 +7431,13 @@
       {
         "fecha": "2026-07-30",
         "valor": 22.25
+      },
+      {
+        "fecha": "2026-07-31",
+        "valor": 22.125
       }
     ],
     "12": [
-      {
-        "fecha": "2025-01-22",
-        "valor": 30.34
-      },
       {
         "fecha": "2025-01-23",
         "valor": 29.98
@@ -8897,13 +8893,13 @@
       {
         "fecha": "2026-07-30",
         "valor": 20.61
+      },
+      {
+        "fecha": "2026-07-31",
+        "valor": 19.76
       }
     ],
     "15": [
-      {
-        "fecha": "2025-01-21",
-        "valor": 29894816.0
-      },
       {
         "fecha": "2025-01-22",
         "valor": 30090521.0
@@ -10359,13 +10355,13 @@
       {
         "fecha": "2026-07-29",
         "valor": 44055898.0
+      },
+      {
+        "fecha": "2026-07-30",
+        "valor": 45706709.0
       }
     ],
     "16": [
-      {
-        "fecha": "2025-01-21",
-        "valor": 19888809.0
-      },
       {
         "fecha": "2025-01-22",
         "valor": 19865761.0
@@ -11821,6 +11817,10 @@
       {
         "fecha": "2026-07-29",
         "valor": 28659716.0
+      },
+      {
+        "fecha": "2026-07-30",
+        "valor": 28760439.0
       }
     ],
     "27": [
