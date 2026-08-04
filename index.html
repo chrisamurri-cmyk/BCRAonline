@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BCRAonline — Variables económicas</title>
+  <title>BCRAonline — Variables económicas y financieras</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -42,7 +42,7 @@
       background: var(--bg);
       z-index: 10;
     }
-    .logo { font-family: var(--mono); font-size: 15px; font-weight: 500; color: var(--text); text-decoration: none; }
+    .logo { font-family: var(--mono); font-size: 15px; font-weight: 600; color: var(--text); text-decoration: none; }
     .logo span { color: var(--accent); }
     #last-update { font-size: 12px; color: var(--muted); font-family: var(--mono); }
     #status-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--muted); margin-right: 6px; }
@@ -52,14 +52,38 @@
     main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 64px; }
     h1 { font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
 
+    /* NAVEGACIÓN POR CATEGORÍAS */
+    .nav-categories {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+    .nav-cat-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .nav-cat-btn:hover, .nav-cat-btn.active {
+      border-color: var(--accent);
+      color: var(--text);
+      background: rgba(61,139,255,0.1);
+    }
+
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; margin-bottom: 40px; }
-    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; position: relative; }
-    .card-label { font-size: 11px; font-weight: 500; color: var(--muted); margin-bottom: 12px; text-transform: uppercase; }
-    .card-value { font-family: var(--mono); font-size: 28px; font-weight: 500; color: var(--text); }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; position: relative; cursor: pointer; transition: transform 0.2s, border-color 0.2s; }
+    .card:hover, .card.active { border-color: var(--accent); transform: translateY(-2px); }
+    .card-label { font-size: 11px; font-weight: 500; color: var(--muted); margin-bottom: 12px; text-transform: uppercase; padding-right: 40px; }
+    .card-value { font-family: var(--mono); font-size: 26px; font-weight: 500; color: var(--text); }
     .card-sub { font-size: 12px; color: var(--muted); font-family: var(--mono); margin-top: 8px; display: flex; gap: 6px; align-items: center; }
-    .card-change { font-size: 11px; font-weight: 600; padding: 2px 6px; border-radius: 4px; }
-    .change-up { background: rgba(34,197,94,0.1); color: var(--green); }
-    .change-down { background: rgba(239,68,68,0.1); color: var(--red); }
     .card-tag { position: absolute; top: 16px; right: 16px; font-size: 10px; padding: 3px 8px; border-radius: 4px; font-weight: 600; text-transform: uppercase; }
     .tag-blue { background: rgba(61,139,255,0.12); color: var(--accent); }
     .tag-amber { background: rgba(245,158,11,0.12); color: var(--amber); }
@@ -69,11 +93,34 @@
     .chart-section { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 40px; }
     .chart-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; }
     .chart-title { font-size: 13px; font-weight: 500; color: var(--text); }
-    .chart-tabs { display: flex; gap: 6px; }
+    .chart-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
     .chart-tab, .range-tab { font-size: 11px; padding: 5px 12px; border-radius: 5px; border: 1px solid var(--border); background: transparent; color: var(--muted); cursor: pointer; }
     .chart-tab.active, .range-tab.active { border-color: var(--accent); color: var(--accent); background: rgba(61,139,255,0.1); }
 
-    .table-section { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    /* SECCIÓN MICRO BASE DE DATOS */
+    .catalog-section { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 40px; }
+    .catalog-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
+    .catalog-title { font-size: 14px; font-weight: 600; color: var(--text); }
+    .search-box {
+      display: flex;
+      gap: 8px;
+      width: 100%;
+      max-width: 400px;
+    }
+    .search-input {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-family: var(--sans);
+      outline: none;
+    }
+    .search-input:focus { border-color: var(--accent); }
+
+    .table-section { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 40px; }
     .table-header { padding: 18px 24px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 13px; }
     table { width: 100%; border-collapse: collapse; }
     th { text-align: left; padding: 12px 24px; font-size: 11px; color: var(--muted); text-transform: uppercase; border-bottom: 1px solid var(--border); }
@@ -101,17 +148,30 @@
       Cargando informe inteligente...
     </div>
   </section>
+
+  <!-- GUÍA / PESTAÑAS POR CATEGORÍA -->
+  <div class="nav-categories" id="category-tabs">
+    <button class="nav-cat-btn active" data-cat="all">📊 Resumen General</button>
+    <button class="nav-cat-btn" data-cat="cambiario">💵 Mercado Cambiario</button>
+    <button class="nav-cat-btn" data-cat="tasas">📈 Tasas de Interés</button>
+    <button class="nav-cat-btn" data-cat="monetario">🏦 Agregados Monetarios</button>
+    <button class="nav-cat-btn" data-cat="precios">🏷️ Precios e Índices</button>
+  </div>
   
+  <!-- GRID DE TARJETAS PRINCIPALES -->
   <div class="grid" id="cards-grid"></div>
 
+  <!-- SECCIÓN DE GRÁFICO E HISTORIAL -->
   <div class="chart-section">
     <div class="chart-header">
       <div class="chart-title">Evolución histórica</div>
       <div class="chart-controls" style="display: flex; gap: 12px; flex-wrap: wrap;">
         <div class="chart-tabs" id="chart-tabs">
           <button class="chart-tab active" data-var="1" data-label="Reservas (USD M)">Reservas</button>
-          <button class="chart-tab" data-var="4" data-label="TC Oficial ($/USD)">Dólar</button>
+          <button class="chart-tab" data-var="4" data-label="TC Minorista ($/USD)">Dólar Min.</button>
+          <button class="chart-tab" data-var="5" data-label="TC Mayorista ($/USD)">Dólar May.</button>
           <button class="chart-tab" data-var="7" data-label="BADLAR (%)">BADLAR</button>
+          <button class="chart-tab" data-var="14" data-label="Tasa Préstamos Personales (%)">Tasa Personales</button>
           <button class="chart-tab" data-var="15" data-label="Base Monetaria (M$)">Base M.</button>
           <button class="chart-tab" data-var="27" data-label="Inflación (%)">IPC</button>
         </div>
@@ -126,6 +186,7 @@
     <canvas id="main-chart" height="280"></canvas>
   </div>
 
+  <!-- TABLA DE REGISTROS DE LA VARIABLE SELECCIONADA -->
   <div class="table-section">
     <div class="table-header">
       <span>Últimos registros — <span id="table-var-label">Reservas internacionales</span></span>
@@ -135,6 +196,31 @@
       <thead><tr><th>Fecha</th><th>Valor</th></tr></thead>
       <tbody id="table-body"></tbody>
     </table>
+  </div>
+
+  <!-- SECCIÓN EXPLORADOR / MICRO BASE DE DATOS COMPLETA -->
+  <div class="catalog-section">
+    <div class="catalog-header">
+      <div class="catalog-title">🔍 Micro Base de Datos (Último valor de todas las variables)</div>
+      <div class="search-box">
+        <input type="text" id="catalog-search" class="search-input" placeholder="Buscar variable (ej: hipotecario, tarjetas, BADLAR...)" />
+      </div>
+    </div>
+    <div style="max-height: 350px; overflow-y: auto; border: 1px solid var(--border); border-radius: 8px;">
+      <table>
+        <thead style="position: sticky; top: 0; background: var(--surface);">
+          <tr>
+            <th>ID</th>
+            <th>Descripción Variable</th>
+            <th>Último Valor</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody id="catalog-table-body">
+          <tr><td colspan="4" style="text-align:center; padding: 24px; color: var(--muted);">Cargando catálogo completo...</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </main>
 
@@ -147,57 +233,62 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 
 <script>
+// 20 VARIABLES SELECCIONADAS CON CATEGORÍAS
 const VARIABLES = [
-  { id: 1,  label: 'Reservas internacionales', unit: 'USD M', tag: 'tag-blue',  format: v => formatNum(v) },
-  { id: 4,  label: 'Tipo de cambio oficial',     unit: '$/USD', tag: 'tag-amber', format: v => '$' + formatDec(v) },
-  { id: 7,  label: 'BADLAR bancos privados',     unit: '% TNA', tag: 'tag-green', format: v => formatDec(v) + '%' },
-  { id: 15, label: 'Base monetaria',             unit: 'MM$',   tag: 'tag-blue',  format: v => formatNum(v) },
-  { id: 27, label: 'Inflación mensual',          unit: '%',     tag: 'tag-red',   format: v => formatDec(v) + '%' },
-  { id: 16, label: 'Circulación monetaria',      unit: 'MM$',   tag: 'tag-blue',  format: v => formatNum(v) },
-  { id: 8,  label: 'TM20 bancos privados',       unit: '% TNA', tag: 'tag-green', format: v => formatDec(v) + '%' },
-  { id: 12, label: 'Depósitos a 30 días',        unit: '% TNA', tag: 'tag-green', format: v => formatDec(v) + '%' }
+  { id: 1,  label: 'Reservas internacionales', unit: 'USD M', tag: 'tag-blue',  category: 'cambiario', format: v => formatNum(v) },
+  { id: 4,  label: 'Tipo de cambio minorista',   unit: '$/USD', tag: 'tag-amber', category: 'cambiario', format: v => '$' + formatDec(v) },
+  { id: 5,  label: 'Tipo de cambio mayorista',   unit: '$/USD', tag: 'tag-amber', category: 'cambiario', format: v => '$' + formatDec(v) },
+  { id: 7,  label: 'BADLAR bancos privados',     unit: '% TNA', tag: 'tag-green', category: 'tasas',     format: v => formatDec(v) + '%' },
+  { id: 8,  label: 'TM20 bancos privados',       unit: '% TNA', tag: 'tag-green', category: 'tasas',     format: v => formatDec(v) + '%' },
+  { id: 11, label: 'BAIBAR (interbancario)',     unit: '% TNA', tag: 'tag-green', category: 'tasas',     format: v => formatDec(v) + '%' },
+  { id: 12, label: 'Depósitos a 30 días',        unit: '% TNA', tag: 'tag-green', category: 'tasas',     format: v => formatDec(v) + '%' },
+  { id: 13, label: 'Adelantos cuenta corriente', unit: '% TNA', tag: 'tag-green', category: 'tasas',     format: v => formatDec(v) + '%' },
+  { id: 14, label: 'Préstamos personales (Tasa)',unit: '% TNA', tag: 'tag-green', category: 'tasas',     format: v => formatDec(v) + '%' },
+  { id: 15, label: 'Base monetaria',             unit: 'MM$',   tag: 'tag-blue',  category: 'monetario', format: v => formatNum(v) },
+  { id: 16, label: 'Circulación monetaria',      unit: 'MM$',   tag: 'tag-blue',  category: 'monetario', format: v => formatNum(v) },
+  { id: 17, label: 'Billetes en público',        unit: 'MM$',   tag: 'tag-blue',  category: 'monetario', format: v => formatNum(v) },
+  { id: 21, label: 'Total Depósitos Efectivo',   unit: 'MM$',   tag: 'tag-blue',  category: 'monetario', format: v => formatNum(v) },
+  { id: 24, label: 'Depósitos a Plazo Fijo',     unit: 'MM$',   tag: 'tag-blue',  category: 'monetario', format: v => formatNum(v) },
+  { id: 26, label: 'Préstamos al Sector Privado',unit: 'MM$',   tag: 'tag-blue',  category: 'monetario', format: v => formatNum(v) },
+  { id: 27, label: 'Inflación mensual',          unit: '%',     tag: 'tag-red',   category: 'precios',   format: v => formatDec(v) + '%' },
+  { id: 28, label: 'Inflación interanual',        unit: '%',     tag: 'tag-red',   category: 'precios',   format: v => formatDec(v) + '%' },
+  { id: 29, label: 'REM (Inflación esperada 12m)',unit: '%',    tag: 'tag-red',   category: 'precios',   format: v => formatDec(v) + '%' },
+  { id: 30, label: 'CER (Coeficiente REF)',      unit: 'Índice',tag: 'tag-amber', category: 'precios',   format: v => formatDec(v) },
+  { id: 31, label: 'UVA (Valor Adquisitivo)',    unit: 'Pesos', tag: 'tag-amber', category: 'precios',   format: v => formatDec(v) }
 ];
 
-function formatNum(v) { return v >= 1_000_000 ? (v / 1_000_000).toFixed(2) + 'B' : v.toLocaleString('es-AR'); }
-function formatDec(v) { return parseFloat(v).toLocaleString('es-AR', { minimumFractionDigits: 2 }); }
+function formatNum(v) { 
+  if (v === null || v === undefined) return '—';
+  return v >= 1_000_000 ? (v / 1_000_000).toFixed(2) + 'B' : v.toLocaleString('es-AR'); 
+}
+function formatDec(v) { 
+  if (v === null || v === undefined) return '—';
+  return parseFloat(v).toLocaleString('es-AR', { minimumFractionDigits: 2 }); 
+}
 function formatDate(d) { if(!d) return '—'; const [y,m,day] = d.split('-'); return `${day}/${m}/${y}`; }
 
 let cacheData = null;
 let chartInstance = null;
 let activeVarId = 1;
 let activeRange = 180;
+let currentCategory = 'all';
 
 async function loadData() {
   try {
     const res = await fetch('data/bcra_data.json');
     cacheData = await res.json();
 
-    // --- MOSTRAR IA ---
+    // --- MOSTRAR ANÁLISIS IA ---
     if (cacheData.ai_analysis && !cacheData.ai_analysis.includes("no pudo")) {
       document.getElementById('ai-container').style.display = 'block';
       document.getElementById('ai-text').innerText = cacheData.ai_analysis;
       document.querySelector('#ai-container h3').innerText = `🤖 ${cacheData.ai_title || 'Resumen del día'}`;
     }
 
-    const byId = {};
-    cacheData.variables.forEach(d => { byId[d.idVariable] = d; });
+    renderCards();
+    renderCatalogTable(cacheData.latest_catalog || []);
 
-    const grid = document.getElementById('cards-grid');
-    grid.innerHTML = '';
-    VARIABLES.forEach(v => {
-      const d = byId[v.id];
-      if (d) {
-        grid.innerHTML += `
-          <div class="card">
-            <div class="card-label">${v.label}</div>
-            <div class="card-value">${v.format(d.ultValorInformado)}</div>
-            <div class="card-sub">${v.unit} · ${formatDate(d.ultFechaInformada)}</div>
-            <span class="card-tag ${v.tag}">${v.id === 4 ? 'FX' : 'Stock'}</span>
-          </div>`;
-      }
-    });
-
-    if (cacheData.metadata.last_update) {
+    if (cacheData.metadata && cacheData.metadata.last_update) {
       const date = new Date(cacheData.metadata.last_update);
       document.getElementById('last-update').innerHTML = `<span id="status-dot" class="live"></span> Actualizado: ${date.toLocaleString('es-AR')}`;
     }
@@ -206,7 +297,61 @@ async function loadData() {
   } catch (e) { console.error(e); }
 }
 
+function renderCards() {
+  if (!cacheData || !cacheData.variables) return;
+  const byId = {};
+  cacheData.variables.forEach(d => { byId[d.idVariable] = d; });
+
+  const grid = document.getElementById('cards-grid');
+  grid.innerHTML = '';
+
+  const filteredVars = currentCategory === 'all' 
+    ? VARIABLES.slice(0, 8) // Mostrar las 8 más relevantes en el resumen
+    : VARIABLES.filter(v => v.category === currentCategory);
+
+  filteredVars.forEach(v => {
+    const d = byId[v.id];
+    if (d) {
+      const activeClass = v.id == activeVarId ? 'active' : '';
+      grid.innerHTML += `
+        <div class="card ${activeClass}" data-var="${v.id}" data-label="${v.label}">
+          <div class="card-label">${v.label}</div>
+          <div class="card-value">${v.format(d.ultValorInformado)}</div>
+          <div class="card-sub">${v.unit} · ${formatDate(d.ultFechaInformada)}</div>
+          <span class="card-tag ${v.tag}">${v.tagText || 'Dato'}</span>
+        </div>`;
+    }
+  });
+}
+
+function renderCatalogTable(catalog, filterText = '') {
+  const tbody = document.getElementById('catalog-table-body');
+  if (!tbody) return;
+
+  const query = filterText.toLowerCase().trim();
+  const filtered = catalog.filter(item => 
+    item.descripcion.toLowerCase().includes(query) || 
+    String(item.idVariable).includes(query)
+  );
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="4" style="text-align:center; padding: 20px; color: var(--muted);">No se encontraron variables con "${filterText}".</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = filtered.map(item => `
+    <tr>
+      <td><strong>${item.idVariable}</strong></td>
+      <td>${item.descripcion}</td>
+      <td style="color: var(--accent); font-weight: 500;">${item.ultValorInformado !== null ? item.ultValorInformado.toLocaleString('es-AR') : '—'}</td>
+      <td>${formatDate(item.ultFechaInformada)}</td>
+    </tr>
+  `).join('');
+}
+
 function updateChart(varId) {
+  if (!cacheData || !cacheData.history || !cacheData.history[varId]) return;
+
   const history = cacheData.history[varId].slice(-activeRange);
   const labels = history.map(h => formatDate(h.fecha));
   const values = history.map(h => h.valor);
@@ -241,6 +386,27 @@ function updateChart(varId) {
   tbody.innerHTML = history.slice(-10).reverse().map(h => `<tr><td>${formatDate(h.fecha)}</td><td>${formatDec(h.valor)}</td></tr>`).join('');
 }
 
+// LISTENERS DE NAVEGACIÓN Y EVENTOS
+document.getElementById('category-tabs').addEventListener('click', e => {
+  if (e.target.dataset.cat) {
+    document.querySelectorAll('.nav-cat-btn').forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+    currentCategory = e.target.dataset.cat;
+    renderCards();
+  }
+});
+
+document.getElementById('cards-grid').addEventListener('click', e => {
+  const card = e.target.closest('.card');
+  if (card && card.dataset.var) {
+    activeVarId = card.dataset.var;
+    document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+    document.getElementById('table-var-label').innerText = card.dataset.label;
+    updateChart(activeVarId);
+  }
+});
+
 document.getElementById('chart-tabs').addEventListener('click', e => {
   if (e.target.dataset.var) {
     document.querySelectorAll('.chart-tab').forEach(b => b.classList.remove('active'));
@@ -257,6 +423,12 @@ document.getElementById('range-tabs').addEventListener('click', e => {
     e.target.classList.add('active');
     activeRange = parseInt(e.target.dataset.days);
     updateChart(activeVarId);
+  }
+});
+
+document.getElementById('catalog-search').addEventListener('input', e => {
+  if (cacheData && cacheData.latest_catalog) {
+    renderCatalogTable(cacheData.latest_catalog, e.target.value);
   }
 });
 
