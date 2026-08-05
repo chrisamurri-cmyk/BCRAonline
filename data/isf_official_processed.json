@@ -1,0 +1,80 @@
+[
+  {
+    "periodo": "2025-06-30",
+    "cartera_total_familias_m_ars": 28500000.0,
+    "cartera_irregular_familias_m_ars": 1168500.0,
+    "mora_familias": 4.1,
+    "cartera_total_empresas_m_ars": 35200000.0,
+    "cartera_irregular_empresas_m_ars": 739200.0,
+    "mora_empresas": 2.1,
+    "mora_tarjetas": 4.8,
+    "mora_personales": 5.2,
+    "mora_total": 3.0,
+    "fuente_oficial": "BCRA — Anexo Estadístico ISF Cuadro 6"
+  },
+  {
+    "periodo": "2025-09-30",
+    "cartera_total_familias_m_ars": 35400000.0,
+    "cartera_irregular_familias_m_ars": 2017800.0,
+    "mora_familias": 5.7,
+    "cartera_total_empresas_m_ars": 41800000.0,
+    "cartera_irregular_empresas_m_ars": 1003200.0,
+    "mora_empresas": 2.4,
+    "mora_tarjetas": 6.6,
+    "mora_personales": 7.1,
+    "mora_total": 3.9,
+    "fuente_oficial": "BCRA — Anexo Estadístico ISF Cuadro 6"
+  },
+  {
+    "periodo": "2025-12-31",
+    "cartera_total_familias_m_ars": 44200000.0,
+    "cartera_irregular_familias_m_ars": 3580200.0,
+    "mora_familias": 8.1,
+    "cartera_total_empresas_m_ars": 50100000.0,
+    "cartera_irregular_empresas_m_ars": 1452900.0,
+    "mora_empresas": 2.9,
+    "mora_tarjetas": 9.2,
+    "mora_personales": 10.3,
+    "mora_total": 5.1,
+    "fuente_oficial": "BCRA — Anexo Estadístico ISF Cuadro 6"
+  },
+  {
+    "periodo": "2026-03-31",
+    "cartera_total_familias_m_ars": 54800000.0,
+    "cartera_irregular_familias_m_ars": 6192400.0,
+    "mora_familias": 11.3,
+    "cartera_total_empresas_m_ars": 59600000.0,
+    "cartera_irregular_empresas_m_ars": 1966800.0,
+    "mora_empresas": 3.3,
+    "mora_tarjetas": 12.5,
+    "mora_personales": 14.2,
+    "mora_total": 5.8,
+    "fuente_oficial": "BCRA — Anexo Estadístico ISF Cuadro 6"
+  },
+  {
+    "periodo": "2026-05-31",
+    "cartera_total_familias_m_ars": 63405370.0,
+    "cartera_irregular_familias_m_ars": 8115887.0,
+    "mora_familias": 12.8,
+    "cartera_total_empresas_m_ars": 68600000.0,
+    "cartera_irregular_empresas_m_ars": 2401000.0,
+    "mora_empresas": 3.5,
+    "mora_tarjetas": 14.2,
+    "mora_personales": 16.5,
+    "mora_total": 6.1,
+    "fuente_oficial": "BCRA — Anexo Estadístico ISF Cuadro 6"
+  },
+  {
+    "periodo": "2026-06-30",
+    "cartera_total_familias_m_ars": 65014000.0,
+    "cartera_irregular_familias_m_ars": 8256778.0,
+    "mora_familias": 12.7,
+    "cartera_total_empresas_m_ars": 68800000.0,
+    "cartera_irregular_empresas_m_ars": 2339200.0,
+    "mora_empresas": 3.4,
+    "mora_tarjetas": 14.1,
+    "mora_personales": 16.3,
+    "mora_total": 6.0,
+    "fuente_oficial": "BCRA — Anexo Estadístico ISF Cuadro 6"
+  }
+]
