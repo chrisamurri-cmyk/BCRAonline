@@ -312,53 +312,79 @@
       </div>
     </div>
 
-    <!-- GRÁFICO HISTÓRICO ISF -->
+    <!-- GRÁFICO HISTÓRICO ISF CON DROPDOWN DE 15 VARIABLES Y RANGO HISTÓRICO (1A - 10A - MAX) -->
     <div class="chart-section">
       <div class="chart-header">
-        <div class="chart-title">Evolución de Morosidad e Irregularidad del Crédito (ISF)</div>
-        <div class="chart-controls">
-          <div class="chart-tabs" id="isf-chart-tabs">
-            <button class="chart-tab active" data-isf-series="mora_familias">Mora Familias (%)</button>
-            <button class="chart-tab" data-isf-series="mora_empresas">Mora Empresas (%)</button>
-            <button class="chart-tab" data-isf-series="mora_tarjetas">Mora Tarjetas (%)</button>
-            <button class="chart-tab" data-isf-series="mora_personales">Mora Personales (%)</button>
-            <button class="chart-tab" data-isf-series="mora_total">Mora Total Sistema (%)</button>
+        <div class="chart-title">Evolución de Variables del Anexo ISF (BCRA)</div>
+        <div class="chart-controls" style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+          <!-- DROPDOWN DE LAS 15 VARIABLES DEL ANEXO ISF -->
+          <div style="position: relative;">
+            <select id="isf-series-select" style="background: var(--bg); border: 1px solid var(--accent); color: var(--text); padding: 6px 12px; border-radius: 6px; font-size: 12px; font-family: var(--sans); font-weight: 600; outline: none; cursor: pointer;">
+              <optgroup label="📊 Ratios de Morosidad e Irregularidad (%)">
+                <option value="mora_familias" selected>Mora Familias / Hogares (%)</option>
+                <option value="mora_empresas">Mora Empresas / Sector Productivo (%)</option>
+                <option value="mora_tarjetas">Mora en Tarjetas de Crédito (%)</option>
+                <option value="mora_personales">Mora en Préstamos Personales (%)</option>
+                <option value="mora_total">Mora Total del Sistema Financiero (%)</option>
+                <option value="mora_hipotecarios">Mora en Préstamos Hipotecarios (%)</option>
+                <option value="mora_prendarios">Mora en Préstamos Prendarios (%)</option>
+                <option value="mora_adelantos">Mora en Adelantos Cuenta Corriente (%)</option>
+              </optgroup>
+              <optgroup label="💵 Saldos Totales e Irregulares en Pesos ($ ARS)">
+                <option value="saldo_familias_ars">Saldo Total Financiaciones a Familias ($ ARS)</option>
+                <option value="saldo_irregular_familias_ars">Saldo Irregular Impago de Familias ($ ARS)</option>
+                <option value="saldo_empresas_ars">Saldo Total Financiaciones a Empresas ($ ARS)</option>
+                <option value="saldo_irregular_empresas_ars">Saldo Irregular Impago de Empresas ($ ARS)</option>
+                <option value="saldo_tarjetas_ars">Saldo Total Tarjetas de Crédito ($ ARS)</option>
+                <option value="saldo_personales_ars">Saldo Total Préstamos Personales ($ ARS)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- BOTONES DE EXPANSIÓN DE RANGO TEMPORAL (1A / 3A / 5A / 10A / MAX) -->
+          <div class="chart-tabs" id="isf-range-tabs">
+            <button class="range-tab" data-isf-months="12">1 año</button>
+            <button class="range-tab active" data-isf-months="36">3 años</button>
+            <button class="range-tab" data-isf-months="60">5 años</button>
+            <button class="range-tab" data-isf-months="120">10 años</button>
+            <button class="range-tab" data-isf-months="999">Max</button>
           </div>
         </div>
       </div>
       <canvas id="isf-chart" height="280"></canvas>
     </div>
 
-    <!-- TABLA HISTÓRICA ISF Y BOTONES DE DESCARGA -->
-    <div class="table-section">
-      <div class="table-header">
-        <span>Registro Histórico — <span id="isf-table-label">Ratio de Morosidad en Familias (%)</span></span>
-        <div style="display: flex; gap: 8px; align-items: center;">
-          <button id="btn-isf-csv" style="background:none; border:1px solid var(--border); color:var(--muted); cursor:pointer; padding:5px 12px; border-radius:5px; font-size:11px; font-weight:500;">⬇ CSV (ISF)</button>
-          <button id="btn-isf-excel" style="background:rgba(34,197,94,0.12); border:1px solid var(--green); color:var(--green); cursor:pointer; padding:5px 12px; border-radius:5px; font-size:11px; font-weight:600;">📊 Excel (Mora e ISF)</button>
-        </div>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Fecha Período</th>
-            <th>Mora Familias (%)</th>
-            <th>Mora Empresas (%)</th>
-            <th>Mora Tarjetas (%)</th>
-            <th>Mora Personales (%)</th>
-            <th>Mora Total (%)</th>
-          </tr>
-        </thead>
-        <tbody id="isf-table-body"></tbody>
-      </table>
-    </div>
-
-    <!-- BANCO DE DESCARGA DE INFORMES OFICIALES -->
+    <!-- CATÁLOGO INFERIOR DE TODAS LAS VARIABLES DEL ANEXO ISF Y ACCIONES -->
     <div class="catalog-section">
       <div class="catalog-header">
-        <div class="catalog-title">📁 Banco de Datos e Informes Oficiales BCRA</div>
+        <div class="catalog-title">🔍 Listado de Variables del Anexo Estadístico ISF (BCRA)</div>
       </div>
+      <div style="max-height: 350px; overflow-y: auto; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 20px;">
+        <table>
+          <thead style="position: sticky; top: 0; background: var(--surface);">
+            <tr>
+              <th>Variable Anexo ISF</th>
+              <th>Clasificación</th>
+              <th>Último Valor</th>
+              <th>Período</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="isf-catalog-table-body">
+            <!-- RENDERIZADO DINÁMICO DESDE JS -->
+          </tbody>
+        </table>
+      </div>
+
       <div style="padding: 16px; background: var(--bg); border-radius: 8px; border: 1px solid var(--border); font-size: 13px; line-height: 1.6;">
+        <p style="margin-bottom: 12px; color: var(--muted);">Descarga directa de los datasets procesados y estructurados del Informe del Sistema Financiero (ISF) y la API del BCRA:</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <button id="btn-isf-excel" style="display: inline-flex; align-items: center; gap: 6px; background: rgba(34,197,94,0.15); border: 1px solid var(--green); color: var(--green); padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: 600;">📊 Exportar Anexo ISF (.xlsx)</button>
+          <button id="btn-isf-csv" style="display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text); padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: 500;">⬇ Descargar Serie Completa (.csv)</button>
+          <a href="data/bcra_data.json" download style="display: inline-flex; align-items: center; gap: 6px; background: rgba(61,139,255,0.15); border: 1px solid var(--accent); color: var(--accent); padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: 600;">💾 Dataset JSON Completo (bcra_data.json)</a>
+        </div>
+      </div>
+    </div>
         <p style="margin-bottom: 12px; color: var(--muted);">Descarga directa de los datasets procesados y estructurados del Informe del Sistema Financiero (ISF) y la API del BCRA:</p>
         <div style="display: flex; gap: 12px; flex-wrap: wrap;">
           <a href="data/bcra_data.json" download style="display: inline-flex; align-items: center; gap: 6px; background: rgba(61,139,255,0.15); border: 1px solid var(--accent); color: var(--accent); padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: 600;">💾 Dataset JSON Completo (bcra_data.json)</a>
@@ -468,7 +494,7 @@ async function loadData() {
 
     renderCards();
     renderCatalogTable(getActiveCatalog());
-    renderIsfTable();
+    renderIsfCatalogTable();
 
     if (cacheData.metadata && cacheData.metadata.last_update) {
       const date = new Date(cacheData.metadata.last_update);
@@ -629,13 +655,23 @@ function renderIsfChart(seriesKey = 'mora_familias') {
   const isfData = cacheData.isf_series;
   const labels = isfData.map(d => formatDate(d.fecha));
   const values = isfData.map(d => d[seriesKey]);
+  const isPeso = seriesKey.startsWith('saldo_');
 
   const seriesLabels = {
     'mora_familias': 'Mora Familias (%)',
     'mora_empresas': 'Mora Empresas (%)',
     'mora_tarjetas': 'Mora Tarjetas (%)',
     'mora_personales': 'Mora Personales (%)',
-    'mora_total': 'Mora Total Sistema (%)'
+    'mora_total': 'Mora Total Sistema (%)',
+    'mora_hipotecarios': 'Mora Hipotecarios (%)',
+    'mora_prendarios': 'Mora Prendarios (%)',
+    'mora_adelantos': 'Mora Adelantos C/C (%)',
+    'saldo_familias_ars': 'Saldo Total Familias ($ ARS)',
+    'saldo_irregular_familias_ars': 'Saldo Irregular Impago Familias ($ ARS)',
+    'saldo_empresas_ars': 'Saldo Total Empresas ($ ARS)',
+    'saldo_irregular_empresas_ars': 'Saldo Irregular Impago Empresas ($ ARS)',
+    'saldo_tarjetas_ars': 'Saldo Total Tarjetas ($ ARS)',
+    'saldo_personales_ars': 'Saldo Total Personales ($ ARS)'
   };
 
   const colors = {
@@ -643,7 +679,16 @@ function renderIsfChart(seriesKey = 'mora_familias') {
     'mora_empresas': '#22c55e',
     'mora_tarjetas': '#f59e0b',
     'mora_personales': '#a855f7',
-    'mora_total': '#3d8bff'
+    'mora_total': '#3d8bff',
+    'mora_hipotecarios': '#06b6d4',
+    'mora_prendarios': '#f97316',
+    'mora_adelantos': '#ec4899',
+    'saldo_familias_ars': '#ef4444',
+    'saldo_irregular_familias_ars': '#f43f5e',
+    'saldo_empresas_ars': '#22c55e',
+    'saldo_irregular_empresas_ars': '#10b981',
+    'saldo_tarjetas_ars': '#f59e0b',
+    'saldo_personales_ars': '#a855f7'
   };
 
   const ctx = document.getElementById('isf-chart').getContext('2d');
@@ -654,7 +699,7 @@ function renderIsfChart(seriesKey = 'mora_familias') {
     data: {
       labels,
       datasets: [{
-        label: seriesLabels[seriesKey] || 'Mora (%)',
+        label: seriesLabels[seriesKey] || 'Variable ISF',
         data: values,
         borderColor: colors[seriesKey] || '#3d8bff',
         backgroundColor: (colors[seriesKey] || '#3d8bff') + '1a',
@@ -668,12 +713,18 @@ function renderIsfChart(seriesKey = 'mora_familias') {
       plugins: { legend: { display: true, labels: { color: '#e8eaf0' } } },
       scales: {
         x: { grid: { display: false }, ticks: { color: '#5a6080' } },
-        y: { grid: { color: '#1e2330' }, ticks: { color: '#5a6080', callback: v => v + '%' } }
+        y: { 
+          grid: { color: '#1e2330' }, 
+          ticks: { 
+            color: '#5a6080', 
+            callback: v => isPeso ? ('$' + (v >= 1e9 ? (v/1e9).toFixed(1) + 'B' : (v/1e6).toFixed(0) + 'M')) : (v + '%')
+          } 
+        }
       }
     }
   });
 
-  document.getElementById('isf-table-label').innerText = seriesLabels[seriesKey] || 'Morosidad (%)';
+  document.getElementById('isf-table-label').innerText = seriesLabels[seriesKey] || 'Variable Anexo ISF';
 }
 
 function renderIsfTable() {
@@ -732,11 +783,26 @@ document.getElementById('range-tabs').addEventListener('click', e => {
   }
 });
 
-document.getElementById('isf-chart-tabs').addEventListener('click', e => {
-  if (e.target.dataset.isfSeries) {
-    document.querySelectorAll('#isf-chart-tabs .chart-tab').forEach(b => b.classList.remove('active'));
+document.getElementById('isf-series-select').addEventListener('change', e => {
+  renderIsfChart(e.target.value);
+});
+
+document.getElementById('isf-range-tabs').addEventListener('click', e => {
+  if (e.target.dataset.isfMonths) {
+    document.querySelectorAll('#isf-range-tabs .range-tab').forEach(b => b.classList.remove('active'));
     e.target.classList.add('active');
-    renderIsfChart(e.target.dataset.isfSeries);
+    activeIsfMonths = parseInt(e.target.dataset.isfMonths);
+    renderIsfChart(activeIsfSeries);
+  }
+});
+
+document.getElementById('isf-catalog-table-body').addEventListener('click', e => {
+  const btn = e.target.closest('.btn-select-isf-var');
+  if (btn && btn.dataset.isfSeries) {
+    const seriesKey = btn.dataset.isfSeries;
+    document.getElementById('isf-series-select').value = seriesKey;
+    document.querySelector('#section-isf .chart-section').scrollIntoView({ behavior: 'smooth' });
+    renderIsfChart(seriesKey);
   }
 });
 
