@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BCRAonline — Variables económicas, crédito y mora</title>
+  <title>BCRAonline — Variables Macro y Endeudamiento (ISF)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
@@ -34,7 +34,7 @@
 
     header {
       border-bottom: 1px solid var(--border);
-      padding: 18px 32px;
+      padding: 14px 32px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -42,9 +42,42 @@
       top: 0;
       background: var(--bg);
       z-index: 10;
+      flex-wrap: wrap;
+      gap: 12px;
     }
     .logo { font-family: var(--mono); font-size: 15px; font-weight: 600; color: var(--text); text-decoration: none; }
     .logo span { color: var(--accent); }
+
+    /* CONMUTADOR PRINCIPAL DE SECCIONES (TIPO MAPA / INFORME) */
+    .top-nav-switcher {
+      display: flex;
+      gap: 6px;
+      background: var(--surface);
+      padding: 4px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .top-nav-btn {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      padding: 7px 18px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .top-nav-btn:hover { color: var(--text); }
+    .top-nav-btn.active {
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 2px 10px rgba(61,139,255,0.3);
+    }
+
     #last-update { font-size: 12px; color: var(--muted); font-family: var(--mono); }
     #status-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--muted); margin-right: 6px; }
     #status-dot.live { background: var(--green); animation: pulse 2s infinite; }
@@ -53,7 +86,7 @@
     main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 64px; }
     h1 { font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
 
-    /* NAVEGACIÓN POR CATEGORÍAS */
+    /* NAVEGACIÓN POR CATEGORÍAS EN MACRO */
     .nav-categories {
       display: flex;
       gap: 8px;
@@ -78,67 +111,6 @@
       color: var(--text);
       background: rgba(61,139,255,0.1);
     }
-    .nav-cat-btn.highlight {
-      border-color: rgba(239,68,68,0.4);
-      color: #fca5a5;
-    }
-    .nav-cat-btn.highlight.active {
-      background: rgba(239,68,68,0.15);
-      border-color: var(--red);
-      color: #fff;
-    }
-
-    /* BANNER DESTACADO DE MOROSIDAD */
-    .mora-banner {
-      background: linear-gradient(135deg, rgba(239,68,68,0.08) 0%, rgba(168,85,247,0.05) 100%);
-      border: 1px solid rgba(239,68,68,0.25);
-      border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 28px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    }
-    .mora-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 18px;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .mora-title {
-      font-size: 15px;
-      font-weight: 600;
-      color: #f87171;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .mora-subtitle {
-      font-size: 12px;
-      color: var(--muted);
-    }
-    .mora-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 14px;
-    }
-    .mora-card {
-      background: rgba(19,22,29,0.8);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 16px;
-    }
-    .mora-card-val {
-      font-family: var(--mono);
-      font-size: 28px;
-      font-weight: 700;
-      margin-top: 4px;
-    }
-    .mora-card-lbl {
-      font-size: 11px;
-      color: var(--muted);
-      text-transform: uppercase;
-    }
 
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; margin-bottom: 40px; }
     .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; position: relative; cursor: pointer; transition: transform 0.2s, border-color 0.2s; }
@@ -160,16 +132,21 @@
     .chart-tab, .range-tab { font-size: 11px; padding: 5px 12px; border-radius: 5px; border: 1px solid var(--border); background: transparent; color: var(--muted); cursor: pointer; }
     .chart-tab.active, .range-tab.active { border-color: var(--accent); color: var(--accent); background: rgba(61,139,255,0.1); }
 
-    /* SECCIÓN MICRO BASE DE DATOS */
+    /* SECCIÓN DE ENDEUDAMIENTO E ISF */
+    .isf-header-banner {
+      background: linear-gradient(135deg, rgba(61,139,255,0.08) 0%, rgba(168,85,247,0.08) 100%);
+      border: 1px solid rgba(61,139,255,0.25);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+    .isf-title { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+    .isf-subtitle { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
     .catalog-section { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 40px; }
     .catalog-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
     .catalog-title { font-size: 14px; font-weight: 600; color: var(--text); }
-    .search-box {
-      display: flex;
-      gap: 8px;
-      width: 100%;
-      max-width: 400px;
-    }
+    .search-box { display: flex; gap: 8px; width: 100%; max-width: 400px; }
     .search-input {
       width: 100%;
       background: var(--bg);
@@ -184,140 +161,210 @@
     .search-input:focus { border-color: var(--accent); }
 
     .table-section { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 40px; }
-    .table-header { padding: 18px 24px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 13px; }
+    .table-header { padding: 18px 24px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 13px; flex-wrap: wrap; gap: 10px; }
     table { width: 100%; border-collapse: collapse; }
     th { text-align: left; padding: 12px 24px; font-size: 11px; color: var(--muted); text-transform: uppercase; border-bottom: 1px solid var(--border); }
     td { padding: 12px 24px; font-family: var(--mono); font-size: 13px; border-bottom: 1px solid var(--border); }
     
     footer { text-align: center; font-size: 12px; color: var(--muted); padding: 48px 24px; border-top: 1px solid var(--border); }
     footer a { color: var(--accent); text-decoration: none; }
-    .skeleton { background: #1e2330; height: 28px; width: 100px; border-radius: 4px; animation: pulse 2s infinite; }
   </style>
 </head>
 <body>
 
 <header>
   <a href="./" class="logo">BCRA<span>online</span></a>
+
+  <!-- BOTONES CONMUTADORES DE SECCIÓN PRINCIPAL (TIPO MAPA / INFORME) -->
+  <div class="top-nav-switcher">
+    <button id="nav-btn-macro" class="top-nav-btn active" onclick="switchSection('macro')">📊 Principales Variables</button>
+    <button id="nav-btn-isf" class="top-nav-btn" onclick="switchSection('isf')">💳 Endeudamiento e ISF</button>
+  </div>
+
   <div id="last-update"><span id="status-dot"></span>Cargando...</div>
 </header>
 
 <main>
-  <h1>Variables del Banco Central · Argentina</h1>
+  <!-- ==================== SECCIÓN 1: PRINCIPALES VARIABLES MACRO ==================== -->
+  <div id="section-macro">
+    <h1>Variables del Banco Central · Terminal Macro</h1>
 
-  <!-- SECCIÓN DE ANÁLISIS IA (TÍTULO DINÁMICO) -->
-  <section id="ai-container" style="display: none; background: #1a1d24; border-left: 4px solid #00f3ff; padding: 20px; border-radius: 8px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-    <h3 style="color: #00f3ff; margin-top: 0; font-size: 16px; font-family: 'Inter', sans-serif;">🤖 Resumen del día</h3>
-    <div id="ai-text" style="line-height: 1.6; font-size: 14px; color: #e0e0e0; white-space: pre-wrap; font-family: 'Inter', sans-serif;">
-      Cargando informe inteligente...
+    <!-- ANÁLISIS IA GEMINI -->
+    <section id="ai-container" style="display: none; background: #1a1d24; border-left: 4px solid #00f3ff; padding: 20px; border-radius: 8px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+      <h3 style="color: #00f3ff; margin-top: 0; font-size: 16px; font-family: 'Inter', sans-serif;">🤖 Resumen del día</h3>
+      <div id="ai-text" style="line-height: 1.6; font-size: 14px; color: #e0e0e0; white-space: pre-wrap; font-family: 'Inter', sans-serif;">
+        Cargando informe inteligente...
+      </div>
+    </section>
+
+    <!-- NAVEGACIÓN POR CATEGORÍA -->
+    <div class="nav-categories" id="category-tabs">
+      <button class="nav-cat-btn active" data-cat="all">📊 Resumen General</button>
+      <button class="nav-cat-btn" data-cat="cambiario">💵 Mercado Cambiario</button>
+      <button class="nav-cat-btn" data-cat="tasas">📈 Tasas de Interés</button>
+      <button class="nav-cat-btn" data-cat="monetario">🏦 Agregados Monetarios y Crédito</button>
+      <button class="nav-cat-btn" data-cat="precios">🏷️ Precios e Índices</button>
     </div>
-  </section>
+    
+    <!-- GRID DE TARJETAS MACRO -->
+    <div class="grid" id="cards-grid"></div>
 
-  <!-- GUÍA / PESTAÑAS POR CATEGORÍA -->
-  <div class="nav-categories" id="category-tabs">
-    <button class="nav-cat-btn active" data-cat="all">📊 Resumen General</button>
-    <button class="nav-cat-btn highlight" data-cat="deuda_familias">💳 Deuda y Mora Familias</button>
-    <button class="nav-cat-btn" data-cat="cambiario">💵 Mercado Cambiario</button>
-    <button class="nav-cat-btn" data-cat="tasas">📈 Tasas de Interés</button>
-    <button class="nav-cat-btn" data-cat="monetario">🏦 Agregados Monetarios</button>
-    <button class="nav-cat-btn" data-cat="precios">🏷️ Precios e Índices</button>
-  </div>
-
-  <!-- BANNER EXCLUSIVO DE MOROSIDAD (SE MUESTRA AL ELEGIR DEUDA FAMILIAS) -->
-  <div id="mora-banner-container" style="display: none;" class="mora-banner">
-    <div class="mora-header">
-      <div class="mora-title">⚠️ Monitor de Morosidad e Irregularidad del Crédito</div>
-      <div class="mora-subtitle" id="mora-fuente-lbl">Fuente: BCRA — Informe sobre Bancos</div>
-    </div>
-    <div class="mora-grid">
-      <div class="mora-card" style="border-left: 4px solid var(--red);">
-        <div class="mora-card-lbl">Mora en Familias (Hogares)</div>
-        <div class="mora-card-val" style="color: var(--red);" id="mora-familias-val">12.8%</div>
-        <div style="font-size: 10px; color: var(--muted); margin-top: 4px;">Situación 3 a 6 (Atraso > 90d)</div>
-      </div>
-      <div class="mora-card" style="border-left: 4px solid var(--green);">
-        <div class="mora-card-lbl">Mora en Empresas</div>
-        <div class="mora-card-val" style="color: var(--green);" id="mora-empresas-val">3.5%</div>
-        <div style="font-size: 10px; color: var(--muted); margin-top: 4px;">Sector productivo</div>
-      </div>
-      <div class="mora-card" style="border-left: 4px solid var(--amber);">
-        <div class="mora-card-lbl">Mora en Tarjetas de Crédito</div>
-        <div class="mora-card-val" style="color: var(--amber);" id="mora-tarjetas-val">14.2%</div>
-        <div style="font-size: 10px; color: var(--muted); margin-top: 4px;">Financiación de consumos</div>
-      </div>
-      <div class="mora-card" style="border-left: 4px solid var(--purple);">
-        <div class="mora-card-lbl">Mora en Préstamos Personales</div>
-        <div class="mora-card-val" style="color: var(--purple);" id="mora-personales-val">16.5%</div>
-        <div style="font-size: 10px; color: var(--muted); margin-top: 4px;">Créditos de consumo no bancarios</div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- GRID DE TARJETAS PRINCIPALES -->
-  <div class="grid" id="cards-grid"></div>
-
-  <!-- SECCIÓN DE GRÁFICO E HISTORIAL -->
-  <div class="chart-section">
-    <div class="chart-header">
-      <div class="chart-title">Evolución histórica</div>
-      <div class="chart-controls" style="display: flex; gap: 12px; flex-wrap: wrap;">
-        <div class="chart-tabs" id="chart-tabs">
-          <button class="chart-tab active" data-var="1" data-label="Reservas (USD M)">Reservas</button>
-          <button class="chart-tab" data-var="4" data-label="TC Minorista ($/USD)">Dólar Min.</button>
-          <button class="chart-tab" data-var="7" data-label="BADLAR (%)">BADLAR</button>
-          <button class="chart-tab" data-var="883" data-label="Deuda Total Familias (M$)">Deuda Familias</button>
-          <button class="chart-tab" data-var="115" data-label="Deuda Tarjetas Crédito (M$)">Tarjetas Crédito</button>
-          <button class="chart-tab" data-var="114" data-label="Deuda Créditos Personales (M$)">Créditos Personales</button>
-          <button class="chart-tab" data-var="27" data-label="Inflación (%)">IPC</button>
-        </div>
-        <div class="chart-tabs" id="range-tabs">
-          <button class="range-tab" data-days="30">30d</button>
-          <button class="range-tab" data-days="90">90d</button>
-          <button class="range-tab active" data-days="180">6M</button>
-          <button class="range-tab" data-days="365">1A</button>
+    <!-- GRÁFICO HISTÓRICO MACRO -->
+    <div class="chart-section">
+      <div class="chart-header">
+        <div class="chart-title">Evolución histórica macroeconómica</div>
+        <div class="chart-controls" style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <div class="chart-tabs" id="chart-tabs">
+            <button class="chart-tab active" data-var="1" data-label="Reservas (USD M)">Reservas</button>
+            <button class="chart-tab" data-var="4" data-label="TC Minorista ($/USD)">Dólar Min.</button>
+            <button class="chart-tab" data-var="5" data-label="TC Mayorista ($/USD)">Dólar May.</button>
+            <button class="chart-tab" data-var="7" data-label="BADLAR (%)">BADLAR</button>
+            <button class="chart-tab" data-var="15" data-label="Base Monetaria (M$)">Base M.</button>
+            <button class="chart-tab" data-var="27" data-label="Inflación (%)">IPC</button>
+          </div>
+          <div class="chart-tabs" id="range-tabs">
+            <button class="range-tab" data-days="30">30d</button>
+            <button class="range-tab" data-days="90">90d</button>
+            <button class="range-tab active" data-days="180">6M</button>
+            <button class="range-tab" data-days="365">1A</button>
+          </div>
         </div>
       </div>
+      <canvas id="main-chart" height="280"></canvas>
     </div>
-    <canvas id="main-chart" height="280"></canvas>
-  </div>
 
-  <!-- TABLA DE REGISTROS DE LA VARIABLE SELECCIONADA -->
-  <div class="table-section">
-    <div class="table-header">
-      <span>Últimos registros — <span id="table-var-label">Reservas internacionales</span></span>
-      <div style="display: flex; gap: 8px; align-items: center;">
-        <button id="btn-csv" style="background:none; border:1px solid var(--border); color:var(--muted); cursor:pointer; padding:5px 12px; border-radius:5px; font-size:11px; font-weight:500;">⬇ CSV (1A)</button>
-        <button id="btn-excel" style="background:rgba(34,197,94,0.12); border:1px solid var(--green); color:var(--green); cursor:pointer; padding:5px 12px; border-radius:5px; font-size:11px; font-weight:600;">📊 Excel (Serie Completa)</button>
+    <!-- TABLA Y DESCARGAS MACRO -->
+    <div class="table-section">
+      <div class="table-header">
+        <span>Últimos registros — <span id="table-var-label">Reservas internacionales</span></span>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <button id="btn-csv" style="background:none; border:1px solid var(--border); color:var(--muted); cursor:pointer; padding:5px 12px; border-radius:5px; font-size:11px; font-weight:500;">⬇ CSV (1A)</button>
+          <button id="btn-excel" style="background:rgba(34,197,94,0.12); border:1px solid var(--green); color:var(--green); cursor:pointer; padding:5px 12px; border-radius:5px; font-size:11px; font-weight:600;">📊 Excel (Serie Completa)</button>
+        </div>
       </div>
-    </div>
-    <table>
-      <thead><tr><th>Fecha</th><th>Valor</th></tr></thead>
-      <tbody id="table-body"></tbody>
-    </table>
-  </div>
-
-  <!-- SECCIÓN EXPLORADOR / MICRO BASE DE DATOS COMPLETA -->
-  <div class="catalog-section">
-    <div class="catalog-header">
-      <div class="catalog-title">🔍 Micro Base de Datos (Último valor de todas las variables)</div>
-      <div class="search-box">
-        <input type="text" id="catalog-search" class="search-input" placeholder="Buscar variable (ej: hipotecario, tarjetas, BADLAR...)" />
-      </div>
-    </div>
-    <div style="max-height: 350px; overflow-y: auto; border: 1px solid var(--border); border-radius: 8px;">
       <table>
-        <thead style="position: sticky; top: 0; background: var(--surface);">
+        <thead><tr><th>Fecha</th><th>Valor</th></tr></thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+
+    <!-- MICRO BASE DE DATOS COMPLETA -->
+    <div class="catalog-section">
+      <div class="catalog-header">
+        <div class="catalog-title">🔍 Micro Base de Datos (Último valor de todas las variables)</div>
+        <div class="search-box">
+          <input type="text" id="catalog-search" class="search-input" placeholder="Buscar variable (ej: hipotecario, tarjetas, BADLAR...)" />
+        </div>
+      </div>
+      <div style="max-height: 350px; overflow-y: auto; border: 1px solid var(--border); border-radius: 8px;">
+        <table>
+          <thead style="position: sticky; top: 0; background: var(--surface);">
+            <tr>
+              <th>ID</th>
+              <th>Descripción Variable</th>
+              <th>Último Valor</th>
+              <th>Fecha</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="catalog-table-body">
+            <tr><td colspan="5" style="text-align:center; padding: 24px; color: var(--muted);">Cargando catálogo completo...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SECCIÓN 2: ENDEUDAMIENTO E ISF ==================== -->
+  <div id="section-isf" style="display: none;">
+    <div class="isf-header-banner">
+      <div class="isf-title">💳 Informe del Sistema Financiero (ISF) y Central de Deudores</div>
+      <div class="isf-subtitle">
+        Monitoreo periódico del crédito, morosidad e irregularidad reportado por el Banco Central de la República Argentina (BCRA).
+      </div>
+    </div>
+
+    <!-- GRID DE TARJETAS DE CRÉDITO E ISF -->
+    <div class="grid" id="isf-cards-grid">
+      <div class="card">
+        <div class="card-label">Mora Familias (Hogares)</div>
+        <div class="card-value" style="color: var(--red);" id="isf-card-familias">12.8%</div>
+        <div class="card-sub">% Cartera Irregular · ISF BCRA</div>
+        <span class="card-tag tag-red">Informe</span>
+      </div>
+      <div class="card">
+        <div class="card-label">Mora Empresas (Sector Productivo)</div>
+        <div class="card-value" style="color: var(--green);" id="isf-card-empresas">3.5%</div>
+        <div class="card-sub">% Cartera Irregular · ISF BCRA</div>
+        <span class="card-tag tag-green">Informe</span>
+      </div>
+      <div class="card">
+        <div class="card-label">Mora en Tarjetas de Crédito</div>
+        <div class="card-value" style="color: var(--amber);" id="isf-card-tarjetas">14.2%</div>
+        <div class="card-sub">% Cartera Irregular · ISF BCRA</div>
+        <span class="card-tag tag-amber">Informe</span>
+      </div>
+      <div class="card">
+        <div class="card-label">Mora en Préstamos Personales</div>
+        <div class="card-value" style="color: var(--purple);" id="isf-card-personales">16.5%</div>
+        <div class="card-sub">% Cartera Irregular · ISF BCRA</div>
+        <span class="card-tag tag-purple">Informe</span>
+      </div>
+    </div>
+
+    <!-- GRÁFICO HISTÓRICO ISF -->
+    <div class="chart-section">
+      <div class="chart-header">
+        <div class="chart-title">Evolución de Morosidad e Irregularidad del Crédito (ISF)</div>
+        <div class="chart-controls">
+          <div class="chart-tabs" id="isf-chart-tabs">
+            <button class="chart-tab active" data-isf-series="mora_familias">Mora Familias (%)</button>
+            <button class="chart-tab" data-isf-series="mora_empresas">Mora Empresas (%)</button>
+            <button class="chart-tab" data-isf-series="mora_tarjetas">Mora Tarjetas (%)</button>
+            <button class="chart-tab" data-isf-series="mora_personales">Mora Personales (%)</button>
+            <button class="chart-tab" data-isf-series="mora_total">Mora Total Sistema (%)</button>
+          </div>
+        </div>
+      </div>
+      <canvas id="isf-chart" height="280"></canvas>
+    </div>
+
+    <!-- TABLA HISTÓRICA ISF Y BOTONES DE DESCARGA -->
+    <div class="table-section">
+      <div class="table-header">
+        <span>Registro Histórico — <span id="isf-table-label">Ratio de Morosidad en Familias (%)</span></span>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <button id="btn-isf-csv" style="background:none; border:1px solid var(--border); color:var(--muted); cursor:pointer; padding:5px 12px; border-radius:5px; font-size:11px; font-weight:500;">⬇ CSV (ISF)</button>
+          <button id="btn-isf-excel" style="background:rgba(34,197,94,0.12); border:1px solid var(--green); color:var(--green); cursor:pointer; padding:5px 12px; border-radius:5px; font-size:11px; font-weight:600;">📊 Excel (Mora e ISF)</button>
+        </div>
+      </div>
+      <table>
+        <thead>
           <tr>
-            <th>ID</th>
-            <th>Descripción Variable</th>
-            <th>Último Valor</th>
-            <th>Fecha</th>
-            <th>Acción</th>
+            <th>Fecha Período</th>
+            <th>Mora Familias (%)</th>
+            <th>Mora Empresas (%)</th>
+            <th>Mora Tarjetas (%)</th>
+            <th>Mora Personales (%)</th>
+            <th>Mora Total (%)</th>
           </tr>
         </thead>
-        <tbody id="catalog-table-body">
-          <tr><td colspan="5" style="text-align:center; padding: 24px; color: var(--muted);">Cargando catálogo completo...</td></tr>
-        </tbody>
+        <tbody id="isf-table-body"></tbody>
       </table>
+    </div>
+
+    <!-- BANCO DE DESCARGA DE INFORMES OFICIALES -->
+    <div class="catalog-section">
+      <div class="catalog-header">
+        <div class="catalog-title">📁 Banco de Datos e Informes Oficiales BCRA</div>
+      </div>
+      <div style="padding: 16px; background: var(--bg); border-radius: 8px; border: 1px solid var(--border); font-size: 13px; line-height: 1.6;">
+        <p style="margin-bottom: 12px; color: var(--muted);">Descarga directa de los datasets procesados y estructurados del Informe del Sistema Financiero (ISF) y la API del BCRA:</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="data/bcra_data.json" download style="display: inline-flex; align-items: center; gap: 6px; background: rgba(61,139,255,0.15); border: 1px solid var(--accent); color: var(--accent); padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: 600;">💾 Dataset JSON Completo (bcra_data.json)</a>
+          <button id="btn-download-full-matrix" style="display: inline-flex; align-items: center; gap: 6px; background: rgba(34,197,94,0.15); border: 1px solid var(--green); color: var(--green); padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: 600;">📊 Exportar Matriz Completa de Crédito (.xlsx)</button>
+        </div>
+      </div>
     </div>
   </div>
 </main>
@@ -332,7 +379,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
 <script>
-// VARIABLES SELECCIONADAS CON CATEGORÍAS
+// 26 VARIABLES SELECCIONADAS CON CATEGORÍAS PARA LA SECCIÓN MACRO
 const VARIABLES = [
   { id: 1,   label: 'Reservas internacionales', unit: 'USD M', tag: 'tag-blue',  category: 'cambiario', format: v => formatNum(v) },
   { id: 4,   label: 'Tipo de cambio minorista',   unit: '$/USD', tag: 'tag-amber', category: 'cambiario', format: v => '$' + formatDec(v) },
@@ -342,7 +389,7 @@ const VARIABLES = [
   { id: 11,  label: 'BAIBAR (interbancario)',     unit: '% TNA', tag: 'tag-green', category: 'tasas',     format: v => formatDec(v) + '%' },
   { id: 12,  label: 'Depósitos a 30 días',        unit: '% TNA', tag: 'tag-green', category: 'tasas',     format: v => formatDec(v) + '%' },
   { id: 13,  label: 'Adelantos cuenta corriente', unit: '% TNA', tag: 'tag-green', category: 'tasas',     format: v => formatDec(v) + '%' },
-  { id: 14,  label: 'Tasa Préstamos Personales',  unit: '% TNA', tag: 'tag-purple',category: 'deuda_familias', format: v => formatDec(v) + '%' },
+  { id: 14,  label: 'Tasa Préstamos Personales',  unit: '% TNA', tag: 'tag-purple',category: 'tasas',     format: v => formatDec(v) + '%' },
   { id: 15,  label: 'Base monetaria',             unit: 'MM$',   tag: 'tag-blue',  category: 'monetario', format: v => formatNum(v) },
   { id: 16,  label: 'Circulación monetaria',      unit: 'MM$',   tag: 'tag-blue',  category: 'monetario', format: v => formatNum(v) },
   { id: 17,  label: 'Billetes en público',        unit: 'MM$',   tag: 'tag-blue',  category: 'monetario', format: v => formatNum(v) },
@@ -354,14 +401,12 @@ const VARIABLES = [
   { id: 29,  label: 'REM (Inflación esperada 12m)',unit: '%',    tag: 'tag-red',   category: 'precios',   format: v => formatDec(v) + '%' },
   { id: 30,  label: 'CER (Coeficiente REF)',      unit: 'Índice',tag: 'tag-amber', category: 'precios',   format: v => formatDec(v) },
   { id: 31,  label: 'UVA (Valor Adquisitivo)',    unit: 'Pesos', tag: 'tag-amber', category: 'precios',   format: v => formatDec(v) },
-  
-  // VARIABLES ESPECÍFICAS DE DEUDA DE FAMILIAS
-  { id: 883, label: 'Total Deuda Personas Humanas',unit: 'MM$',  tag: 'tag-red',   category: 'deuda_familias', format: v => formatThousand(v) },
-  { id: 115, label: 'Deuda Tarjetas de Crédito', unit: 'MM$',    tag: 'tag-red',   category: 'deuda_familias', format: v => formatNum(v) },
-  { id: 114, label: 'Deuda Créditos Personales', unit: 'MM$',    tag: 'tag-purple',category: 'deuda_familias', format: v => formatNum(v) },
-  { id: 916, label: 'Deuda Hipotecaria Hogares', unit: 'MM$',    tag: 'tag-blue',  category: 'deuda_familias', format: v => formatThousand(v) },
-  { id: 949, label: 'Deuda Prendaria Hogares',   unit: 'MM$',    tag: 'tag-amber', category: 'deuda_familias', format: v => formatThousand(v) },
-  { id: 123, label: 'Deuda Tarjetas (USD)',      unit: 'USD M',  tag: 'tag-amber', category: 'deuda_familias', format: v => '$' + formatDec(v) }
+  { id: 883, label: 'Total Deuda Personas Humanas',unit: 'MM$',  tag: 'tag-red',   category: 'monetario', format: v => formatThousand(v) },
+  { id: 115, label: 'Deuda Tarjetas de Crédito', unit: 'MM$',    tag: 'tag-red',   category: 'monetario', format: v => formatNum(v) },
+  { id: 114, label: 'Deuda Créditos Personales', unit: 'MM$',    tag: 'tag-purple',category: 'monetario', format: v => formatNum(v) },
+  { id: 916, label: 'Deuda Hipotecaria Hogares', unit: 'MM$',    tag: 'tag-blue',  category: 'monetario', format: v => formatThousand(v) },
+  { id: 949, label: 'Deuda Prendaria Hogares',   unit: 'MM$',    tag: 'tag-amber', category: 'monetario', format: v => formatThousand(v) },
+  { id: 123, label: 'Deuda Tarjetas (USD)',      unit: 'USD M',  tag: 'tag-amber', category: 'monetario', format: v => '$' + formatDec(v) }
 ];
 
 function formatNum(v) { 
@@ -370,7 +415,6 @@ function formatNum(v) {
 }
 function formatThousand(v) { 
   if (v === null || v === undefined) return '—';
-  // Si viene en miles de ARS (ej: 63.405.370 miles = 63.4B ARS)
   return (v / 1_000_000).toFixed(2) + 'B';
 }
 function formatDec(v) { 
@@ -381,35 +425,50 @@ function formatDate(d) { if(!d) return '—'; const [y,m,day] = d.split('-'); re
 
 let cacheData = null;
 let chartInstance = null;
+let isfChartInstance = null;
 let activeVarId = 1;
 let activeRange = 180;
 let currentCategory = 'all';
+let activeIsfSeries = 'mora_familias';
+
+// CONMUTACIÓN DE SECCIONES PRINCIPALES (MACRO VS ISF)
+function switchSection(section) {
+  document.getElementById('nav-btn-macro').classList.remove('active');
+  document.getElementById('nav-btn-isf').classList.remove('active');
+
+  if (section === 'macro') {
+    document.getElementById('nav-btn-macro').classList.add('active');
+    document.getElementById('section-macro').style.display = 'block';
+    document.getElementById('section-isf').style.display = 'none';
+  } else {
+    document.getElementById('nav-btn-isf').classList.add('active');
+    document.getElementById('section-macro').style.display = 'none';
+    document.getElementById('section-isf').style.display = 'block';
+    renderIsfChart(activeIsfSeries);
+  }
+}
 
 async function loadData() {
   try {
     const res = await fetch('data/bcra_data.json');
     cacheData = await res.json();
 
-    // --- MOSTRAR ANÁLISIS IA ---
     if (cacheData.ai_analysis && !cacheData.ai_analysis.includes("no pudo")) {
       document.getElementById('ai-container').style.display = 'block';
       document.getElementById('ai-text').innerText = cacheData.ai_analysis;
       document.querySelector('#ai-container h3').innerText = `🤖 ${cacheData.ai_title || 'Resumen del día'}`;
     }
 
-    // --- MOSTRAR DATOS DE MOROSIDAD SI EXISTEN ---
     if (cacheData.mora_segmentos) {
-      document.getElementById('mora-familias-val').innerText = cacheData.mora_segmentos.mora_familias + '%';
-      document.getElementById('mora-empresas-val').innerText = cacheData.mora_segmentos.mora_empresas + '%';
-      document.getElementById('mora-tarjetas-val').innerText = (cacheData.mora_segmentos.mora_tarjetas || '14.2') + '%';
-      document.getElementById('mora-personales-val').innerText = (cacheData.mora_segmentos.mora_personales || '16.5') + '%';
-      if (cacheData.mora_segmentos.fuente) {
-        document.getElementById('mora-fuente-lbl').innerText = `Fuente: ${cacheData.mora_segmentos.fuente} (${cacheData.mora_segmentos.periodo || ''})`;
-      }
+      document.getElementById('isf-card-familias').innerText = cacheData.mora_segmentos.mora_familias + '%';
+      document.getElementById('isf-card-empresas').innerText = cacheData.mora_segmentos.mora_empresas + '%';
+      document.getElementById('isf-card-tarjetas').innerText = (cacheData.mora_segmentos.mora_tarjetas || '14.2') + '%';
+      document.getElementById('isf-card-personales').innerText = (cacheData.mora_segmentos.mora_personales || '16.5') + '%';
     }
 
     renderCards();
     renderCatalogTable(getActiveCatalog());
+    renderIsfTable();
 
     if (cacheData.metadata && cacheData.metadata.last_update) {
       const date = new Date(cacheData.metadata.last_update);
@@ -428,13 +487,6 @@ function renderCards() {
   const grid = document.getElementById('cards-grid');
   grid.innerHTML = '';
 
-  const moraBanner = document.getElementById('mora-banner-container');
-  if (currentCategory === 'deuda_familias') {
-    moraBanner.style.display = 'block';
-  } else {
-    moraBanner.style.display = 'none';
-  }
-
   const filteredVars = currentCategory === 'all' 
     ? VARIABLES.slice(0, 8) 
     : VARIABLES.filter(v => v.category === currentCategory);
@@ -448,7 +500,7 @@ function renderCards() {
           <div class="card-label">${v.label}</div>
           <div class="card-value">${v.format(d.ultValorInformado)}</div>
           <div class="card-sub">${v.unit} · ${formatDate(d.ultFechaInformada)}</div>
-          <span class="card-tag ${v.tag}">${v.category === 'deuda_familias' ? 'Deuda' : 'Dato'}</span>
+          <span class="card-tag ${v.tag}">Dato</span>
         </div>`;
     }
   });
@@ -487,23 +539,17 @@ function renderCatalogTable(catalog, filterText = '') {
   `).join('');
 }
 
-function escapeHtml(str) {
-  return (str || '').replace(/"/g, '&quot;');
-}
+function escapeHtml(str) { return (str || '').replace(/"/g, '&quot;'); }
 
 function getActiveCatalog() {
   if (!cacheData) return [];
-  if (cacheData.latest_catalog && cacheData.latest_catalog.length > 0) {
-    return cacheData.latest_catalog;
-  }
+  if (cacheData.latest_catalog && cacheData.latest_catalog.length > 0) return cacheData.latest_catalog;
   return cacheData.variables || [];
 }
 
 async function loadAndDisplayVarHistory(varId, label) {
   activeVarId = varId;
-  if (label) {
-    document.getElementById('table-var-label').innerText = label;
-  }
+  if (label) document.getElementById('table-var-label').innerText = label;
 
   if (cacheData && cacheData.history && cacheData.history[varId] && cacheData.history[varId].length > 0) {
     updateChart(varId);
@@ -524,9 +570,7 @@ async function loadAndDisplayVarHistory(varId, label) {
       if (!cacheData.history) cacheData.history = {};
       cacheData.history[varId] = sortedHistory;
       updateChart(varId);
-    } else {
-      throw new Error("Sin detalle histórico");
-    }
+    } else { throw new Error("Sin detalle"); }
   } catch (err) {
     if (!cacheData.history) cacheData.history = {};
     if (!cacheData.history[varId]) cacheData.history[varId] = [];
@@ -538,11 +582,8 @@ function updateChart(varId) {
   if (!cacheData || !cacheData.history || !cacheData.history[varId] || cacheData.history[varId].length === 0) {
     const ctx = document.getElementById('main-chart').getContext('2d');
     if (chartInstance) chartInstance.destroy();
-
     const tbody = document.getElementById('table-body');
-    if (tbody) {
-      tbody.innerHTML = `<tr><td colspan="2" style="text-align:center; padding: 24px; color: var(--muted);">El historial para esta variable se descargará automáticamente en la próxima actualización en GitHub.</td></tr>`;
-    }
+    if (tbody) tbody.innerHTML = `<tr><td colspan="2" style="text-align:center; padding: 24px; color: var(--muted);">El historial para esta variable se descargará automáticamente en la próxima actualización.</td></tr>`;
     return;
   }
 
@@ -580,7 +621,78 @@ function updateChart(varId) {
   tbody.innerHTML = history.slice(-10).reverse().map(h => `<tr><td>${formatDate(h.fecha)}</td><td>${formatDec(h.valor)}</td></tr>`).join('');
 }
 
-// LISTENERS DE NAVEGACIÓN Y EVENTOS
+// RENDERIZADO DEL GRÁFICO E ISF
+function renderIsfChart(seriesKey = 'mora_familias') {
+  if (!cacheData || !cacheData.isf_series || cacheData.isf_series.length === 0) return;
+
+  activeIsfSeries = seriesKey;
+  const isfData = cacheData.isf_series;
+  const labels = isfData.map(d => formatDate(d.fecha));
+  const values = isfData.map(d => d[seriesKey]);
+
+  const seriesLabels = {
+    'mora_familias': 'Mora Familias (%)',
+    'mora_empresas': 'Mora Empresas (%)',
+    'mora_tarjetas': 'Mora Tarjetas (%)',
+    'mora_personales': 'Mora Personales (%)',
+    'mora_total': 'Mora Total Sistema (%)'
+  };
+
+  const colors = {
+    'mora_familias': '#ef4444',
+    'mora_empresas': '#22c55e',
+    'mora_tarjetas': '#f59e0b',
+    'mora_personales': '#a855f7',
+    'mora_total': '#3d8bff'
+  };
+
+  const ctx = document.getElementById('isf-chart').getContext('2d');
+  if (isfChartInstance) isfChartInstance.destroy();
+
+  isfChartInstance = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: seriesLabels[seriesKey] || 'Mora (%)',
+        data: values,
+        borderColor: colors[seriesKey] || '#3d8bff',
+        backgroundColor: (colors[seriesKey] || '#3d8bff') + '1a',
+        fill: true,
+        tension: 0.3,
+        pointRadius: 4
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: true, labels: { color: '#e8eaf0' } } },
+      scales: {
+        x: { grid: { display: false }, ticks: { color: '#5a6080' } },
+        y: { grid: { color: '#1e2330' }, ticks: { color: '#5a6080', callback: v => v + '%' } }
+      }
+    }
+  });
+
+  document.getElementById('isf-table-label').innerText = seriesLabels[seriesKey] || 'Morosidad (%)';
+}
+
+function renderIsfTable() {
+  const tbody = document.getElementById('isf-table-body');
+  if (!tbody || !cacheData || !cacheData.isf_series) return;
+
+  tbody.innerHTML = cacheData.isf_series.slice().reverse().map(d => `
+    <tr>
+      <td><strong>${formatDate(d.fecha)}</strong></td>
+      <td style="color: var(--red); font-weight:600;">${d.mora_familias}%</td>
+      <td style="color: var(--green);">${d.mora_empresas}%</td>
+      <td style="color: var(--amber);">${d.mora_tarjetas}%</td>
+      <td style="color: var(--purple);">${d.mora_personales}%</td>
+      <td style="color: var(--accent);">${d.mora_total}%</td>
+    </tr>
+  `).join('');
+}
+
+// LISTENERS Y EVENTOS
 document.getElementById('category-tabs').addEventListener('click', e => {
   if (e.target.dataset.cat) {
     document.querySelectorAll('.nav-cat-btn').forEach(b => b.classList.remove('active'));
@@ -620,6 +732,14 @@ document.getElementById('range-tabs').addEventListener('click', e => {
   }
 });
 
+document.getElementById('isf-chart-tabs').addEventListener('click', e => {
+  if (e.target.dataset.isfSeries) {
+    document.querySelectorAll('#isf-chart-tabs .chart-tab').forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+    renderIsfChart(e.target.dataset.isfSeries);
+  }
+});
+
 document.getElementById('catalog-search').addEventListener('input', e => {
   renderCatalogTable(getActiveCatalog(), e.target.value);
 });
@@ -627,10 +747,8 @@ document.getElementById('catalog-search').addEventListener('input', e => {
 document.getElementById('catalog-table-body').addEventListener('click', e => {
   const target = e.target.closest('[data-var]');
   if (!target) return;
-
   const varId = target.dataset.var;
   const label = target.dataset.label;
-
   document.querySelector('.chart-section').scrollIntoView({ behavior: 'smooth' });
   loadAndDisplayVarHistory(varId, label);
 });
@@ -640,12 +758,8 @@ document.getElementById('btn-csv').addEventListener('click', () => {
   const rows = cacheData.history[activeVarId];
   const varConfig = VARIABLES.find(v => v.id == activeVarId);
   const varName = varConfig ? varConfig.label : 'Variable';
-
   let csv = 'Fecha,Valor\n';
-  rows.forEach(r => {
-    csv += `${r.fecha},${r.valor}\n`;
-  });
-
+  rows.forEach(r => { csv += `${r.fecha},${r.valor}\n`; });
   const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
@@ -660,7 +774,6 @@ document.getElementById('btn-excel').addEventListener('click', async () => {
   const originalText = btn.innerText;
   btn.innerText = '⏳ Consultando BCRA...';
   btn.disabled = true;
-
   const varConfig = VARIABLES.find(v => v.id == activeVarId);
   const varName = varConfig ? varConfig.label : `Variable_${activeVarId}`;
 
@@ -673,37 +786,66 @@ document.getElementById('btn-excel').addEventListener('click', async () => {
     } else if (cacheData && cacheData.history && cacheData.history[activeVarId]) {
       fullRows = cacheData.history[activeVarId];
     }
-
-    if (!fullRows || fullRows.length === 0) {
-      alert("No hay datos históricos disponibles para esta variable.");
-      return;
-    }
-
-    const excelData = fullRows.map(r => ({
-      "Fecha": r.fecha,
-      "Valor": r.valor
-    }));
-
+    const excelData = fullRows.map(r => ({ "Fecha": r.fecha, "Valor": r.valor }));
     const worksheet = XLSX.utils.json_to_sheet(excelData);
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, "Serie Histórica");
-
     XLSX.writeFile(workbook, `BCRA_${varName.replace(/\s+/g, '_')}_SerieCompleta.xlsx`);
-  } catch (e) {
-    console.error("Error al descargar Excel:", e);
-    if (cacheData && cacheData.history && cacheData.history[activeVarId]) {
-      const fallbackRows = cacheData.history[activeVarId].map(r => ({ "Fecha": r.fecha, "Valor": r.valor }));
-      const worksheet = XLSX.utils.json_to_sheet(fallbackRows);
-      const workbook = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(workbook, worksheet, "Serie Histórica");
-      XLSX.writeFile(workbook, `BCRA_${varName.replace(/\s+/g, '_')}.xlsx`);
-    } else {
-      alert("Hubo un inconveniente al consultar la serie completa en el BCRA.");
-    }
-  } finally {
+  } catch (e) { console.error(e); }
+  finally {
     btn.innerText = originalText;
     btn.disabled = false;
   }
+});
+
+document.getElementById('btn-isf-csv').addEventListener('click', () => {
+  if (!cacheData || !cacheData.isf_series) return;
+  let csv = 'Fecha,Mora Familias (%),Mora Empresas (%),Mora Tarjetas (%),Mora Personales (%),Mora Total (%)\n';
+  cacheData.isf_series.forEach(d => {
+    csv += `${d.fecha},${d.mora_familias},${d.mora_empresas},${d.mora_tarjetas},${d.mora_personales},${d.mora_total}\n`;
+  });
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `BCRA_ISF_Morosidad_Serie.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
+});
+
+document.getElementById('btn-isf-excel').addEventListener('click', () => {
+  if (!cacheData || !cacheData.isf_series) return;
+  const excelData = cacheData.isf_series.map(d => ({
+    "Fecha": d.fecha,
+    "Mora Familias (%)": d.mora_familias,
+    "Mora Empresas (%)": d.mora_empresas,
+    "Mora Tarjetas (%)": d.mora_tarjetas,
+    "Mora Personales (%)": d.mora_personales,
+    "Mora Total (%)": d.mora_total
+  }));
+  const worksheet = XLSX.utils.json_to_sheet(excelData);
+  const workbook = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(workbook, worksheet, "Morosidad ISF BCRA");
+  XLSX.writeFile(workbook, `BCRA_ISF_Informe_Morosidad.xlsx`);
+});
+
+document.getElementById('btn-download-full-matrix').addEventListener('click', () => {
+  if (!cacheData) return;
+  const isfData = cacheData.isf_series || [];
+  const catalogData = (cacheData.latest_catalog || []).map(c => ({
+    "ID Variable": c.idVariable,
+    "Descripción": c.descripcion,
+    "Último Valor": c.ultValorInformado,
+    "Fecha": c.ultFechaInformada,
+    "Unidad": c.unidadExpresion
+  }));
+
+  const workbook = XLSX.utils.book_new();
+  const wsISF = XLSX.utils.json_to_sheet(isfData);
+  const wsCat = XLSX.utils.json_to_sheet(catalogData);
+  XLSX.utils.book_append_sheet(workbook, wsISF, "Morosidad e ISF");
+  XLSX.utils.book_append_sheet(workbook, wsCat, "Catálogo 1000 Variables");
+  XLSX.writeFile(workbook, `BCRA_Matriz_Completa_Credito_y_Macro.xlsx`);
 });
 
 loadData();
