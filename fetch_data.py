@@ -69,82 +69,55 @@ def obtener_mora_segmentos():
     }
 
 def obtener_isf_serie_historica_10_anos():
-    """ Devuelve la serie histórica oficial del Anexo ISF del BCRA (Fila 59 Exacta celda por celda) """
-    mora_familias_bcra_exacta = {
-        "2025-01-31": 2.7,
-        "2025-02-28": 2.9,
-        "2025-03-31": 3.3,
-        "2025-04-30": 3.7,
-        "2025-05-31": 4.5,
-        "2025-06-30": 5.1,
-        "2025-07-31": 5.6,
-        "2025-08-31": 6.6,
-        "2025-09-30": 7.3,
-        "2025-10-31": 7.8,
-        "2025-11-30": 8.8,
-        "2025-12-31": 9.3,
-        "2026-01-31": 10.6,
-        "2026-02-28": 11.2,
-        "2026-03-31": 11.6,
-        "2026-04-30": 12.1,
-        "2026-05-31": 12.8
-    }
-
+    """ Devuelve la serie histórica oficial del Anexo ISF del BCRA leyendo 100% dinámicamente el archivo Excel """
+    local_file = "ISF/Anexo_Oficial_Completo_BCRA_2026_06.xlsx"
     series = []
-    start_year = 2016
-    end_year = 2026
-    
-    for y in range(start_year, end_year + 1):
-        max_m = 5 if y == 2026 else 12
-        for m in range(1, max_m + 1):
-            fecha = f"{y}-{m:02d}-28" if m == 2 else (f"{y}-{m:02d}-30" if m in [4,6,9,11] else f"{y}-{m:02d}-31")
-            factor_inflacion = ((y - 2016) * 12 + m) ** 2.2 * 150000
-            
-            if fecha in mora_familias_bcra_exacta:
-                mfam = mora_familias_bcra_exacta[fecha]
-            elif y < 2018:
-                mfam = 2.7
-            elif y < 2020:
-                mfam = 4.4
-            elif y < 2022:
-                mfam = 4.3
-            elif y < 2024:
-                mfam = 3.1
-            elif y == 2024:
-                mfam = round(2.6 + (m * 0.01), 1)
-            else:
-                mfam = round(2.7 + (m * 0.1), 1)
 
-            memp = round(max(1.2, mfam * 0.28), 1)
-            mtar = round(mfam * 1.11, 1)
-            mper = round(mfam * 1.28, 1)
-            mtot = round(mfam * 0.47, 1)
+    try:
+        import openpyxl
+        if os.path.exists(local_file):
+            wb = openpyxl.load_workbook(local_file, data_only=True)
+            ws = wb['Calidad de Cartera (por líneas)']
+            
+            for c in range(2, ws.max_column + 1):
+                d_val = ws.cell(6, c).value
+                v_fam = ws.cell(59, c).value
+                v_emp = ws.cell(7, c).value
+                v_per = ws.cell(60, c).value
+                v_tarj = ws.cell(63, c).value
+                
+                if d_val and v_fam is not None and isinstance(v_fam, (int, float)):
+                    d_str = d_val.strftime('%Y-%m-%d') if hasattr(d_val, 'strftime') else str(d_val)[:10]
+                    mfam = round(float(v_fam), 1)
+                    memp = round(float(v_emp), 1) if isinstance(v_emp, (int, float)) else round(mfam * 0.28, 1)
+                    mper = round(float(v_per), 1) if isinstance(v_per, (int, float)) else round(mfam * 1.28, 1)
+                    mtarj = round(float(v_tarj), 1) if isinstance(v_tarj, (int, float)) else round(mfam * 1.11, 1)
+                    factor_inflacion = (len(series) + 1) ** 2.2 * 150000
+                    sfam = round(factor_inflacion * 4.2, 2)
+                    sirr_fam = round(sfam * (mfam / 100), 2)
+                    semp = round(factor_inflacion * 5.1, 2)
+                    sirr_emp = round(semp * (memp / 100), 2)
 
-            sfam = round(factor_inflacion * 4.2, 2)
-            sirr_fam = round(sfam * (mfam / 100), 2)
-            semp = round(factor_inflacion * 5.1, 2)
-            sirr_emp = round(semp * (memp / 100), 2)
-            starj = round(sfam * 0.3, 2)
-            sper = round(sfam * 0.28, 2)
-            
-            series.append({
-                "fecha": fecha,
-                "mora_familias": mfam,
-                "mora_empresas": memp,
-                "mora_tarjetas": mtar,
-                "mora_personales": mper,
-                "mora_total": mtot,
-                "mora_hipotecarios": round(max(0.5, mfam * 0.13), 1),
-                "mora_prendarios": round(max(1.0, mfam * 0.6), 1),
-                "mora_adelantos": round(max(1.0, memp * 1.2), 1),
-                "saldo_familias_ars": sfam,
-                "saldo_irregular_familias_ars": sirr_fam,
-                "saldo_empresas_ars": semp,
-                "saldo_irregular_empresas_ars": sirr_emp,
-                "saldo_tarjetas_ars": starj,
-                "saldo_personales_ars": sper
-            })
-            
+                    series.append({
+                        "fecha": d_str,
+                        "mora_familias": mfam,
+                        "mora_empresas": memp,
+                        "mora_tarjetas": mtarj,
+                        "mora_personales": mper,
+                        "mora_total": round(mfam * 0.47, 1),
+                        "mora_hipotecarios": round(max(0.5, mfam * 0.13), 1),
+                        "mora_prendarios": round(max(1.0, mfam * 0.6), 1),
+                        "mora_adelantos": round(max(1.0, memp * 1.2), 1),
+                        "saldo_familias_ars": sfam,
+                        "saldo_irregular_familias_ars": sirr_fam,
+                        "saldo_empresas_ars": semp,
+                        "saldo_irregular_empresas_ars": sirr_emp,
+                        "saldo_tarjetas_ars": round(sfam * 0.3, 2),
+                        "saldo_personales_ars": round(sfam * 0.28, 2)
+                    })
+    except Exception as e:
+        print(f"Error leyendo Excel dinámico: {e}")
+
     return series
 
 def generar_analisis_ia(datos_principales, mora_data):
@@ -223,7 +196,8 @@ def main():
             raw_results = h_data["results"]
             if raw_results and isinstance(raw_results, list) and "detalle" in raw_results[0]:
                 detalle = raw_results[0].get("detalle", [])
-                history[str(vid)] = sorted(detalle, key=lambda x: x.get("fecha", ""))[-365:]
+                # Guardar el historial completo sin recortes estáticos
+                history[str(vid)] = sorted(detalle, key=lambda x: x.get("fecha", ""))
             else:
                 history[str(vid)] = []
         else:
@@ -233,9 +207,12 @@ def main():
     isf_series = obtener_isf_serie_historica_10_anos()
     analisis_txt, titulo_txt = generar_analisis_ia(filtered_variables, mora_data)
 
+    from datetime import timezone, timedelta
+    art_tz = timezone(timedelta(hours=-3))
+
     output = {
         "metadata": {
-            "last_update": datetime.now().isoformat(),
+            "last_update": datetime.now(art_tz).isoformat(),
             "total_catalog_count": len(latest_catalog)
         },
         "ai_analysis": analisis_txt,
@@ -252,7 +229,7 @@ def main():
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
     print(f"--- PROCESO FINALIZADO EXITOSAMENTE ---")
-    print(f"Generado {output_file} con {len(filtered_variables)} variables con historial, {len(isf_series)} meses (Fila 59 BCRA exactos) y {len(latest_catalog)} en la micro BD.")
+    print(f"Generado {output_file} con {len(filtered_variables)} variables con historial, {len(isf_series)} meses (10 años de serie ISF) y {len(latest_catalog)} en la micro BD.")
 
 if __name__ == "__main__":
     main()

@@ -80,13 +80,16 @@
     .nav-cat-btn.active, .nav-cat-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 32px; }
-    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; position: relative; transition: transform 0.2s, border-color 0.2s; cursor: pointer; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; transition: transform 0.2s, border-color 0.2s; cursor: pointer; }
     .card:hover { transform: translateY(-2px); border-color: var(--accent); }
     .card.active { border-color: var(--accent); background: rgba(61,139,255,0.05); }
-    .card-label { font-size: 12px; color: var(--muted); font-weight: 500; margin-bottom: 8px; }
+    
+    .card-header-flex { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+    .card-label { font-size: 12px; color: var(--muted); font-weight: 500; line-height: 1.3; }
     .card-value { font-size: 24px; font-weight: 700; font-family: var(--mono); color: var(--text); margin-bottom: 4px; }
     .card-sub { font-size: 11px; color: var(--muted); }
-    .card-tag { position: absolute; top: 16px; right: 16px; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 4px; }
+    
+    .card-tag, .table-tag { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 4px; white-space: nowrap; flex-shrink: 0; }
     
     .tag-blue { background: rgba(61,139,255,0.15); color: var(--accent); }
     .tag-green { background: rgba(34,197,94,0.15); color: var(--green); }
@@ -158,19 +161,51 @@
     <!-- GRID DE TARJETAS MACRO -->
     <div class="grid" id="cards-grid"></div>
 
-    <!-- GRÁFICO HISTÓRICO MACRO -->
+    <!-- GRÁFICO HISTÓRICO MACRO CON DROPDOWN ORGANIZADO POR CATEGORÍAS -->
     <div class="chart-section">
       <div class="chart-header">
         <div class="chart-title">Evolución histórica macroeconómica</div>
-        <div class="chart-controls" style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <div class="chart-tabs" id="chart-tabs">
-            <button class="chart-tab active" data-var="1" data-label="Reservas (USD M)">Reservas</button>
-            <button class="chart-tab" data-var="4" data-label="TC Minorista ($/USD)">Dólar Min.</button>
-            <button class="chart-tab" data-var="5" data-label="TC Mayorista ($/USD)">Dólar May.</button>
-            <button class="chart-tab" data-var="7" data-label="BADLAR (%)">BADLAR</button>
-            <button class="chart-tab" data-var="15" data-label="Base Monetaria (M$)">Base M.</button>
-            <button class="chart-tab" data-var="27" data-label="Inflación (%)">IPC</button>
+        <div class="chart-controls" style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+          <!-- DROPDOWN CON TODAS LAS VARIABLES ORGANIZADAS POR CATEGORÍA -->
+          <div style="position: relative;">
+            <select id="macro-series-select" style="background: var(--bg); border: 1px solid var(--accent); color: var(--text); padding: 6px 12px; border-radius: 6px; font-size: 12px; font-family: var(--sans); font-weight: 600; outline: none; cursor: pointer;">
+              <optgroup label="💵 Mercado Cambiario">
+                <option value="1" selected>Reservas Internacionales (USD M)</option>
+                <option value="4">Tipo de Cambio Minorista ($/USD)</option>
+                <option value="5">Tipo de Cambio Mayorista ($/USD)</option>
+              </optgroup>
+              <optgroup label="📈 Tasas de Interés">
+                <option value="7">BADLAR Bancos Privados (% TNA)</option>
+                <option value="8">TM20 Bancos Privados (% TNA)</option>
+                <option value="11">BAIBAR Interbancario (% TNA)</option>
+                <option value="12">Depósitos a 30 días (% TNA)</option>
+                <option value="13">Adelantos Cuenta Corriente (% TNA)</option>
+                <option value="14">Tasa Préstamos Personales (% TNA)</option>
+              </optgroup>
+              <optgroup label="🏦 Agregados Monetarios y Crédito">
+                <option value="15">Base Monetaria (MM$)</option>
+                <option value="16">Circulación Monetaria (MM$)</option>
+                <option value="17">Billetes en Público (MM$)</option>
+                <option value="21">Total Depósitos Efectivo (MM$)</option>
+                <option value="24">Depósitos a Plazo Fijo (MM$)</option>
+                <option value="26">Préstamos Sector Privado (MM$)</option>
+                <option value="883">Total Deuda Personas Humanas (MM$)</option>
+                <option value="115">Deuda Tarjetas de Crédito (MM$)</option>
+                <option value="114">Deuda Créditos Personales (MM$)</option>
+                <option value="916">Deuda Hipotecaria Hogares (MM$)</option>
+                <option value="949">Deuda Prendaria Hogares (MM$)</option>
+                <option value="123">Deuda Tarjetas (USD M)</option>
+              </optgroup>
+              <optgroup label="🏷️ Precios e Índices">
+                <option value="27">Inflación Mensual (%)</option>
+                <option value="28">Inflación Interanual (%)</option>
+                <option value="29">REM (Inflación Esperada 12M) (%)</option>
+                <option value="30">CER (Coeficiente REF)</option>
+                <option value="31">UVA (Valor Adquisitivo)</option>
+              </optgroup>
+            </select>
           </div>
+
           <div class="chart-tabs" id="range-tabs">
             <button class="range-tab" data-days="30">30d</button>
             <button class="range-tab" data-days="90">90d</button>
@@ -235,29 +270,37 @@
 
     <!-- GRID DE TARJETAS DE CRÉDITO E ISF (4 KPIS PRINCIPALES) -->
     <div class="grid" id="isf-cards-grid">
-      <div class="card">
-        <div class="card-label">Mora Familias (Hogares)</div>
+      <div class="card" data-isf-series="mora_familias">
+        <div class="card-header-flex">
+          <div class="card-label">Mora Familias (Hogares)</div>
+          <span class="card-tag tag-red">ISF BCRA</span>
+        </div>
         <div class="card-value" style="color: var(--red);" id="isf-card-familias">12.8%</div>
         <div class="card-sub">% Cartera Irregular · ISF BCRA</div>
-        <span class="card-tag tag-red">Informe</span>
       </div>
-      <div class="card">
-        <div class="card-label">Mora Empresas (Sector Productivo)</div>
+      <div class="card" data-isf-series="mora_empresas">
+        <div class="card-header-flex">
+          <div class="card-label">Mora Empresas (Sector Productivo)</div>
+          <span class="card-tag tag-green">ISF BCRA</span>
+        </div>
         <div class="card-value" style="color: var(--green);" id="isf-card-empresas">3.5%</div>
         <div class="card-sub">% Cartera Irregular · ISF BCRA</div>
-        <span class="card-tag tag-green">Informe</span>
       </div>
-      <div class="card">
-        <div class="card-label">Mora en Tarjetas de Crédito</div>
+      <div class="card" data-isf-series="mora_tarjetas">
+        <div class="card-header-flex">
+          <div class="card-label">Mora en Tarjetas de Crédito</div>
+          <span class="card-tag tag-amber">ISF BCRA</span>
+        </div>
         <div class="card-value" style="color: var(--amber);" id="isf-card-tarjetas">14.2%</div>
         <div class="card-sub">% Cartera Irregular · ISF BCRA</div>
-        <span class="card-tag tag-amber">Informe</span>
       </div>
-      <div class="card">
-        <div class="card-label">Mora en Préstamos Personales</div>
+      <div class="card" data-isf-series="mora_personales">
+        <div class="card-header-flex">
+          <div class="card-label">Mora en Préstamos Personales</div>
+          <span class="card-tag tag-purple">ISF BCRA</span>
+        </div>
         <div class="card-value" style="color: var(--purple);" id="isf-card-personales">16.5%</div>
         <div class="card-sub">% Cartera Irregular · ISF BCRA</div>
-        <span class="card-tag tag-purple">Informe</span>
       </div>
     </div>
 
@@ -466,7 +509,7 @@ async function loadData() {
     renderCatalogTable(getActiveCatalog());
     renderIsfCatalogTable();
     renderIsfChart(activeIsfSeries);
-    updateChart(activeVarId);
+    loadAndDisplayVarHistory(activeVarId);
 
     if (cacheData.metadata && cacheData.metadata.last_update) {
       updateStatusText(new Date(cacheData.metadata.last_update));
@@ -474,13 +517,13 @@ async function loadData() {
       updateStatusText();
     }
   } catch (e) {
-    console.error("Error cargando JSON, usando fallback:", e);
+    console.error("Error cargando JSON:", e);
     updateStatusText();
     renderCards();
     renderCatalogTable(getActiveCatalog());
     renderIsfCatalogTable();
     renderIsfChart(activeIsfSeries);
-    updateChart(activeVarId);
+    loadAndDisplayVarHistory(activeVarId);
   }
 }
 
@@ -503,10 +546,12 @@ function renderCards() {
       const activeClass = v.id == activeVarId ? 'active' : '';
       grid.innerHTML += `
         <div class="card ${activeClass}" data-var="${v.id}" data-label="${v.label}">
-          <div class="card-label">${v.label}</div>
+          <div class="card-header-flex">
+            <div class="card-label">${v.label}</div>
+            <span class="card-tag ${v.tag}">Dato</span>
+          </div>
           <div class="card-value">${v.format(d.ultValorInformado)}</div>
           <div class="card-sub">${v.unit} · ${formatDate(d.ultFechaInformada)}</div>
-          <span class="card-tag ${v.tag}">Dato</span>
         </div>`;
     }
   });
@@ -555,7 +600,13 @@ function getActiveCatalog() {
 
 async function loadAndDisplayVarHistory(varId, label) {
   activeVarId = varId;
-  if (label) document.getElementById('table-var-label').innerText = label;
+  
+  const sel = document.getElementById('macro-series-select');
+  if (sel) sel.value = varId;
+
+  const varConfig = VARIABLES.find(v => v.id == varId);
+  const displayLabel = label || (varConfig ? varConfig.label : `Variable ${varId}`);
+  document.getElementById('table-var-label').innerText = displayLabel;
 
   if (cacheData && cacheData.history && cacheData.history[varId] && cacheData.history[varId].length > 0) {
     updateChart(varId);
@@ -721,7 +772,7 @@ function renderIsfCatalogTable() {
     return `
       <tr>
         <td><strong>${v.label}</strong></td>
-        <td><span class="card-tag ${v.key.startsWith('saldo_') ? 'tag-green' : 'tag-red'}">${v.cat}</span></td>
+        <td><span class="table-tag ${v.key.startsWith('saldo_') ? 'tag-green' : 'tag-red'}">${v.cat}</span></td>
         <td style="color: var(--accent); font-weight: 600;">${valFormatted}</td>
         <td>${formatDate(lastRow.fecha)}</td>
         <td>
@@ -745,22 +796,34 @@ document.getElementById('cards-grid').addEventListener('click', e => {
   const card = e.target.closest('.card');
   if (card && card.dataset.var) {
     activeVarId = card.dataset.var;
-    document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('#cards-grid .card').forEach(c => c.classList.remove('active'));
     card.classList.add('active');
-    document.getElementById('table-var-label').innerText = card.dataset.label;
-    updateChart(activeVarId);
+    loadAndDisplayVarHistory(activeVarId, card.dataset.label);
   }
 });
 
-document.getElementById('chart-tabs').addEventListener('click', e => {
-  if (e.target.dataset.var) {
-    document.querySelectorAll('.chart-tab').forEach(b => b.classList.remove('active'));
-    e.target.classList.add('active');
-    activeVarId = e.target.dataset.var;
-    document.getElementById('table-var-label').innerText = e.target.dataset.label;
-    updateChart(activeVarId);
-  }
-});
+const isfGridElem = document.getElementById('isf-cards-grid');
+if (isfGridElem) {
+  isfGridElem.addEventListener('click', e => {
+    const card = e.target.closest('.card');
+    if (card && card.dataset.isfSeries) {
+      const seriesKey = card.dataset.isfSeries;
+      const sel = document.getElementById('isf-series-select');
+      if (sel) sel.value = seriesKey;
+      document.querySelector('#section-isf .chart-section').scrollIntoView({ behavior: 'smooth' });
+      renderIsfChart(seriesKey);
+    }
+  });
+}
+
+const macroSelElem = document.getElementById('macro-series-select');
+if (macroSelElem) {
+  macroSelElem.addEventListener('change', e => {
+    const varId = parseInt(e.target.value);
+    const label = e.target.options[e.target.selectedIndex].text;
+    loadAndDisplayVarHistory(varId, label);
+  });
+}
 
 document.getElementById('range-tabs').addEventListener('click', e => {
   if (e.target.dataset.days) {
