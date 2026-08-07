@@ -194,7 +194,7 @@
                 <option value="114">Deuda Créditos Personales (MM$)</option>
                 <option value="916">Deuda Hipotecaria Hogares (MM$)</option>
                 <option value="949">Deuda Prendaria Hogares (MM$)</option>
-                <option value="123">Deuda Tarjetas (USD M)</option>
+                <option value="123">Deuda Tarjetas USD (USD M)</option>
               </optgroup>
               <optgroup label="🏷️ Precios e Índices">
                 <option value="27">Inflación Mensual (%)</option>
@@ -471,7 +471,10 @@ function switchSection(section) {
     document.getElementById('nav-btn-isf').classList.add('active');
     document.getElementById('section-macro').style.display = 'none';
     document.getElementById('section-isf').style.display = 'block';
-    renderIsfChart(activeIsfSeries);
+    renderIsfCatalogTable();
+    setTimeout(() => {
+      renderIsfChart(activeIsfSeries);
+    }, 50);
   }
 }
 
@@ -485,7 +488,7 @@ function updateStatusText(dateObj) {
 
 async function loadData() {
   try {
-    const res = await fetch('data/bcra_data.json');
+    const res = await fetch('data/bcra_data.json?v=' + Date.now());
     if (!res.ok) throw new Error("HTTP error " + res.status);
     cacheData = await res.json();
 

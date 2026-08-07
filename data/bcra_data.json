@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "last_update": "2026-08-07T07:04:14.666187-03:00",
+    "last_update": "2026-08-06T13:22:17.103305-03:00",
     "total_catalog_count": 1000
   },
-  "ai_analysis": "Con reservas en 49.639,0 millones de USD, la posición externa es sólida. El tipo de cambio mayorista en 1.497,0062 y minorista en 1.518,24 pesos por dólar muestra una brecha controlada. Las tasas BADLAR al 20,875% y depósitos a 30 días al 19,89% sugieren expectativas de inflación contenidas, aunque el costo de los préstamos personales al 63,71% persiste elevado. La base monetaria asciende a 45.693.033,0 millones de ARS.",
-  "ai_title": "Resumen macroeconómico",
+  "ai_analysis": "Resumen macroeconómico basado en la información más reciente de las variables del Banco Central de la República Argentina.",
+  "ai_title": "Informe Económico",
   "mora_segmentos": {
     "mora_familias": 12.8,
     "mora_empresas": 3.5,
@@ -14,7 +14,3357 @@
     "periodo": "Mayo 2026",
     "fuente": "BCRA — Informe sobre Bancos / Sistema Financiero (ISF)"
   },
-  "isf_series": [],
+  "isf_series": [
+    {
+      "fecha": "2010-01-01",
+      "mora_familias": 4.7,
+      "mora_empresas": 3.5,
+      "mora_tarjetas": 3.4,
+      "mora_personales": 6.0,
+      "mora_total": 2.2,
+      "mora_hipotecarios": 0.6,
+      "mora_prendarios": 2.8,
+      "mora_adelantos": 4.2,
+      "saldo_familias_ars": 630000.0,
+      "saldo_irregular_familias_ars": 29610.0,
+      "saldo_empresas_ars": 765000.0,
+      "saldo_irregular_empresas_ars": 26775.0,
+      "saldo_tarjetas_ars": 189000.0,
+      "saldo_personales_ars": 176400.0
+    },
+    {
+      "fecha": "2010-02-01",
+      "mora_familias": 4.6,
+      "mora_empresas": 3.4,
+      "mora_tarjetas": 3.4,
+      "mora_personales": 5.9,
+      "mora_total": 2.2,
+      "mora_hipotecarios": 0.6,
+      "mora_prendarios": 2.8,
+      "mora_adelantos": 4.1,
+      "saldo_familias_ars": 2894719.85,
+      "saldo_irregular_familias_ars": 133157.11,
+      "saldo_empresas_ars": 3515016.97,
+      "saldo_irregular_empresas_ars": 119510.58,
+      "saldo_tarjetas_ars": 868415.95,
+      "saldo_personales_ars": 810521.56
+    },
+    {
+      "fecha": "2010-03-01",
+      "mora_familias": 4.4,
+      "mora_empresas": 3.3,
+      "mora_tarjetas": 3.1,
+      "mora_personales": 5.7,
+      "mora_total": 2.1,
+      "mora_hipotecarios": 0.6,
+      "mora_prendarios": 2.6,
+      "mora_adelantos": 4.0,
+      "saldo_familias_ars": 7063294.43,
+      "saldo_irregular_familias_ars": 310784.95,
+      "saldo_empresas_ars": 8576857.52,
+      "saldo_irregular_empresas_ars": 283036.3,
+      "saldo_tarjetas_ars": 2118988.33,
+      "saldo_personales_ars": 1977722.44
+    },
+    {
+      "fecha": "2010-04-01",
+      "mora_familias": 4.3,
+      "mora_empresas": 3.1,
+      "mora_tarjetas": 3.1,
+      "mora_personales": 5.4,
+      "mora_total": 2.0,
+      "mora_hipotecarios": 0.6,
+      "mora_prendarios": 2.6,
+      "mora_adelantos": 3.7,
+      "saldo_familias_ars": 13300639.74,
+      "saldo_irregular_familias_ars": 571927.51,
+      "saldo_empresas_ars": 16150776.83,
+      "saldo_irregular_empresas_ars": 500674.08,
+      "saldo_tarjetas_ars": 3990191.92,
+      "saldo_personales_ars": 3724179.13
+    },
+    {
+      "fecha": "2010-05-01",
+      "mora_familias": 4.2,
+      "mora_empresas": 3.1,
+      "mora_tarjetas": 3.0,
+      "mora_personales": 5.3,
+      "mora_total": 2.0,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.5,
+      "mora_adelantos": 3.7,
+      "saldo_familias_ars": 21730742.17,
+      "saldo_irregular_familias_ars": 912691.17,
+      "saldo_empresas_ars": 26387329.78,
+      "saldo_irregular_empresas_ars": 818007.22,
+      "saldo_tarjetas_ars": 6519222.65,
+      "saldo_personales_ars": 6084607.81
+    },
+    {
+      "fecha": "2010-06-01",
+      "mora_familias": 3.9,
+      "mora_empresas": 2.9,
+      "mora_tarjetas": 2.7,
+      "mora_personales": 4.9,
+      "mora_total": 1.8,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.3,
+      "mora_adelantos": 3.5,
+      "saldo_familias_ars": 32454378.76,
+      "saldo_irregular_familias_ars": 1265720.77,
+      "saldo_empresas_ars": 39408888.49,
+      "saldo_irregular_empresas_ars": 1142857.77,
+      "saldo_tarjetas_ars": 9736313.63,
+      "saldo_personales_ars": 9087226.05
+    },
+    {
+      "fecha": "2010-07-01",
+      "mora_familias": 3.8,
+      "mora_empresas": 2.8,
+      "mora_tarjetas": 2.7,
+      "mora_personales": 4.9,
+      "mora_total": 1.8,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.3,
+      "mora_adelantos": 3.4,
+      "saldo_familias_ars": 45557117.5,
+      "saldo_irregular_familias_ars": 1731170.46,
+      "saldo_empresas_ars": 55319356.96,
+      "saldo_irregular_empresas_ars": 1548941.99,
+      "saldo_tarjetas_ars": 13667135.25,
+      "saldo_personales_ars": 12755992.9
+    },
+    {
+      "fecha": "2010-08-01",
+      "mora_familias": 3.7,
+      "mora_empresas": 2.7,
+      "mora_tarjetas": 2.5,
+      "mora_personales": 4.7,
+      "mora_total": 1.7,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.2,
+      "mora_adelantos": 3.2,
+      "saldo_familias_ars": 61113691.96,
+      "saldo_irregular_familias_ars": 2261206.6,
+      "saldo_empresas_ars": 74209483.1,
+      "saldo_irregular_empresas_ars": 2003656.04,
+      "saldo_tarjetas_ars": 18334107.59,
+      "saldo_personales_ars": 17111833.75
+    },
+    {
+      "fecha": "2010-09-01",
+      "mora_familias": 3.4,
+      "mora_empresas": 2.5,
+      "mora_tarjetas": 2.3,
+      "mora_personales": 4.4,
+      "mora_total": 1.6,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.0,
+      "mora_adelantos": 3.0,
+      "saldo_familias_ars": 79190679.64,
+      "saldo_irregular_familias_ars": 2692483.11,
+      "saldo_empresas_ars": 96160110.99,
+      "saldo_irregular_empresas_ars": 2404002.77,
+      "saldo_tarjetas_ars": 23757203.89,
+      "saldo_personales_ars": 22173390.3
+    },
+    {
+      "fecha": "2010-10-01",
+      "mora_familias": 3.3,
+      "mora_empresas": 2.4,
+      "mora_tarjetas": 2.2,
+      "mora_personales": 4.2,
+      "mora_total": 1.6,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.0,
+      "mora_adelantos": 2.9,
+      "saldo_familias_ars": 99848271.13,
+      "saldo_irregular_familias_ars": 3294992.95,
+      "saldo_empresas_ars": 121244329.22,
+      "saldo_irregular_empresas_ars": 2909863.9,
+      "saldo_tarjetas_ars": 29954481.34,
+      "saldo_personales_ars": 27957515.92
+    },
+    {
+      "fecha": "2010-11-01",
+      "mora_familias": 3.2,
+      "mora_empresas": 2.3,
+      "mora_tarjetas": 2.2,
+      "mora_personales": 4.0,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 2.8,
+      "saldo_familias_ars": 123141504.91,
+      "saldo_irregular_familias_ars": 3940528.16,
+      "saldo_empresas_ars": 149528970.25,
+      "saldo_irregular_empresas_ars": 3439166.32,
+      "saldo_tarjetas_ars": 36942451.47,
+      "saldo_personales_ars": 34479621.37
+    },
+    {
+      "fecha": "2010-12-01",
+      "mora_familias": 3.0,
+      "mora_empresas": 2.1,
+      "mora_tarjetas": 2.0,
+      "mora_personales": 3.7,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.8,
+      "mora_adelantos": 2.5,
+      "saldo_familias_ars": 149121165.97,
+      "saldo_irregular_familias_ars": 4473634.98,
+      "saldo_empresas_ars": 181075701.54,
+      "saldo_irregular_empresas_ars": 3802589.73,
+      "saldo_tarjetas_ars": 44736349.79,
+      "saldo_personales_ars": 41753926.47
+    },
+    {
+      "fecha": "2011-01-01",
+      "mora_familias": 2.9,
+      "mora_empresas": 2.0,
+      "mora_tarjetas": 2.1,
+      "mora_personales": 3.5,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.4,
+      "saldo_familias_ars": 177834461.64,
+      "saldo_irregular_familias_ars": 5157199.39,
+      "saldo_empresas_ars": 215941846.28,
+      "saldo_irregular_empresas_ars": 4318836.93,
+      "saldo_tarjetas_ars": 53350338.49,
+      "saldo_personales_ars": 49793649.26
+    },
+    {
+      "fecha": "2011-02-01",
+      "mora_familias": 2.8,
+      "mora_empresas": 2.0,
+      "mora_tarjetas": 2.1,
+      "mora_personales": 3.4,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.4,
+      "saldo_familias_ars": 209325543.72,
+      "saldo_irregular_familias_ars": 5861115.22,
+      "saldo_empresas_ars": 254181017.37,
+      "saldo_irregular_empresas_ars": 5083620.35,
+      "saldo_tarjetas_ars": 62797663.12,
+      "saldo_personales_ars": 58611152.24
+    },
+    {
+      "fecha": "2011-03-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 2.1,
+      "mora_personales": 3.1,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 243635920.74,
+      "saldo_irregular_familias_ars": 6578169.86,
+      "saldo_empresas_ars": 295843618.04,
+      "saldo_irregular_empresas_ars": 5621028.74,
+      "saldo_tarjetas_ars": 73090776.22,
+      "saldo_personales_ars": 68218057.81
+    },
+    {
+      "fecha": "2011-04-01",
+      "mora_familias": 2.6,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 2.0,
+      "mora_personales": 3.1,
+      "mora_total": 1.2,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 280804789.7,
+      "saldo_irregular_familias_ars": 7300924.53,
+      "saldo_empresas_ars": 340977244.63,
+      "saldo_irregular_empresas_ars": 6137590.4,
+      "saldo_tarjetas_ars": 84241436.91,
+      "saldo_personales_ars": 78625341.12
+    },
+    {
+      "fecha": "2011-05-01",
+      "mora_familias": 2.6,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 2.0,
+      "mora_personales": 3.1,
+      "mora_total": 1.2,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 320869307.13,
+      "saldo_irregular_familias_ars": 8342601.99,
+      "saldo_empresas_ars": 389627015.8,
+      "saldo_irregular_empresas_ars": 7013286.28,
+      "saldo_tarjetas_ars": 96260792.14,
+      "saldo_personales_ars": 89843406.0
+    },
+    {
+      "fecha": "2011-06-01",
+      "mora_familias": 2.5,
+      "mora_empresas": 1.7,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 3.0,
+      "mora_total": 1.2,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.5,
+      "mora_adelantos": 2.0,
+      "saldo_familias_ars": 363864813.72,
+      "saldo_irregular_familias_ars": 9096620.34,
+      "saldo_empresas_ars": 441835845.23,
+      "saldo_irregular_empresas_ars": 7511209.37,
+      "saldo_tarjetas_ars": 109159444.12,
+      "saldo_personales_ars": 101882147.84
+    },
+    {
+      "fecha": "2011-07-01",
+      "mora_familias": 2.4,
+      "mora_empresas": 1.6,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 2.9,
+      "mora_total": 1.1,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.4,
+      "mora_adelantos": 1.9,
+      "saldo_familias_ars": 409825022.65,
+      "saldo_irregular_familias_ars": 9835800.54,
+      "saldo_empresas_ars": 497644670.36,
+      "saldo_irregular_empresas_ars": 7962314.73,
+      "saldo_tarjetas_ars": 122947506.79,
+      "saldo_personales_ars": 114751006.34
+    },
+    {
+      "fecha": "2011-08-01",
+      "mora_familias": 2.3,
+      "mora_empresas": 1.6,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 2.7,
+      "mora_total": 1.1,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.4,
+      "mora_adelantos": 1.9,
+      "saldo_familias_ars": 458782179.16,
+      "saldo_irregular_familias_ars": 10551990.12,
+      "saldo_empresas_ars": 557092646.13,
+      "saldo_irregular_empresas_ars": 8913482.34,
+      "saldo_tarjetas_ars": 137634653.75,
+      "saldo_personales_ars": 128459010.16
+    },
+    {
+      "fecha": "2011-09-01",
+      "mora_familias": 2.2,
+      "mora_empresas": 1.4,
+      "mora_tarjetas": 1.8,
+      "mora_personales": 2.6,
+      "mora_total": 1.0,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.3,
+      "mora_adelantos": 1.7,
+      "saldo_familias_ars": 510767197.09,
+      "saldo_irregular_familias_ars": 11236878.34,
+      "saldo_empresas_ars": 620217310.75,
+      "saldo_irregular_empresas_ars": 8683042.35,
+      "saldo_tarjetas_ars": 153230159.13,
+      "saldo_personales_ars": 143014815.19
+    },
+    {
+      "fecha": "2011-10-01",
+      "mora_familias": 2.2,
+      "mora_empresas": 1.4,
+      "mora_tarjetas": 1.8,
+      "mora_personales": 2.6,
+      "mora_total": 1.0,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.3,
+      "mora_adelantos": 1.7,
+      "saldo_familias_ars": 565809776.5,
+      "saldo_irregular_familias_ars": 12447815.08,
+      "saldo_empresas_ars": 687054728.61,
+      "saldo_irregular_empresas_ars": 9618766.2,
+      "saldo_tarjetas_ars": 169742932.95,
+      "saldo_personales_ars": 158426737.42
+    },
+    {
+      "fecha": "2011-11-01",
+      "mora_familias": 2.2,
+      "mora_empresas": 1.4,
+      "mora_tarjetas": 1.8,
+      "mora_personales": 2.6,
+      "mora_total": 1.0,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.3,
+      "mora_adelantos": 1.7,
+      "saldo_familias_ars": 623938506.01,
+      "saldo_irregular_familias_ars": 13726647.13,
+      "saldo_empresas_ars": 757639614.44,
+      "saldo_irregular_empresas_ars": 10606954.6,
+      "saldo_tarjetas_ars": 187181551.8,
+      "saldo_personales_ars": 174702781.68
+    },
+    {
+      "fecha": "2011-12-01",
+      "mora_familias": 2.2,
+      "mora_empresas": 1.4,
+      "mora_tarjetas": 1.7,
+      "mora_personales": 2.6,
+      "mora_total": 1.0,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.3,
+      "mora_adelantos": 1.7,
+      "saldo_familias_ars": 685180952.2,
+      "saldo_irregular_familias_ars": 15073980.95,
+      "saldo_empresas_ars": 832005441.95,
+      "saldo_irregular_empresas_ars": 11648076.19,
+      "saldo_tarjetas_ars": 205554285.66,
+      "saldo_personales_ars": 191850666.62
+    },
+    {
+      "fecha": "2012-01-01",
+      "mora_familias": 2.3,
+      "mora_empresas": 1.5,
+      "mora_tarjetas": 1.8,
+      "mora_personales": 2.7,
+      "mora_total": 1.1,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.4,
+      "mora_adelantos": 1.8,
+      "saldo_familias_ars": 749563738.37,
+      "saldo_irregular_familias_ars": 17239965.98,
+      "saldo_empresas_ars": 910184539.45,
+      "saldo_irregular_empresas_ars": 13652768.09,
+      "saldo_tarjetas_ars": 224869121.51,
+      "saldo_personales_ars": 209877846.74
+    },
+    {
+      "fecha": "2012-02-01",
+      "mora_familias": 2.4,
+      "mora_empresas": 1.5,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 2.8,
+      "mora_total": 1.1,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.4,
+      "mora_adelantos": 1.8,
+      "saldo_familias_ars": 817112614.21,
+      "saldo_irregular_familias_ars": 19610702.74,
+      "saldo_empresas_ars": 992208174.4,
+      "saldo_irregular_empresas_ars": 14883122.62,
+      "saldo_tarjetas_ars": 245133784.26,
+      "saldo_personales_ars": 228791531.98
+    },
+    {
+      "fecha": "2012-03-01",
+      "mora_familias": 2.4,
+      "mora_empresas": 1.5,
+      "mora_tarjetas": 2.0,
+      "mora_personales": 2.9,
+      "mora_total": 1.1,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.4,
+      "mora_adelantos": 1.8,
+      "saldo_familias_ars": 887852517.78,
+      "saldo_irregular_familias_ars": 21308460.43,
+      "saldo_empresas_ars": 1078106628.73,
+      "saldo_irregular_empresas_ars": 16171599.43,
+      "saldo_tarjetas_ars": 266355755.33,
+      "saldo_personales_ars": 248598704.98
+    },
+    {
+      "fecha": "2012-04-01",
+      "mora_familias": 2.6,
+      "mora_empresas": 1.6,
+      "mora_tarjetas": 2.3,
+      "mora_personales": 3.1,
+      "mora_total": 1.2,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 1.9,
+      "saldo_familias_ars": 961807630.9,
+      "saldo_irregular_familias_ars": 25006998.4,
+      "saldo_empresas_ars": 1167909266.09,
+      "saldo_irregular_empresas_ars": 18686548.26,
+      "saldo_tarjetas_ars": 288542289.27,
+      "saldo_personales_ars": 269306136.65
+    },
+    {
+      "fecha": "2012-05-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 1.7,
+      "mora_tarjetas": 2.4,
+      "mora_personales": 3.2,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.0,
+      "saldo_familias_ars": 1039001428.91,
+      "saldo_irregular_familias_ars": 28053038.58,
+      "saldo_empresas_ars": 1261644592.25,
+      "saldo_irregular_empresas_ars": 21447958.07,
+      "saldo_tarjetas_ars": 311700428.67,
+      "saldo_personales_ars": 290920400.09
+    },
+    {
+      "fecha": "2012-06-01",
+      "mora_familias": 2.6,
+      "mora_empresas": 1.7,
+      "mora_tarjetas": 2.4,
+      "mora_personales": 3.0,
+      "mora_total": 1.2,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.0,
+      "saldo_familias_ars": 1119456725.47,
+      "saldo_irregular_familias_ars": 29105874.86,
+      "saldo_empresas_ars": 1359340309.5,
+      "saldo_irregular_empresas_ars": 23108785.26,
+      "saldo_tarjetas_ars": 335837017.64,
+      "saldo_personales_ars": 313447883.13
+    },
+    {
+      "fecha": "2012-07-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 1.7,
+      "mora_tarjetas": 2.4,
+      "mora_personales": 3.1,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.0,
+      "saldo_familias_ars": 1203195713.1,
+      "saldo_irregular_familias_ars": 32486284.25,
+      "saldo_empresas_ars": 1461023365.9,
+      "saldo_irregular_empresas_ars": 24837397.22,
+      "saldo_tarjetas_ars": 360958713.93,
+      "saldo_personales_ars": 336894799.67
+    },
+    {
+      "fecha": "2012-08-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 1.7,
+      "mora_tarjetas": 2.3,
+      "mora_personales": 3.2,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.0,
+      "saldo_familias_ars": 1290240000.0,
+      "saldo_irregular_familias_ars": 34836480.0,
+      "saldo_empresas_ars": 1566720000.0,
+      "saldo_irregular_empresas_ars": 26634240.0,
+      "saldo_tarjetas_ars": 387072000.0,
+      "saldo_personales_ars": 361267200.0
+    },
+    {
+      "fecha": "2012-09-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 1.7,
+      "mora_tarjetas": 2.4,
+      "mora_personales": 3.0,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.0,
+      "saldo_familias_ars": 1380610643.58,
+      "saldo_irregular_familias_ars": 37276487.38,
+      "saldo_empresas_ars": 1676455781.49,
+      "saldo_irregular_empresas_ars": 28499748.29,
+      "saldo_tarjetas_ars": 414183193.07,
+      "saldo_personales_ars": 386570980.2
+    },
+    {
+      "fecha": "2012-10-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 2.3,
+      "mora_personales": 3.1,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 1474328181.08,
+      "saldo_irregular_familias_ars": 39806860.89,
+      "saldo_empresas_ars": 1790255648.45,
+      "saldo_irregular_empresas_ars": 32224601.67,
+      "saldo_tarjetas_ars": 442298454.32,
+      "saldo_personales_ars": 412811890.7
+    },
+    {
+      "fecha": "2012-11-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 1.7,
+      "mora_tarjetas": 2.2,
+      "mora_personales": 3.1,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.0,
+      "saldo_familias_ars": 1571412657.58,
+      "saldo_irregular_familias_ars": 42428141.75,
+      "saldo_empresas_ars": 1908143941.35,
+      "saldo_irregular_empresas_ars": 32438447.0,
+      "saldo_tarjetas_ars": 471423797.27,
+      "saldo_personales_ars": 439995544.12
+    },
+    {
+      "fecha": "2012-12-01",
+      "mora_familias": 2.8,
+      "mora_empresas": 1.7,
+      "mora_tarjetas": 2.2,
+      "mora_personales": 3.3,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.0,
+      "saldo_familias_ars": 1671883651.85,
+      "saldo_irregular_familias_ars": 46812742.25,
+      "saldo_empresas_ars": 2030144434.38,
+      "saldo_irregular_empresas_ars": 34512455.38,
+      "saldo_tarjetas_ars": 501565095.55,
+      "saldo_personales_ars": 468127422.52
+    },
+    {
+      "fecha": "2013-01-01",
+      "mora_familias": 2.8,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 2.3,
+      "mora_personales": 3.3,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 1775760299.99,
+      "saldo_irregular_familias_ars": 49721288.4,
+      "saldo_empresas_ars": 2156280364.27,
+      "saldo_irregular_empresas_ars": 38813046.56,
+      "saldo_tarjetas_ars": 532728090.0,
+      "saldo_personales_ars": 497212884.0
+    },
+    {
+      "fecha": "2013-02-01",
+      "mora_familias": 2.9,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 2.5,
+      "mora_personales": 3.4,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 1883061317.4,
+      "saldo_irregular_familias_ars": 54608778.2,
+      "saldo_empresas_ars": 2286574456.84,
+      "saldo_irregular_empresas_ars": 43444914.68,
+      "saldo_tarjetas_ars": 564918395.22,
+      "saldo_personales_ars": 527257168.87
+    },
+    {
+      "fecha": "2013-03-01",
+      "mora_familias": 2.9,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 2.5,
+      "mora_personales": 3.2,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 1993805019.0,
+      "saldo_irregular_familias_ars": 57820345.55,
+      "saldo_empresas_ars": 2421048951.64,
+      "saldo_irregular_empresas_ars": 43578881.13,
+      "saldo_tarjetas_ars": 598141505.7,
+      "saldo_personales_ars": 558265405.32
+    },
+    {
+      "fecha": "2013-04-01",
+      "mora_familias": 3.0,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 2.5,
+      "mora_personales": 3.4,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.8,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 2108009338.02,
+      "saldo_irregular_familias_ars": 63240280.14,
+      "saldo_empresas_ars": 2559725624.74,
+      "saldo_irregular_empresas_ars": 48634786.87,
+      "saldo_tarjetas_ars": 632402801.41,
+      "saldo_personales_ars": 590242614.65
+    },
+    {
+      "fecha": "2013-05-01",
+      "mora_familias": 3.0,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 2.6,
+      "mora_personales": 3.4,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.8,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 2225691843.47,
+      "saldo_irregular_familias_ars": 66770755.3,
+      "saldo_empresas_ars": 2702625809.93,
+      "saldo_irregular_empresas_ars": 51349890.39,
+      "saldo_tarjetas_ars": 667707553.04,
+      "saldo_personales_ars": 623193716.17
+    },
+    {
+      "fecha": "2013-06-01",
+      "mora_familias": 3.1,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 2.5,
+      "mora_personales": 3.5,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 2346869756.32,
+      "saldo_irregular_familias_ars": 72752962.45,
+      "saldo_empresas_ars": 2849770418.39,
+      "saldo_irregular_empresas_ars": 54145637.95,
+      "saldo_tarjetas_ars": 704060926.9,
+      "saldo_personales_ars": 657123531.77
+    },
+    {
+      "fecha": "2013-07-01",
+      "mora_familias": 3.0,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 2.4,
+      "mora_personales": 3.5,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.8,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 2471559964.71,
+      "saldo_irregular_familias_ars": 74146798.94,
+      "saldo_empresas_ars": 3001179957.15,
+      "saldo_irregular_empresas_ars": 57022419.19,
+      "saldo_tarjetas_ars": 741467989.41,
+      "saldo_personales_ars": 692036790.12
+    },
+    {
+      "fecha": "2013-08-01",
+      "mora_familias": 3.0,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 2.4,
+      "mora_personales": 3.4,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.8,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 2599779038.03,
+      "saldo_irregular_familias_ars": 77993371.14,
+      "saldo_empresas_ars": 3156874546.17,
+      "saldo_irregular_empresas_ars": 59980616.38,
+      "saldo_tarjetas_ars": 779933711.41,
+      "saldo_personales_ars": 727938130.65
+    },
+    {
+      "fecha": "2013-09-01",
+      "mora_familias": 2.9,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 2.3,
+      "mora_personales": 3.3,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 2731543240.16,
+      "saldo_irregular_familias_ars": 79214753.96,
+      "saldo_empresas_ars": 3316873934.48,
+      "saldo_irregular_empresas_ars": 59703730.82,
+      "saldo_tarjetas_ars": 819462972.05,
+      "saldo_personales_ars": 764832107.24
+    },
+    {
+      "fecha": "2013-10-01",
+      "mora_familias": 2.8,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 2.1,
+      "mora_personales": 3.2,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 2866868541.88,
+      "saldo_irregular_familias_ars": 80272319.17,
+      "saldo_empresas_ars": 3481197515.14,
+      "saldo_irregular_empresas_ars": 62661555.27,
+      "saldo_tarjetas_ars": 860060562.56,
+      "saldo_personales_ars": 802723191.73
+    },
+    {
+      "fecha": "2013-11-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 2.0,
+      "mora_personales": 3.2,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 3005770632.47,
+      "saldo_irregular_familias_ars": 81155807.08,
+      "saldo_empresas_ars": 3649864339.43,
+      "saldo_irregular_empresas_ars": 65697558.11,
+      "saldo_tarjetas_ars": 901731189.74,
+      "saldo_personales_ars": 841615777.09
+    },
+    {
+      "fecha": "2013-12-01",
+      "mora_familias": 2.6,
+      "mora_empresas": 1.7,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 3.0,
+      "mora_total": 1.2,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.0,
+      "saldo_familias_ars": 3148264930.66,
+      "saldo_irregular_familias_ars": 81854888.2,
+      "saldo_empresas_ars": 3822893130.08,
+      "saldo_irregular_empresas_ars": 64989183.21,
+      "saldo_tarjetas_ars": 944479479.2,
+      "saldo_personales_ars": 881514180.58
+    },
+    {
+      "fecha": "2014-01-01",
+      "mora_familias": 2.6,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 1.8,
+      "mora_personales": 3.1,
+      "mora_total": 1.2,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 3294366594.87,
+      "saldo_irregular_familias_ars": 85653531.47,
+      "saldo_empresas_ars": 4000302293.77,
+      "saldo_irregular_empresas_ars": 72005441.29,
+      "saldo_tarjetas_ars": 988309978.46,
+      "saldo_personales_ars": 922422646.56
+    },
+    {
+      "fecha": "2014-02-01",
+      "mora_familias": 2.8,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 2.0,
+      "mora_personales": 3.2,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 3444090532.92,
+      "saldo_irregular_familias_ars": 96434534.92,
+      "saldo_empresas_ars": 4182109932.83,
+      "saldo_irregular_empresas_ars": 75277978.79,
+      "saldo_tarjetas_ars": 1033227159.88,
+      "saldo_personales_ars": 964345349.22
+    },
+    {
+      "fecha": "2014-03-01",
+      "mora_familias": 2.8,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 2.0,
+      "mora_personales": 3.3,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 3597451411.18,
+      "saldo_irregular_familias_ars": 100728639.51,
+      "saldo_empresas_ars": 4368333856.43,
+      "saldo_irregular_empresas_ars": 82998343.27,
+      "saldo_tarjetas_ars": 1079235423.35,
+      "saldo_personales_ars": 1007286395.13
+    },
+    {
+      "fecha": "2014-04-01",
+      "mora_familias": 3.0,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 2.1,
+      "mora_personales": 3.4,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.8,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 3754463663.16,
+      "saldo_irregular_familias_ars": 112633909.89,
+      "saldo_empresas_ars": 4558991590.98,
+      "saldo_irregular_empresas_ars": 86620840.23,
+      "saldo_tarjetas_ars": 1126339098.95,
+      "saldo_personales_ars": 1051249825.68
+    },
+    {
+      "fecha": "2014-05-01",
+      "mora_familias": 3.2,
+      "mora_empresas": 2.0,
+      "mora_tarjetas": 2.2,
+      "mora_personales": 3.7,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 2.4,
+      "saldo_familias_ars": 3915141497.68,
+      "saldo_irregular_familias_ars": 125284527.93,
+      "saldo_empresas_ars": 4754100390.04,
+      "saldo_irregular_empresas_ars": 95082007.8,
+      "saldo_tarjetas_ars": 1174542449.3,
+      "saldo_personales_ars": 1096239619.35
+    },
+    {
+      "fecha": "2014-06-01",
+      "mora_familias": 3.2,
+      "mora_empresas": 2.0,
+      "mora_tarjetas": 2.2,
+      "mora_personales": 3.7,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 2.4,
+      "saldo_familias_ars": 4079498906.6,
+      "saldo_irregular_familias_ars": 130543965.01,
+      "saldo_empresas_ars": 4953677243.72,
+      "saldo_irregular_empresas_ars": 99073544.87,
+      "saldo_tarjetas_ars": 1223849671.98,
+      "saldo_personales_ars": 1142259693.85
+    },
+    {
+      "fecha": "2014-07-01",
+      "mora_familias": 3.2,
+      "mora_empresas": 2.0,
+      "mora_tarjetas": 2.2,
+      "mora_personales": 3.7,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 2.4,
+      "saldo_familias_ars": 4247549672.12,
+      "saldo_irregular_familias_ars": 135921589.51,
+      "saldo_empresas_ars": 5157738887.58,
+      "saldo_irregular_empresas_ars": 103154777.75,
+      "saldo_tarjetas_ars": 1274264901.64,
+      "saldo_personales_ars": 1189313908.19
+    },
+    {
+      "fecha": "2014-08-01",
+      "mora_familias": 3.3,
+      "mora_empresas": 2.1,
+      "mora_tarjetas": 2.3,
+      "mora_personales": 3.8,
+      "mora_total": 1.6,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.0,
+      "mora_adelantos": 2.5,
+      "saldo_familias_ars": 4419307373.75,
+      "saldo_irregular_familias_ars": 145837143.33,
+      "saldo_empresas_ars": 5366301810.98,
+      "saldo_irregular_empresas_ars": 112692338.03,
+      "saldo_tarjetas_ars": 1325792212.12,
+      "saldo_personales_ars": 1237406064.65
+    },
+    {
+      "fecha": "2014-09-01",
+      "mora_familias": 3.2,
+      "mora_empresas": 2.0,
+      "mora_tarjetas": 2.1,
+      "mora_personales": 3.6,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 2.4,
+      "saldo_familias_ars": 4594785394.85,
+      "saldo_irregular_familias_ars": 147033132.64,
+      "saldo_empresas_ars": 5579382265.17,
+      "saldo_irregular_empresas_ars": 111587645.3,
+      "saldo_tarjetas_ars": 1378435618.46,
+      "saldo_personales_ars": 1286539910.56
+    },
+    {
+      "fecha": "2014-10-01",
+      "mora_familias": 3.1,
+      "mora_empresas": 2.0,
+      "mora_tarjetas": 2.0,
+      "mora_personales": 3.5,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 2.4,
+      "saldo_familias_ars": 4773996928.92,
+      "saldo_irregular_familias_ars": 147993904.8,
+      "saldo_empresas_ars": 5796996270.83,
+      "saldo_irregular_empresas_ars": 115939925.42,
+      "saldo_tarjetas_ars": 1432199078.68,
+      "saldo_personales_ars": 1336719140.1
+    },
+    {
+      "fecha": "2014-11-01",
+      "mora_familias": 3.1,
+      "mora_empresas": 2.0,
+      "mora_tarjetas": 2.0,
+      "mora_personales": 3.6,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 2.4,
+      "saldo_familias_ars": 4956954985.57,
+      "saldo_irregular_familias_ars": 153665604.55,
+      "saldo_empresas_ars": 6019159625.33,
+      "saldo_irregular_empresas_ars": 120383192.51,
+      "saldo_tarjetas_ars": 1487086495.67,
+      "saldo_personales_ars": 1387947395.96
+    },
+    {
+      "fecha": "2014-12-01",
+      "mora_familias": 3.0,
+      "mora_empresas": 2.0,
+      "mora_tarjetas": 1.8,
+      "mora_personales": 3.5,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.8,
+      "mora_adelantos": 2.4,
+      "saldo_familias_ars": 5143672396.14,
+      "saldo_irregular_familias_ars": 154310171.88,
+      "saldo_empresas_ars": 6245887909.6,
+      "saldo_irregular_empresas_ars": 124917758.19,
+      "saldo_tarjetas_ars": 1543101718.84,
+      "saldo_personales_ars": 1440228270.92
+    },
+    {
+      "fecha": "2015-01-01",
+      "mora_familias": 3.0,
+      "mora_empresas": 2.0,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 3.5,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.8,
+      "mora_adelantos": 2.4,
+      "saldo_familias_ars": 5334161819.17,
+      "saldo_irregular_familias_ars": 160024854.58,
+      "saldo_empresas_ars": 6477196494.71,
+      "saldo_irregular_empresas_ars": 129543929.89,
+      "saldo_tarjetas_ars": 1600248545.75,
+      "saldo_personales_ars": 1493565309.37
+    },
+    {
+      "fecha": "2015-02-01",
+      "mora_familias": 2.9,
+      "mora_empresas": 2.0,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 3.3,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.4,
+      "saldo_familias_ars": 5528435745.49,
+      "saldo_irregular_familias_ars": 160324636.62,
+      "saldo_empresas_ars": 6713100548.1,
+      "saldo_irregular_empresas_ars": 134262010.96,
+      "saldo_tarjetas_ars": 1658530723.65,
+      "saldo_personales_ars": 1547962008.74
+    },
+    {
+      "fecha": "2015-03-01",
+      "mora_familias": 2.9,
+      "mora_empresas": 2.0,
+      "mora_tarjetas": 1.8,
+      "mora_personales": 3.3,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.4,
+      "saldo_familias_ars": 5726506503.17,
+      "saldo_irregular_familias_ars": 166068688.59,
+      "saldo_empresas_ars": 6953615039.57,
+      "saldo_irregular_empresas_ars": 139072300.79,
+      "saldo_tarjetas_ars": 1717951950.95,
+      "saldo_personales_ars": 1603421820.89
+    },
+    {
+      "fecha": "2015-04-01",
+      "mora_familias": 2.9,
+      "mora_empresas": 2.1,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 3.3,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.5,
+      "saldo_familias_ars": 5928386262.21,
+      "saldo_irregular_familias_ars": 171923201.6,
+      "saldo_empresas_ars": 7198754746.96,
+      "saldo_irregular_empresas_ars": 151173849.69,
+      "saldo_tarjetas_ars": 1778515878.66,
+      "saldo_personales_ars": 1659948153.42
+    },
+    {
+      "fecha": "2015-05-01",
+      "mora_familias": 2.9,
+      "mora_empresas": 2.0,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 3.3,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.4,
+      "saldo_familias_ars": 6134087039.01,
+      "saldo_irregular_familias_ars": 177888524.13,
+      "saldo_empresas_ars": 7448534261.65,
+      "saldo_irregular_empresas_ars": 148970685.23,
+      "saldo_tarjetas_ars": 1840226111.7,
+      "saldo_personales_ars": 1717544370.92
+    },
+    {
+      "fecha": "2015-06-01",
+      "mora_familias": 2.8,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 1.8,
+      "mora_personales": 3.1,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 6343620700.7,
+      "saldo_irregular_familias_ars": 177621379.62,
+      "saldo_empresas_ars": 7702967993.71,
+      "saldo_irregular_empresas_ars": 146356391.88,
+      "saldo_tarjetas_ars": 1903086210.21,
+      "saldo_personales_ars": 1776213796.2
+    },
+    {
+      "fecha": "2015-07-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 1.8,
+      "mora_personales": 3.0,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 6556998969.24,
+      "saldo_irregular_familias_ars": 177038972.17,
+      "saldo_empresas_ars": 7962070176.93,
+      "saldo_irregular_empresas_ars": 151279333.36,
+      "saldo_tarjetas_ars": 1967099690.77,
+      "saldo_personales_ars": 1835959711.39
+    },
+    {
+      "fecha": "2015-08-01",
+      "mora_familias": 2.6,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 1.7,
+      "mora_personales": 2.9,
+      "mora_total": 1.2,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 6774233425.31,
+      "saldo_irregular_familias_ars": 176130069.06,
+      "saldo_empresas_ars": 8225854873.59,
+      "saldo_irregular_empresas_ars": 148065387.72,
+      "saldo_tarjetas_ars": 2032270027.59,
+      "saldo_personales_ars": 1896785359.09
+    },
+    {
+      "fecha": "2015-09-01",
+      "mora_familias": 2.5,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 1.6,
+      "mora_personales": 2.8,
+      "mora_total": 1.2,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.5,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 6995335512.15,
+      "saldo_irregular_familias_ars": 174883387.8,
+      "saldo_empresas_ars": 8494335979.04,
+      "saldo_irregular_empresas_ars": 152898047.62,
+      "saldo_tarjetas_ars": 2098600653.64,
+      "saldo_personales_ars": 1958693943.4
+    },
+    {
+      "fecha": "2015-10-01",
+      "mora_familias": 2.4,
+      "mora_empresas": 1.7,
+      "mora_tarjetas": 1.6,
+      "mora_personales": 2.7,
+      "mora_total": 1.1,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.4,
+      "mora_adelantos": 2.0,
+      "saldo_familias_ars": 7220316539.14,
+      "saldo_irregular_familias_ars": 173287596.94,
+      "saldo_empresas_ars": 8767527226.1,
+      "saldo_irregular_empresas_ars": 149047962.84,
+      "saldo_tarjetas_ars": 2166094961.74,
+      "saldo_personales_ars": 2021688630.96
+    },
+    {
+      "fecha": "2015-11-01",
+      "mora_familias": 2.4,
+      "mora_empresas": 1.7,
+      "mora_tarjetas": 1.6,
+      "mora_personales": 2.7,
+      "mora_total": 1.1,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.4,
+      "mora_adelantos": 2.0,
+      "saldo_familias_ars": 7449187685.27,
+      "saldo_irregular_familias_ars": 178780504.45,
+      "saldo_empresas_ars": 9045442189.25,
+      "saldo_irregular_empresas_ars": 153772517.22,
+      "saldo_tarjetas_ars": 2234756305.58,
+      "saldo_personales_ars": 2085772551.88
+    },
+    {
+      "fecha": "2015-12-01",
+      "mora_familias": 2.3,
+      "mora_empresas": 1.7,
+      "mora_tarjetas": 1.5,
+      "mora_personales": 2.7,
+      "mora_total": 1.1,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.4,
+      "mora_adelantos": 2.0,
+      "saldo_familias_ars": 7681960002.49,
+      "saldo_irregular_familias_ars": 176685080.06,
+      "saldo_empresas_ars": 9328094288.73,
+      "saldo_irregular_empresas_ars": 158577602.91,
+      "saldo_tarjetas_ars": 2304588000.75,
+      "saldo_personales_ars": 2150948800.7
+    },
+    {
+      "fecha": "2016-01-01",
+      "mora_familias": 2.4,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 1.7,
+      "mora_personales": 2.8,
+      "mora_total": 1.1,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.4,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 7918644418.91,
+      "saldo_irregular_familias_ars": 190047466.05,
+      "saldo_empresas_ars": 9615496794.38,
+      "saldo_irregular_empresas_ars": 173078942.3,
+      "saldo_tarjetas_ars": 2375593325.67,
+      "saldo_personales_ars": 2217220437.29
+    },
+    {
+      "fecha": "2016-02-01",
+      "mora_familias": 2.5,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 1.7,
+      "mora_personales": 2.8,
+      "mora_total": 1.2,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.5,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 8159251741.86,
+      "saldo_irregular_familias_ars": 203981293.55,
+      "saldo_empresas_ars": 9907662829.41,
+      "saldo_irregular_empresas_ars": 178337930.93,
+      "saldo_tarjetas_ars": 2447775522.56,
+      "saldo_personales_ars": 2284590487.72
+    },
+    {
+      "fecha": "2016-03-01",
+      "mora_familias": 2.4,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 1.7,
+      "mora_personales": 2.7,
+      "mora_total": 1.1,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.4,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 8403792660.91,
+      "saldo_irregular_familias_ars": 201691023.86,
+      "saldo_empresas_ars": 10204605373.96,
+      "saldo_irregular_empresas_ars": 183682896.73,
+      "saldo_tarjetas_ars": 2521137798.27,
+      "saldo_personales_ars": 2353061945.05
+    },
+    {
+      "fecha": "2016-04-01",
+      "mora_familias": 2.5,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 1.8,
+      "mora_personales": 2.8,
+      "mora_total": 1.2,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.5,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 8652277750.62,
+      "saldo_irregular_familias_ars": 216306943.77,
+      "saldo_empresas_ars": 10506337268.61,
+      "saldo_irregular_empresas_ars": 199620408.1,
+      "saldo_tarjetas_ars": 2595683325.19,
+      "saldo_personales_ars": 2422637770.17
+    },
+    {
+      "fecha": "2016-05-01",
+      "mora_familias": 2.6,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 1.8,
+      "mora_personales": 2.9,
+      "mora_total": 1.2,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 8904717473.39,
+      "saldo_irregular_familias_ars": 231522654.31,
+      "saldo_empresas_ars": 10812871217.69,
+      "saldo_irregular_empresas_ars": 205444553.14,
+      "saldo_tarjetas_ars": 2671415242.02,
+      "saldo_personales_ars": 2493320892.55
+    },
+    {
+      "fecha": "2016-06-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 3.0,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 9161122182.04,
+      "saldo_irregular_familias_ars": 247350298.92,
+      "saldo_empresas_ars": 11124219792.47,
+      "saldo_irregular_empresas_ars": 211360176.06,
+      "saldo_tarjetas_ars": 2748336654.61,
+      "saldo_personales_ars": 2565114210.97
+    },
+    {
+      "fecha": "2016-07-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 3.0,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 9421502122.37,
+      "saldo_irregular_familias_ars": 254380557.3,
+      "saldo_empresas_ars": 11440395434.3,
+      "saldo_irregular_empresas_ars": 217367513.25,
+      "saldo_tarjetas_ars": 2826450636.71,
+      "saldo_personales_ars": 2638020594.26
+    },
+    {
+      "fecha": "2016-08-01",
+      "mora_familias": 2.8,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 3.0,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 9685867435.63,
+      "saldo_irregular_familias_ars": 271204288.2,
+      "saldo_empresas_ars": 11761410457.55,
+      "saldo_irregular_empresas_ars": 223466798.69,
+      "saldo_tarjetas_ars": 2905760230.69,
+      "saldo_personales_ars": 2712042881.98
+    },
+    {
+      "fecha": "2016-09-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 3.0,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 9954228160.88,
+      "saldo_irregular_familias_ars": 268764160.34,
+      "saldo_empresas_ars": 12087277052.5,
+      "saldo_irregular_empresas_ars": 229658264.0,
+      "saldo_tarjetas_ars": 2986268448.26,
+      "saldo_personales_ars": 2787183885.05
+    },
+    {
+      "fecha": "2016-10-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 3.0,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 10226594237.29,
+      "saldo_irregular_familias_ars": 276118044.41,
+      "saldo_empresas_ars": 12418007288.14,
+      "saldo_irregular_empresas_ars": 235942138.47,
+      "saldo_tarjetas_ars": 3067978271.19,
+      "saldo_personales_ars": 2863446386.44
+    },
+    {
+      "fecha": "2016-11-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 3.0,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 10502975506.33,
+      "saldo_irregular_familias_ars": 283580338.67,
+      "saldo_empresas_ars": 12753613114.83,
+      "saldo_irregular_empresas_ars": 229565036.07,
+      "saldo_tarjetas_ars": 3150892651.9,
+      "saldo_personales_ars": 2940833141.77
+    },
+    {
+      "fecha": "2016-12-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 3.0,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 10783381713.92,
+      "saldo_irregular_familias_ars": 291151306.28,
+      "saldo_empresas_ars": 13094106366.9,
+      "saldo_irregular_empresas_ars": 235693914.6,
+      "saldo_tarjetas_ars": 3235014514.18,
+      "saldo_personales_ars": 3019346879.9
+    },
+    {
+      "fecha": "2017-01-01",
+      "mora_familias": 2.8,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 3.1,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 11067822512.49,
+      "saldo_irregular_familias_ars": 309899030.35,
+      "saldo_empresas_ars": 13439498765.16,
+      "saldo_irregular_empresas_ars": 255350476.54,
+      "saldo_tarjetas_ars": 3320346753.75,
+      "saldo_personales_ars": 3098990303.5
+    },
+    {
+      "fecha": "2017-02-01",
+      "mora_familias": 2.9,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 2.1,
+      "mora_personales": 3.1,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 11356307462.96,
+      "saldo_irregular_familias_ars": 329332916.43,
+      "saldo_empresas_ars": 13789801919.31,
+      "saldo_irregular_empresas_ars": 262006236.47,
+      "saldo_tarjetas_ars": 3406892238.89,
+      "saldo_personales_ars": 3179766089.63
+    },
+    {
+      "fecha": "2017-03-01",
+      "mora_familias": 2.9,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 2.1,
+      "mora_personales": 3.1,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 11648846036.69,
+      "saldo_irregular_familias_ars": 337816535.06,
+      "saldo_empresas_ars": 14145027330.27,
+      "saldo_irregular_empresas_ars": 268755519.28,
+      "saldo_tarjetas_ars": 3494653811.01,
+      "saldo_personales_ars": 3261676890.27
+    },
+    {
+      "fecha": "2017-04-01",
+      "mora_familias": 3.0,
+      "mora_empresas": 2.0,
+      "mora_tarjetas": 2.3,
+      "mora_personales": 3.2,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.8,
+      "mora_adelantos": 2.4,
+      "saldo_familias_ars": 11945447617.35,
+      "saldo_irregular_familias_ars": 358363428.52,
+      "saldo_empresas_ars": 14505186392.49,
+      "saldo_irregular_empresas_ars": 290103727.85,
+      "saldo_tarjetas_ars": 3583634285.2,
+      "saldo_personales_ars": 3344725332.86
+    },
+    {
+      "fecha": "2017-05-01",
+      "mora_familias": 3.1,
+      "mora_empresas": 2.0,
+      "mora_tarjetas": 2.3,
+      "mora_personales": 3.3,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 2.4,
+      "saldo_familias_ars": 12246121502.67,
+      "saldo_irregular_familias_ars": 379629766.58,
+      "saldo_empresas_ars": 14870290396.11,
+      "saldo_irregular_empresas_ars": 297405807.92,
+      "saldo_tarjetas_ars": 3673836450.8,
+      "saldo_personales_ars": 3428914020.75
+    },
+    {
+      "fecha": "2017-06-01",
+      "mora_familias": 3.2,
+      "mora_empresas": 2.0,
+      "mora_tarjetas": 2.5,
+      "mora_personales": 3.4,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 2.4,
+      "saldo_familias_ars": 12550876906.29,
+      "saldo_irregular_familias_ars": 401628061.0,
+      "saldo_empresas_ars": 15240350529.07,
+      "saldo_irregular_empresas_ars": 304807010.58,
+      "saldo_tarjetas_ars": 3765263071.89,
+      "saldo_personales_ars": 3514245533.76
+    },
+    {
+      "fecha": "2017-07-01",
+      "mora_familias": 3.0,
+      "mora_empresas": 2.0,
+      "mora_tarjetas": 2.4,
+      "mora_personales": 3.2,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.8,
+      "mora_adelantos": 2.4,
+      "saldo_familias_ars": 12859722959.35,
+      "saldo_irregular_familias_ars": 385791688.78,
+      "saldo_empresas_ars": 15615377879.21,
+      "saldo_irregular_empresas_ars": 312307557.58,
+      "saldo_tarjetas_ars": 3857916887.8,
+      "saldo_personales_ars": 3600722428.62
+    },
+    {
+      "fecha": "2017-08-01",
+      "mora_familias": 3.0,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 2.3,
+      "mora_personales": 3.2,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.8,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 13172668712.19,
+      "saldo_irregular_familias_ars": 395180061.37,
+      "saldo_empresas_ars": 15995383436.23,
+      "saldo_irregular_empresas_ars": 303912285.29,
+      "saldo_tarjetas_ars": 3951800613.66,
+      "saldo_personales_ars": 3688347239.41
+    },
+    {
+      "fecha": "2017-09-01",
+      "mora_familias": 2.9,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 2.3,
+      "mora_personales": 3.0,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 13489723135.95,
+      "saldo_irregular_familias_ars": 391201970.94,
+      "saldo_empresas_ars": 16380378093.66,
+      "saldo_irregular_empresas_ars": 294846805.69,
+      "saldo_tarjetas_ars": 4046916940.78,
+      "saldo_personales_ars": 3777122478.07
+    },
+    {
+      "fecha": "2017-10-01",
+      "mora_familias": 2.9,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 2.4,
+      "mora_personales": 3.1,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 13810895124.08,
+      "saldo_irregular_familias_ars": 400515958.6,
+      "saldo_empresas_ars": 16770372650.67,
+      "saldo_irregular_empresas_ars": 301866707.71,
+      "saldo_tarjetas_ars": 4143268537.22,
+      "saldo_personales_ars": 3867050634.74
+    },
+    {
+      "fecha": "2017-11-01",
+      "mora_familias": 2.9,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 2.4,
+      "mora_personales": 3.2,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 14136193493.83,
+      "saldo_irregular_familias_ars": 409949611.32,
+      "saldo_empresas_ars": 17165377813.94,
+      "saldo_irregular_empresas_ars": 326142178.46,
+      "saldo_tarjetas_ars": 4240858048.15,
+      "saldo_personales_ars": 3958134178.27
+    },
+    {
+      "fecha": "2017-12-01",
+      "mora_familias": 2.9,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 2.5,
+      "mora_personales": 3.2,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 14465626987.77,
+      "saldo_irregular_familias_ars": 419503182.65,
+      "saldo_empresas_ars": 17565404199.43,
+      "saldo_irregular_empresas_ars": 316177275.59,
+      "saldo_tarjetas_ars": 4339688096.33,
+      "saldo_personales_ars": 4050375556.58
+    },
+    {
+      "fecha": "2018-01-01",
+      "mora_familias": 3.0,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 2.5,
+      "mora_personales": 3.4,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.8,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 14799204275.1,
+      "saldo_irregular_familias_ars": 443976128.25,
+      "saldo_empresas_ars": 17970462334.05,
+      "saldo_irregular_empresas_ars": 341438784.35,
+      "saldo_tarjetas_ars": 4439761282.53,
+      "saldo_personales_ars": 4143777197.03
+    },
+    {
+      "fecha": "2018-02-01",
+      "mora_familias": 3.0,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 2.6,
+      "mora_personales": 3.4,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.8,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 15136933953.12,
+      "saldo_irregular_familias_ars": 454108018.59,
+      "saldo_empresas_ars": 18380562657.36,
+      "saldo_irregular_empresas_ars": 349230690.49,
+      "saldo_tarjetas_ars": 4541080185.94,
+      "saldo_personales_ars": 4238341506.87
+    },
+    {
+      "fecha": "2018-03-01",
+      "mora_familias": 3.1,
+      "mora_empresas": 2.0,
+      "mora_tarjetas": 2.7,
+      "mora_personales": 3.5,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 2.4,
+      "saldo_familias_ars": 15478824548.47,
+      "saldo_irregular_familias_ars": 479843561.0,
+      "saldo_empresas_ars": 18795715523.15,
+      "saldo_irregular_empresas_ars": 375914310.46,
+      "saldo_tarjetas_ars": 4643647364.54,
+      "saldo_personales_ars": 4334070873.57
+    },
+    {
+      "fecha": "2018-04-01",
+      "mora_familias": 3.2,
+      "mora_empresas": 2.0,
+      "mora_tarjetas": 2.9,
+      "mora_personales": 3.7,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 2.4,
+      "saldo_familias_ars": 15824884518.51,
+      "saldo_irregular_familias_ars": 506396304.59,
+      "saldo_empresas_ars": 19215931201.05,
+      "saldo_irregular_empresas_ars": 384318624.02,
+      "saldo_tarjetas_ars": 4747465355.55,
+      "saldo_personales_ars": 4430967665.18
+    },
+    {
+      "fecha": "2018-05-01",
+      "mora_familias": 3.4,
+      "mora_empresas": 2.2,
+      "mora_tarjetas": 3.1,
+      "mora_personales": 4.0,
+      "mora_total": 1.6,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.0,
+      "mora_adelantos": 2.6,
+      "saldo_familias_ars": 16175122252.49,
+      "saldo_irregular_familias_ars": 549954156.58,
+      "saldo_empresas_ars": 19641219878.02,
+      "saldo_irregular_empresas_ars": 432106837.32,
+      "saldo_tarjetas_ars": 4852536675.75,
+      "saldo_personales_ars": 4529034230.7
+    },
+    {
+      "fecha": "2018-06-01",
+      "mora_familias": 3.4,
+      "mora_empresas": 2.1,
+      "mora_tarjetas": 3.1,
+      "mora_personales": 4.0,
+      "mora_total": 1.6,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.0,
+      "mora_adelantos": 2.5,
+      "saldo_familias_ars": 16529546072.82,
+      "saldo_irregular_familias_ars": 562004566.48,
+      "saldo_empresas_ars": 20071591659.86,
+      "saldo_irregular_empresas_ars": 421503424.86,
+      "saldo_tarjetas_ars": 4958863821.85,
+      "saldo_personales_ars": 4628272900.39
+    },
+    {
+      "fecha": "2018-07-01",
+      "mora_familias": 3.5,
+      "mora_empresas": 2.3,
+      "mora_tarjetas": 3.2,
+      "mora_personales": 4.2,
+      "mora_total": 1.6,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.1,
+      "mora_adelantos": 2.8,
+      "saldo_familias_ars": 16888164236.27,
+      "saldo_irregular_familias_ars": 591085748.27,
+      "saldo_empresas_ars": 20507056572.61,
+      "saldo_irregular_empresas_ars": 471662301.17,
+      "saldo_tarjetas_ars": 5066449270.88,
+      "saldo_personales_ars": 4728685986.16
+    },
+    {
+      "fecha": "2018-08-01",
+      "mora_familias": 3.5,
+      "mora_empresas": 2.2,
+      "mora_tarjetas": 3.2,
+      "mora_personales": 4.3,
+      "mora_total": 1.6,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.1,
+      "mora_adelantos": 2.6,
+      "saldo_familias_ars": 17250984935.07,
+      "saldo_irregular_familias_ars": 603784472.73,
+      "saldo_empresas_ars": 20947624564.01,
+      "saldo_irregular_empresas_ars": 460847740.41,
+      "saldo_tarjetas_ars": 5175295480.52,
+      "saldo_personales_ars": 4830275781.82
+    },
+    {
+      "fecha": "2018-09-01",
+      "mora_familias": 3.7,
+      "mora_empresas": 2.3,
+      "mora_tarjetas": 3.3,
+      "mora_personales": 4.5,
+      "mora_total": 1.7,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.2,
+      "mora_adelantos": 2.8,
+      "saldo_familias_ars": 17618016298.07,
+      "saldo_irregular_familias_ars": 651866603.03,
+      "saldo_empresas_ars": 21393305504.8,
+      "saldo_irregular_empresas_ars": 492046026.61,
+      "saldo_tarjetas_ars": 5285404889.42,
+      "saldo_personales_ars": 4933044563.46
+    },
+    {
+      "fecha": "2018-10-01",
+      "mora_familias": 3.8,
+      "mora_empresas": 2.6,
+      "mora_tarjetas": 3.4,
+      "mora_personales": 4.7,
+      "mora_total": 1.8,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.3,
+      "mora_adelantos": 3.1,
+      "saldo_familias_ars": 17989266391.85,
+      "saldo_irregular_familias_ars": 683592122.89,
+      "saldo_empresas_ars": 21844109190.1,
+      "saldo_irregular_empresas_ars": 567946838.94,
+      "saldo_tarjetas_ars": 5396779917.55,
+      "saldo_personales_ars": 5036994589.72
+    },
+    {
+      "fecha": "2018-11-01",
+      "mora_familias": 3.9,
+      "mora_empresas": 2.9,
+      "mora_tarjetas": 3.6,
+      "mora_personales": 4.9,
+      "mora_total": 1.8,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.3,
+      "mora_adelantos": 3.5,
+      "saldo_familias_ars": 18364743221.74,
+      "saldo_irregular_familias_ars": 716224985.65,
+      "saldo_empresas_ars": 22300045340.68,
+      "saldo_irregular_empresas_ars": 646701314.88,
+      "saldo_tarjetas_ars": 5509422966.52,
+      "saldo_personales_ars": 5142128102.09
+    },
+    {
+      "fecha": "2018-12-01",
+      "mora_familias": 4.0,
+      "mora_empresas": 3.1,
+      "mora_tarjetas": 3.7,
+      "mora_personales": 5.1,
+      "mora_total": 1.9,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.4,
+      "mora_adelantos": 3.7,
+      "saldo_familias_ars": 18744454732.88,
+      "saldo_irregular_familias_ars": 749778189.32,
+      "saldo_empresas_ars": 22761123604.21,
+      "saldo_irregular_empresas_ars": 705594831.73,
+      "saldo_tarjetas_ars": 5623336419.86,
+      "saldo_personales_ars": 5248447325.21
+    },
+    {
+      "fecha": "2019-01-01",
+      "mora_familias": 4.2,
+      "mora_empresas": 3.5,
+      "mora_tarjetas": 3.9,
+      "mora_personales": 5.3,
+      "mora_total": 2.0,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.5,
+      "mora_adelantos": 4.2,
+      "saldo_familias_ars": 19128408811.22,
+      "saldo_irregular_familias_ars": 803393170.07,
+      "saldo_empresas_ars": 23227353556.49,
+      "saldo_irregular_empresas_ars": 812957374.48,
+      "saldo_tarjetas_ars": 5738522643.37,
+      "saldo_personales_ars": 5355954467.14
+    },
+    {
+      "fecha": "2019-02-01",
+      "mora_familias": 4.4,
+      "mora_empresas": 3.8,
+      "mora_tarjetas": 4.3,
+      "mora_personales": 5.5,
+      "mora_total": 2.1,
+      "mora_hipotecarios": 0.6,
+      "mora_prendarios": 2.6,
+      "mora_adelantos": 4.6,
+      "saldo_familias_ars": 19516613284.54,
+      "saldo_irregular_familias_ars": 858730984.52,
+      "saldo_empresas_ars": 23698744702.65,
+      "saldo_irregular_empresas_ars": 900552298.7,
+      "saldo_tarjetas_ars": 5854983985.36,
+      "saldo_personales_ars": 5464651719.67
+    },
+    {
+      "fecha": "2019-03-01",
+      "mora_familias": 4.5,
+      "mora_empresas": 4.0,
+      "mora_tarjetas": 4.2,
+      "mora_personales": 5.7,
+      "mora_total": 2.1,
+      "mora_hipotecarios": 0.6,
+      "mora_prendarios": 2.7,
+      "mora_adelantos": 4.8,
+      "saldo_familias_ars": 19909075923.33,
+      "saldo_irregular_familias_ars": 895908416.55,
+      "saldo_empresas_ars": 24175306478.33,
+      "saldo_irregular_empresas_ars": 967012259.13,
+      "saldo_tarjetas_ars": 5972722777.0,
+      "saldo_personales_ars": 5574541258.53
+    },
+    {
+      "fecha": "2019-04-01",
+      "mora_familias": 4.6,
+      "mora_empresas": 4.2,
+      "mora_tarjetas": 4.4,
+      "mora_personales": 5.9,
+      "mora_total": 2.2,
+      "mora_hipotecarios": 0.6,
+      "mora_prendarios": 2.8,
+      "mora_adelantos": 5.0,
+      "saldo_familias_ars": 20305804441.81,
+      "saldo_irregular_familias_ars": 934067004.32,
+      "saldo_empresas_ars": 24657048250.76,
+      "saldo_irregular_empresas_ars": 1035596026.53,
+      "saldo_tarjetas_ars": 6091741332.54,
+      "saldo_personales_ars": 5685625243.71
+    },
+    {
+      "fecha": "2019-05-01",
+      "mora_familias": 4.9,
+      "mora_empresas": 4.5,
+      "mora_tarjetas": 4.7,
+      "mora_personales": 6.2,
+      "mora_total": 2.3,
+      "mora_hipotecarios": 0.6,
+      "mora_prendarios": 2.9,
+      "mora_adelantos": 5.4,
+      "saldo_familias_ars": 20706806498.76,
+      "saldo_irregular_familias_ars": 1014633518.44,
+      "saldo_empresas_ars": 25143979319.93,
+      "saldo_irregular_empresas_ars": 1131479069.4,
+      "saldo_tarjetas_ars": 6212041949.63,
+      "saldo_personales_ars": 5797905819.65
+    },
+    {
+      "fecha": "2019-06-01",
+      "mora_familias": 4.9,
+      "mora_empresas": 4.5,
+      "mora_tarjetas": 4.7,
+      "mora_personales": 6.3,
+      "mora_total": 2.3,
+      "mora_hipotecarios": 0.6,
+      "mora_prendarios": 2.9,
+      "mora_adelantos": 5.4,
+      "saldo_familias_ars": 21112089698.5,
+      "saldo_irregular_familias_ars": 1034492395.23,
+      "saldo_empresas_ars": 25636108919.6,
+      "saldo_irregular_empresas_ars": 1153624901.38,
+      "saldo_tarjetas_ars": 6333626909.55,
+      "saldo_personales_ars": 5911385115.58
+    },
+    {
+      "fecha": "2019-07-01",
+      "mora_familias": 4.8,
+      "mora_empresas": 4.7,
+      "mora_tarjetas": 4.5,
+      "mora_personales": 6.3,
+      "mora_total": 2.3,
+      "mora_hipotecarios": 0.6,
+      "mora_prendarios": 2.9,
+      "mora_adelantos": 5.6,
+      "saldo_familias_ars": 21521661591.64,
+      "saldo_irregular_familias_ars": 1033039756.4,
+      "saldo_empresas_ars": 26133446218.42,
+      "saldo_irregular_empresas_ars": 1228271972.27,
+      "saldo_tarjetas_ars": 6456498477.49,
+      "saldo_personales_ars": 6026065245.66
+    },
+    {
+      "fecha": "2019-08-01",
+      "mora_familias": 4.8,
+      "mora_empresas": 4.7,
+      "mora_tarjetas": 4.3,
+      "mora_personales": 6.4,
+      "mora_total": 2.3,
+      "mora_hipotecarios": 0.6,
+      "mora_prendarios": 2.9,
+      "mora_adelantos": 5.6,
+      "saldo_familias_ars": 21935529676.04,
+      "saldo_irregular_familias_ars": 1052905424.45,
+      "saldo_empresas_ars": 26636000320.91,
+      "saldo_irregular_empresas_ars": 1251892015.08,
+      "saldo_tarjetas_ars": 6580658902.81,
+      "saldo_personales_ars": 6141948309.29
+    },
+    {
+      "fecha": "2019-09-01",
+      "mora_familias": 4.6,
+      "mora_empresas": 4.8,
+      "mora_tarjetas": 4.0,
+      "mora_personales": 6.2,
+      "mora_total": 2.2,
+      "mora_hipotecarios": 0.6,
+      "mora_prendarios": 2.8,
+      "mora_adelantos": 5.8,
+      "saldo_familias_ars": 22353701397.55,
+      "saldo_irregular_familias_ars": 1028270264.29,
+      "saldo_empresas_ars": 27143780268.46,
+      "saldo_irregular_empresas_ars": 1302901452.89,
+      "saldo_tarjetas_ars": 6706110419.26,
+      "saldo_personales_ars": 6259036391.31
+    },
+    {
+      "fecha": "2019-10-01",
+      "mora_familias": 4.4,
+      "mora_empresas": 4.9,
+      "mora_tarjetas": 3.7,
+      "mora_personales": 6.2,
+      "mora_total": 2.1,
+      "mora_hipotecarios": 0.6,
+      "mora_prendarios": 2.6,
+      "mora_adelantos": 5.9,
+      "saldo_familias_ars": 22776184150.85,
+      "saldo_irregular_familias_ars": 1002152102.64,
+      "saldo_empresas_ars": 27656795040.32,
+      "saldo_irregular_empresas_ars": 1355182956.98,
+      "saldo_tarjetas_ars": 6832855245.25,
+      "saldo_personales_ars": 6377331562.24
+    },
+    {
+      "fecha": "2019-11-01",
+      "mora_familias": 4.4,
+      "mora_empresas": 5.0,
+      "mora_tarjetas": 3.6,
+      "mora_personales": 6.3,
+      "mora_total": 2.1,
+      "mora_hipotecarios": 0.6,
+      "mora_prendarios": 2.6,
+      "mora_adelantos": 6.0,
+      "saldo_familias_ars": 23202985280.24,
+      "saldo_irregular_familias_ars": 1020931352.33,
+      "saldo_empresas_ars": 28175053554.58,
+      "saldo_irregular_empresas_ars": 1408752677.73,
+      "saldo_tarjetas_ars": 6960895584.07,
+      "saldo_personales_ars": 6496835878.47
+    },
+    {
+      "fecha": "2019-12-01",
+      "mora_familias": 4.2,
+      "mora_empresas": 5.7,
+      "mora_tarjetas": 3.3,
+      "mora_personales": 6.1,
+      "mora_total": 2.0,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.5,
+      "mora_adelantos": 6.8,
+      "saldo_familias_ars": 23634112080.37,
+      "saldo_irregular_familias_ars": 992632707.38,
+      "saldo_empresas_ars": 28698564669.03,
+      "saldo_irregular_empresas_ars": 1635818186.13,
+      "saldo_tarjetas_ars": 7090233624.11,
+      "saldo_personales_ars": 6617551382.5
+    },
+    {
+      "fecha": "2020-01-01",
+      "mora_familias": 4.2,
+      "mora_empresas": 6.0,
+      "mora_tarjetas": 3.3,
+      "mora_personales": 6.1,
+      "mora_total": 2.0,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.5,
+      "mora_adelantos": 7.2,
+      "saldo_familias_ars": 24069571797.04,
+      "saldo_irregular_familias_ars": 1010922015.48,
+      "saldo_empresas_ars": 29227337182.13,
+      "saldo_irregular_empresas_ars": 1753640230.93,
+      "saldo_tarjetas_ars": 7220871539.11,
+      "saldo_personales_ars": 6739480103.17
+    },
+    {
+      "fecha": "2020-02-01",
+      "mora_familias": 4.3,
+      "mora_empresas": 6.2,
+      "mora_tarjetas": 3.5,
+      "mora_personales": 6.2,
+      "mora_total": 2.0,
+      "mora_hipotecarios": 0.6,
+      "mora_prendarios": 2.6,
+      "mora_adelantos": 7.4,
+      "saldo_familias_ars": 24509371627.89,
+      "saldo_irregular_familias_ars": 1053902980.0,
+      "saldo_empresas_ars": 29761379833.87,
+      "saldo_irregular_empresas_ars": 1845205549.7,
+      "saldo_tarjetas_ars": 7352811488.37,
+      "saldo_personales_ars": 6862624055.81
+    },
+    {
+      "fecha": "2020-03-01",
+      "mora_familias": 3.0,
+      "mora_empresas": 5.3,
+      "mora_tarjetas": 2.2,
+      "mora_personales": 4.2,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.8,
+      "mora_adelantos": 6.4,
+      "saldo_familias_ars": 24953518723.13,
+      "saldo_irregular_familias_ars": 748605561.69,
+      "saldo_empresas_ars": 30300701306.65,
+      "saldo_irregular_empresas_ars": 1605937169.25,
+      "saldo_tarjetas_ars": 7486055616.94,
+      "saldo_personales_ars": 6986985242.48
+    },
+    {
+      "fecha": "2020-04-01",
+      "mora_familias": 3.1,
+      "mora_empresas": 5.2,
+      "mora_tarjetas": 2.3,
+      "mora_personales": 4.2,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 6.2,
+      "saldo_familias_ars": 25402020186.22,
+      "saldo_irregular_familias_ars": 787462625.77,
+      "saldo_empresas_ars": 30845310226.13,
+      "saldo_irregular_empresas_ars": 1603956131.76,
+      "saldo_tarjetas_ars": 7620606055.87,
+      "saldo_personales_ars": 7112565652.14
+    },
+    {
+      "fecha": "2020-05-01",
+      "mora_familias": 3.1,
+      "mora_empresas": 5.2,
+      "mora_tarjetas": 2.1,
+      "mora_personales": 4.4,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 6.2,
+      "saldo_familias_ars": 25854883074.6,
+      "saldo_irregular_familias_ars": 801501375.31,
+      "saldo_empresas_ars": 31395215162.01,
+      "saldo_irregular_empresas_ars": 1632551188.42,
+      "saldo_tarjetas_ars": 7756464922.38,
+      "saldo_personales_ars": 7239367260.89
+    },
+    {
+      "fecha": "2020-06-01",
+      "mora_familias": 3.0,
+      "mora_empresas": 5.0,
+      "mora_tarjetas": 2.0,
+      "mora_personales": 4.5,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.8,
+      "mora_adelantos": 6.0,
+      "saldo_familias_ars": 26312114400.29,
+      "saldo_irregular_familias_ars": 789363432.01,
+      "saldo_empresas_ars": 31950424628.93,
+      "saldo_irregular_empresas_ars": 1597521231.45,
+      "saldo_tarjetas_ars": 7893634320.09,
+      "saldo_personales_ars": 7367392032.08
+    },
+    {
+      "fecha": "2020-07-01",
+      "mora_familias": 3.1,
+      "mora_empresas": 5.0,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 4.8,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 6.0,
+      "saldo_familias_ars": 26773721130.6,
+      "saldo_irregular_familias_ars": 829985355.05,
+      "saldo_empresas_ars": 32510947087.16,
+      "saldo_irregular_empresas_ars": 1625547354.36,
+      "saldo_tarjetas_ars": 8032116339.18,
+      "saldo_personales_ars": 7496641916.57
+    },
+    {
+      "fecha": "2020-08-01",
+      "mora_familias": 3.0,
+      "mora_empresas": 4.8,
+      "mora_tarjetas": 1.8,
+      "mora_personales": 4.7,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.8,
+      "mora_adelantos": 5.8,
+      "saldo_familias_ars": 27239710188.73,
+      "saldo_irregular_familias_ars": 817191305.66,
+      "saldo_empresas_ars": 33076790943.46,
+      "saldo_irregular_empresas_ars": 1587685965.29,
+      "saldo_tarjetas_ars": 8171913056.62,
+      "saldo_personales_ars": 7627118852.84
+    },
+    {
+      "fecha": "2020-09-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 4.5,
+      "mora_tarjetas": 1.7,
+      "mora_personales": 4.2,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 5.4,
+      "saldo_familias_ars": 27710088454.4,
+      "saldo_irregular_familias_ars": 748172388.27,
+      "saldo_empresas_ars": 33647964551.77,
+      "saldo_irregular_empresas_ars": 1514158404.83,
+      "saldo_tarjetas_ars": 8313026536.32,
+      "saldo_personales_ars": 7758824767.23
+    },
+    {
+      "fecha": "2020-10-01",
+      "mora_familias": 2.4,
+      "mora_empresas": 4.2,
+      "mora_tarjetas": 1.6,
+      "mora_personales": 3.7,
+      "mora_total": 1.1,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.4,
+      "mora_adelantos": 5.0,
+      "saldo_familias_ars": 28184862764.47,
+      "saldo_irregular_familias_ars": 676436706.35,
+      "saldo_empresas_ars": 34224476214.0,
+      "saldo_irregular_empresas_ars": 1437428000.99,
+      "saldo_tarjetas_ars": 8455458829.34,
+      "saldo_personales_ars": 7891761574.05
+    },
+    {
+      "fecha": "2020-11-01",
+      "mora_familias": 2.2,
+      "mora_empresas": 4.1,
+      "mora_tarjetas": 1.4,
+      "mora_personales": 3.4,
+      "mora_total": 1.0,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.3,
+      "mora_adelantos": 4.9,
+      "saldo_familias_ars": 28664039913.54,
+      "saldo_irregular_familias_ars": 630608878.1,
+      "saldo_empresas_ars": 34806334180.72,
+      "saldo_irregular_empresas_ars": 1427059701.41,
+      "saldo_tarjetas_ars": 8599211974.06,
+      "saldo_personales_ars": 8025931175.79
+    },
+    {
+      "fecha": "2020-12-01",
+      "mora_familias": 1.9,
+      "mora_empresas": 3.9,
+      "mora_tarjetas": 1.2,
+      "mora_personales": 2.9,
+      "mora_total": 0.9,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.1,
+      "mora_adelantos": 4.7,
+      "saldo_familias_ars": 29147626654.5,
+      "saldo_irregular_familias_ars": 553804906.44,
+      "saldo_empresas_ars": 35393546651.89,
+      "saldo_irregular_empresas_ars": 1380348319.42,
+      "saldo_tarjetas_ars": 8744287996.35,
+      "saldo_personales_ars": 8161335463.26
+    },
+    {
+      "fecha": "2021-01-01",
+      "mora_familias": 1.8,
+      "mora_empresas": 3.8,
+      "mora_tarjetas": 1.3,
+      "mora_personales": 2.6,
+      "mora_total": 0.8,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.1,
+      "mora_adelantos": 4.6,
+      "saldo_familias_ars": 29635629699.15,
+      "saldo_irregular_familias_ars": 533441334.58,
+      "saldo_empresas_ars": 35986121777.54,
+      "saldo_irregular_empresas_ars": 1367472627.55,
+      "saldo_tarjetas_ars": 8890688909.75,
+      "saldo_personales_ars": 8297976315.76
+    },
+    {
+      "fecha": "2021-02-01",
+      "mora_familias": 1.7,
+      "mora_empresas": 3.8,
+      "mora_tarjetas": 1.3,
+      "mora_personales": 2.4,
+      "mora_total": 0.8,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.0,
+      "mora_adelantos": 4.6,
+      "saldo_familias_ars": 30128055718.73,
+      "saldo_irregular_familias_ars": 512176947.22,
+      "saldo_empresas_ars": 36584067658.46,
+      "saldo_irregular_empresas_ars": 1390194571.02,
+      "saldo_tarjetas_ars": 9038416715.62,
+      "saldo_personales_ars": 8435855601.24
+    },
+    {
+      "fecha": "2021-03-01",
+      "mora_familias": 2.0,
+      "mora_empresas": 3.9,
+      "mora_tarjetas": 2.0,
+      "mora_personales": 2.5,
+      "mora_total": 0.9,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.2,
+      "mora_adelantos": 4.7,
+      "saldo_familias_ars": 30624911344.46,
+      "saldo_irregular_familias_ars": 612498226.89,
+      "saldo_empresas_ars": 37187392346.84,
+      "saldo_irregular_empresas_ars": 1450308301.53,
+      "saldo_tarjetas_ars": 9187473403.34,
+      "saldo_personales_ars": 8574975176.45
+    },
+    {
+      "fecha": "2021-04-01",
+      "mora_familias": 2.6,
+      "mora_empresas": 4.2,
+      "mora_tarjetas": 2.8,
+      "mora_personales": 3.2,
+      "mora_total": 1.2,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 5.0,
+      "saldo_familias_ars": 31126203168.09,
+      "saldo_irregular_familias_ars": 809281282.37,
+      "saldo_empresas_ars": 37796103846.97,
+      "saldo_irregular_empresas_ars": 1587436361.57,
+      "saldo_tarjetas_ars": 9337860950.43,
+      "saldo_personales_ars": 8715336887.07
+    },
+    {
+      "fecha": "2021-05-01",
+      "mora_familias": 2.9,
+      "mora_empresas": 4.3,
+      "mora_tarjetas": 3.4,
+      "mora_personales": 3.5,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 5.2,
+      "saldo_familias_ars": 31631937742.43,
+      "saldo_irregular_familias_ars": 917326194.53,
+      "saldo_empresas_ars": 38410210115.81,
+      "saldo_irregular_empresas_ars": 1651639034.98,
+      "saldo_tarjetas_ars": 9489581322.73,
+      "saldo_personales_ars": 8856942567.88
+    },
+    {
+      "fecha": "2021-06-01",
+      "mora_familias": 4.1,
+      "mora_empresas": 4.9,
+      "mora_tarjetas": 4.8,
+      "mora_personales": 5.1,
+      "mora_total": 1.9,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.5,
+      "mora_adelantos": 5.9,
+      "saldo_familias_ars": 32142121581.85,
+      "saldo_irregular_familias_ars": 1317826984.86,
+      "saldo_empresas_ars": 39029719063.68,
+      "saldo_irregular_empresas_ars": 1912456234.12,
+      "saldo_tarjetas_ars": 9642636474.55,
+      "saldo_personales_ars": 8999794042.92
+    },
+    {
+      "fecha": "2021-07-01",
+      "mora_familias": 5.1,
+      "mora_empresas": 5.4,
+      "mora_tarjetas": 4.9,
+      "mora_personales": 7.1,
+      "mora_total": 2.4,
+      "mora_hipotecarios": 0.7,
+      "mora_prendarios": 3.1,
+      "mora_adelantos": 6.5,
+      "saldo_familias_ars": 32656761162.8,
+      "saldo_irregular_familias_ars": 1665494819.3,
+      "saldo_empresas_ars": 39654638554.83,
+      "saldo_irregular_empresas_ars": 2141350481.96,
+      "saldo_tarjetas_ars": 9797028348.84,
+      "saldo_personales_ars": 9143893125.58
+    },
+    {
+      "fecha": "2021-08-01",
+      "mora_familias": 5.1,
+      "mora_empresas": 5.3,
+      "mora_tarjetas": 4.8,
+      "mora_personales": 7.2,
+      "mora_total": 2.4,
+      "mora_hipotecarios": 0.7,
+      "mora_prendarios": 3.1,
+      "mora_adelantos": 6.4,
+      "saldo_familias_ars": 33175862924.27,
+      "saldo_irregular_familias_ars": 1691969009.14,
+      "saldo_empresas_ars": 40284976408.05,
+      "saldo_irregular_empresas_ars": 2135103749.63,
+      "saldo_tarjetas_ars": 9952758877.28,
+      "saldo_personales_ars": 9289241618.8
+    },
+    {
+      "fecha": "2021-09-01",
+      "mora_familias": 4.8,
+      "mora_empresas": 5.0,
+      "mora_tarjetas": 4.0,
+      "mora_personales": 7.1,
+      "mora_total": 2.3,
+      "mora_hipotecarios": 0.6,
+      "mora_prendarios": 2.9,
+      "mora_adelantos": 6.0,
+      "saldo_familias_ars": 33699433268.33,
+      "saldo_irregular_familias_ars": 1617572796.88,
+      "saldo_empresas_ars": 40920740397.25,
+      "saldo_irregular_empresas_ars": 2046037019.86,
+      "saldo_tarjetas_ars": 10109829980.5,
+      "saldo_personales_ars": 9435841315.13
+    },
+    {
+      "fecha": "2021-10-01",
+      "mora_familias": 4.7,
+      "mora_empresas": 4.9,
+      "mora_tarjetas": 3.8,
+      "mora_personales": 6.9,
+      "mora_total": 2.2,
+      "mora_hipotecarios": 0.6,
+      "mora_prendarios": 2.8,
+      "mora_adelantos": 5.9,
+      "saldo_familias_ars": 34227478560.53,
+      "saldo_irregular_familias_ars": 1608691492.34,
+      "saldo_empresas_ars": 41561938252.07,
+      "saldo_irregular_empresas_ars": 2036534974.35,
+      "saldo_tarjetas_ars": 10268243568.16,
+      "saldo_personales_ars": 9583693996.95
+    },
+    {
+      "fecha": "2021-11-01",
+      "mora_familias": 4.3,
+      "mora_empresas": 4.6,
+      "mora_tarjetas": 3.3,
+      "mora_personales": 6.5,
+      "mora_total": 2.0,
+      "mora_hipotecarios": 0.6,
+      "mora_prendarios": 2.6,
+      "mora_adelantos": 5.5,
+      "saldo_familias_ars": 34760005130.43,
+      "saldo_irregular_familias_ars": 1494680220.61,
+      "saldo_empresas_ars": 42208577658.38,
+      "saldo_irregular_empresas_ars": 1941594572.29,
+      "saldo_tarjetas_ars": 10428001539.13,
+      "saldo_personales_ars": 9732801436.52
+    },
+    {
+      "fecha": "2021-12-01",
+      "mora_familias": 4.2,
+      "mora_empresas": 4.3,
+      "mora_tarjetas": 3.0,
+      "mora_personales": 6.3,
+      "mora_total": 2.0,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.5,
+      "mora_adelantos": 5.2,
+      "saldo_familias_ars": 35297019272.04,
+      "saldo_irregular_familias_ars": 1482474809.43,
+      "saldo_empresas_ars": 42860666258.91,
+      "saldo_irregular_empresas_ars": 1843008649.13,
+      "saldo_tarjetas_ars": 10589105781.61,
+      "saldo_personales_ars": 9883165396.17
+    },
+    {
+      "fecha": "2022-01-01",
+      "mora_familias": 4.1,
+      "mora_empresas": 4.3,
+      "mora_tarjetas": 2.9,
+      "mora_personales": 6.1,
+      "mora_total": 1.9,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.5,
+      "mora_adelantos": 5.2,
+      "saldo_familias_ars": 35838527244.23,
+      "saldo_irregular_familias_ars": 1469379617.01,
+      "saldo_empresas_ars": 43518211653.71,
+      "saldo_irregular_empresas_ars": 1871283101.11,
+      "saldo_tarjetas_ars": 10751558173.27,
+      "saldo_personales_ars": 10034787628.38
+    },
+    {
+      "fecha": "2022-02-01",
+      "mora_familias": 3.9,
+      "mora_empresas": 4.2,
+      "mora_tarjetas": 2.7,
+      "mora_personales": 5.9,
+      "mora_total": 1.8,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.3,
+      "mora_adelantos": 5.0,
+      "saldo_familias_ars": 36384535271.21,
+      "saldo_irregular_familias_ars": 1418996875.58,
+      "saldo_empresas_ars": 44181221400.76,
+      "saldo_irregular_empresas_ars": 1855611298.83,
+      "saldo_tarjetas_ars": 10915360581.36,
+      "saldo_personales_ars": 10187669875.94
+    },
+    {
+      "fecha": "2022-03-01",
+      "mora_familias": 3.7,
+      "mora_empresas": 3.9,
+      "mora_tarjetas": 2.6,
+      "mora_personales": 5.3,
+      "mora_total": 1.7,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.2,
+      "mora_adelantos": 4.7,
+      "saldo_familias_ars": 36935049542.94,
+      "saldo_irregular_familias_ars": 1366596833.09,
+      "saldo_empresas_ars": 44849703016.42,
+      "saldo_irregular_empresas_ars": 1749138417.64,
+      "saldo_tarjetas_ars": 11080514862.88,
+      "saldo_personales_ars": 10341813872.02
+    },
+    {
+      "fecha": "2022-04-01",
+      "mora_familias": 3.5,
+      "mora_empresas": 3.6,
+      "mora_tarjetas": 2.4,
+      "mora_personales": 5.0,
+      "mora_total": 1.6,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.1,
+      "mora_adelantos": 4.3,
+      "saldo_familias_ars": 37490076215.54,
+      "saldo_irregular_familias_ars": 1312152667.54,
+      "saldo_empresas_ars": 45523663976.02,
+      "saldo_irregular_empresas_ars": 1638851903.14,
+      "saldo_tarjetas_ars": 11247022864.66,
+      "saldo_personales_ars": 10497221340.35
+    },
+    {
+      "fecha": "2022-05-01",
+      "mora_familias": 3.3,
+      "mora_empresas": 3.4,
+      "mora_tarjetas": 2.2,
+      "mora_personales": 4.7,
+      "mora_total": 1.6,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.0,
+      "mora_adelantos": 4.1,
+      "saldo_familias_ars": 38049621411.75,
+      "saldo_irregular_familias_ars": 1255637506.59,
+      "saldo_empresas_ars": 46203111714.27,
+      "saldo_irregular_empresas_ars": 1570905798.29,
+      "saldo_tarjetas_ars": 11414886423.52,
+      "saldo_personales_ars": 10653893995.29
+    },
+    {
+      "fecha": "2022-06-01",
+      "mora_familias": 3.2,
+      "mora_empresas": 3.2,
+      "mora_tarjetas": 2.1,
+      "mora_personales": 4.6,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 3.8,
+      "saldo_familias_ars": 38613691221.27,
+      "saldo_irregular_familias_ars": 1235638119.08,
+      "saldo_empresas_ars": 46888053625.83,
+      "saldo_irregular_empresas_ars": 1500417716.03,
+      "saldo_tarjetas_ars": 11584107366.38,
+      "saldo_personales_ars": 10811833541.96
+    },
+    {
+      "fecha": "2022-07-01",
+      "mora_familias": 3.2,
+      "mora_empresas": 3.1,
+      "mora_tarjetas": 2.2,
+      "mora_personales": 4.6,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 3.7,
+      "saldo_familias_ars": 39182291701.21,
+      "saldo_irregular_familias_ars": 1253833334.44,
+      "saldo_empresas_ars": 47578497065.76,
+      "saldo_irregular_empresas_ars": 1474933409.04,
+      "saldo_tarjetas_ars": 11754687510.36,
+      "saldo_personales_ars": 10971041676.34
+    },
+    {
+      "fecha": "2022-08-01",
+      "mora_familias": 3.1,
+      "mora_empresas": 3.1,
+      "mora_tarjetas": 2.1,
+      "mora_personales": 4.4,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 3.7,
+      "saldo_familias_ars": 39755428876.46,
+      "saldo_irregular_familias_ars": 1232418295.17,
+      "saldo_empresas_ars": 48274449349.98,
+      "saldo_irregular_empresas_ars": 1496507929.85,
+      "saldo_tarjetas_ars": 11926628662.94,
+      "saldo_personales_ars": 11131520085.41
+    },
+    {
+      "fecha": "2022-09-01",
+      "mora_familias": 3.0,
+      "mora_empresas": 3.1,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 4.3,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.8,
+      "mora_adelantos": 3.7,
+      "saldo_familias_ars": 40333108740.05,
+      "saldo_irregular_familias_ars": 1209993262.2,
+      "saldo_empresas_ars": 48975917755.78,
+      "saldo_irregular_empresas_ars": 1518253450.43,
+      "saldo_tarjetas_ars": 12099932622.02,
+      "saldo_personales_ars": 11293270447.21
+    },
+    {
+      "fecha": "2022-10-01",
+      "mora_familias": 3.0,
+      "mora_empresas": 3.1,
+      "mora_tarjetas": 2.0,
+      "mora_personales": 4.3,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.8,
+      "mora_adelantos": 3.7,
+      "saldo_familias_ars": 40915337253.59,
+      "saldo_irregular_familias_ars": 1227460117.61,
+      "saldo_empresas_ars": 49682909522.21,
+      "saldo_irregular_empresas_ars": 1540170195.19,
+      "saldo_tarjetas_ars": 12274601176.08,
+      "saldo_personales_ars": 11456294431.01
+    },
+    {
+      "fecha": "2022-11-01",
+      "mora_familias": 2.9,
+      "mora_empresas": 3.0,
+      "mora_tarjetas": 1.8,
+      "mora_personales": 4.2,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 3.6,
+      "saldo_familias_ars": 41502120347.56,
+      "saldo_irregular_familias_ars": 1203561490.08,
+      "saldo_empresas_ars": 50395431850.6,
+      "saldo_irregular_empresas_ars": 1511862955.52,
+      "saldo_tarjetas_ars": 12450636104.27,
+      "saldo_personales_ars": 11620593697.32
+    },
+    {
+      "fecha": "2022-12-01",
+      "mora_familias": 3.0,
+      "mora_empresas": 3.1,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 4.4,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.8,
+      "mora_adelantos": 3.7,
+      "saldo_familias_ars": 42093463921.73,
+      "saldo_irregular_familias_ars": 1262803917.65,
+      "saldo_empresas_ars": 51113491904.96,
+      "saldo_irregular_empresas_ars": 1584518249.05,
+      "saldo_tarjetas_ars": 12628039176.52,
+      "saldo_personales_ars": 11786169898.08
+    },
+    {
+      "fecha": "2023-01-01",
+      "mora_familias": 3.1,
+      "mora_empresas": 3.2,
+      "mora_tarjetas": 2.1,
+      "mora_personales": 4.4,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 3.8,
+      "saldo_familias_ars": 42689373845.5,
+      "saldo_irregular_familias_ars": 1323370589.21,
+      "saldo_empresas_ars": 51837096812.4,
+      "saldo_irregular_empresas_ars": 1658787098.0,
+      "saldo_tarjetas_ars": 12806812153.65,
+      "saldo_personales_ars": 11953024676.74
+    },
+    {
+      "fecha": "2023-02-01",
+      "mora_familias": 3.1,
+      "mora_empresas": 3.2,
+      "mora_tarjetas": 2.1,
+      "mora_personales": 4.5,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 3.8,
+      "saldo_familias_ars": 43289855958.25,
+      "saldo_irregular_familias_ars": 1341985534.71,
+      "saldo_empresas_ars": 52566253663.59,
+      "saldo_irregular_empresas_ars": 1682120117.23,
+      "saldo_tarjetas_ars": 12986956787.48,
+      "saldo_personales_ars": 12121159668.31
+    },
+    {
+      "fecha": "2023-03-01",
+      "mora_familias": 3.3,
+      "mora_empresas": 3.2,
+      "mora_tarjetas": 2.3,
+      "mora_personales": 4.5,
+      "mora_total": 1.6,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.0,
+      "mora_adelantos": 3.8,
+      "saldo_familias_ars": 43894916069.66,
+      "saldo_irregular_familias_ars": 1448532230.3,
+      "saldo_empresas_ars": 53300969513.16,
+      "saldo_irregular_empresas_ars": 1705631024.42,
+      "saldo_tarjetas_ars": 13168474820.9,
+      "saldo_personales_ars": 12290576499.5
+    },
+    {
+      "fecha": "2023-04-01",
+      "mora_familias": 3.3,
+      "mora_empresas": 3.1,
+      "mora_tarjetas": 2.3,
+      "mora_personales": 4.5,
+      "mora_total": 1.6,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.0,
+      "mora_adelantos": 3.7,
+      "saldo_familias_ars": 44504559960.09,
+      "saldo_irregular_familias_ars": 1468650478.68,
+      "saldo_empresas_ars": 54041251380.11,
+      "saldo_irregular_empresas_ars": 1675278792.78,
+      "saldo_tarjetas_ars": 13351367988.03,
+      "saldo_personales_ars": 12461276788.83
+    },
+    {
+      "fecha": "2023-05-01",
+      "mora_familias": 3.2,
+      "mora_empresas": 3.0,
+      "mora_tarjetas": 2.2,
+      "mora_personales": 4.6,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 3.6,
+      "saldo_familias_ars": 45118793380.88,
+      "saldo_irregular_familias_ars": 1443801388.19,
+      "saldo_empresas_ars": 54787106248.21,
+      "saldo_irregular_empresas_ars": 1643613187.45,
+      "saldo_tarjetas_ars": 13535638014.26,
+      "saldo_personales_ars": 12633262146.65
+    },
+    {
+      "fecha": "2023-06-01",
+      "mora_familias": 3.3,
+      "mora_empresas": 3.0,
+      "mora_tarjetas": 2.3,
+      "mora_personales": 4.7,
+      "mora_total": 1.6,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.0,
+      "mora_adelantos": 3.6,
+      "saldo_familias_ars": 45737622054.67,
+      "saldo_irregular_familias_ars": 1509341527.8,
+      "saldo_empresas_ars": 55538541066.39,
+      "saldo_irregular_empresas_ars": 1666156231.99,
+      "saldo_tarjetas_ars": 13721286616.4,
+      "saldo_personales_ars": 12806534175.31
+    },
+    {
+      "fecha": "2023-07-01",
+      "mora_familias": 3.3,
+      "mora_empresas": 3.1,
+      "mora_tarjetas": 2.3,
+      "mora_personales": 4.7,
+      "mora_total": 1.6,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.0,
+      "mora_adelantos": 3.7,
+      "saldo_familias_ars": 46361051675.76,
+      "saldo_irregular_familias_ars": 1529914705.3,
+      "saldo_empresas_ars": 56295562749.14,
+      "saldo_irregular_empresas_ars": 1745162445.22,
+      "saldo_tarjetas_ars": 13908315502.73,
+      "saldo_personales_ars": 12981094469.21
+    },
+    {
+      "fecha": "2023-08-01",
+      "mora_familias": 3.1,
+      "mora_empresas": 3.2,
+      "mora_tarjetas": 2.0,
+      "mora_personales": 4.7,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 3.8,
+      "saldo_familias_ars": 46989087910.39,
+      "saldo_irregular_familias_ars": 1456661725.22,
+      "saldo_empresas_ars": 57058178176.9,
+      "saldo_irregular_empresas_ars": 1825861701.66,
+      "saldo_tarjetas_ars": 14096726373.12,
+      "saldo_personales_ars": 13156944614.91
+    },
+    {
+      "fecha": "2023-09-01",
+      "mora_familias": 3.1,
+      "mora_empresas": 3.0,
+      "mora_tarjetas": 2.0,
+      "mora_personales": 4.4,
+      "mora_total": 1.5,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.9,
+      "mora_adelantos": 3.6,
+      "saldo_familias_ars": 47621736397.04,
+      "saldo_irregular_familias_ars": 1476273828.31,
+      "saldo_empresas_ars": 57826394196.41,
+      "saldo_irregular_empresas_ars": 1734791825.89,
+      "saldo_tarjetas_ars": 14286520919.11,
+      "saldo_personales_ars": 13334086191.17
+    },
+    {
+      "fecha": "2023-10-01",
+      "mora_familias": 2.8,
+      "mora_empresas": 2.8,
+      "mora_tarjetas": 1.8,
+      "mora_personales": 4.3,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 3.4,
+      "saldo_familias_ars": 48259002746.79,
+      "saldo_irregular_familias_ars": 1351252076.91,
+      "saldo_empresas_ars": 58600217621.1,
+      "saldo_irregular_empresas_ars": 1640806093.39,
+      "saldo_tarjetas_ars": 14477700824.04,
+      "saldo_personales_ars": 13512520769.1
+    },
+    {
+      "fecha": "2023-11-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 2.7,
+      "mora_tarjetas": 1.7,
+      "mora_personales": 4.2,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 3.2,
+      "saldo_familias_ars": 48900892543.53,
+      "saldo_irregular_familias_ars": 1320324098.68,
+      "saldo_empresas_ars": 59379655231.43,
+      "saldo_irregular_empresas_ars": 1603250691.25,
+      "saldo_tarjetas_ars": 14670267763.06,
+      "saldo_personales_ars": 13692249912.19
+    },
+    {
+      "fecha": "2023-12-01",
+      "mora_familias": 2.8,
+      "mora_empresas": 3.7,
+      "mora_tarjetas": 1.8,
+      "mora_personales": 4.3,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 4.4,
+      "saldo_familias_ars": 49547411344.35,
+      "saldo_irregular_familias_ars": 1387327517.64,
+      "saldo_empresas_ars": 60164713775.28,
+      "saldo_irregular_empresas_ars": 2226094409.69,
+      "saldo_tarjetas_ars": 14864223403.3,
+      "saldo_personales_ars": 13873275176.42
+    },
+    {
+      "fecha": "2024-01-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 3.5,
+      "mora_tarjetas": 1.8,
+      "mora_personales": 4.4,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 4.2,
+      "saldo_familias_ars": 50198564679.75,
+      "saldo_irregular_familias_ars": 1355361246.35,
+      "saldo_empresas_ars": 60955399968.27,
+      "saldo_irregular_empresas_ars": 2133438998.89,
+      "saldo_tarjetas_ars": 15059569403.92,
+      "saldo_personales_ars": 14055598110.33
+    },
+    {
+      "fecha": "2024-02-01",
+      "mora_familias": 2.6,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 1.7,
+      "mora_personales": 4.2,
+      "mora_total": 1.2,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 50854358053.98,
+      "saldo_irregular_familias_ars": 1322213309.4,
+      "saldo_empresas_ars": 61751720494.12,
+      "saldo_irregular_empresas_ars": 1173282689.39,
+      "saldo_tarjetas_ars": 15256307416.19,
+      "saldo_personales_ars": 14239220255.11
+    },
+    {
+      "fecha": "2024-03-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 1.9,
+      "mora_tarjetas": 1.8,
+      "mora_personales": 4.3,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.3,
+      "saldo_familias_ars": 51514796945.28,
+      "saldo_irregular_familias_ars": 1390899517.52,
+      "saldo_empresas_ars": 62553682004.98,
+      "saldo_irregular_empresas_ars": 1188519958.09,
+      "saldo_tarjetas_ars": 15454439083.58,
+      "saldo_personales_ars": 14424143144.68
+    },
+    {
+      "fecha": "2024-04-01",
+      "mora_familias": 2.6,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 1.8,
+      "mora_personales": 4.3,
+      "mora_total": 1.2,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 52179886806.17,
+      "saldo_irregular_familias_ars": 1356677056.96,
+      "saldo_empresas_ars": 63361291121.78,
+      "saldo_irregular_empresas_ars": 1140503240.19,
+      "saldo_tarjetas_ars": 15653966041.85,
+      "saldo_personales_ars": 14610368305.73
+    },
+    {
+      "fecha": "2024-05-01",
+      "mora_familias": 2.8,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 2.0,
+      "mora_personales": 4.3,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 52849633063.73,
+      "saldo_irregular_familias_ars": 1479789725.78,
+      "saldo_empresas_ars": 64174554434.53,
+      "saldo_irregular_empresas_ars": 1155141979.82,
+      "saldo_tarjetas_ars": 15854889919.12,
+      "saldo_personales_ars": 14797897257.84
+    },
+    {
+      "fecha": "2024-06-01",
+      "mora_familias": 2.8,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 2.0,
+      "mora_personales": 4.2,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 53524041119.86,
+      "saldo_irregular_familias_ars": 1498673151.36,
+      "saldo_empresas_ars": 64993478502.68,
+      "saldo_irregular_empresas_ars": 1169882613.05,
+      "saldo_tarjetas_ars": 16057212335.96,
+      "saldo_personales_ars": 14986731513.56
+    },
+    {
+      "fecha": "2024-07-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 1.7,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 3.9,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 2.0,
+      "saldo_familias_ars": 54203116351.51,
+      "saldo_irregular_familias_ars": 1463484141.49,
+      "saldo_empresas_ars": 65818069855.41,
+      "saldo_irregular_empresas_ars": 1118907187.54,
+      "saldo_tarjetas_ars": 16260934905.45,
+      "saldo_personales_ars": 15176872578.42
+    },
+    {
+      "fecha": "2024-08-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 1.6,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 3.6,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 1.9,
+      "saldo_familias_ars": 54886864111.0,
+      "saldo_irregular_familias_ars": 1481945331.0,
+      "saldo_empresas_ars": 66648334991.92,
+      "saldo_irregular_empresas_ars": 1066373359.87,
+      "saldo_tarjetas_ars": 16466059233.3,
+      "saldo_personales_ars": 15368321951.08
+    },
+    {
+      "fecha": "2024-09-01",
+      "mora_familias": 2.6,
+      "mora_empresas": 1.6,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 3.5,
+      "mora_total": 1.2,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 1.9,
+      "saldo_familias_ars": 55575289726.21,
+      "saldo_irregular_familias_ars": 1444957532.88,
+      "saldo_empresas_ars": 67484280381.82,
+      "saldo_irregular_empresas_ars": 1079748486.11,
+      "saldo_tarjetas_ars": 16672586917.86,
+      "saldo_personales_ars": 15561081123.34
+    },
+    {
+      "fecha": "2024-10-01",
+      "mora_familias": 2.5,
+      "mora_empresas": 1.5,
+      "mora_tarjetas": 1.7,
+      "mora_personales": 3.4,
+      "mora_total": 1.2,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.5,
+      "mora_adelantos": 1.8,
+      "saldo_familias_ars": 56268398500.87,
+      "saldo_irregular_familias_ars": 1406709962.52,
+      "saldo_empresas_ars": 68325912465.34,
+      "saldo_irregular_empresas_ars": 1024888686.98,
+      "saldo_tarjetas_ars": 16880519550.26,
+      "saldo_personales_ars": 15755151580.24
+    },
+    {
+      "fecha": "2024-11-01",
+      "mora_familias": 2.5,
+      "mora_empresas": 1.5,
+      "mora_tarjetas": 1.8,
+      "mora_personales": 3.4,
+      "mora_total": 1.2,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.5,
+      "mora_adelantos": 1.8,
+      "saldo_familias_ars": 56966195714.79,
+      "saldo_irregular_familias_ars": 1424154892.87,
+      "saldo_empresas_ars": 69173237653.67,
+      "saldo_irregular_empresas_ars": 1037598564.81,
+      "saldo_tarjetas_ars": 17089858714.44,
+      "saldo_personales_ars": 15950534800.14
+    },
+    {
+      "fecha": "2024-12-01",
+      "mora_familias": 2.6,
+      "mora_empresas": 1.5,
+      "mora_tarjetas": 1.9,
+      "mora_personales": 3.3,
+      "mora_total": 1.2,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 1.8,
+      "saldo_familias_ars": 57668686624.1,
+      "saldo_irregular_familias_ars": 1499385852.23,
+      "saldo_empresas_ars": 70026262329.26,
+      "saldo_irregular_empresas_ars": 1050393934.94,
+      "saldo_tarjetas_ars": 17300605987.23,
+      "saldo_personales_ars": 16147232254.75
+    },
+    {
+      "fecha": "2025-01-01",
+      "mora_familias": 2.7,
+      "mora_empresas": 1.6,
+      "mora_tarjetas": 2.0,
+      "mora_personales": 3.5,
+      "mora_total": 1.3,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.6,
+      "mora_adelantos": 1.9,
+      "saldo_familias_ars": 58375876461.5,
+      "saldo_irregular_familias_ars": 1576148664.46,
+      "saldo_empresas_ars": 70884992846.11,
+      "saldo_irregular_empresas_ars": 1134159885.54,
+      "saldo_tarjetas_ars": 17512762938.45,
+      "saldo_personales_ars": 16345245409.22
+    },
+    {
+      "fecha": "2025-02-01",
+      "mora_familias": 2.9,
+      "mora_empresas": 1.8,
+      "mora_tarjetas": 2.4,
+      "mora_personales": 3.7,
+      "mora_total": 1.4,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 1.7,
+      "mora_adelantos": 2.2,
+      "saldo_familias_ars": 59087770436.48,
+      "saldo_irregular_familias_ars": 1713545342.66,
+      "saldo_empresas_ars": 71749435530.01,
+      "saldo_irregular_empresas_ars": 1291489839.54,
+      "saldo_tarjetas_ars": 17726331130.94,
+      "saldo_personales_ars": 16544575722.21
+    },
+    {
+      "fecha": "2025-03-01",
+      "mora_familias": 3.3,
+      "mora_empresas": 2.0,
+      "mora_tarjetas": 2.8,
+      "mora_personales": 4.1,
+      "mora_total": 1.6,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.0,
+      "mora_adelantos": 2.4,
+      "saldo_familias_ars": 59804373735.55,
+      "saldo_irregular_familias_ars": 1973544333.27,
+      "saldo_empresas_ars": 72619596678.88,
+      "saldo_irregular_empresas_ars": 1452391933.58,
+      "saldo_tarjetas_ars": 17941312120.67,
+      "saldo_personales_ars": 16745224645.95
+    },
+    {
+      "fecha": "2025-04-01",
+      "mora_familias": 3.7,
+      "mora_empresas": 2.2,
+      "mora_tarjetas": 3.2,
+      "mora_personales": 4.6,
+      "mora_total": 1.7,
+      "mora_hipotecarios": 0.5,
+      "mora_prendarios": 2.2,
+      "mora_adelantos": 2.6,
+      "saldo_familias_ars": 60525691522.47,
+      "saldo_irregular_familias_ars": 2239450586.33,
+      "saldo_empresas_ars": 73495482563.0,
+      "saldo_irregular_empresas_ars": 1616900616.39,
+      "saldo_tarjetas_ars": 18157707456.74,
+      "saldo_personales_ars": 16947193626.29
+    },
+    {
+      "fecha": "2025-05-01",
+      "mora_familias": 4.5,
+      "mora_empresas": 2.6,
+      "mora_tarjetas": 4.2,
+      "mora_personales": 5.6,
+      "mora_total": 2.1,
+      "mora_hipotecarios": 0.6,
+      "mora_prendarios": 2.7,
+      "mora_adelantos": 3.1,
+      "saldo_familias_ars": 61251728938.49,
+      "saldo_irregular_familias_ars": 2756327802.23,
+      "saldo_empresas_ars": 74377099425.31,
+      "saldo_irregular_empresas_ars": 1933804585.06,
+      "saldo_tarjetas_ars": 18375518681.55,
+      "saldo_personales_ars": 17150484102.78
+    },
+    {
+      "fecha": "2025-06-01",
+      "mora_familias": 5.1,
+      "mora_empresas": 2.9,
+      "mora_tarjetas": 4.9,
+      "mora_personales": 6.5,
+      "mora_total": 2.4,
+      "mora_hipotecarios": 0.7,
+      "mora_prendarios": 3.1,
+      "mora_adelantos": 3.5,
+      "saldo_familias_ars": 61982491102.54,
+      "saldo_irregular_familias_ars": 3161107046.23,
+      "saldo_empresas_ars": 75264453481.66,
+      "saldo_irregular_empresas_ars": 2182669150.97,
+      "saldo_tarjetas_ars": 18594747330.76,
+      "saldo_personales_ars": 17355097508.71
+    },
+    {
+      "fecha": "2025-07-01",
+      "mora_familias": 5.6,
+      "mora_empresas": 3.2,
+      "mora_tarjetas": 5.3,
+      "mora_personales": 7.2,
+      "mora_total": 2.6,
+      "mora_hipotecarios": 0.7,
+      "mora_prendarios": 3.4,
+      "mora_adelantos": 3.8,
+      "saldo_familias_ars": 62717983111.47,
+      "saldo_irregular_familias_ars": 3512207054.24,
+      "saldo_empresas_ars": 76157550921.07,
+      "saldo_irregular_empresas_ars": 2437041629.47,
+      "saldo_tarjetas_ars": 18815394933.44,
+      "saldo_personales_ars": 17561035271.21
+    },
+    {
+      "fecha": "2025-08-01",
+      "mora_familias": 6.6,
+      "mora_empresas": 3.7,
+      "mora_tarjetas": 6.7,
+      "mora_personales": 8.2,
+      "mora_total": 3.1,
+      "mora_hipotecarios": 0.9,
+      "mora_prendarios": 4.0,
+      "mora_adelantos": 4.4,
+      "saldo_familias_ars": 63458210040.26,
+      "saldo_irregular_familias_ars": 4188241862.66,
+      "saldo_empresas_ars": 77056397906.02,
+      "saldo_irregular_empresas_ars": 2851086722.52,
+      "saldo_tarjetas_ars": 19037463012.08,
+      "saldo_personales_ars": 17768298811.27
+    },
+    {
+      "fecha": "2025-09-01",
+      "mora_familias": 7.3,
+      "mora_empresas": 4.2,
+      "mora_tarjetas": 7.4,
+      "mora_personales": 9.1,
+      "mora_total": 3.4,
+      "mora_hipotecarios": 0.9,
+      "mora_prendarios": 4.4,
+      "mora_adelantos": 5.0,
+      "saldo_familias_ars": 64203176942.2,
+      "saldo_irregular_familias_ars": 4686831916.78,
+      "saldo_empresas_ars": 77961000572.67,
+      "saldo_irregular_empresas_ars": 3274362024.05,
+      "saldo_tarjetas_ars": 19260953082.66,
+      "saldo_personales_ars": 17976889543.82
+    },
+    {
+      "fecha": "2025-10-01",
+      "mora_familias": 7.8,
+      "mora_empresas": 4.5,
+      "mora_tarjetas": 7.7,
+      "mora_personales": 9.9,
+      "mora_total": 3.7,
+      "mora_hipotecarios": 1.0,
+      "mora_prendarios": 4.7,
+      "mora_adelantos": 5.4,
+      "saldo_familias_ars": 64952888849.15,
+      "saldo_irregular_familias_ars": 5066325330.23,
+      "saldo_empresas_ars": 78871365031.1,
+      "saldo_irregular_empresas_ars": 3549211426.4,
+      "saldo_tarjetas_ars": 19485866654.74,
+      "saldo_personales_ars": 18186808877.76
+    },
+    {
+      "fecha": "2025-11-01",
+      "mora_familias": 8.8,
+      "mora_empresas": 5.2,
+      "mora_tarjetas": 9.1,
+      "mora_personales": 11.0,
+      "mora_total": 4.1,
+      "mora_hipotecarios": 1.1,
+      "mora_prendarios": 5.3,
+      "mora_adelantos": 6.2,
+      "saldo_familias_ars": 65707350771.7,
+      "saldo_irregular_familias_ars": 5782246867.91,
+      "saldo_empresas_ars": 79787497365.63,
+      "saldo_irregular_empresas_ars": 4148949863.01,
+      "saldo_tarjetas_ars": 19712205231.51,
+      "saldo_personales_ars": 18398058216.08
+    },
+    {
+      "fecha": "2025-12-01",
+      "mora_familias": 9.3,
+      "mora_empresas": 5.6,
+      "mora_tarjetas": 9.3,
+      "mora_personales": 11.9,
+      "mora_total": 4.4,
+      "mora_hipotecarios": 1.2,
+      "mora_prendarios": 5.6,
+      "mora_adelantos": 6.7,
+      "saldo_familias_ars": 66466567699.39,
+      "saldo_irregular_familias_ars": 6181390796.04,
+      "saldo_empresas_ars": 80709403634.97,
+      "saldo_irregular_empresas_ars": 4519726603.56,
+      "saldo_tarjetas_ars": 19939970309.82,
+      "saldo_personales_ars": 18610638955.83
+    },
+    {
+      "fecha": "2026-01-01",
+      "mora_familias": 10.6,
+      "mora_empresas": 6.4,
+      "mora_tarjetas": 11.0,
+      "mora_personales": 13.2,
+      "mora_total": 5.0,
+      "mora_hipotecarios": 1.4,
+      "mora_prendarios": 6.4,
+      "mora_adelantos": 7.7,
+      "saldo_familias_ars": 67230544600.91,
+      "saldo_irregular_familias_ars": 7126437727.7,
+      "saldo_empresas_ars": 81637089872.54,
+      "saldo_irregular_empresas_ars": 5224773751.84,
+      "saldo_tarjetas_ars": 20169163380.27,
+      "saldo_personales_ars": 18824552488.25
+    },
+    {
+      "fecha": "2026-02-01",
+      "mora_familias": 11.2,
+      "mora_empresas": 6.7,
+      "mora_tarjetas": 11.6,
+      "mora_personales": 13.8,
+      "mora_total": 5.3,
+      "mora_hipotecarios": 1.5,
+      "mora_prendarios": 6.7,
+      "mora_adelantos": 8.0,
+      "saldo_familias_ars": 67999286424.29,
+      "saldo_irregular_familias_ars": 7615920079.52,
+      "saldo_empresas_ars": 82570562086.64,
+      "saldo_irregular_empresas_ars": 5532227659.8,
+      "saldo_tarjetas_ars": 20399785927.29,
+      "saldo_personales_ars": 19039800198.8
+    },
+    {
+      "fecha": "2026-03-01",
+      "mora_familias": 11.6,
+      "mora_empresas": 7.0,
+      "mora_tarjetas": 11.8,
+      "mora_personales": 14.4,
+      "mora_total": 5.5,
+      "mora_hipotecarios": 1.5,
+      "mora_prendarios": 7.0,
+      "mora_adelantos": 8.4,
+      "saldo_familias_ars": 68772798097.09,
+      "saldo_irregular_familias_ars": 7977644579.26,
+      "saldo_empresas_ars": 83509826260.75,
+      "saldo_irregular_empresas_ars": 5845687838.25,
+      "saldo_tarjetas_ars": 20631839429.13,
+      "saldo_personales_ars": 19256383467.19
+    },
+    {
+      "fecha": "2026-04-01",
+      "mora_familias": 12.1,
+      "mora_empresas": 7.3,
+      "mora_tarjetas": 12.5,
+      "mora_personales": 14.9,
+      "mora_total": 5.7,
+      "mora_hipotecarios": 1.6,
+      "mora_prendarios": 7.3,
+      "mora_adelantos": 8.8,
+      "saldo_familias_ars": 69551084526.57,
+      "saldo_irregular_familias_ars": 8415681227.71,
+      "saldo_empresas_ars": 84454888353.7,
+      "saldo_irregular_empresas_ars": 6165206849.82,
+      "saldo_tarjetas_ars": 20865325357.97,
+      "saldo_personales_ars": 19474303667.44
+    },
+    {
+      "fecha": "2026-05-01",
+      "mora_familias": 12.8,
+      "mora_empresas": 7.7,
+      "mora_tarjetas": 13.1,
+      "mora_personales": 15.9,
+      "mora_total": 6.0,
+      "mora_hipotecarios": 1.7,
+      "mora_prendarios": 7.7,
+      "mora_adelantos": 9.2,
+      "saldo_familias_ars": 70334150599.95,
+      "saldo_irregular_familias_ars": 9002771276.79,
+      "saldo_empresas_ars": 85405754299.93,
+      "saldo_irregular_empresas_ars": 6576243081.09,
+      "saldo_tarjetas_ars": 21100245179.98,
+      "saldo_personales_ars": 19693562167.99
+    }
+  ],
   "variables": [
     {
       "idVariable": 1,
@@ -25,8 +3375,8 @@
       "unidadExpresion": "En millones de USD",
       "moneda": "ME",
       "primerFechaInformada": "1996-01-03",
-      "ultFechaInformada": "2026-08-04",
-      "ultValorInformado": 49639.0
+      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 49372.0
     },
     {
       "idVariable": 4,
@@ -37,8 +3387,8 @@
       "unidadExpresion": "Pesos argentinos por dólar estadounidense",
       "moneda": "ML",
       "primerFechaInformada": "2010-06-01",
-      "ultFechaInformada": "2026-08-06",
-      "ultValorInformado": 1518.24
+      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 1520.12
     },
     {
       "idVariable": 5,
@@ -49,8 +3399,8 @@
       "unidadExpresion": "Pesos argentinos por dólar estadounidense",
       "moneda": "ML",
       "primerFechaInformada": "2002-03-04",
-      "ultFechaInformada": "2026-08-06",
-      "ultValorInformado": 1497.0062
+      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 1496.3132
     },
     {
       "idVariable": 7,
@@ -61,8 +3411,8 @@
       "unidadExpresion": "En porcentaje nominal anual",
       "moneda": "ML",
       "primerFechaInformada": "1999-01-04",
-      "ultFechaInformada": "2026-08-05",
-      "ultValorInformado": 20.875
+      "ultFechaInformada": "2026-08-04",
+      "ultValorInformado": 22.3125
     },
     {
       "idVariable": 8,
@@ -73,8 +3423,8 @@
       "unidadExpresion": "En porcentaje nominal anual",
       "moneda": "ML",
       "primerFechaInformada": "2017-01-02",
-      "ultFechaInformada": "2026-08-05",
-      "ultValorInformado": 21.375
+      "ultFechaInformada": "2026-08-04",
+      "ultValorInformado": 22.625
     },
     {
       "idVariable": 11,
@@ -85,8 +3435,8 @@
       "unidadExpresion": "En porcentaje nominal anual",
       "moneda": "ML",
       "primerFechaInformada": "1999-01-05",
-      "ultFechaInformada": "2026-08-05",
-      "ultValorInformado": 21.54
+      "ultFechaInformada": "2026-08-04",
+      "ultValorInformado": 21.86
     },
     {
       "idVariable": 12,
@@ -97,8 +3447,8 @@
       "unidadExpresion": "En porcentaje nominal anual",
       "moneda": "ML",
       "primerFechaInformada": "1985-08-26",
-      "ultFechaInformada": "2026-08-05",
-      "ultValorInformado": 19.89
+      "ultFechaInformada": "2026-08-04",
+      "ultValorInformado": 21.45
     },
     {
       "idVariable": 13,
@@ -109,8 +3459,8 @@
       "unidadExpresion": "En porcentaje nominal anual",
       "moneda": "ML",
       "primerFechaInformada": "2009-01-02",
-      "ultFechaInformada": "2026-08-05",
-      "ultValorInformado": 27.06
+      "ultFechaInformada": "2026-08-04",
+      "ultValorInformado": 26.22
     },
     {
       "idVariable": 14,
@@ -121,8 +3471,8 @@
       "unidadExpresion": "En porcentaje nominal anual",
       "moneda": "ML",
       "primerFechaInformada": "2010-07-01",
-      "ultFechaInformada": "2026-08-05",
-      "ultValorInformado": 63.71
+      "ultFechaInformada": "2026-08-04",
+      "ultValorInformado": 64.73
     },
     {
       "idVariable": 15,
@@ -133,8 +3483,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "ML",
       "primerFechaInformada": "1996-01-02",
-      "ultFechaInformada": "2026-08-04",
-      "ultValorInformado": 45693033.0
+      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 46439196.0
     },
     {
       "idVariable": 16,
@@ -145,8 +3495,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "ML",
       "primerFechaInformada": "1996-01-02",
-      "ultFechaInformada": "2026-08-04",
-      "ultValorInformado": 28796297.0
+      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 28834430.0
     },
     {
       "idVariable": 17,
@@ -157,8 +3507,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "ML",
       "primerFechaInformada": "1996-01-02",
-      "ultFechaInformada": "2026-08-04",
-      "ultValorInformado": 26493533.0
+      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 26549770.0
     },
     {
       "idVariable": 21,
@@ -169,8 +3519,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "MEyML",
       "primerFechaInformada": "1999-12-30",
-      "ultFechaInformada": "2026-08-04",
-      "ultValorInformado": 232040984.0
+      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 233349851.0
     },
     {
       "idVariable": 24,
@@ -181,8 +3531,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "MEyML",
       "primerFechaInformada": "1996-01-02",
-      "ultFechaInformada": "2026-08-04",
-      "ultValorInformado": 107699057.0
+      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 107194433.0
     },
     {
       "idVariable": 26,
@@ -193,8 +3543,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "MEyML",
       "primerFechaInformada": "1996-04-01",
-      "ultFechaInformada": "2026-08-04",
-      "ultValorInformado": 141208105.0
+      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 140981462.0
     },
     {
       "idVariable": 27,
@@ -229,8 +3579,8 @@
       "unidadExpresion": "En porcentaje",
       "moneda": "ML",
       "primerFechaInformada": "2004-01-31",
-      "ultFechaInformada": "2026-07-31",
-      "ultValorInformado": 21.8
+      "ultFechaInformada": "2026-06-30",
+      "ultValorInformado": 22.3
     },
     {
       "idVariable": 30,
@@ -241,8 +3591,8 @@
       "unidadExpresion": "Índice base 2.2.02=1",
       "moneda": "ML",
       "primerFechaInformada": "2002-02-02",
-      "ultFechaInformada": "2026-08-07",
-      "ultValorInformado": 818.90754259824
+      "ultFechaInformada": "2026-08-06",
+      "ultValorInformado": 818.41049103863
     },
     {
       "idVariable": 31,
@@ -253,8 +3603,8 @@
       "unidadExpresion": "En ARS",
       "moneda": "ML",
       "primerFechaInformada": "2016-03-31",
-      "ultFechaInformada": "2026-08-07",
-      "ultValorInformado": 2066.75
+      "ultFechaInformada": "2026-08-06",
+      "ultValorInformado": 2065.5
     },
     {
       "idVariable": 114,
@@ -265,8 +3615,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "ML",
       "primerFechaInformada": "2002-12-31",
-      "ultFechaInformada": "2026-08-03",
-      "ultValorInformado": 21474044.0
+      "ultFechaInformada": "2026-07-31",
+      "ultValorInformado": 21481618.0
     },
     {
       "idVariable": 115,
@@ -277,8 +3627,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "ML",
       "primerFechaInformada": "2002-12-31",
-      "ultFechaInformada": "2026-08-03",
-      "ultValorInformado": 24526490.0
+      "ultFechaInformada": "2026-07-31",
+      "ultValorInformado": 24776337.0
     },
     {
       "idVariable": 123,
@@ -289,8 +3639,8 @@
       "unidadExpresion": "En millones de USD",
       "moneda": "ME",
       "primerFechaInformada": "2002-12-31",
-      "ultFechaInformada": "2026-08-03",
-      "ultValorInformado": 680.0
+      "ultFechaInformada": "2026-07-31",
+      "ultValorInformado": 797.0
     },
     {
       "idVariable": 883,
@@ -331,6 +3681,10 @@
   ],
   "history": {
     "1": [
+      {
+        "fecha": "2022-06-21",
+        "valor": 40011.0
+      },
       {
         "fecha": "2022-06-22",
         "valor": 38231.0
@@ -4326,13 +7680,13 @@
       {
         "fecha": "2026-08-03",
         "valor": 49372.0
-      },
-      {
-        "fecha": "2026-08-04",
-        "valor": 49639.0
       }
     ],
     "4": [
+      {
+        "fecha": "2022-06-23",
+        "valor": 129.11
+      },
       {
         "fecha": "2022-06-24",
         "valor": 129.15
@@ -8328,13 +11682,13 @@
       {
         "fecha": "2026-08-05",
         "valor": 1520.12
-      },
-      {
-        "fecha": "2026-08-06",
-        "valor": 1518.24
       }
     ],
     "5": [
+      {
+        "fecha": "2022-06-23",
+        "valor": 124.0333
+      },
       {
         "fecha": "2022-06-24",
         "valor": 124.255
@@ -12330,13 +15684,13 @@
       {
         "fecha": "2026-08-05",
         "valor": 1496.3132
-      },
-      {
-        "fecha": "2026-08-06",
-        "valor": 1497.0062
       }
     ],
     "7": [
+      {
+        "fecha": "2022-06-22",
+        "valor": 50.6875
+      },
       {
         "fecha": "2022-06-23",
         "valor": 50.75
@@ -16332,13 +19686,13 @@
       {
         "fecha": "2026-08-04",
         "valor": 22.3125
-      },
-      {
-        "fecha": "2026-08-05",
-        "valor": 20.875
       }
     ],
     "8": [
+      {
+        "fecha": "2022-06-22",
+        "valor": 49.875
+      },
       {
         "fecha": "2022-06-23",
         "valor": 50.0
@@ -20334,13 +23688,13 @@
       {
         "fecha": "2026-08-04",
         "valor": 22.625
-      },
-      {
-        "fecha": "2026-08-05",
-        "valor": 21.375
       }
     ],
     "11": [
+      {
+        "fecha": "2022-06-22",
+        "valor": 36.38
+      },
       {
         "fecha": "2022-06-23",
         "valor": 36.22
@@ -24311,7 +27665,7 @@
       },
       {
         "fecha": "2026-07-27",
-        "valor": 21.09
+        "valor": 20.83
       },
       {
         "fecha": "2026-07-28",
@@ -24319,11 +27673,11 @@
       },
       {
         "fecha": "2026-07-29",
-        "valor": 20.38
+        "valor": 20.19
       },
       {
         "fecha": "2026-07-30",
-        "valor": 22.67
+        "valor": 22.5
       },
       {
         "fecha": "2026-07-31",
@@ -24336,13 +27690,13 @@
       {
         "fecha": "2026-08-04",
         "valor": 21.86
-      },
-      {
-        "fecha": "2026-08-05",
-        "valor": 21.54
       }
     ],
     "12": [
+      {
+        "fecha": "2022-06-22",
+        "valor": 50.57
+      },
       {
         "fecha": "2022-06-23",
         "valor": 50.8
@@ -28338,13 +31692,13 @@
       {
         "fecha": "2026-08-04",
         "valor": 21.45
-      },
-      {
-        "fecha": "2026-08-05",
-        "valor": 19.89
       }
     ],
     "13": [
+      {
+        "fecha": "2022-06-22",
+        "valor": 44.6
+      },
       {
         "fecha": "2022-06-23",
         "valor": 44.81
@@ -32340,13 +35694,13 @@
       {
         "fecha": "2026-08-04",
         "valor": 26.22
-      },
-      {
-        "fecha": "2026-08-05",
-        "valor": 27.06
       }
     ],
     "14": [
+      {
+        "fecha": "2022-06-22",
+        "valor": 61.09
+      },
       {
         "fecha": "2022-06-23",
         "valor": 59.08
@@ -36341,14 +39695,14 @@
       },
       {
         "fecha": "2026-08-04",
-        "valor": 64.74
-      },
-      {
-        "fecha": "2026-08-05",
-        "valor": 63.71
+        "valor": 64.73
       }
     ],
     "15": [
+      {
+        "fecha": "2022-06-21",
+        "valor": 3940012.0
+      },
       {
         "fecha": "2022-06-22",
         "valor": 3847073.0
@@ -40344,13 +43698,13 @@
       {
         "fecha": "2026-08-03",
         "valor": 46439196.0
-      },
-      {
-        "fecha": "2026-08-04",
-        "valor": 45693033.0
       }
     ],
     "16": [
+      {
+        "fecha": "2022-06-21",
+        "valor": 2976911.0
+      },
       {
         "fecha": "2022-06-22",
         "valor": 2978922.0
@@ -44346,13 +47700,13 @@
       {
         "fecha": "2026-08-03",
         "valor": 28834430.0
-      },
-      {
-        "fecha": "2026-08-04",
-        "valor": 28796297.0
       }
     ],
     "17": [
+      {
+        "fecha": "2022-06-21",
+        "valor": 2676580.0
+      },
       {
         "fecha": "2022-06-22",
         "valor": 2669225.0
@@ -48239,7 +51593,7 @@
       },
       {
         "fecha": "2026-06-23",
-        "valor": 24991361.0
+        "valor": 24991363.0
       },
       {
         "fecha": "2026-06-24",
@@ -48259,7 +51613,7 @@
       },
       {
         "fecha": "2026-06-30",
-        "valor": 25781734.0
+        "valor": 25781726.0
       },
       {
         "fecha": "2026-07-01",
@@ -48323,7 +51677,7 @@
       },
       {
         "fecha": "2026-07-24",
-        "valor": 26420677.0
+        "valor": 26419528.0
       },
       {
         "fecha": "2026-07-27",
@@ -48335,7 +51689,7 @@
       },
       {
         "fecha": "2026-07-29",
-        "valor": 26474231.0
+        "valor": 26472194.0
       },
       {
         "fecha": "2026-07-30",
@@ -48343,18 +51697,18 @@
       },
       {
         "fecha": "2026-07-31",
-        "valor": 26519739.0
+        "valor": 26518569.0
       },
       {
         "fecha": "2026-08-03",
-        "valor": 26550933.0
-      },
-      {
-        "fecha": "2026-08-04",
-        "valor": 26493533.0
+        "valor": 26549770.0
       }
     ],
     "21": [
+      {
+        "fecha": "2022-06-21",
+        "valor": 15705701.0
+      },
       {
         "fecha": "2022-06-22",
         "valor": 15883347.0
@@ -52237,11 +55591,11 @@
       },
       {
         "fecha": "2026-06-22",
-        "valor": 221981745.0
+        "valor": 221910010.0
       },
       {
         "fecha": "2026-06-23",
-        "valor": 223261391.0
+        "valor": 223108928.0
       },
       {
         "fecha": "2026-06-24",
@@ -52261,7 +55615,7 @@
       },
       {
         "fecha": "2026-06-30",
-        "valor": 228898396.0
+        "valor": 228896361.0
       },
       {
         "fecha": "2026-07-01",
@@ -52325,7 +55679,7 @@
       },
       {
         "fecha": "2026-07-24",
-        "valor": 229617239.0
+        "valor": 229648245.0
       },
       {
         "fecha": "2026-07-27",
@@ -52333,11 +55687,11 @@
       },
       {
         "fecha": "2026-07-28",
-        "valor": 230799268.0
+        "valor": 230800491.0
       },
       {
         "fecha": "2026-07-29",
-        "valor": 231226792.0
+        "valor": 231251137.0
       },
       {
         "fecha": "2026-07-30",
@@ -52345,18 +55699,18 @@
       },
       {
         "fecha": "2026-07-31",
-        "valor": 236131094.0
+        "valor": 236124703.0
       },
       {
         "fecha": "2026-08-03",
-        "valor": 233536412.0
-      },
-      {
-        "fecha": "2026-08-04",
-        "valor": 232040984.0
+        "valor": 233349851.0
       }
     ],
     "24": [
+      {
+        "fecha": "2022-06-21",
+        "valor": 6947762.0
+      },
       {
         "fecha": "2022-06-22",
         "valor": 7016324.0
@@ -56239,11 +59593,11 @@
       },
       {
         "fecha": "2026-06-22",
-        "valor": 102400847.0
+        "valor": 102337053.0
       },
       {
         "fecha": "2026-06-23",
-        "valor": 103634628.0
+        "valor": 103455896.0
       },
       {
         "fecha": "2026-06-24",
@@ -56327,7 +59681,7 @@
       },
       {
         "fecha": "2026-07-24",
-        "valor": 107611873.0
+        "valor": 107611885.0
       },
       {
         "fecha": "2026-07-27",
@@ -56339,7 +59693,7 @@
       },
       {
         "fecha": "2026-07-29",
-        "valor": 106495853.0
+        "valor": 106495814.0
       },
       {
         "fecha": "2026-07-30",
@@ -56347,18 +59701,18 @@
       },
       {
         "fecha": "2026-07-31",
-        "valor": 107382569.0
+        "valor": 107377087.0
       },
       {
         "fecha": "2026-08-03",
-        "valor": 107415710.0
-      },
-      {
-        "fecha": "2026-08-04",
-        "valor": 107699057.0
+        "valor": 107194433.0
       }
     ],
     "26": [
+      {
+        "fecha": "2022-06-21",
+        "valor": 5732421.0
+      },
       {
         "fecha": "2022-06-22",
         "valor": 5774680.0
@@ -60181,7 +63535,7 @@
       },
       {
         "fecha": "2026-05-29",
-        "valor": 132878287.0
+        "valor": 132566157.0
       },
       {
         "fecha": "2026-06-01",
@@ -60245,7 +63599,7 @@
       },
       {
         "fecha": "2026-06-23",
-        "valor": 135293050.0
+        "valor": 135281988.0
       },
       {
         "fecha": "2026-06-24",
@@ -60265,99 +63619,95 @@
       },
       {
         "fecha": "2026-06-30",
-        "valor": 139169054.0
+        "valor": 139276648.0
       },
       {
         "fecha": "2026-07-01",
-        "valor": 138388210.0
+        "valor": 138226417.0
       },
       {
         "fecha": "2026-07-02",
-        "valor": 138909994.0
+        "valor": 138754291.0
       },
       {
         "fecha": "2026-07-03",
-        "valor": 138604110.0
+        "valor": 138450921.0
       },
       {
         "fecha": "2026-07-06",
-        "valor": 138884931.0
+        "valor": 138732739.0
       },
       {
         "fecha": "2026-07-07",
-        "valor": 138471658.0
+        "valor": 138321143.0
       },
       {
         "fecha": "2026-07-08",
-        "valor": 138497091.0
+        "valor": 138349569.0
       },
       {
         "fecha": "2026-07-13",
-        "valor": 137426834.0
+        "valor": 137280879.0
       },
       {
         "fecha": "2026-07-14",
-        "valor": 137471766.0
+        "valor": 137331849.0
       },
       {
         "fecha": "2026-07-15",
-        "valor": 137114603.0
+        "valor": 136975876.0
       },
       {
         "fecha": "2026-07-16",
-        "valor": 137007891.0
+        "valor": 136876080.0
       },
       {
         "fecha": "2026-07-17",
-        "valor": 136939933.0
+        "valor": 136818579.0
       },
       {
         "fecha": "2026-07-20",
-        "valor": 137346163.0
+        "valor": 137226188.0
       },
       {
         "fecha": "2026-07-21",
-        "valor": 137845957.0
+        "valor": 137726706.0
       },
       {
         "fecha": "2026-07-22",
-        "valor": 138114834.0
+        "valor": 137994859.0
       },
       {
         "fecha": "2026-07-23",
-        "valor": 138816407.0
+        "valor": 138699342.0
       },
       {
         "fecha": "2026-07-24",
-        "valor": 139391984.0
+        "valor": 139269752.0
       },
       {
         "fecha": "2026-07-27",
-        "valor": 140277353.0
+        "valor": 140168495.0
       },
       {
         "fecha": "2026-07-28",
-        "valor": 140874483.0
+        "valor": 140769413.0
       },
       {
         "fecha": "2026-07-29",
-        "valor": 141057961.0
+        "valor": 140611381.0
       },
       {
         "fecha": "2026-07-30",
-        "valor": 141219211.0
+        "valor": 141116317.0
       },
       {
         "fecha": "2026-07-31",
-        "valor": 141333817.0
+        "valor": 141082384.0
       },
       {
         "fecha": "2026-08-03",
-        "valor": 141209329.0
-      },
-      {
-        "fecha": "2026-08-04",
-        "valor": 141208105.0
+        "valor": 140981462.0
       }
     ],
     "27": [
@@ -69224,10 +72574,6 @@
       {
         "fecha": "2026-06-30",
         "valor": 22.3
-      },
-      {
-        "fecha": "2026-07-31",
-        "valor": 21.8
       }
     ],
     "30": [
@@ -77236,6 +80582,10 @@
     ],
     "114": [
       {
+        "fecha": "2022-06-16",
+        "valor": 838198.0
+      },
+      {
         "fecha": "2022-06-21",
         "valor": 840933.0
       },
@@ -81061,7 +84411,7 @@
       },
       {
         "fecha": "2026-05-29",
-        "valor": 21036092.0
+        "valor": 21035056.0
       },
       {
         "fecha": "2026-06-01",
@@ -81125,7 +84475,7 @@
       },
       {
         "fecha": "2026-06-23",
-        "valor": 21160473.0
+        "valor": 21160474.0
       },
       {
         "fecha": "2026-06-24",
@@ -81209,7 +84559,7 @@
       },
       {
         "fecha": "2026-07-24",
-        "valor": 21448309.0
+        "valor": 21448312.0
       },
       {
         "fecha": "2026-07-27",
@@ -81221,7 +84571,7 @@
       },
       {
         "fecha": "2026-07-29",
-        "valor": 21537643.0
+        "valor": 21537645.0
       },
       {
         "fecha": "2026-07-30",
@@ -81229,14 +84579,14 @@
       },
       {
         "fecha": "2026-07-31",
-        "valor": 21481645.0
-      },
-      {
-        "fecha": "2026-08-03",
-        "valor": 21474044.0
+        "valor": 21481618.0
       }
     ],
     "115": [
+      {
+        "fecha": "2022-06-16",
+        "valor": 1440433.0
+      },
       {
         "fecha": "2022-06-21",
         "valor": 1461995.0
@@ -85063,7 +88413,7 @@
       },
       {
         "fecha": "2026-05-29",
-        "valor": 24898664.0
+        "valor": 24595192.0
       },
       {
         "fecha": "2026-06-01",
@@ -85127,7 +88477,7 @@
       },
       {
         "fecha": "2026-06-23",
-        "valor": 23936822.0
+        "valor": 23933249.0
       },
       {
         "fecha": "2026-06-24",
@@ -85211,7 +88561,7 @@
       },
       {
         "fecha": "2026-07-24",
-        "valor": 23173855.0
+        "valor": 23166007.0
       },
       {
         "fecha": "2026-07-27",
@@ -85223,7 +88573,7 @@
       },
       {
         "fecha": "2026-07-29",
-        "valor": 24645448.0
+        "valor": 24315692.0
       },
       {
         "fecha": "2026-07-30",
@@ -85231,14 +88581,14 @@
       },
       {
         "fecha": "2026-07-31",
-        "valor": 24922819.0
-      },
-      {
-        "fecha": "2026-08-03",
-        "valor": 24526490.0
+        "valor": 24776337.0
       }
     ],
     "123": [
+      {
+        "fecha": "2022-06-16",
+        "valor": 255.0
+      },
       {
         "fecha": "2022-06-21",
         "valor": 261.0
@@ -89213,7 +92563,7 @@
       },
       {
         "fecha": "2026-07-24",
-        "valor": 713.0
+        "valor": 714.0
       },
       {
         "fecha": "2026-07-27",
@@ -89225,7 +92575,7 @@
       },
       {
         "fecha": "2026-07-29",
-        "valor": 789.0
+        "valor": 781.0
       },
       {
         "fecha": "2026-07-30",
@@ -89233,11 +92583,7 @@
       },
       {
         "fecha": "2026-07-31",
-        "valor": 798.0
-      },
-      {
-        "fecha": "2026-08-03",
-        "valor": 680.0
+        "valor": 797.0
       }
     ],
     "883": [
@@ -93067,160 +96413,160 @@
     {
       "idVariable": 1,
       "descripcion": "Reservas internacionales",
-      "ultValorInformado": 49639.0,
-      "ultFechaInformada": "2026-08-04",
+      "ultValorInformado": 49372.0,
+      "ultFechaInformada": "2026-08-03",
       "unidadExpresion": "En millones de USD",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 4,
       "descripcion": "Tipo de cambio minorista (promedio vendedor)",
-      "ultValorInformado": 1518.24,
-      "ultFechaInformada": "2026-08-06",
+      "ultValorInformado": 1520.12,
+      "ultFechaInformada": "2026-08-05",
       "unidadExpresion": "Pesos argentinos por dólar estadounidense",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 5,
       "descripcion": "Tipo de cambio mayorista de referencia",
-      "ultValorInformado": 1497.0062,
-      "ultFechaInformada": "2026-08-06",
+      "ultValorInformado": 1496.3132,
+      "ultFechaInformada": "2026-08-05",
       "unidadExpresion": "Pesos argentinos por dólar estadounidense",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 7,
       "descripcion": "Tasa de interés BADLAR de bancos privados",
-      "ultValorInformado": 20.875,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 22.3125,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 8,
       "descripcion": "Tasa de interés TM20 de bancos privados",
-      "ultValorInformado": 21.375,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 22.625,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 11,
       "descripcion": "Tasa de interés de préstamos entre entidades financiera privadas (BAIBAR)",
-      "ultValorInformado": 21.54,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 21.86,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 12,
       "descripcion": "Tasa de interés de depósitos a 30 días de plazo en entidades financieras",
-      "ultValorInformado": 19.89,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 21.45,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 13,
       "descripcion": "Tasa de interés por adelantos en cuenta corriente",
-      "ultValorInformado": 27.06,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 26.22,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 14,
       "descripcion": "Tasa de interés de préstamos personales",
-      "ultValorInformado": 63.71,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 64.73,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 15,
       "descripcion": "Base monetaria",
-      "ultValorInformado": 45693033.0,
-      "ultFechaInformada": "2026-08-04",
+      "ultValorInformado": 46439196.0,
+      "ultFechaInformada": "2026-08-03",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 16,
       "descripcion": "Circulación monetaria",
-      "ultValorInformado": 28796297.0,
-      "ultFechaInformada": "2026-08-04",
+      "ultValorInformado": 28834430.0,
+      "ultFechaInformada": "2026-08-03",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 17,
       "descripcion": "Billetes y monedas en poder del público",
-      "ultValorInformado": 26493533.0,
-      "ultFechaInformada": "2026-08-04",
+      "ultValorInformado": 26549770.0,
+      "ultFechaInformada": "2026-08-03",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 18,
       "descripcion": "Efectivo en entidades financieras.",
-      "ultValorInformado": 2302764.0,
-      "ultFechaInformada": "2026-08-04",
+      "ultValorInformado": 2284660.0,
+      "ultFechaInformada": "2026-08-03",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 19,
       "descripcion": "Depósitos de las entidades financieras en cuenta corriente en el BCRA",
-      "ultValorInformado": 16896736.0,
-      "ultFechaInformada": "2026-08-04",
+      "ultValorInformado": 17604766.0,
+      "ultFechaInformada": "2026-08-03",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 21,
       "descripcion": "Depósitos en efectivo en las entidades financieras",
-      "ultValorInformado": 232040984.0,
-      "ultFechaInformada": "2026-08-04",
+      "ultValorInformado": 233349851.0,
+      "ultFechaInformada": "2026-08-03",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 22,
       "descripcion": "Depósitos en efectivo en las entidades financieras en cuentas corrientes(neto de utilización FUCO)",
-      "ultValorInformado": 30566628.0,
-      "ultFechaInformada": "2026-08-04",
+      "ultValorInformado": 32066048.0,
+      "ultFechaInformada": "2026-08-03",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 23,
       "descripcion": "Depósitos en efectivo en las entidades financieras en cajas de ahorro",
-      "ultValorInformado": 78937565.0,
-      "ultFechaInformada": "2026-08-04",
+      "ultValorInformado": 79069335.0,
+      "ultFechaInformada": "2026-08-03",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 24,
       "descripcion": "Depósitos a plazo en efectivo en las entidades financieras (incluye inversiones y excluye CEDROs)",
-      "ultValorInformado": 107699057.0,
-      "ultFechaInformada": "2026-08-04",
+      "ultValorInformado": 107194433.0,
+      "ultFechaInformada": "2026-08-03",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 25,
       "descripcion": "Variación interanual del promedio móvil de 30 días del M2 privado.",
-      "ultValorInformado": 19.7,
-      "ultFechaInformada": "2026-08-04",
+      "ultValorInformado": 19.8,
+      "ultFechaInformada": "2026-08-03",
       "unidadExpresion": "En porcentaje",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 26,
       "descripcion": "Préstamos de las entidades financieras al sector privado",
-      "ultValorInformado": 141208105.0,
-      "ultFechaInformada": "2026-08-04",
+      "ultValorInformado": 140981462.0,
+      "ultFechaInformada": "2026-08-03",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Principales Variables"
     },
@@ -93243,88 +96589,88 @@
     {
       "idVariable": 29,
       "descripcion": "Mediana de la variación interanual próximos 12 meses del índice de precios al consumidor del relevamiento de expectativas de mercado",
-      "ultValorInformado": 21.8,
-      "ultFechaInformada": "2026-07-31",
+      "ultValorInformado": 22.3,
+      "ultFechaInformada": "2026-06-30",
       "unidadExpresion": "En porcentaje",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 30,
       "descripcion": "Coeficiente de estabilización de referencia (base 2.2.02=1)",
-      "ultValorInformado": 818.90754259824,
-      "ultFechaInformada": "2026-08-07",
+      "ultValorInformado": 818.41049103863,
+      "ultFechaInformada": "2026-08-06",
       "unidadExpresion": "Índice base 2.2.02=1",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 31,
       "descripcion": "Unidad de valor adquisitivo (base 31.3.16=14.05)",
-      "ultValorInformado": 2066.75,
-      "ultFechaInformada": "2026-08-07",
+      "ultValorInformado": 2065.5,
+      "ultFechaInformada": "2026-08-06",
       "unidadExpresion": "En ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 32,
       "descripcion": "Unidad de vivienda (base 31.3.16=14.05)",
-      "ultValorInformado": 1512.0,
-      "ultFechaInformada": "2026-08-07",
+      "ultValorInformado": 1511.03,
+      "ultFechaInformada": "2026-08-06",
       "unidadExpresion": "En ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 35,
       "descripcion": "Tasa de interés BADLAR de bancos privados",
-      "ultValorInformado": 22.98,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 24.73,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje efectivo anual",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 40,
       "descripcion": "Índice para Contratos de Locación (base 30.6.20=1)",
-      "ultValorInformado": 35.11,
-      "ultFechaInformada": "2026-08-07",
+      "ultValorInformado": 35.09,
+      "ultFechaInformada": "2026-08-06",
       "unidadExpresion": "Índice base 30.6.20=1",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 43,
       "descripcion": "Tasa de interés Comunicado P 14.290 (Uso de justicia)",
-      "ultValorInformado": 26533.9819,
-      "ultFechaInformada": "2026-08-07",
+      "ultValorInformado": 26521.2043,
+      "ultFechaInformada": "2026-08-06",
       "unidadExpresion": "En porcentaje",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 44,
       "descripcion": "Tasa de interes TAMAR de bancos privados",
-      "ultValorInformado": 22.875,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 23.125,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 45,
       "descripcion": "Tasa de interés TAMAR de bancos privados",
-      "ultValorInformado": 25.42,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 25.73,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje efectivo anual",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 46,
       "descripcion": "Total de factores de explicación de la base monetaria",
-      "ultValorInformado": 245574.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 486913.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 47,
       "descripcion": "Efecto monetario de las compras netas de divisas al sector privado y otros",
-      "ultValorInformado": 26898.5,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 68465.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93332,7 +96678,7 @@
       "idVariable": 48,
       "descripcion": "Efecto monetario de las compras netas de divisas al tesoro nacional",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93340,7 +96686,7 @@
       "idVariable": 49,
       "descripcion": "Efecto monetario de los adelantos transitorios al tesoro nacional",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93348,15 +96694,15 @@
       "idVariable": 50,
       "descripcion": "Efecto monetario de las transferencia de utilidades al tesoro nacional",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 51,
       "descripcion": "Efecto monetario del resto de operaciones con el tesoro nacional",
-      "ultValorInformado": 13759.1344,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 261921.9129,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93364,7 +96710,7 @@
       "idVariable": 52,
       "descripcion": "Efecto monetario de las operaciones de pases",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93372,7 +96718,7 @@
       "idVariable": 53,
       "descripcion": "Efecto monetario de las LELIQ y NOTALQ",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93380,7 +96726,7 @@
       "idVariable": 54,
       "descripcion": "Efecto monetario de los redescuentos y adelantos",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93388,7 +96734,7 @@
       "idVariable": 55,
       "descripcion": "Efecto monetario de los intereses, primas y remuneración de cuentas corrientes asociados a op. de pases, LELIQ, NOTALQ, redescuentos y adel.",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93396,7 +96742,7 @@
       "idVariable": 56,
       "descripcion": "Efecto monetario de las LEBAC y NOBAC",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93404,7 +96750,7 @@
       "idVariable": 57,
       "descripcion": "Efecto monetario del rescate de cuasimonedas",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93412,31 +96758,31 @@
       "idVariable": 58,
       "descripcion": "Efecto monetario de las operaciones con letras fiscales de liquidez",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 59,
       "descripcion": "Efecto monetario de otras operaciones que explican la variación de la base monetaria",
-      "ultValorInformado": 204916.3656,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 156526.0871,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 60,
       "descripcion": "Billetes y monedas en poder del público",
-      "ultValorInformado": 31194.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 38528.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 61,
       "descripcion": "Billetes y monedas en entidades financieras",
-      "ultValorInformado": 9340.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": -5071.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93444,23 +96790,23 @@
       "idVariable": 62,
       "descripcion": "Cheques cancelatorios",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 63,
       "descripcion": "Cuentas corrientes en pesos en el BCRA",
-      "ultValorInformado": 205040.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 453456.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 64,
       "descripcion": "Base monetaria",
-      "ultValorInformado": 245574.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 486913.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93468,31 +96814,31 @@
       "idVariable": 65,
       "descripcion": "Cuasimonedas",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 66,
       "descripcion": "Base monetaria más cuasimonedas",
-      "ultValorInformado": 245574.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 486913.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 67,
       "descripcion": "Billetes y monedas en poder del público",
-      "ultValorInformado": 26550933.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 26518569.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 68,
       "descripcion": "Billetes y monedas en entidades financieras",
-      "ultValorInformado": 2283497.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 2275327.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93500,23 +96846,23 @@
       "idVariable": 69,
       "descripcion": "Cheques cancelatorios",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 70,
       "descripcion": "Cuentas corrientes en pesos en el BCRA",
-      "ultValorInformado": 17604766.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 17399726.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 71,
       "descripcion": "Base monetaria",
-      "ultValorInformado": 46439196.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 46193622.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93524,31 +96870,31 @@
       "idVariable": 72,
       "descripcion": "Cuasimonedas",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 73,
       "descripcion": "Base monetaria más cuasimonedas",
-      "ultValorInformado": 46439196.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 46193622.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 74,
       "descripcion": "Reservas internacionales (excluidas asignaciones deg 2009)",
-      "ultValorInformado": 49372.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 47599.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 75,
       "descripcion": "Oro, divisas, colocaciones a plazo y otros activos de reserva",
-      "ultValorInformado": 49372.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 47599.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
@@ -93556,55 +96902,55 @@
       "idVariable": 76,
       "descripcion": "Divisas-pase pasivo en dólares con el exterior",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 77,
       "descripcion": "Reservas internacionales",
-      "ultValorInformado": 1772.476,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": -1402.3691,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 78,
       "descripcion": "Variación de reservas internacionales por compra de divisas",
-      "ultValorInformado": 18.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 46.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 79,
       "descripcion": "Variación de reservas internacionales por operaciones con organismos internacionales",
-      "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 17.2693,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 80,
       "descripcion": "Variación de reservas internacionales por otras operaciones del sector público",
-      "ultValorInformado": 781.4664,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 430.9201,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 81,
       "descripcion": "Variación de reservas internacionales por efectivo mínimo",
-      "ultValorInformado": 1789.2702,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": -1827.7812,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 82,
       "descripcion": "Variación de reservas internacionales por otras operaciones no incluidas en otros rubros",
-      "ultValorInformado": -816.2606,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": -68.7774,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
@@ -93612,55 +96958,55 @@
       "idVariable": 83,
       "descripcion": "Asignaciones de DEGS del año 2009",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 84,
       "descripcion": "Tipo de cambio de valuación contable",
-      "ultValorInformado": 1493.4428,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 1488.4531,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "Pesos argentinos por dólar estadounidense",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 85,
       "descripcion": "Cuentas corrientes de los sectores público y privado no financieros",
-      "ultValorInformado": 31956507.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 33543028.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 86,
       "descripcion": "Cajas de ahorro de los sectores público y privado no financieros",
-      "ultValorInformado": 33843527.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 34898406.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 87,
       "descripcion": "Depósitos a plazo no ajustables por CER/UVAS de los sectores público y privado no financieros",
-      "ultValorInformado": 86925558.033,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 86838017.654,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 88,
       "descripcion": "Depósitos a plazo ajustables por CER/UVAS de los sectores público y privado no financieros",
-      "ultValorInformado": 1675195.967,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 1686144.346,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 89,
       "descripcion": "Otros depósitos de los sectores público y privado no financieros",
-      "ultValorInformado": 3288669.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 3166717.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93668,15 +97014,15 @@
       "idVariable": 90,
       "descripcion": "Cedros con cer de los sectores público y privado no financieros",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 91,
       "descripcion": "Depósitos en pesos de los sectores público y privados no financieros (incluye cedros)",
-      "ultValorInformado": 157689457.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 160132313.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93684,55 +97030,55 @@
       "idVariable": 92,
       "descripcion": "BODEN de los sectores público y privado no financieros",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 93,
       "descripcion": "Depósitos de los sectores público y privados no financieros (incluye cedro y BODEN)",
-      "ultValorInformado": 157689457.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 160132313.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 94,
       "descripcion": "Cuentas corrientes del sector privado no financiero",
-      "ultValorInformado": 22014363.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 22473292.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 95,
       "descripcion": "Cajas de ahorro del sector privado no financiero",
-      "ultValorInformado": 32828928.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 33818420.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 96,
       "descripcion": "Depósitos a plazo no ajustables por CER/UVAS del sector privado no financiero",
-      "ultValorInformado": 64795448.033,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 64967050.654,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 97,
       "descripcion": "Depósitos a plazo ajustables por CER/UVAS del sector privado no financiero",
-      "ultValorInformado": 1287770.967,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 1299173.346,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 98,
       "descripcion": "Otros depósitos del sector privado no financiero",
-      "ultValorInformado": 2178614.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 2334436.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93740,15 +97086,15 @@
       "idVariable": 99,
       "descripcion": "Cedros con cer del sector privado no financiero",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 100,
       "descripcion": "Depósitos del sector privado no financiero (incluye cedros)",
-      "ultValorInformado": 123105124.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 124892372.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93756,135 +97102,135 @@
       "idVariable": 101,
       "descripcion": "BODEN del sector privado no financiero",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 102,
       "descripcion": "Depósitos del sector privado no financiero (incluye cedro y BODEN)",
-      "ultValorInformado": 123105124.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 124892372.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 103,
       "descripcion": "Depósitos  de los sectores público y privado no financieros",
-      "ultValorInformado": 64256869.9128,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 64326477.6227,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 104,
       "descripcion": "Depósitos del sector privado no financiero",
-      "ultValorInformado": 60088671.058,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 59941494.7901,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 105,
       "descripcion": "Depósitos  de los sectores público y privado no financieros",
-      "ultValorInformado": 221946326.9128,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 224458790.6227,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 106,
       "descripcion": "Depósitos del sector privado no financiero",
-      "ultValorInformado": 183193795.058,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 184833866.7901,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 107,
       "descripcion": "Depósitos  de los sectores público y privado no financieros",
-      "ultValorInformado": 43026.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 43217.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 108,
       "descripcion": "Depósitos del sector privado no financiero",
-      "ultValorInformado": 40235.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 40271.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 109,
       "descripcion": "M2",
-      "ultValorInformado": 92350967.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 94960003.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 110,
       "descripcion": "Préstamos otorgados mediante adelantos en cuenta al sector privado",
-      "ultValorInformado": 11016735.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 10591075.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 111,
       "descripcion": "Préstamos otorgados mediante documentos al sector privado",
-      "ultValorInformado": 24761378.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 24849931.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 112,
       "descripcion": "Préstamos hipotecaríos otorgados al sector privado",
-      "ultValorInformado": 8271884.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 8243237.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 113,
       "descripcion": "Préstamos prendaríos otorgados al sector privado",
-      "ultValorInformado": 6338449.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 6315793.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 114,
       "descripcion": "Préstamos personales otorgados al sector privado",
-      "ultValorInformado": 21474044.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 21481618.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 115,
       "descripcion": "Préstamos mediante tarjeta de créditos otorgados al sector privado",
-      "ultValorInformado": 24526490.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 24776337.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 116,
       "descripcion": "Otros préstamos otorgados al sector privado",
-      "ultValorInformado": 7225772.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 7081714.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 117,
       "descripcion": "Préstamos otorgados al sector privado",
-      "ultValorInformado": 103614752.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 103339705.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93892,31 +97238,31 @@
       "idVariable": 118,
       "descripcion": "Préstamos en cuenta corriente otorgados al sector privado",
       "ultValorInformado": 250.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 119,
       "descripcion": "Préstamos documentaríos otorgados al sector privado",
-      "ultValorInformado": 18348.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 18397.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 120,
       "descripcion": "Préstamos hipotecaríos otorgados al sector privado",
-      "ultValorInformado": 694.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 695.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 121,
       "descripcion": "Préstamos prendaríos otorgados al sector privado",
-      "ultValorInformado": 1382.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 1383.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
@@ -93924,183 +97270,183 @@
       "idVariable": 122,
       "descripcion": "Préstamos personales otorgados al sector privado",
       "ultValorInformado": 4.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 123,
       "descripcion": "Préstamos en tarjeta de créditos otorgados al sector privado",
-      "ultValorInformado": 680.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 797.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 124,
       "descripcion": "Otros préstamos otorgados al sector privado",
-      "ultValorInformado": 3306.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 3304.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 125,
       "descripcion": "Préstamos otorgados al sector privado",
-      "ultValorInformado": 24664.0,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 24830.0,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 126,
       "descripcion": "Préstamos otorgados al sector privado",
-      "ultValorInformado": 36834273.2192,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 36958290.473,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 127,
       "descripcion": "Préstamos otorgados al sector privado",
-      "ultValorInformado": 140449025.2192,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 140297995.473,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 135,
       "descripcion": "Tasa de interés TAMAR de bancos públicos y privados",
-      "ultValorInformado": 22.3125,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 23.0625,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 136,
       "descripcion": "Tasa de interés TAMAR de bancos privados",
-      "ultValorInformado": 22.875,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 23.125,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 137,
       "descripcion": "Tasa de interés TAMAR de bancos privados",
-      "ultValorInformado": 25.4186,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 25.7263,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje efectivo anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 138,
       "descripcion": "Tasa de interés BADLAR de bancos públicos y privados",
-      "ultValorInformado": 20.375,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 21.9375,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 139,
       "descripcion": "Tasa de interés BADLAR de bancos privados",
-      "ultValorInformado": 20.875,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 22.3125,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 140,
       "descripcion": "Tasa de interés BADLAR de bancos privados",
-      "ultValorInformado": 22.9814,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 24.7287,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje efectivo anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 141,
       "descripcion": "Tasa de interés TM20 de bancos públicos y privados",
-      "ultValorInformado": 20.875,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 22.3125,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 142,
       "descripcion": "Tasa de interésTM20 de bancos privados",
-      "ultValorInformado": 21.375,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 22.625,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 143,
       "descripcion": "Tasa de interés TM20 de bancos privados",
-      "ultValorInformado": 23.5866,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 25.1115,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje efectivo anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 144,
       "descripcion": "Tasa de interés de préstamos personales otorgados al sector privado",
-      "ultValorInformado": 63.71,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 64.73,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 145,
       "descripcion": "Tasa de interés de adelantos en cuenta corriente, con acuerdo de 1 a 7 días y de 10 millones o más, a empresas del sector privado",
-      "ultValorInformado": 27.06,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 26.22,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 146,
       "descripcion": "Tasa de interés de préstamos entre bancos privados (BAIBAR)",
-      "ultValorInformado": 21.54,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 21.86,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 147,
       "descripcion": "Préstamos entre bancos privados (BAIBAR)",
-      "ultValorInformado": 136063.0,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 177465.0,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 148,
       "descripcion": "Tasa de interés de préstamos entre entidades financieras locales",
-      "ultValorInformado": 22.43,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 22.74,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 149,
       "descripcion": "Préstamos entre entidades financieras locales",
-      "ultValorInformado": 548172.0,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 459393.0,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 150,
       "descripcion": "Tasa de interés por operaciones de pases entre terceros a 1 día",
-      "ultValorInformado": 22.79,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 21.51,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 151,
       "descripcion": "Operaciones de pases entre terceros a 1 día",
-      "ultValorInformado": 1746691.0,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 1968646.0,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -94108,7 +97454,7 @@
       "idVariable": 152,
       "descripcion": "Pases pasivos para el BCRA (incluye pases pasivos con fci)",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-05",
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -94116,7 +97462,7 @@
       "idVariable": 153,
       "descripcion": "Pases pasivos para el BCRA con fondos comunes de inversión",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-05",
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -94124,7 +97470,7 @@
       "idVariable": 154,
       "descripcion": "Pases activos para el BCRA",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-05",
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -94132,15 +97478,15 @@
       "idVariable": 155,
       "descripcion": "LELIQ y NOTALQ",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-05",
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 156,
       "descripcion": "LEBAC y NOBAC , LEGAR y LEMIN",
-      "ultValorInformado": 228878.4028,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 232893.9944,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -94148,7 +97494,7 @@
       "idVariable": 157,
       "descripcion": "LEBAC y NOBAC  de entidades financieras",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-05",
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -94156,7 +97502,7 @@
       "idVariable": 158,
       "descripcion": "LEBAC, LEDIV y BOPREAL",
       "ultValorInformado": 4889.69,
-      "ultFechaInformada": "2026-08-05",
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
@@ -94164,7 +97510,7 @@
       "idVariable": 159,
       "descripcion": "NOCOM",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-05",
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -94460,23 +97806,23 @@
       "idVariable": 196,
       "descripcion": "LEFI en cartera de entidades financieras, en valor técnico",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-08-05",
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 197,
       "descripcion": "M2 transaccional del sector privado",
-      "ultValorInformado": 68199203.208,
-      "ultFechaInformada": "2026-08-03",
+      "ultValorInformado": 69381157.93,
+      "ultFechaInformada": "2026-07-31",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 198,
       "descripcion": "Otros",
-      "ultValorInformado": 814910.0568,
-      "ultFechaInformada": "2026-08-05",
+      "ultValorInformado": 880111.7804,
+      "ultFechaInformada": "2026-08-04",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
