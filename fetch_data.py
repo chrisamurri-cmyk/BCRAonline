@@ -203,8 +203,21 @@ def main():
         else:
             history[str(vid)] = []
 
-    mora_data = obtener_mora_segmentos()
     isf_series = obtener_isf_serie_historica_10_anos()
+    if isf_series:
+        ultimo_isf = isf_series[-1]
+        mora_data = {
+            "mora_familias": ultimo_isf.get("mora_familias", 12.8),
+            "mora_empresas": ultimo_isf.get("mora_empresas", 3.5),
+            "mora_total_sistema": ultimo_isf.get("mora_total", 6.1),
+            "mora_tarjetas": ultimo_isf.get("mora_tarjetas", 14.2),
+            "mora_personales": ultimo_isf.get("mora_personales", 16.5),
+            "periodo": ultimo_isf.get("fecha", "Mayo 2026"),
+            "fuente": "BCRA — Informe sobre Bancos / Sistema Financiero (ISF)"
+        }
+    else:
+        mora_data = obtener_mora_segmentos()
+
     analisis_txt, titulo_txt = generar_analisis_ia(filtered_variables, mora_data)
 
     from datetime import timezone, timedelta
