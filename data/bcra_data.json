@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "last_update": "2026-11-02T16:18:27.538593-03:00",
+    "last_update": "2026-11-03T13:53:48.503249-03:00",
     "total_catalog_count": 1000
   },
-  "ai_analysis": "Las reservas internacionales alcanzan 50.603,0 millones USD, denotando fortaleza externa. El tipo de cambio mayorista se sitúa en 1.537,3487 ARS. Las tasas de interés nominales son notablemente bajas, con BADLAR en 23,125% y depósitos a 30 días en 22,39%. Este escenario de tasas reducidas sugiere una inflación contenida y una consolidación de la estabilidad macroeconómica.",
+  "ai_analysis": "Reservas de 50.164,0 M USD robustecen la posición externa. El tipo de cambio mayorista en 1.544,65 ARS/USD refleja ajuste. Sin embargo, las tasas nominales sumamente bajas (BADLAR 22,75% TNA; depósitos 21,77% TNA) implican una exitosa contención inflacionaria y expectativas de estabilidad para 2026. La base monetaria es 46.205.273,0 M ARS. Tasas de préstamos personales (60,19% TNA) evidencian aún un diferencial de riesgo.",
   "ai_title": "Resumen macroeconómico",
   "mora_segmentos": {
     "mora_familias": 12.8,
@@ -25,8 +25,8 @@
       "unidadExpresion": "En millones de USD",
       "moneda": "ME",
       "primerFechaInformada": "1996-01-03",
-      "ultFechaInformada": "2026-10-28",
-      "ultValorInformado": 50603.0
+      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 50164.0
     },
     {
       "idVariable": 4,
@@ -37,8 +37,8 @@
       "unidadExpresion": "Pesos argentinos por dólar estadounidense",
       "moneda": "ML",
       "primerFechaInformada": "2010-06-01",
-      "ultFechaInformada": "2026-10-30",
-      "ultValorInformado": 1562.04
+      "ultFechaInformada": "2026-11-02",
+      "ultValorInformado": 1567.17
     },
     {
       "idVariable": 5,
@@ -49,8 +49,8 @@
       "unidadExpresion": "Pesos argentinos por dólar estadounidense",
       "moneda": "ML",
       "primerFechaInformada": "2002-03-04",
-      "ultFechaInformada": "2026-10-30",
-      "ultValorInformado": 1537.3487
+      "ultFechaInformada": "2026-11-02",
+      "ultValorInformado": 1544.6507
     },
     {
       "idVariable": 7,
@@ -61,8 +61,8 @@
       "unidadExpresion": "En porcentaje nominal anual",
       "moneda": "ML",
       "primerFechaInformada": "1999-01-04",
-      "ultFechaInformada": "2026-10-29",
-      "ultValorInformado": 23.125
+      "ultFechaInformada": "2026-10-30",
+      "ultValorInformado": 22.75
     },
     {
       "idVariable": 8,
@@ -73,8 +73,8 @@
       "unidadExpresion": "En porcentaje nominal anual",
       "moneda": "ML",
       "primerFechaInformada": "2017-01-02",
-      "ultFechaInformada": "2026-10-29",
-      "ultValorInformado": 23.4375
+      "ultFechaInformada": "2026-10-30",
+      "ultValorInformado": 23.125
     },
     {
       "idVariable": 11,
@@ -85,8 +85,8 @@
       "unidadExpresion": "En porcentaje nominal anual",
       "moneda": "ML",
       "primerFechaInformada": "1999-01-05",
-      "ultFechaInformada": "2026-10-29",
-      "ultValorInformado": 21.53
+      "ultFechaInformada": "2026-10-30",
+      "ultValorInformado": 22.15
     },
     {
       "idVariable": 12,
@@ -97,8 +97,8 @@
       "unidadExpresion": "En porcentaje nominal anual",
       "moneda": "ML",
       "primerFechaInformada": "1985-08-26",
-      "ultFechaInformada": "2026-10-29",
-      "ultValorInformado": 22.39
+      "ultFechaInformada": "2026-10-30",
+      "ultValorInformado": 21.77
     },
     {
       "idVariable": 13,
@@ -109,8 +109,8 @@
       "unidadExpresion": "En porcentaje nominal anual",
       "moneda": "ML",
       "primerFechaInformada": "2009-01-02",
-      "ultFechaInformada": "2026-10-29",
-      "ultValorInformado": 25.11
+      "ultFechaInformada": "2026-10-30",
+      "ultValorInformado": 24.89
     },
     {
       "idVariable": 14,
@@ -121,8 +121,8 @@
       "unidadExpresion": "En porcentaje nominal anual",
       "moneda": "ML",
       "primerFechaInformada": "2010-07-01",
-      "ultFechaInformada": "2026-10-29",
-      "ultValorInformado": 60.56
+      "ultFechaInformada": "2026-10-30",
+      "ultValorInformado": 60.19
     },
     {
       "idVariable": 15,
@@ -133,8 +133,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "ML",
       "primerFechaInformada": "1996-01-02",
-      "ultFechaInformada": "2026-10-28",
-      "ultValorInformado": 45680819.0
+      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 46205273.0
     },
     {
       "idVariable": 16,
@@ -145,8 +145,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "ML",
       "primerFechaInformada": "1996-01-02",
-      "ultFechaInformada": "2026-10-28",
-      "ultValorInformado": 28808790.0
+      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 28966791.0
     },
     {
       "idVariable": 17,
@@ -157,8 +157,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "ML",
       "primerFechaInformada": "1996-01-02",
-      "ultFechaInformada": "2026-10-28",
-      "ultValorInformado": 26670498.0
+      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 26787890.0
     },
     {
       "idVariable": 21,
@@ -169,8 +169,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "MEyML",
       "primerFechaInformada": "1999-12-30",
-      "ultFechaInformada": "2026-10-28",
-      "ultValorInformado": 251676638.0
+      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 253105936.0
     },
     {
       "idVariable": 24,
@@ -181,8 +181,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "MEyML",
       "primerFechaInformada": "1996-01-02",
-      "ultFechaInformada": "2026-10-28",
-      "ultValorInformado": 119847155.0
+      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 118782716.0
     },
     {
       "idVariable": 26,
@@ -193,8 +193,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "MEyML",
       "primerFechaInformada": "1996-04-01",
-      "ultFechaInformada": "2026-10-28",
-      "ultValorInformado": 151098226.0
+      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 151303504.0
     },
     {
       "idVariable": 27,
@@ -241,8 +241,8 @@
       "unidadExpresion": "Índice base 2.2.02=1",
       "moneda": "ML",
       "primerFechaInformada": "2002-02-02",
-      "ultFechaInformada": "2026-11-02",
-      "ultValorInformado": 863.84800272562
+      "ultFechaInformada": "2026-11-03",
+      "ultValorInformado": 864.37265019987
     },
     {
       "idVariable": 31,
@@ -253,8 +253,8 @@
       "unidadExpresion": "En ARS",
       "moneda": "ML",
       "primerFechaInformada": "2016-03-31",
-      "ultFechaInformada": "2026-11-02",
-      "ultValorInformado": 2177.53
+      "ultFechaInformada": "2026-11-03",
+      "ultValorInformado": 2181.5
     },
     {
       "idVariable": 114,
@@ -265,8 +265,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "ML",
       "primerFechaInformada": "2002-12-31",
-      "ultFechaInformada": "2026-10-27",
-      "ultValorInformado": 22530419.0
+      "ultFechaInformada": "2026-10-28",
+      "ultValorInformado": 22584678.0
     },
     {
       "idVariable": 115,
@@ -277,8 +277,8 @@
       "unidadExpresion": "En millones de ARS",
       "moneda": "ML",
       "primerFechaInformada": "2002-12-31",
-      "ultFechaInformada": "2026-10-27",
-      "ultValorInformado": 25297996.0
+      "ultFechaInformada": "2026-10-28",
+      "ultValorInformado": 25475688.0
     },
     {
       "idVariable": 123,
@@ -289,8 +289,8 @@
       "unidadExpresion": "En millones de USD",
       "moneda": "ME",
       "primerFechaInformada": "2002-12-31",
-      "ultFechaInformada": "2026-10-27",
-      "ultValorInformado": 710.0
+      "ultFechaInformada": "2026-10-28",
+      "ultValorInformado": 722.0
     },
     {
       "idVariable": 883,
@@ -331,10 +331,6 @@
   ],
   "history": {
     "1": [
-      {
-        "fecha": "2022-09-15",
-        "valor": 37916.0
-      },
       {
         "fecha": "2022-09-16",
         "valor": 38120.0
@@ -4330,13 +4326,13 @@
       {
         "fecha": "2026-10-28",
         "valor": 50603.0
+      },
+      {
+        "fecha": "2026-10-29",
+        "valor": 50164.0
       }
     ],
     "4": [
-      {
-        "fecha": "2022-09-19",
-        "valor": 150.93
-      },
       {
         "fecha": "2022-09-20",
         "valor": 151.24
@@ -8332,13 +8328,13 @@
       {
         "fecha": "2026-10-30",
         "valor": 1562.04
+      },
+      {
+        "fecha": "2026-11-02",
+        "valor": 1567.17
       }
     ],
     "5": [
-      {
-        "fecha": "2022-09-19",
-        "valor": 144.345
-      },
       {
         "fecha": "2022-09-20",
         "valor": 144.6317
@@ -12334,13 +12330,13 @@
       {
         "fecha": "2026-10-30",
         "valor": 1537.3487
+      },
+      {
+        "fecha": "2026-11-02",
+        "valor": 1544.6507
       }
     ],
     "7": [
-      {
-        "fecha": "2022-09-16",
-        "valor": 68.1875
-      },
       {
         "fecha": "2022-09-19",
         "valor": 68.6875
@@ -16336,13 +16332,13 @@
       {
         "fecha": "2026-10-29",
         "valor": 23.125
+      },
+      {
+        "fecha": "2026-10-30",
+        "valor": 22.75
       }
     ],
     "8": [
-      {
-        "fecha": "2022-09-16",
-        "valor": 66.375
-      },
       {
         "fecha": "2022-09-19",
         "valor": 66.3125
@@ -20338,13 +20334,13 @@
       {
         "fecha": "2026-10-29",
         "valor": 23.4375
+      },
+      {
+        "fecha": "2026-10-30",
+        "valor": 23.125
       }
     ],
     "11": [
-      {
-        "fecha": "2022-09-16",
-        "valor": 61.24
-      },
       {
         "fecha": "2022-09-19",
         "valor": 60.52
@@ -24340,13 +24336,13 @@
       {
         "fecha": "2026-10-29",
         "valor": 21.53
+      },
+      {
+        "fecha": "2026-10-30",
+        "valor": 22.15
       }
     ],
     "12": [
-      {
-        "fecha": "2022-09-16",
-        "valor": 69.74
-      },
       {
         "fecha": "2022-09-19",
         "valor": 70.21
@@ -28342,13 +28338,13 @@
       {
         "fecha": "2026-10-29",
         "valor": 22.39
+      },
+      {
+        "fecha": "2026-10-30",
+        "valor": 21.77
       }
     ],
     "13": [
-      {
-        "fecha": "2022-09-16",
-        "valor": 71.14
-      },
       {
         "fecha": "2022-09-19",
         "valor": 72.26
@@ -32344,13 +32340,13 @@
       {
         "fecha": "2026-10-29",
         "valor": 25.11
+      },
+      {
+        "fecha": "2026-10-30",
+        "valor": 24.89
       }
     ],
     "14": [
-      {
-        "fecha": "2022-09-16",
-        "valor": 77.94
-      },
       {
         "fecha": "2022-09-19",
         "valor": 78.61
@@ -36209,7 +36205,7 @@
       },
       {
         "fecha": "2026-09-10",
-        "valor": 63.31
+        "valor": 63.29
       },
       {
         "fecha": "2026-09-11",
@@ -36345,14 +36341,14 @@
       },
       {
         "fecha": "2026-10-29",
-        "valor": 60.56
+        "valor": 60.5
+      },
+      {
+        "fecha": "2026-10-30",
+        "valor": 60.19
       }
     ],
     "15": [
-      {
-        "fecha": "2022-09-15",
-        "valor": 4264815.0
-      },
       {
         "fecha": "2022-09-16",
         "valor": 4110170.0
@@ -40348,13 +40344,13 @@
       {
         "fecha": "2026-10-28",
         "valor": 45680819.0
+      },
+      {
+        "fecha": "2026-10-29",
+        "valor": 46205273.0
       }
     ],
     "16": [
-      {
-        "fecha": "2022-09-15",
-        "valor": 3168305.0
-      },
       {
         "fecha": "2022-09-16",
         "valor": 3161666.0
@@ -44350,13 +44346,13 @@
       {
         "fecha": "2026-10-28",
         "valor": 28808790.0
+      },
+      {
+        "fecha": "2026-10-29",
+        "valor": 28966791.0
       }
     ],
     "17": [
-      {
-        "fecha": "2022-09-15",
-        "valor": 2853281.0
-      },
       {
         "fecha": "2022-09-16",
         "valor": 2849273.0
@@ -48339,7 +48335,7 @@
       },
       {
         "fecha": "2026-10-23",
-        "valor": 26571617.0
+        "valor": 26561972.0
       },
       {
         "fecha": "2026-10-26",
@@ -48347,18 +48343,18 @@
       },
       {
         "fecha": "2026-10-27",
-        "valor": 26603847.0
+        "valor": 26608177.0
       },
       {
         "fecha": "2026-10-28",
-        "valor": 26670498.0
+        "valor": 26670237.0
+      },
+      {
+        "fecha": "2026-10-29",
+        "valor": 26787890.0
       }
     ],
     "21": [
-      {
-        "fecha": "2022-09-15",
-        "valor": 18477907.0
-      },
       {
         "fecha": "2022-09-16",
         "valor": 18544344.0
@@ -51321,31 +51317,31 @@
       },
       {
         "fecha": "2025-10-01",
-        "valor": 189626529.0
+        "valor": 189627062.0
       },
       {
         "fecha": "2025-10-02",
-        "valor": 189114469.0
+        "valor": 189115001.0
       },
       {
         "fecha": "2025-10-03",
-        "valor": 189081152.0
+        "valor": 189081334.0
       },
       {
         "fecha": "2025-10-06",
-        "valor": 187786719.0
+        "valor": 187786346.0
       },
       {
         "fecha": "2025-10-07",
-        "valor": 187944730.0
+        "valor": 187944658.0
       },
       {
         "fecha": "2025-10-08",
-        "valor": 186653000.0
+        "valor": 186652599.0
       },
       {
         "fecha": "2025-10-09",
-        "valor": 186780453.0
+        "valor": 186780051.0
       },
       {
         "fecha": "2025-10-13",
@@ -51357,51 +51353,51 @@
       },
       {
         "fecha": "2025-10-15",
-        "valor": 183444477.0
+        "valor": 183444024.0
       },
       {
         "fecha": "2025-10-16",
-        "valor": 184036412.0
+        "valor": 184035959.0
       },
       {
         "fecha": "2025-10-17",
-        "valor": 187124768.0
+        "valor": 187124316.0
       },
       {
         "fecha": "2025-10-20",
-        "valor": 188883575.0
+        "valor": 188882723.0
       },
       {
         "fecha": "2025-10-21",
-        "valor": 189297600.0
+        "valor": 189296747.0
       },
       {
         "fecha": "2025-10-22",
-        "valor": 189564760.0
+        "valor": 189563908.0
       },
       {
         "fecha": "2025-10-23",
-        "valor": 189871112.0
+        "valor": 189870386.0
       },
       {
         "fecha": "2025-10-24",
-        "valor": 189852187.0
+        "valor": 189851461.0
       },
       {
         "fecha": "2025-10-27",
-        "valor": 185731914.0
+        "valor": 185731441.0
       },
       {
         "fecha": "2025-10-28",
-        "valor": 189762851.0
+        "valor": 189762378.0
       },
       {
         "fecha": "2025-10-29",
-        "valor": 189219434.0
+        "valor": 189218960.0
       },
       {
         "fecha": "2025-10-30",
-        "valor": 189565148.0
+        "valor": 189565414.0
       },
       {
         "fecha": "2025-10-31",
@@ -51441,7 +51437,7 @@
       },
       {
         "fecha": "2025-11-14",
-        "valor": 188057201.0
+        "valor": 188057151.0
       },
       {
         "fecha": "2025-11-17",
@@ -51453,7 +51449,7 @@
       },
       {
         "fecha": "2025-11-19",
-        "valor": 189662675.0
+        "valor": 189662622.0
       },
       {
         "fecha": "2025-11-20",
@@ -51481,7 +51477,7 @@
       },
       {
         "fecha": "2025-12-02",
-        "valor": 201201576.0
+        "valor": 201199179.0
       },
       {
         "fecha": "2025-12-03",
@@ -51489,7 +51485,7 @@
       },
       {
         "fecha": "2025-12-04",
-        "valor": 200876414.0
+        "valor": 200874317.0
       },
       {
         "fecha": "2025-12-05",
@@ -51497,11 +51493,11 @@
       },
       {
         "fecha": "2025-12-09",
-        "valor": 196881450.0
+        "valor": 196878777.0
       },
       {
         "fecha": "2025-12-10",
-        "valor": 197582773.0
+        "valor": 197579900.0
       },
       {
         "fecha": "2025-12-11",
@@ -51521,7 +51517,7 @@
       },
       {
         "fecha": "2025-12-17",
-        "valor": 200061044.0
+        "valor": 200059444.0
       },
       {
         "fecha": "2025-12-18",
@@ -51633,7 +51629,7 @@
       },
       {
         "fecha": "2026-01-30",
-        "valor": 201697998.0
+        "valor": 201698290.0
       },
       {
         "fecha": "2026-02-02",
@@ -52337,11 +52333,11 @@
       },
       {
         "fecha": "2026-10-22",
-        "valor": 249847534.0
+        "valor": 249844490.0
       },
       {
         "fecha": "2026-10-23",
-        "valor": 249841431.0
+        "valor": 249831441.0
       },
       {
         "fecha": "2026-10-26",
@@ -52349,18 +52345,18 @@
       },
       {
         "fecha": "2026-10-27",
-        "valor": 251264420.0
+        "valor": 251277651.0
       },
       {
         "fecha": "2026-10-28",
-        "valor": 251676638.0
+        "valor": 251789114.0
+      },
+      {
+        "fecha": "2026-10-29",
+        "valor": 253105936.0
       }
     ],
     "24": [
-      {
-        "fecha": "2022-09-15",
-        "valor": 8310756.0
-      },
       {
         "fecha": "2022-09-16",
         "valor": 8574438.0
@@ -55635,7 +55631,7 @@
       },
       {
         "fecha": "2026-01-30",
-        "valor": 89909520.0
+        "valor": 89909812.0
       },
       {
         "fecha": "2026-02-02",
@@ -56343,7 +56339,7 @@
       },
       {
         "fecha": "2026-10-23",
-        "valor": 120015401.0
+        "valor": 120015258.0
       },
       {
         "fecha": "2026-10-26",
@@ -56351,18 +56347,18 @@
       },
       {
         "fecha": "2026-10-27",
-        "valor": 120551649.0
+        "valor": 120552241.0
       },
       {
         "fecha": "2026-10-28",
-        "valor": 119847155.0
+        "valor": 119966279.0
+      },
+      {
+        "fecha": "2026-10-29",
+        "valor": 118782716.0
       }
     ],
     "26": [
-      {
-        "fecha": "2022-09-15",
-        "valor": 6343858.0
-      },
       {
         "fecha": "2022-09-16",
         "valor": 6353654.0
@@ -60281,23 +60277,23 @@
       },
       {
         "fecha": "2026-09-30",
-        "valor": 149122928.0
+        "valor": 149130690.0
       },
       {
         "fecha": "2026-10-01",
-        "valor": 148978351.0
+        "valor": 148971365.0
       },
       {
         "fecha": "2026-10-02",
-        "valor": 148950109.0
+        "valor": 148943123.0
       },
       {
         "fecha": "2026-10-05",
-        "valor": 148317303.0
+        "valor": 148310317.0
       },
       {
         "fecha": "2026-10-06",
-        "valor": 148568018.0
+        "valor": 148561032.0
       },
       {
         "fecha": "2026-10-07",
@@ -60305,59 +60301,63 @@
       },
       {
         "fecha": "2026-10-08",
-        "valor": 147687213.0
+        "valor": 147680227.0
       },
       {
         "fecha": "2026-10-09",
-        "valor": 146572061.0
+        "valor": 146565075.0
       },
       {
         "fecha": "2026-10-13",
-        "valor": 147197578.0
+        "valor": 147190592.0
       },
       {
         "fecha": "2026-10-14",
-        "valor": 147542787.0
+        "valor": 147535801.0
       },
       {
         "fecha": "2026-10-15",
-        "valor": 146884357.0
+        "valor": 146877371.0
       },
       {
         "fecha": "2026-10-16",
-        "valor": 147332749.0
+        "valor": 147325763.0
       },
       {
         "fecha": "2026-10-19",
-        "valor": 147775264.0
+        "valor": 147768278.0
       },
       {
         "fecha": "2026-10-20",
-        "valor": 148491727.0
+        "valor": 148484741.0
       },
       {
         "fecha": "2026-10-21",
-        "valor": 149024672.0
+        "valor": 149017686.0
       },
       {
         "fecha": "2026-10-22",
-        "valor": 149315616.0
+        "valor": 149308543.0
       },
       {
         "fecha": "2026-10-23",
-        "valor": 149553476.0
+        "valor": 149699302.0
       },
       {
         "fecha": "2026-10-26",
-        "valor": 150117204.0
+        "valor": 150117203.0
       },
       {
         "fecha": "2026-10-27",
-        "valor": 150843296.0
+        "valor": 150823391.0
       },
       {
         "fecha": "2026-10-28",
-        "valor": 151098226.0
+        "valor": 151103639.0
+      },
+      {
+        "fecha": "2026-10-29",
+        "valor": 151303504.0
       }
     ],
     "27": [
@@ -77256,10 +77256,6 @@
     ],
     "114": [
       {
-        "fecha": "2022-09-14",
-        "valor": 928192.0
-      },
-      {
         "fecha": "2022-09-15",
         "valor": 930755.0
       },
@@ -81181,23 +81177,23 @@
       },
       {
         "fecha": "2026-09-30",
-        "valor": 22110528.0
+        "valor": 22111127.0
       },
       {
         "fecha": "2026-10-01",
-        "valor": 22123172.0
+        "valor": 22122628.0
       },
       {
         "fecha": "2026-10-02",
-        "valor": 22143578.0
+        "valor": 22143033.0
       },
       {
         "fecha": "2026-10-05",
-        "valor": 22186982.0
+        "valor": 22186437.0
       },
       {
         "fecha": "2026-10-06",
-        "valor": 22168648.0
+        "valor": 22168103.0
       },
       {
         "fecha": "2026-10-07",
@@ -81205,47 +81201,47 @@
       },
       {
         "fecha": "2026-10-08",
-        "valor": 22235213.0
+        "valor": 22234669.0
       },
       {
         "fecha": "2026-10-09",
-        "valor": 22291614.0
+        "valor": 22291069.0
       },
       {
         "fecha": "2026-10-13",
-        "valor": 22261542.0
+        "valor": 22260998.0
       },
       {
         "fecha": "2026-10-14",
-        "valor": 22295058.0
+        "valor": 22294513.0
       },
       {
         "fecha": "2026-10-15",
-        "valor": 22305093.0
+        "valor": 22304549.0
       },
       {
         "fecha": "2026-10-16",
-        "valor": 22343553.0
+        "valor": 22343008.0
       },
       {
         "fecha": "2026-10-19",
-        "valor": 22402378.0
+        "valor": 22401833.0
       },
       {
         "fecha": "2026-10-20",
-        "valor": 22435131.0
+        "valor": 22434587.0
       },
       {
         "fecha": "2026-10-21",
-        "valor": 22448611.0
+        "valor": 22448066.0
       },
       {
         "fecha": "2026-10-22",
-        "valor": 22471888.0
+        "valor": 22471343.0
       },
       {
         "fecha": "2026-10-23",
-        "valor": 22469766.0
+        "valor": 22469220.0
       },
       {
         "fecha": "2026-10-26",
@@ -81253,14 +81249,14 @@
       },
       {
         "fecha": "2026-10-27",
-        "valor": 22530419.0
+        "valor": 22530486.0
+      },
+      {
+        "fecha": "2026-10-28",
+        "valor": 22584678.0
       }
     ],
     "115": [
-      {
-        "fecha": "2022-09-14",
-        "valor": 1574312.0
-      },
       {
         "fecha": "2022-09-15",
         "valor": 1582147.0
@@ -85183,7 +85179,7 @@
       },
       {
         "fecha": "2026-09-30",
-        "valor": 26311010.0
+        "valor": 26319228.0
       },
       {
         "fecha": "2026-10-01",
@@ -85247,22 +85243,22 @@
       },
       {
         "fecha": "2026-10-23",
-        "valor": 24091658.0
+        "valor": 24220951.0
       },
       {
         "fecha": "2026-10-26",
-        "valor": 24492235.0
+        "valor": 24492234.0
       },
       {
         "fecha": "2026-10-27",
-        "valor": 25297996.0
+        "valor": 25306500.0
+      },
+      {
+        "fecha": "2026-10-28",
+        "valor": 25475688.0
       }
     ],
     "123": [
-      {
-        "fecha": "2022-09-14",
-        "valor": 204.0
-      },
       {
         "fecha": "2022-09-15",
         "valor": 212.0
@@ -89249,7 +89245,7 @@
       },
       {
         "fecha": "2026-10-23",
-        "valor": 676.0
+        "valor": 681.0
       },
       {
         "fecha": "2026-10-26",
@@ -89257,7 +89253,11 @@
       },
       {
         "fecha": "2026-10-27",
-        "valor": 710.0
+        "valor": 711.0
+      },
+      {
+        "fecha": "2026-10-28",
+        "valor": 722.0
       }
     ],
     "883": [
@@ -93123,160 +93123,160 @@
     {
       "idVariable": 1,
       "descripcion": "Reservas internacionales",
-      "ultValorInformado": 50603.0,
-      "ultFechaInformada": "2026-10-28",
+      "ultValorInformado": 50164.0,
+      "ultFechaInformada": "2026-10-29",
       "unidadExpresion": "En millones de USD",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 4,
       "descripcion": "Tipo de cambio minorista (promedio vendedor)",
-      "ultValorInformado": 1562.04,
-      "ultFechaInformada": "2026-10-30",
+      "ultValorInformado": 1567.17,
+      "ultFechaInformada": "2026-11-02",
       "unidadExpresion": "Pesos argentinos por dólar estadounidense",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 5,
       "descripcion": "Tipo de cambio mayorista de referencia",
-      "ultValorInformado": 1537.3487,
-      "ultFechaInformada": "2026-10-30",
+      "ultValorInformado": 1544.6507,
+      "ultFechaInformada": "2026-11-02",
       "unidadExpresion": "Pesos argentinos por dólar estadounidense",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 7,
       "descripcion": "Tasa de interés BADLAR de bancos privados",
-      "ultValorInformado": 23.125,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 22.75,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 8,
       "descripcion": "Tasa de interés TM20 de bancos privados",
-      "ultValorInformado": 23.4375,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 23.125,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 11,
       "descripcion": "Tasa de interés de préstamos entre entidades financiera privadas (BAIBAR)",
-      "ultValorInformado": 21.53,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 22.15,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 12,
       "descripcion": "Tasa de interés de depósitos a 30 días de plazo en entidades financieras",
-      "ultValorInformado": 22.39,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 21.77,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 13,
       "descripcion": "Tasa de interés por adelantos en cuenta corriente",
-      "ultValorInformado": 25.11,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 24.89,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 14,
       "descripcion": "Tasa de interés de préstamos personales",
-      "ultValorInformado": 60.56,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 60.19,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 15,
       "descripcion": "Base monetaria",
-      "ultValorInformado": 45680819.0,
-      "ultFechaInformada": "2026-10-28",
+      "ultValorInformado": 46205273.0,
+      "ultFechaInformada": "2026-10-29",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 16,
       "descripcion": "Circulación monetaria",
-      "ultValorInformado": 28808790.0,
-      "ultFechaInformada": "2026-10-28",
+      "ultValorInformado": 28966791.0,
+      "ultFechaInformada": "2026-10-29",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 17,
       "descripcion": "Billetes y monedas en poder del público",
-      "ultValorInformado": 26670498.0,
-      "ultFechaInformada": "2026-10-28",
+      "ultValorInformado": 26787890.0,
+      "ultFechaInformada": "2026-10-29",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 18,
       "descripcion": "Efectivo en entidades financieras.",
-      "ultValorInformado": 2138292.0,
-      "ultFechaInformada": "2026-10-28",
+      "ultValorInformado": 2178901.0,
+      "ultFechaInformada": "2026-10-29",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 19,
       "descripcion": "Depósitos de las entidades financieras en cuenta corriente en el BCRA",
-      "ultValorInformado": 16872029.0,
-      "ultFechaInformada": "2026-10-28",
+      "ultValorInformado": 17238482.0,
+      "ultFechaInformada": "2026-10-29",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 21,
       "descripcion": "Depósitos en efectivo en las entidades financieras",
-      "ultValorInformado": 251676638.0,
-      "ultFechaInformada": "2026-10-28",
+      "ultValorInformado": 253105936.0,
+      "ultFechaInformada": "2026-10-29",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 22,
       "descripcion": "Depósitos en efectivo en las entidades financieras en cuentas corrientes(neto de utilización FUCO)",
-      "ultValorInformado": 37283332.0,
-      "ultFechaInformada": "2026-10-28",
+      "ultValorInformado": 38317784.0,
+      "ultFechaInformada": "2026-10-29",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 23,
       "descripcion": "Depósitos en efectivo en las entidades financieras en cajas de ahorro",
-      "ultValorInformado": 78935875.0,
-      "ultFechaInformada": "2026-10-28",
+      "ultValorInformado": 80355980.0,
+      "ultFechaInformada": "2026-10-29",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 24,
       "descripcion": "Depósitos a plazo en efectivo en las entidades financieras (incluye inversiones y excluye CEDROs)",
-      "ultValorInformado": 119847155.0,
-      "ultFechaInformada": "2026-10-28",
+      "ultValorInformado": 118782716.0,
+      "ultFechaInformada": "2026-10-29",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 25,
       "descripcion": "Variación interanual del promedio móvil de 30 días del M2 privado.",
-      "ultValorInformado": 20.5,
-      "ultFechaInformada": "2026-10-28",
+      "ultValorInformado": 20.6,
+      "ultFechaInformada": "2026-10-29",
       "unidadExpresion": "En porcentaje",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 26,
       "descripcion": "Préstamos de las entidades financieras al sector privado",
-      "ultValorInformado": 151098226.0,
-      "ultFechaInformada": "2026-10-28",
+      "ultValorInformado": 151303504.0,
+      "ultFechaInformada": "2026-10-29",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Principales Variables"
     },
@@ -93307,72 +93307,72 @@
     {
       "idVariable": 30,
       "descripcion": "Coeficiente de estabilización de referencia (base 2.2.02=1)",
-      "ultValorInformado": 863.84800272562,
-      "ultFechaInformada": "2026-11-02",
+      "ultValorInformado": 864.37265019987,
+      "ultFechaInformada": "2026-11-03",
       "unidadExpresion": "Índice base 2.2.02=1",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 31,
       "descripcion": "Unidad de valor adquisitivo (base 31.3.16=14.05)",
-      "ultValorInformado": 2177.53,
-      "ultFechaInformada": "2026-11-02",
+      "ultValorInformado": 2181.5,
+      "ultFechaInformada": "2026-11-03",
       "unidadExpresion": "En ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 32,
       "descripcion": "Unidad de vivienda (base 31.3.16=14.05)",
-      "ultValorInformado": 1596.13,
-      "ultFechaInformada": "2026-11-02",
+      "ultValorInformado": 1598.44,
+      "ultFechaInformada": "2026-11-03",
       "unidadExpresion": "En ARS",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 35,
       "descripcion": "Tasa de interés BADLAR de bancos privados",
-      "ultValorInformado": 25.73,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 25.26,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje efectivo anual",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 40,
       "descripcion": "Índice para Contratos de Locación (base 30.6.20=1)",
-      "ultValorInformado": 37.23,
-      "ultFechaInformada": "2026-11-02",
+      "ultValorInformado": 37.25,
+      "ultFechaInformada": "2026-11-03",
       "unidadExpresion": "Índice base 30.6.20=1",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 43,
       "descripcion": "Tasa de interés Comunicado P 14.290 (Uso de justicia)",
-      "ultValorInformado": 27698.4331,
-      "ultFechaInformada": "2026-11-02",
+      "ultValorInformado": 27712.5978,
+      "ultFechaInformada": "2026-11-03",
       "unidadExpresion": "En porcentaje",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 44,
       "descripcion": "Tasa de interes TAMAR de bancos privados",
-      "ultValorInformado": 24.125,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 24.0625,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 45,
       "descripcion": "Tasa de interés TAMAR de bancos privados",
-      "ultValorInformado": 26.96,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 26.89,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje efectivo anual",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 46,
       "descripcion": "Total de factores de explicación de la base monetaria",
-      "ultValorInformado": -1234595.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 110896.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93380,7 +93380,7 @@
       "idVariable": 47,
       "descripcion": "Efecto monetario de las compras netas de divisas al sector privado y otros",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93388,7 +93388,7 @@
       "idVariable": 48,
       "descripcion": "Efecto monetario de las compras netas de divisas al tesoro nacional",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93396,7 +93396,7 @@
       "idVariable": 49,
       "descripcion": "Efecto monetario de los adelantos transitorios al tesoro nacional",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93404,15 +93404,15 @@
       "idVariable": 50,
       "descripcion": "Efecto monetario de las transferencia de utilidades al tesoro nacional",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 51,
       "descripcion": "Efecto monetario del resto de operaciones con el tesoro nacional",
-      "ultValorInformado": 67776.3711,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": -391.5455,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93420,7 +93420,7 @@
       "idVariable": 52,
       "descripcion": "Efecto monetario de las operaciones de pases",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93428,7 +93428,7 @@
       "idVariable": 53,
       "descripcion": "Efecto monetario de las LELIQ y NOTALQ",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93436,7 +93436,7 @@
       "idVariable": 54,
       "descripcion": "Efecto monetario de los redescuentos y adelantos",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93444,7 +93444,7 @@
       "idVariable": 55,
       "descripcion": "Efecto monetario de los intereses, primas y remuneración de cuentas corrientes asociados a op. de pases, LELIQ, NOTALQ, redescuentos y adel.",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93452,7 +93452,7 @@
       "idVariable": 56,
       "descripcion": "Efecto monetario de las LEBAC y NOBAC",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93460,7 +93460,7 @@
       "idVariable": 57,
       "descripcion": "Efecto monetario del rescate de cuasimonedas",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93468,31 +93468,31 @@
       "idVariable": 58,
       "descripcion": "Efecto monetario de las operaciones con letras fiscales de liquidez",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 59,
       "descripcion": "Efecto monetario de otras operaciones que explican la variación de la base monetaria",
-      "ultValorInformado": -1302371.3711,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 111287.5455,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 60,
       "descripcion": "Billetes y monedas en poder del público",
-      "ultValorInformado": -2395.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 62060.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 61,
       "descripcion": "Billetes y monedas en entidades financieras",
-      "ultValorInformado": 66977.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 27300.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93500,23 +93500,23 @@
       "idVariable": 62,
       "descripcion": "Cheques cancelatorios",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 63,
       "descripcion": "Cuentas corrientes en pesos en el BCRA",
-      "ultValorInformado": -1299177.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 21536.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 64,
       "descripcion": "Base monetaria",
-      "ultValorInformado": -1234595.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 110896.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93524,31 +93524,31 @@
       "idVariable": 65,
       "descripcion": "Cuasimonedas",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 66,
       "descripcion": "Base monetaria más cuasimonedas",
-      "ultValorInformado": -1234595.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 110896.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 67,
       "descripcion": "Billetes y monedas en poder del público",
-      "ultValorInformado": 26603847.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 26670237.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 68,
       "descripcion": "Billetes y monedas en entidades financieras",
-      "ultValorInformado": 2115583.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 2138553.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93556,23 +93556,23 @@
       "idVariable": 69,
       "descripcion": "Cheques cancelatorios",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 70,
       "descripcion": "Cuentas corrientes en pesos en el BCRA",
-      "ultValorInformado": 16850493.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 16872029.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 71,
       "descripcion": "Base monetaria",
-      "ultValorInformado": 45569923.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 45680819.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93580,31 +93580,31 @@
       "idVariable": 72,
       "descripcion": "Cuasimonedas",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 73,
       "descripcion": "Base monetaria más cuasimonedas",
-      "ultValorInformado": 45569923.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 45680819.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 74,
       "descripcion": "Reservas internacionales (excluidas asignaciones deg 2009)",
-      "ultValorInformado": 50579.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 50603.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 75,
       "descripcion": "Oro, divisas, colocaciones a plazo y otros activos de reserva",
-      "ultValorInformado": 50579.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 50603.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
@@ -93612,15 +93612,15 @@
       "idVariable": 76,
       "descripcion": "Divisas-pase pasivo en dólares con el exterior",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 77,
       "descripcion": "Reservas internacionales",
-      "ultValorInformado": 97.452,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 23.7967,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
@@ -93628,7 +93628,7 @@
       "idVariable": 78,
       "descripcion": "Variación de reservas internacionales por compra de divisas",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
@@ -93636,31 +93636,31 @@
       "idVariable": 79,
       "descripcion": "Variación de reservas internacionales por operaciones con organismos internacionales",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 80,
       "descripcion": "Variación de reservas internacionales por otras operaciones del sector público",
-      "ultValorInformado": 21.8977,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": -0.4347,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 81,
       "descripcion": "Variación de reservas internacionales por efectivo mínimo",
-      "ultValorInformado": -14.0943,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 55.0483,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 82,
       "descripcion": "Variación de reservas internacionales por otras operaciones no incluidas en otros rubros",
-      "ultValorInformado": 89.6486,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": -30.817,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
@@ -93668,55 +93668,55 @@
       "idVariable": 83,
       "descripcion": "Asignaciones de DEGS del año 2009",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 84,
       "descripcion": "Tipo de cambio de valuación contable",
-      "ultValorInformado": 1538.741,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 1538.4739,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "Pesos argentinos por dólar estadounidense",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 85,
       "descripcion": "Cuentas corrientes de los sectores público y privado no financieros",
-      "ultValorInformado": 36658387.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 37116500.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 86,
       "descripcion": "Cajas de ahorro de los sectores público y privado no financieros",
-      "ultValorInformado": 28888990.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 29758973.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 87,
       "descripcion": "Depósitos a plazo no ajustables por CER/UVAS de los sectores público y privado no financieros",
-      "ultValorInformado": 97349860.916,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 96885442.147,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 88,
       "descripcion": "Depósitos a plazo ajustables por CER/UVAS de los sectores público y privado no financieros",
-      "ultValorInformado": 2100495.084,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 2103138.853,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 89,
       "descripcion": "Otros depósitos de los sectores público y privado no financieros",
-      "ultValorInformado": 3110619.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 2899791.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93724,15 +93724,15 @@
       "idVariable": 90,
       "descripcion": "Cedros con cer de los sectores público y privado no financieros",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 91,
       "descripcion": "Depósitos en pesos de los sectores público y privados no financieros (incluye cedros)",
-      "ultValorInformado": 168108352.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 168763845.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93740,55 +93740,55 @@
       "idVariable": 92,
       "descripcion": "BODEN de los sectores público y privado no financieros",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 93,
       "descripcion": "Depósitos de los sectores público y privados no financieros (incluye cedro y BODEN)",
-      "ultValorInformado": 168108352.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 168763845.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 94,
       "descripcion": "Cuentas corrientes del sector privado no financiero",
-      "ultValorInformado": 21712222.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 21746190.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 95,
       "descripcion": "Cajas de ahorro del sector privado no financiero",
-      "ultValorInformado": 27838722.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 28770671.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 96,
       "descripcion": "Depósitos a plazo no ajustables por CER/UVAS del sector privado no financiero",
-      "ultValorInformado": 70502947.916,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 70728167.147,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 97,
       "descripcion": "Depósitos a plazo ajustables por CER/UVAS del sector privado no financiero",
-      "ultValorInformado": 1313442.084,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 1316084.853,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 98,
       "descripcion": "Otros depósitos del sector privado no financiero",
-      "ultValorInformado": 1945353.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 1966417.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93796,15 +93796,15 @@
       "idVariable": 99,
       "descripcion": "Cedros con cer del sector privado no financiero",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 100,
       "descripcion": "Depósitos del sector privado no financiero (incluye cedros)",
-      "ultValorInformado": 123312687.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 124527530.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -93812,159 +93812,159 @@
       "idVariable": 101,
       "descripcion": "BODEN del sector privado no financiero",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 102,
       "descripcion": "Depósitos del sector privado no financiero (incluye cedro y BODEN)",
-      "ultValorInformado": 123312687.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 124527530.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 103,
       "descripcion": "Depósitos  de los sectores público y privado no financieros",
-      "ultValorInformado": 70588204.634,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 70472873.9373,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 104,
       "descripcion": "Depósitos del sector privado no financiero",
-      "ultValorInformado": 65856576.059,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 65806682.5986,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 105,
       "descripcion": "Depósitos  de los sectores público y privado no financieros",
-      "ultValorInformado": 238696556.634,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 239236718.9373,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 106,
       "descripcion": "Depósitos del sector privado no financiero",
-      "ultValorInformado": 189169263.059,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 190334212.5986,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 107,
       "descripcion": "Depósitos  de los sectores público y privado no financieros",
-      "ultValorInformado": 45874.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 45807.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 108,
       "descripcion": "Depósitos del sector privado no financiero",
-      "ultValorInformado": 42799.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 42774.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 109,
       "descripcion": "M2",
-      "ultValorInformado": 92151224.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 93545710.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 110,
       "descripcion": "Préstamos otorgados mediante adelantos en cuenta al sector privado",
-      "ultValorInformado": 11144897.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 10948029.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 111,
       "descripcion": "Préstamos otorgados mediante documentos al sector privado",
-      "ultValorInformado": 26942312.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 27015413.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 112,
       "descripcion": "Préstamos hipotecaríos otorgados al sector privado",
-      "ultValorInformado": 9512335.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 9535358.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 113,
       "descripcion": "Préstamos prendaríos otorgados al sector privado",
-      "ultValorInformado": 6695619.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 6704519.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 114,
       "descripcion": "Préstamos personales otorgados al sector privado",
-      "ultValorInformado": 22530419.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 22584678.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 115,
       "descripcion": "Préstamos mediante tarjeta de créditos otorgados al sector privado",
-      "ultValorInformado": 25297996.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 25475688.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 116,
       "descripcion": "Otros préstamos otorgados al sector privado",
-      "ultValorInformado": 7657480.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 7645858.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 117,
       "descripcion": "Préstamos otorgados al sector privado",
-      "ultValorInformado": 109781058.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 109909543.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 118,
       "descripcion": "Préstamos en cuenta corriente otorgados al sector privado",
-      "ultValorInformado": 294.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 305.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 119,
       "descripcion": "Préstamos documentaríos otorgados al sector privado",
-      "ultValorInformado": 19143.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 19193.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 120,
       "descripcion": "Préstamos hipotecaríos otorgados al sector privado",
-      "ultValorInformado": 855.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 859.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
@@ -93972,7 +93972,7 @@
       "idVariable": 121,
       "descripcion": "Préstamos prendaríos otorgados al sector privado",
       "ultValorInformado": 1408.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
@@ -93980,183 +93980,183 @@
       "idVariable": 122,
       "descripcion": "Préstamos personales otorgados al sector privado",
       "ultValorInformado": 4.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 123,
       "descripcion": "Préstamos en tarjeta de créditos otorgados al sector privado",
-      "ultValorInformado": 710.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 722.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 124,
       "descripcion": "Otros préstamos otorgados al sector privado",
-      "ultValorInformado": 3717.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 3723.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 125,
       "descripcion": "Préstamos otorgados al sector privado",
-      "ultValorInformado": 26131.0,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 26214.0,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 126,
       "descripcion": "Préstamos otorgados al sector privado",
-      "ultValorInformado": 40208841.071,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 40329554.8146,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 127,
       "descripcion": "Préstamos otorgados al sector privado",
-      "ultValorInformado": 149989899.071,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 150239097.8146,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 135,
       "descripcion": "Tasa de interés TAMAR de bancos públicos y privados",
-      "ultValorInformado": 24.0625,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 23.5625,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 136,
       "descripcion": "Tasa de interés TAMAR de bancos privados",
-      "ultValorInformado": 24.125,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 24.0625,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 137,
       "descripcion": "Tasa de interés TAMAR de bancos privados",
-      "ultValorInformado": 26.9641,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 26.8864,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje efectivo anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 138,
       "descripcion": "Tasa de interés BADLAR de bancos públicos y privados",
-      "ultValorInformado": 23.125,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 22.5,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 139,
       "descripcion": "Tasa de interés BADLAR de bancos privados",
-      "ultValorInformado": 23.125,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 22.75,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 140,
       "descripcion": "Tasa de interés BADLAR de bancos privados",
-      "ultValorInformado": 25.7263,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 25.265,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje efectivo anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 141,
       "descripcion": "Tasa de interés TM20 de bancos públicos y privados",
-      "ultValorInformado": 23.4375,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 22.8125,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 142,
       "descripcion": "Tasa de interésTM20 de bancos privados",
-      "ultValorInformado": 23.4375,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 23.125,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 143,
       "descripcion": "Tasa de interés TM20 de bancos privados",
-      "ultValorInformado": 26.1119,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 25.7263,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje efectivo anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 144,
       "descripcion": "Tasa de interés de préstamos personales otorgados al sector privado",
-      "ultValorInformado": 60.56,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 60.19,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 145,
       "descripcion": "Tasa de interés de adelantos en cuenta corriente, con acuerdo de 1 a 7 días y de 10 millones o más, a empresas del sector privado",
-      "ultValorInformado": 25.11,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 24.89,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 146,
       "descripcion": "Tasa de interés de préstamos entre bancos privados (BAIBAR)",
-      "ultValorInformado": 21.53,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 22.15,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 147,
       "descripcion": "Préstamos entre bancos privados (BAIBAR)",
-      "ultValorInformado": 270340.0,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 211287.0,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 148,
       "descripcion": "Tasa de interés de préstamos entre entidades financieras locales",
-      "ultValorInformado": 21.08,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 21.42,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 149,
       "descripcion": "Préstamos entre entidades financieras locales",
-      "ultValorInformado": 466441.0,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 372586.0,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 150,
       "descripcion": "Tasa de interés por operaciones de pases entre terceros a 1 día",
-      "ultValorInformado": 20.7,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 21.86,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En porcentaje nominal anual",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 151,
       "descripcion": "Operaciones de pases entre terceros a 1 día",
-      "ultValorInformado": 2493203.0,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 2199217.0,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -94164,7 +94164,7 @@
       "idVariable": 152,
       "descripcion": "Pases pasivos para el BCRA (incluye pases pasivos con fci)",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-29",
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -94172,7 +94172,7 @@
       "idVariable": 153,
       "descripcion": "Pases pasivos para el BCRA con fondos comunes de inversión",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-29",
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -94180,7 +94180,7 @@
       "idVariable": 154,
       "descripcion": "Pases activos para el BCRA",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-29",
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -94188,15 +94188,15 @@
       "idVariable": 155,
       "descripcion": "LELIQ y NOTALQ",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-29",
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 156,
       "descripcion": "LEBAC y NOBAC , LEGAR y LEMIN",
-      "ultValorInformado": 242351.3571,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 243894.8737,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -94204,7 +94204,7 @@
       "idVariable": 157,
       "descripcion": "LEBAC y NOBAC  de entidades financieras",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-29",
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -94212,7 +94212,7 @@
       "idVariable": 158,
       "descripcion": "LEBAC, LEDIV y BOPREAL",
       "ultValorInformado": 4889.69,
-      "ultFechaInformada": "2026-10-29",
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En millones de USD",
       "categoria": "Series.xlsm"
     },
@@ -94220,7 +94220,7 @@
       "idVariable": 159,
       "descripcion": "NOCOM",
       "ultValorInformado": 0.0,
-      "ultFechaInformada": "2026-10-29",
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
@@ -94523,16 +94523,16 @@
     {
       "idVariable": 197,
       "descripcion": "M2 transaccional del sector privado",
-      "ultValorInformado": 63058168.811,
-      "ultFechaInformada": "2026-10-27",
+      "ultValorInformado": 64078454.569,
+      "ultFechaInformada": "2026-10-28",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
     {
       "idVariable": 198,
       "descripcion": "Otros",
-      "ultValorInformado": 2361651.3829,
-      "ultFechaInformada": "2026-10-29",
+      "ultValorInformado": 1326629.282,
+      "ultFechaInformada": "2026-10-30",
       "unidadExpresion": "En millones de ARS",
       "categoria": "Series.xlsm"
     },
