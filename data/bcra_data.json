@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "last_update": "2026-11-23T17:59:20.815246-03:00",
+    "last_update": "2026-11-24T17:01:53.364589-03:00",
     "total_catalog_count": 1000
   },
-  "ai_analysis": "Al 2026-11-20, las reservas internacionales ascienden a 49.553,0 M USD, reflejando solidez. El tipo de cambio minorista se ubica en 1.601,32 ARS/USD y el mayorista en 1.575,9572 ARS/USD, con un spread contenido. Las tasas de interés de referencia, como la BADLAR del 22,625% y depósitos a 30 días del 21,93%, sugieren una estabilidad de precios significativa y expectativas inflacionarias controladas, consolidando un entorno monetario de baja tasa nominal.",
+  "ai_analysis": "Reservas Internacionales alcanzan 49.553,0 M USD. El tipo de cambio mayorista se sitúa en 1.575,9572 ARS/USD, con el minorista en 1.601,32 ARS/USD, reflejando una brecha cambiaria controlada. Las tasas de interés nominales, como BADLAR al 22,625% y depósitos a 30 días al 21,93%, sugieren un entorno de baja inflación o implican significativas tasas reales negativas. La Base Monetaria es 47.361.165,0 M ARS.",
   "ai_title": "Resumen macroeconómico",
   "mora_segmentos": {
     "mora_familias": 12.8,
@@ -241,8 +241,8 @@
       "unidadExpresion": "Índice base 2.2.02=1",
       "moneda": "ML",
       "primerFechaInformada": "2002-02-02",
-      "ultFechaInformada": "2026-11-23",
-      "ultValorInformado": 875.7607075698
+      "ultFechaInformada": "2026-11-24",
+      "ultValorInformado": 876.39620001101
     },
     {
       "idVariable": 31,
@@ -253,7 +253,7 @@
       "unidadExpresion": "En ARS",
       "moneda": "ML",
       "primerFechaInformada": "2016-03-31",
-      "ultFechaInformada": "2026-11-23",
+      "ultFechaInformada": "2026-11-24",
       "ultValorInformado": 2206.78
     },
     {
@@ -93327,8 +93327,8 @@
     {
       "idVariable": 30,
       "descripcion": "Coeficiente de estabilización de referencia (base 2.2.02=1)",
-      "ultValorInformado": 875.7607075698,
-      "ultFechaInformada": "2026-11-23",
+      "ultValorInformado": 876.39620001101,
+      "ultFechaInformada": "2026-11-24",
       "unidadExpresion": "Índice base 2.2.02=1",
       "categoria": "Principales Variables"
     },
@@ -93336,7 +93336,7 @@
       "idVariable": 31,
       "descripcion": "Unidad de valor adquisitivo (base 31.3.16=14.05)",
       "ultValorInformado": 2206.78,
-      "ultFechaInformada": "2026-11-23",
+      "ultFechaInformada": "2026-11-24",
       "unidadExpresion": "En ARS",
       "categoria": "Principales Variables"
     },
@@ -93344,7 +93344,7 @@
       "idVariable": 32,
       "descripcion": "Unidad de vivienda (base 31.3.16=14.05)",
       "ultValorInformado": 1612.45,
-      "ultFechaInformada": "2026-11-23",
+      "ultFechaInformada": "2026-11-24",
       "unidadExpresion": "En ARS",
       "categoria": "Principales Variables"
     },
@@ -93359,16 +93359,16 @@
     {
       "idVariable": 40,
       "descripcion": "Índice para Contratos de Locación (base 30.6.20=1)",
-      "ultValorInformado": 37.7,
-      "ultFechaInformada": "2026-11-23",
+      "ultValorInformado": 37.73,
+      "ultFechaInformada": "2026-11-24",
       "unidadExpresion": "Índice base 30.6.20=1",
       "categoria": "Principales Variables"
     },
     {
       "idVariable": 43,
       "descripcion": "Tasa de interés Comunicado P 14.290 (Uso de justicia)",
-      "ultValorInformado": 27996.9506,
-      "ultFechaInformada": "2026-11-23",
+      "ultValorInformado": 28010.8982,
+      "ultFechaInformada": "2026-11-24",
       "unidadExpresion": "En porcentaje",
       "categoria": "Principales Variables"
     },
